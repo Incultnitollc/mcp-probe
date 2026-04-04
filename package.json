@@ -1,0 +1,45 @@
+{
+  "name": "mcp-doctor",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "mcp-doctor": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "test": "vitest run"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "testing",
+    "cli",
+    "developer-tools",
+    "ai",
+    "llm"
+  ],
+  "author": "Incultnito Studios LLC",
+  "license": "MIT",
+  "description": "One command to diagnose your MCP server. Tests every tool, resource, and prompt — then gives you a health report.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PengSpirit/mcp-doctor.git"
+  },
+  "homepage": "https://github.com/PengSpirit/mcp-doctor",
+  "bugs": {
+    "url": "https://github.com/PengSpirit/mcp-doctor/issues"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "@types/node": "^25.5.0",
+    "chalk": "^5.6.2",
+    "commander": "^14.0.3",
+    "ora": "^9.3.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2",
+    "vitest": "^3.2.4",
+    "zod": "^4.3.6"
+  }
+}
