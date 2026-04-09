@@ -4,45 +4,12 @@
 
 Tests every tool, resource, and prompt your server exposes — then gives you a health report with a pass/fail scorecard.
 
+<p align="center">
+  <img src="demo.gif" alt="mcp-doctor demo" width="800" />
+</p>
+
 ```
 npx mcp-doctor test "npx -y @modelcontextprotocol/server-everything"
-```
-
-```
-═══════════════════════════════════════════
-  MCP Server Inspection Report
-  Server: mcp-servers/everything
-═══════════════════════════════════════════
-
-Tools:
-  PASS echo — Echoes back the input string (3ms)
-  PASS get-sum — Returns the sum of two numbers (1ms)
-  PASS get-tiny-image — Returns a tiny MCP logo image. (0ms)
-  FAIL simulate-research-query — Requires task-based execution (0ms)
-
-Resources:
-  PASS demo://resource/static/document/architecture.md [1604 bytes] (3ms)
-  PASS demo://resource/static/document/features.md [8815 bytes] (1ms)
-
-Prompts:
-  PASS simple-prompt — A prompt with no arguments [1 messages] (1ms)
-  PASS args-prompt — A prompt with two arguments [1 messages] (1ms)
-
-Schema Issues:
-  WARN  get-resource-reference — Property "resourceType" missing description
-
-═══════════════════════════════════════════
-  Health Check Score
-═══════════════════════════════════════════
-
-  Tools callable:      12/13
-  Resources readable:  7/7
-  Prompts gettable:    3/4
-  Schema errors:       0
-  Schema warnings:     1
-  Total time:          12590ms
-
-  SOME CHECKS FAILED
 ```
 
 ## What it does
