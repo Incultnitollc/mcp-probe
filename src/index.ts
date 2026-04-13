@@ -2,48 +2,84 @@
 
 import { Command } from "commander";
 import { inspectServer } from "./client.js";
+import { parseTarget, createTransport } from "./transport.js";
+import type { TransportKind } from "./types.js";
 
 const program = new Command();
 
 program
   .name("mcp-doctor")
-  .description("One command to diagnose your MCP server")
-  .version("0.1.0");
+  .description("One command to diagnose your MCP server (stdio, SSE, or Streamable HTTP)")
+  .version("0.2.0");
 
 program
   .command("test")
   .description("Connect to an MCP server and run a full inspection")
   .argument(
-    "<command>",
-    'The MCP server start command (e.g. "npx -y @modelcontextprotocol/server-everything")'
+    "<target>",
+    'MCP server target. A command (e.g. "npx -y @modelcontextprotocol/server-everything") for stdio, or a URL (e.g. "https://example.com/mcp") for remote servers.'
   )
   .option("--json", "Output results as JSON", false)
   .option("--timeout <ms>", "Timeout per operation in milliseconds", "30000")
-  .action(async (command: string, opts: { json: boolean; timeout: string }) => {
-    try {
-      const result = await inspectServer(command, {
-        json: opts.json,
-        timeout: parseInt(opts.timeout, 10),
-      });
+  .option(
+    "--transport <kind>",
+    "Force transport: stdio | sse | http (auto-detected from target by default)"
+  )
+  .option(
+    "--header <header>",
+    'Header for remote transports, "Name: value". Repeatable.',
+    (value: string, prev: string[] = []) => [...prev, value],
+    [] as string[]
+  )
+  .action(
+    async (
+      target: string,
+      opts: {
+        json: boolean;
+        timeout: string;
+        transport?: string;
+        header: string[];
+      }
+    ) => {
+      try {
+        if (
+          opts.transport &&
+          !["stdio", "sse", "http"].includes(opts.transport)
+        ) {
+          throw new Error(
+            `Invalid --transport "${opts.transport}". Expected stdio, sse, or http.`
+          );
+        }
 
-      // Exit with non-zero if any checks failed
-      const { score } = result;
-      const allPassed =
-        score.toolsCallable === score.toolsTotal &&
-        score.resourcesReadable === score.resourcesTotal &&
-        score.promptsGettable === score.promptsTotal &&
-        score.schemaErrors === 0;
+        const spec = parseTarget(target, {
+          transport: opts.transport as TransportKind | undefined,
+          headers: opts.header,
+        });
+        const transport = createTransport(spec);
 
-      if (!allPassed) {
+        const result = await inspectServer(transport, {
+          json: opts.json,
+          timeout: parseInt(opts.timeout, 10),
+        });
+
+        const { score } = result;
+        const allPassed =
+          score.toolsCallable === score.toolsTotal &&
+          score.resourcesReadable === score.resourcesTotal &&
+          score.promptsGettable === score.promptsTotal &&
+          score.schemaErrors === 0;
+
+        if (!allPassed) {
+          process.exit(1);
+        }
+      } catch (error) {
+        console.error(
+          "Error:",
+          error instanceof Error ? error.message : error
+        );
         process.exit(1);
       }
-    } catch (error) {
-      console.error(
-        "Error:",
-        error instanceof Error ? error.message : error
-      );
-      process.exit(1);
     }
-  });
+  );
 
 program.parse();
