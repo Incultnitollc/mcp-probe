@@ -1,6 +1,6 @@
 import { Client } from "@modelcontextprotocol/sdk/client";
-import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio";
-import type { Transport } from "@modelcontextprotocol/sdk/shared/transport";
+import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
+import type { Transport } from "@modelcontextprotocol/sdk/shared/transport.js";
 import ora from "ora";
 import type {
   InspectResult,

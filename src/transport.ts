@@ -1,8 +1,8 @@
 import type { TargetSpec, TransportKind } from "./types.js";
-import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio";
-import { SSEClientTransport } from "@modelcontextprotocol/sdk/client/sse";
-import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp";
-import type { Transport } from "@modelcontextprotocol/sdk/shared/transport";
+import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
+import { SSEClientTransport } from "@modelcontextprotocol/sdk/client/sse.js";
+import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js";
+import type { Transport } from "@modelcontextprotocol/sdk/shared/transport.js";
 
 export interface ParseTargetOptions {
   transport?: TransportKind;
