@@ -1,4 +1,8 @@
 import type { TargetSpec, TransportKind } from "./types.js";
+import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio";
+import { SSEClientTransport } from "@modelcontextprotocol/sdk/client/sse";
+import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp";
+import type { Transport } from "@modelcontextprotocol/sdk/shared/transport";
 
 export interface ParseTargetOptions {
   transport?: TransportKind;
@@ -52,4 +56,33 @@ function parseHeaders(raw: string[]): Record<string, string> {
     out[name] = value;
   }
   return out;
+}
+
+export function createTransport(spec: TargetSpec): Transport {
+  if (spec.kind === "stdio") {
+    return new StdioClientTransport({
+      command: spec.command,
+      args: spec.args,
+      stderr: "pipe",
+    });
+  }
+
+  const requestInit: RequestInit =
+    Object.keys(spec.headers).length > 0 ? { headers: spec.headers } : {};
+
+  if (spec.kind === "sse") {
+    return new SSEClientTransport(spec.url, {
+      requestInit,
+      eventSourceInit:
+        Object.keys(spec.headers).length > 0
+          ? {
+              fetch: (input, init) =>
+                fetch(input, { ...init, headers: { ...init?.headers, ...spec.headers } }),
+            }
+          : undefined,
+    });
+  }
+
+  // kind === "http"
+  return new StreamableHTTPClientTransport(spec.url, { requestInit });
 }

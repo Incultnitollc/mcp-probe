@@ -54,3 +54,37 @@ describe("parseTarget", () => {
     );
   });
 });
+
+import { createTransport } from "./transport.js";
+import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio";
+import { SSEClientTransport } from "@modelcontextprotocol/sdk/client/sse";
+import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp";
+
+describe("createTransport", () => {
+  it("builds a StdioClientTransport for stdio specs", () => {
+    const t = createTransport({
+      kind: "stdio",
+      command: "echo",
+      args: ["hi"],
+    });
+    expect(t).toBeInstanceOf(StdioClientTransport);
+  });
+
+  it("builds an SSEClientTransport for sse specs", () => {
+    const t = createTransport({
+      kind: "sse",
+      url: new URL("https://example.com/mcp"),
+      headers: {},
+    });
+    expect(t).toBeInstanceOf(SSEClientTransport);
+  });
+
+  it("builds a StreamableHTTPClientTransport for http specs", () => {
+    const t = createTransport({
+      kind: "http",
+      url: new URL("https://example.com/mcp"),
+      headers: {},
+    });
+    expect(t).toBeInstanceOf(StreamableHTTPClientTransport);
+  });
+});
