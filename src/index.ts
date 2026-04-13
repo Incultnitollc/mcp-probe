@@ -21,6 +21,7 @@ program
   )
   .option("--json", "Output results as JSON", false)
   .option("--timeout <ms>", "Timeout per operation in milliseconds", "30000")
+  .option("--html <path>", "Save HTML report to file")
   .option(
     "--transport <kind>",
     "Force transport: stdio | sse | http (auto-detected from target by default)"
@@ -37,6 +38,7 @@ program
       opts: {
         json: boolean;
         timeout: string;
+        html?: string;
         transport?: string;
         header: string[];
       }
@@ -60,6 +62,7 @@ program
         const result = await inspectServer(transport, {
           json: opts.json,
           timeout: parseInt(opts.timeout, 10),
+          html: opts.html,
         });
 
         const { score } = result;

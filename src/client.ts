@@ -14,8 +14,10 @@ import type {
 } from "./types.js";
 import { validateToolSchemas } from "./schema-validator.js";
 import { generateSampleArgs } from "./sample-args.js";
+import { writeFileSync } from "node:fs";
 import { printResult } from "./printer.js";
 import { checkCompliance } from "./spec-checker.js";
+import { generateHtmlReport } from "./html-reporter.js";
 
 export async function inspectServer(
   transport: Transport,
@@ -231,6 +233,12 @@ export async function inspectServer(
       console.log(JSON.stringify(result, null, 2));
     } else {
       printResult(result);
+    }
+
+    if (options.html) {
+      const html = generateHtmlReport(result);
+      writeFileSync(options.html, html, "utf-8");
+      ora(`HTML report saved to ${options.html}`).succeed();
     }
 
     await client.close();

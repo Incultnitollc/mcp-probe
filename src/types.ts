@@ -90,6 +90,7 @@ export interface InspectResult {
 export interface InspectOptions {
   json: boolean;
   timeout: number;
+  html?: string;
 }
 
 export type TransportKind = "stdio" | "sse" | "http";
