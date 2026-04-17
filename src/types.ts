@@ -19,6 +19,7 @@ export interface ToolCallResult {
   content?: Array<{ type: string; text?: string }>;
   error?: string;
   durationMs: number;
+  argsUsed?: Record<string, unknown>;
 }
 
 export interface ResourceInfo {
@@ -48,6 +49,7 @@ export interface PromptGetResult {
   messageCount?: number;
   error?: string;
   durationMs: number;
+  argsUsed?: Record<string, string>;
 }
 
 export interface ComplianceIssue {

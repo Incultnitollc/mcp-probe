@@ -28,6 +28,9 @@ export function printResult(result: InspectResult): void {
       console.log(`  ${status} ${chalk.white(tool.name)} — ${tool.description ?? ""}${duration}`);
       if (callResult && !callResult.success && callResult.error) {
         console.log(`       ${chalk.red(callResult.error)}`);
+        if (callResult.argsUsed && Object.keys(callResult.argsUsed).length > 0) {
+          console.log(`       ${chalk.dim(`args sent: ${JSON.stringify(callResult.argsUsed)}`)}`);
+        }
       }
     }
     console.log("");
@@ -72,6 +75,9 @@ export function printResult(result: InspectResult): void {
       console.log(`  ${status} ${chalk.magenta(prompt.name)} — ${prompt.description ?? ""}${msgCount}${duration}`);
       if (getResult && !getResult.success && getResult.error) {
         console.log(`       ${chalk.red(getResult.error)}`);
+        if (getResult.argsUsed && Object.keys(getResult.argsUsed).length > 0) {
+          console.log(`       ${chalk.dim(`args sent: ${JSON.stringify(getResult.argsUsed)}`)}`);
+        }
       }
     }
     console.log("");

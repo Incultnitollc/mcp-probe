@@ -261,8 +261,8 @@ async function callTool(
   timeout: number
 ): Promise<ToolCallResult> {
   const start = Date.now();
+  const sampleArgs = generateSampleArgs(tool.inputSchema);
   try {
-    const sampleArgs = generateSampleArgs(tool.inputSchema);
     const response = await withTimeout(
       client.callTool({ name: tool.name, arguments: sampleArgs }),
       timeout,
@@ -275,6 +275,7 @@ async function callTool(
       content: response.content as Array<{ type: string; text?: string }>,
       error: isError ? extractErrorText(response.content) : undefined,
       durationMs: Date.now() - start,
+      argsUsed: sampleArgs,
     };
   } catch (err) {
     return {
@@ -282,6 +283,7 @@ async function callTool(
       success: false,
       error: err instanceof Error ? err.message : String(err),
       durationMs: Date.now() - start,
+      argsUsed: sampleArgs,
     };
   }
 }
@@ -323,17 +325,19 @@ async function getPrompt(
   timeout: number
 ): Promise<PromptGetResult> {
   const start = Date.now();
-  try {
-    // Build required arguments with sample values
-    const promptArgs: Record<string, string> = {};
-    if (prompt.arguments) {
-      for (const arg of prompt.arguments) {
-        if (arg.required) {
-          promptArgs[arg.name] = "test";
-        }
+  // Build required arguments with sample values. MCP prompt arguments carry
+  // only name/description/required — no schema — so if the description hints
+  // at accepted values (e.g. "Must be Text or Blob"), we try to extract one
+  // before falling back to "test".
+  const promptArgs: Record<string, string> = {};
+  if (prompt.arguments) {
+    for (const arg of prompt.arguments) {
+      if (arg.required) {
+        promptArgs[arg.name] = guessPromptArgValue(arg.description);
       }
     }
-
+  }
+  try {
     const response = await withTimeout(
       client.getPrompt({ name: prompt.name, arguments: promptArgs }),
       timeout,
@@ -344,6 +348,7 @@ async function getPrompt(
       success: true,
       messageCount: response.messages.length,
       durationMs: Date.now() - start,
+      argsUsed: promptArgs,
     };
   } catch (err) {
     return {
@@ -351,8 +356,17 @@ async function getPrompt(
       success: false,
       error: err instanceof Error ? err.message : String(err),
       durationMs: Date.now() - start,
+      argsUsed: promptArgs,
     };
   }
+}
+
+function guessPromptArgValue(description?: string): string {
+  if (!description) return "test";
+  // "Must be X or Y" / "one of: X, Y" — pick first capitalized token
+  const mustMatch = description.match(/(?:must be|one of:?)\s+([A-Z][A-Za-z0-9_]*)/);
+  if (mustMatch) return mustMatch[1];
+  return "test";
 }
 
 function extractErrorText(content: unknown): string {
