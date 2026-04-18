@@ -13,8 +13,8 @@ import type {
   PromptGetResult,
 } from "./types.js";
 import { validateToolSchemas } from "./schema-validator.js";
-import { generateSampleArgs } from "./sample-args.js";
-import { writeFileSync } from "node:fs";
+import { generateSampleArgs, type SampleArgsContext } from "./sample-args.js";
+import { writeFileSync, realpathSync } from "node:fs";
 import { printResult } from "./printer.js";
 import { checkCompliance } from "./spec-checker.js";
 import { generateHtmlReport } from "./html-reporter.js";
@@ -162,11 +162,34 @@ export async function inspectServer(
 
     // ── Phase 3: Call every tool ─────────────────��───────────────
 
+    // Sandbox probe: if the server exposes `list_allowed_directories`
+    // (filesystem-style servers), call it first so we can seed path
+    // args with directories the server actually accepts. Falls back
+    // silently — servers without it are unaffected.
+    const sampleCtx: SampleArgsContext = {};
+    const allowedDirsTool = result.tools.find(
+      (t) => t.name === "list_allowed_directories"
+    );
+    if (allowedDirsTool) {
+      try {
+        const resp = await withTimeout(
+          client.callTool({ name: "list_allowed_directories", arguments: {} }),
+          options.timeout,
+          "list_allowed_directories timed out"
+        );
+        if (resp.isError !== true) {
+          sampleCtx.allowedDirectories = parseAllowedDirectories(resp.content);
+        }
+      } catch {
+        // ignore — behave as if the tool weren't there
+      }
+    }
+
     if (result.tools.length > 0) {
       const s = ora("Calling tools...").start();
       for (const tool of result.tools) {
         s.text = `Calling tool: ${tool.name}...`;
-        const callResult = await callTool(client, tool, options.timeout);
+        const callResult = await callTool(client, tool, options.timeout, sampleCtx);
         result.toolResults.push(callResult);
       }
       const passed = result.toolResults.filter((r) => r.success).length;
@@ -258,10 +281,11 @@ export async function inspectServer(
 async function callTool(
   client: Client,
   tool: ToolInfo,
-  timeout: number
+  timeout: number,
+  context: SampleArgsContext
 ): Promise<ToolCallResult> {
   const start = Date.now();
-  const sampleArgs = generateSampleArgs(tool.inputSchema);
+  const sampleArgs = generateSampleArgs(tool.inputSchema, context);
   try {
     const response = await withTimeout(
       client.callTool({ name: tool.name, arguments: sampleArgs }),
@@ -367,6 +391,33 @@ function guessPromptArgValue(description?: string): string {
   const mustMatch = description.match(/(?:must be|one of:?)\s+([A-Z][A-Za-z0-9_]*)/);
   if (mustMatch) return mustMatch[1];
   return "test";
+}
+
+export function parseAllowedDirectories(content: unknown): string[] {
+  if (!Array.isArray(content)) return [];
+  const seen = new Set<string>();
+  const dirs: string[] = [];
+  const absolutePathRe = /^(?:\/|[A-Za-z]:[\\/])/;
+  for (const item of content) {
+    if (typeof item !== "object" || item === null || !("text" in item)) continue;
+    const text = String((item as { text?: unknown }).text ?? "");
+    for (const line of text.split(/\r?\n/)) {
+      const cleaned = line.trim().replace(/^[-*•]\s+/, "");
+      if (!absolutePathRe.test(cleaned)) continue;
+      let resolved = cleaned;
+      try {
+        resolved = realpathSync(cleaned);
+      } catch {
+        // Path may not exist on THIS machine (e.g. a remote server
+        // listing paths we can't stat). Use the raw string — it's
+        // still the string the server wants us to send.
+      }
+      if (seen.has(resolved)) continue;
+      seen.add(resolved);
+      dirs.push(resolved);
+    }
+  }
+  return dirs;
 }
 
 function extractErrorText(content: unknown): string {

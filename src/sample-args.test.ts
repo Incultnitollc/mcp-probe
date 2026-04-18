@@ -147,3 +147,138 @@ describe("generateSampleArgs", () => {
     expect((args.tags as string[])[0]).toBe("test");
   });
 });
+
+describe("generateSampleArgs — sandbox-aware path args", () => {
+  it("falls back to /tmp/test for path arg when no context provided", () => {
+    const args = generateSampleArgs({
+      type: "object",
+      properties: { path: { type: "string" } },
+      required: ["path"],
+    });
+    expect(args).toEqual({ path: "/tmp/test" });
+  });
+
+  it("falls back to /tmp/test for path arg when context has no allowed dirs", () => {
+    const args = generateSampleArgs(
+      {
+        type: "object",
+        properties: { path: { type: "string" } },
+        required: ["path"],
+      },
+      { allowedDirectories: [] }
+    );
+    expect(args).toEqual({ path: "/tmp/test" });
+  });
+
+  it("returns the allowed directory itself when description mentions 'directory'", () => {
+    const args = generateSampleArgs(
+      {
+        type: "object",
+        properties: {
+          path: { type: "string", description: "Directory to list" },
+        },
+        required: ["path"],
+      },
+      { allowedDirectories: ["/private/tmp"] }
+    );
+    expect(args).toEqual({ path: "/private/tmp" });
+  });
+
+  it("appends mcp-probe-test.txt when description mentions 'file'", () => {
+    const args = generateSampleArgs(
+      {
+        type: "object",
+        properties: {
+          path: { type: "string", description: "Path to the file to read" },
+        },
+        required: ["path"],
+      },
+      { allowedDirectories: ["/private/tmp"] }
+    );
+    expect(args).toEqual({ path: "/private/tmp/mcp-probe-test.txt" });
+  });
+
+  it("uses the first allowed directory when multiple are provided", () => {
+    const args = generateSampleArgs(
+      {
+        type: "object",
+        properties: { path: { type: "string" } },
+        required: ["path"],
+      },
+      { allowedDirectories: ["/private/tmp", "/Users/peng/work"] }
+    );
+    expect(args).toEqual({ path: "/private/tmp" });
+  });
+
+  it("defaults to the directory itself when description gives no file/dir hint", () => {
+    const args = generateSampleArgs(
+      {
+        type: "object",
+        properties: { source: { type: "string" } },
+        required: ["source"],
+      },
+      { allowedDirectories: ["/private/tmp"] }
+    );
+    expect(args).toEqual({ source: "/private/tmp" });
+  });
+
+  it("does not affect non-path string args", () => {
+    const args = generateSampleArgs(
+      {
+        type: "object",
+        properties: {
+          name: { type: "string" },
+          query: { type: "string" },
+          callback_url: { type: "string" },
+        },
+        required: ["name", "query", "callback_url"],
+      },
+      { allowedDirectories: ["/private/tmp"] }
+    );
+    expect(args).toEqual({
+      name: "test",
+      query: "test query",
+      callback_url: "https://example.com",
+    });
+  });
+
+  it("seeds path-named arrays with the first allowed directory", () => {
+    const args = generateSampleArgs(
+      {
+        type: "object",
+        properties: {
+          paths: { type: "array", items: { type: "string" } },
+        },
+        required: ["paths"],
+      },
+      { allowedDirectories: ["/private/tmp"] }
+    );
+    expect(args).toEqual({ paths: ["/private/tmp"] });
+  });
+
+  it("returns empty array for path-named arrays when no context provided", () => {
+    const args = generateSampleArgs({
+      type: "object",
+      properties: {
+        paths: { type: "array", items: { type: "string" } },
+      },
+      required: ["paths"],
+    });
+    expect(args).toEqual({ paths: [] });
+  });
+
+  it("treats `src` and `destination` as path names", () => {
+    const args = generateSampleArgs(
+      {
+        type: "object",
+        properties: {
+          src: { type: "string" },
+          destination: { type: "string" },
+        },
+        required: ["src", "destination"],
+      },
+      { allowedDirectories: ["/private/tmp"] }
+    );
+    expect(args).toEqual({ src: "/private/tmp", destination: "/private/tmp" });
+  });
+});
