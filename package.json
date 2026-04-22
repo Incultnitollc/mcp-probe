@@ -1,6 +1,6 @@
 {
   "name": "@incultnitollc/mcp-probe",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "main": "./dist/lib.js",
   "types": "./dist/lib.d.ts",

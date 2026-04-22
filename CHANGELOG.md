@@ -4,6 +4,11 @@ All notable changes to `@incultnitollc/mcp-probe` are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] — 2026-04-23
+
+### Changed
+- Metadata-only patch. Refreshed `package.json` `repository.url`, `homepage`, and `bugs.url` to point at the renamed GitHub repo (`PengSpirit/mcp-probe`); the 1.0.0 tarball still carried the pre-rename URLs. No code or behavior changes.
+
 ## [1.0.0] — 2026-04-23
 
 ### Added

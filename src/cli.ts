@@ -12,7 +12,7 @@ const program = new Command();
 program
   .name("mcp-probe")
   .description("One command to diagnose your MCP server (stdio, SSE, or Streamable HTTP)")
-  .version("1.0.0");
+  .version("1.0.1");
 
 program
   .command("test")

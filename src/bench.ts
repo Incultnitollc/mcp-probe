@@ -20,7 +20,7 @@ export async function benchServer(
 
   const client = new Client({
     name: "mcp-probe",
-    version: "1.0.0",
+    version: "1.0.1",
   });
 
   try {
