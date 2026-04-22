@@ -16,20 +16,22 @@ schema-validated, with CI-friendly exit codes.
     mcp-probe test "<server>"
 
 To prove it on something real, I pointed it at the four official Node
-MCP servers Anthropic publishes:
+MCP servers in the modelcontextprotocol org:
 
     server-memory               9 / 9   PASS
     server-sequential-thinking  1 / 1   PASS
     server-everything           12 / 13 tools, 3 / 4 prompts
     server-filesystem           8 / 14  tools
 
-Two pass clean. The other two reveal the same issue: when servers ship
-without `description` fields on their input-schema properties, every
-automated caller — my probe, your IDE's autocomplete, any LLM trying
-to invoke the tool — has to guess. mcp-probe surfaces exactly which
+Two pass clean. The other two reveal mostly the same issue: when
+servers ship without `description` fields on their input-schema
+properties, every automated caller — my probe, your IDE's autocomplete,
+any LLM trying to invoke the tool — has to guess. (One tool in
+server-everything also needs a streaming API that mcp-probe doesn't
+wire up yet — a client-side gap, on the roadmap.) mcp-probe surfaces exactly which
 params need better docs, so maintainers can fix them.
 
-Context on me: I'm not a DevTools founder. I run Incultnito Studios LLC
+Context on me: I'm not a DevTools founder. I run Incultnito LLC
 and I'm a non-coder by background. I built this during a two-month
 learning project because I kept adding MCP servers to my stack and
 discovering broken tools only after integration.

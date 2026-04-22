@@ -23,11 +23,13 @@ I ran it against the four official Node MCP servers as a sanity check:
    server-everything           12 / 13 tools, 7 / 7 resources, 3 / 4 prompts
    server-filesystem           8 / 14  tools
 
-30 / 37 tools callable across the four. Every remaining failure traces
-to the same thing: schema properties shipped without `description`
+30 / 37 tools callable across the four. Nearly every remaining failure
+traces to the same thing: schema properties shipped without `description`
 fields, so any automated caller — mcp-probe, your IDE's autocomplete,
-an LLM — has to guess the argument shape. mcp-probe surfaces exactly
-which params need better docs.
+an LLM — has to guess the argument shape. (One exception: one tool in
+server-everything needs a streaming API — `callToolStream` — that
+mcp-probe doesn't wire up yet. Client-side gap, roadmap item.)
+mcp-probe surfaces exactly which params need better docs.
 
 Built as a non-coder founder during a two-month MCP project. Open to
 "you're validating this wrong" feedback. If you maintain a server and

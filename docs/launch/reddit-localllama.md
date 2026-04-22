@@ -28,11 +28,14 @@ Sanity-check run against the four official Node MCP servers:
     server-everything           12 / 13 tools, 3 / 4 prompts
     server-filesystem           8 / 14  tools
 
-30 / 37 tools callable. Every failure I haven't fixed in my own client
-traces to the same thing: schema properties without `description` fields.
-When the schema doesn't describe an argument, anything calling the tool
-— my probe, your local model, your IDE — has to guess. The probe flags
-those properties so server authors can fix them upstream.
+30 / 37 tools callable. Nearly every remaining tool failure traces to
+the same thing: schema properties without `description` fields. (One
+exception — `simulate-research-query` in server-everything needs
+`callToolStream`, which mcp-probe doesn't wire up yet. Client-side
+gap, roadmap item.) When the schema doesn't describe an argument,
+anything calling the tool — my probe, your local model, your IDE —
+has to guess. The probe flags those properties so server authors can
+fix them upstream.
 
 (One example I had to fix on my side: server-filesystem went from 2/14
 to 8/14 once the client called `list_allowed_directories` first and

@@ -31,9 +31,11 @@ my own tool:
     server-everything           12 / 13 tools, 3 / 4 prompts
     server-filesystem           8 / 14  tools
 
-Two pass clean. The other two surface the same root cause: input-schema
-properties without `description` fields. When the schema doesn't say
-what an arg is for, every caller has to guess — Claude included. That
+Two pass clean. The other two surface mostly the same root cause:
+input-schema properties without `description` fields. (One tool in
+server-everything also needs a streaming API mcp-probe doesn't wire
+up yet — noted on the roadmap.) When the schema doesn't say what an
+arg is for, every caller has to guess — Claude included. That
 matches the failure mode I was seeing in Claude Desktop: a tool listed,
 the model calls it, the call comes back with `Invalid X` or `EISDIR`
 because the model guessed wrong.

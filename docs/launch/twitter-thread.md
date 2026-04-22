@@ -35,9 +35,9 @@ server-filesystem           8/14  tools
 ### 3/
 
 ```
-The interesting part isn't the pass rate. It's that every remaining
-failure traces to the same thing: input-schema properties shipped
-without `description` fields.
+The interesting part isn't the pass rate. It's that nearly every
+remaining failure traces to the same thing: input-schema properties
+shipped without `description` fields.
 
 If the schema doesn't describe the arg, my probe — and any LLM, and
 your IDE's autocomplete — has to guess.

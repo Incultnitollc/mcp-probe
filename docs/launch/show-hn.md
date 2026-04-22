@@ -34,8 +34,8 @@ URL, or Streamable HTTP URL) and:
 Other flags: --html for a shareable report, --bench for p50/p95/p99
 latency per tool, --watch for dev loops, --json for automation.
 
-I ran it against the four official Node MCP servers Anthropic publishes,
-as a sanity check on my own tool:
+I ran it against the four official Node MCP servers in the
+modelcontextprotocol org, as a sanity check on my own tool:
 
   server-memory               9/9   tools  PASS
   server-sequential-thinking  1/1   tools  PASS
@@ -43,8 +43,10 @@ as a sanity check on my own tool:
   server-filesystem           8/14  tools
 
 30/37 tools callable across the four (81%). The interesting part isn't
-the pass rate, it's the failure mode: every remaining failure traces
-to input-schema properties shipped without `description` fields. When
+the pass rate, it's the failure mode: 6 of 7 remaining tool failures
+trace to input-schema properties shipped without `description` fields.
+(The seventh, `simulate-research-query` in server-everything, needs a
+streaming API my client doesn't wire up yet — on the roadmap.) When
 the schema doesn't describe a parameter, every automated caller — my
 probe, an IDE's autocomplete, an LLM trying to invoke the tool — has
 to guess the argument shape. On server-filesystem that meant the probe
@@ -55,7 +57,7 @@ every downstream caller the same way.
 For full transparency: server-filesystem only got to 8/14 after I fixed
 my own client to call `list_allowed_directories` first and normalize
 macOS `/tmp` -> `/private/tmp` symlinks. Before that fix it scored 2/14.
-Writing a probe taught me how lazy most MCP clients are about sandbox
+Writing a probe taught me how lazy my own client was about sandbox
 boundaries.
 
 Background: I'm a solo builder, non-coder by training. I wrote this

@@ -7,7 +7,7 @@
 ## Title
 
 ```
-mcp-probe: ran it against the 4 official Node MCP servers — 30/37 tools pass, the rest are all missing schema descriptions
+mcp-probe: ran it against the 4 official Node MCP servers — 30/37 tools pass, most remaining failures trace to missing schema descriptions
 ```
 
 ## Body
@@ -36,10 +36,12 @@ official Node servers (`@modelcontextprotocol/server-*`):
 
 Aggregate: 30 / 37 tools callable (81%), 2 / 4 servers fully clean.
 
-Every remaining failure traces to the same root cause: input-schema
-properties shipped without `description` fields. When the schema doesn't
-say what a param is for, every automated caller — my probe, an IDE's
-autocomplete, an LLM — has to guess. On server-filesystem that meant
+6 of the 7 remaining tool failures trace to the same root cause:
+input-schema properties shipped without `description` fields. (The
+seventh, `simulate-research-query`, needs a streaming API — `callToolStream`
+— that mcp-probe doesn't wire up yet. Client-side gap, on the roadmap.)
+When the schema doesn't say what a param is for, every automated caller
+— my probe, an IDE's autocomplete, an LLM — has to guess. On server-filesystem that meant
 mcp-probe defaulted `path` to the allowed root directory and the server
 correctly returned EISDIR. Not a server bug, a documentation gap that
 breaks every downstream caller the same way.

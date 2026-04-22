@@ -1,5 +1,7 @@
 # Launch materials
 
+> **Hook (canonical one-liner):** Missing parameter descriptions break automated tooling. mcp-probe shows you which params need better docs.
+
 **Launch date: Wed 2026-04-29.** Start time **9:45pm Taipei = 9:45am ET**. Reply window ends ~1:45am Thu Taipei.
 
 Paste-ready copy for the mcp-probe v0.2.1 launch. One file per channel.
