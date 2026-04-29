@@ -19,7 +19,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 DOCS_DIR="${REPO_ROOT}/docs/launch"
 
-REPO_URL="https://github.com/PengSpirit/mcp-doctor"
+REPO_URL="https://github.com/incultnitollc/mcp-probe"
 
 # ── Pick a browser-opener for this OS ───────────────────────────────────────
 if command -v open >/dev/null 2>&1; then
@@ -69,7 +69,7 @@ open_url() {
 # ── 1. Show HN ──────────────────────────────────────────────────────────────
 echo ""
 echo "Opening Show HN submit page..."
-echo "  Paste title:  Show HN: Mcp-probe – one command to health-check any MCP server"
+echo "  Paste title:  Show HN: mcp-probe – one command to health-check any MCP server"
 echo "  Paste URL:    ${REPO_URL}"
 open_url "Show HN" "https://news.ycombinator.com/submit"
 

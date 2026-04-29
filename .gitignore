@@ -4,6 +4,6 @@ dist/
 .DS_Store
 .env
 demo.tape
-scripts/
+scripts/*
 !scripts/launch.sh
 graphify-out/

@@ -120,7 +120,7 @@ This means tools with complex required inputs may fail — and that's useful inf
 
 ```bash
 git clone https://github.com/incultnitollc/mcp-probe.git
-cd mcp-doctor
+cd mcp-probe
 npm install
 npm run dev -- test "npx -y @modelcontextprotocol/server-everything"
 npm test
@@ -128,4 +128,4 @@ npm test
 
 ## License
 
-MIT - [Incultnito LLC](https://github.com/PengSpirit)
+MIT - [Incultnito LLC](https://github.com/incultnitollc)
