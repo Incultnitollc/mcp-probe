@@ -4,6 +4,8 @@
 
 Tests every tool, resource, and prompt your server exposes — then gives you a health report with a pass/fail scorecard.
 
+Built on the Anthropic Model Context Protocol (MCP) spec.
+
 > **Note:** Published to npm as `@incultnitollc/mcp-probe`. The CLI binary is `mcp-probe`. The unscoped name `mcp-doctor` on npm is owned by an unrelated tool, so this project ships under a scope. Versions `<= 0.2.1` shipped under the deprecated `@incultnitostudiosllc` scope — install `@incultnitollc/mcp-probe` instead.
 
 <p align="center">
@@ -14,7 +16,7 @@ Tests every tool, resource, and prompt your server exposes — then gives you a 
 npx @incultnitollc/mcp-probe test "npx -y @modelcontextprotocol/server-everything"
 ```
 
-## What it does
+## Test your MCP server in 30 seconds
 
 | Check | Description |
 |-------|-------------|
@@ -115,6 +117,22 @@ This means tools with complex required inputs may fail — and that's useful inf
 - **CI/CD gates** — Block deploys if your MCP server doesn't pass health checks
 - **Server evaluation** — Quickly assess third-party MCP servers before integrating them
 - **Schema quality** — Find missing descriptions and malformed schemas before users hit them
+
+## CI integration
+
+`mcp-probe` exits `0` on full pass and `1` on any failure, so it drops directly into any CI pipeline:
+
+```yaml
+# .github/workflows/mcp-health.yml
+- name: Health-check MCP server
+  run: npx @incultnitollc/mcp-probe test "$MCP_SERVER_CMD"
+```
+
+Use `--json` for structured output and `jq` to gate on specific metrics (e.g. fail the build if `schemaWarnings > 0`). A dedicated GitHub Action is on the roadmap.
+
+## Compared to MCP Inspector
+
+The official [MCP Inspector](https://github.com/modelcontextprotocol/inspector) is a GUI for interactive exploration — point, click, see what a server returns. `mcp-probe` is a CLI for automated, repeatable diagnosis — every tool/resource/prompt called automatically, pass/fail scorecard out, exit code in. Use Inspector when you're exploring; use `mcp-probe` in CI, in pre-publish checks, or when you want a shareable scorecard of someone else's server.
 
 ## Development
 

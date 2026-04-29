@@ -1,5 +1,9 @@
 # Scorecard Summary — 2026-04-19
 
+## TL;DR
+
+Across the four official Anthropic Model Context Protocol (MCP) Node servers, **30 of 37 tools pass `mcp-probe`'s automated health check (81% pass rate)**. Every remaining failure traces to **missing `description` fields on schema properties** — when servers ship without parameter descriptions, every automated tool (mcp-probe, IDE autocomplete, LLM tool-use planners) has to guess argument shapes.
+
 Re-run of `@incultnitollc/mcp-probe@1.0.0` after the 2026-04-17 integrity audit. Every failure here has been classified as **server-side** or **client-side limit** — no fragile claims left in this file.
 
 ## Results

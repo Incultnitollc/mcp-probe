@@ -1,5 +1,5 @@
 ---
-title: "Schema descriptions are load-bearing: what I learned building a health check tool for MCP servers"
+title: "Schema descriptions are load-bearing: why missing parameter descriptions break MCP clients"
 description: "I built mcp-probe to test MCP servers. Stress-testing it against the four official Node servers forced me to fix three real bugs in my own client before I could trust any failure I reported. Here's the loop."
 tags: [mcp, modelcontextprotocol, claude, cli, devtools, testing]
 cover_image: "docs/assets/og-card.png"
