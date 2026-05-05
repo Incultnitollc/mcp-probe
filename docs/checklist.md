@@ -12,13 +12,16 @@ The seven sections below correspond to the seven categories where MCP servers mo
 
 The schema is the contract between your server and every LLM that calls it. The model never sees your README — it sees `inputSchema.properties` and the `description` field on each property. A missing description is a missing instruction, and the model will fill the gap by guessing.
 
-- [ ] **Every input property has a `description`.** Not "todo", not blank, not omitted. Treat the description as the parameter's docstring. The model will paraphrase it back to the user when explaining what your tool does.
+Treat the schema as an API contract, not generated documentation. Every parameter description should answer five questions: (1) what kind of value it expects, (2) what constraints apply, (3) what NOT to pass, (4) whether the value mutates data or only narrows a read, and (5) one example when ambiguity is likely. The mutation-vs-read axis is the safety-critical one — when two tools could plausibly satisfy a user's intent, "this one writes" vs "this one only narrows a read" is exactly the disambiguator the model should be able to read off the schema. (Credit: this 5-axis framing was contributed by [Mads Hansen](https://dev.to/incultnitollc/schema-descriptions-are-load-bearing-why-missing-parameter-descriptions-break-mcp-clients-4l42#comment-37goo) on the originating article — see [Acknowledgments](#acknowledgments).)
+
+- [ ] **Every input property has a `description` that answers the five questions above.** Not "todo", not blank, not omitted. Treat the description as the parameter's docstring. The model will paraphrase it back to the user when explaining what your tool does.
 - [ ] **Enums are enums in the schema, not in prose.** If a parameter accepts `"Text"` or `"Blob"`, declare `"enum": ["Text", "Blob"]`. Do not bury the allowed values in a description string — many automated callers will not parse them out.
 - [ ] **Required fields are listed in `required: []`.** Optional parameters need a default — either via `default:` in the schema or a clear "Optional. Defaults to X." in the description.
 - [ ] **Path-shaped parameters say so.** A parameter named `path` with description `"file path"` is ambiguous: file path, directory path, absolute, relative? Spell it out: `"absolute path to a file inside the allowed directory; never a directory"`.
 - [ ] **`additionalProperties: false`** on every input schema unless you genuinely accept arbitrary keys. Without this, clients that send extra fields will succeed when you intended a 400.
 - [ ] **Examples in the schema, not just the README.** `examples: ["/Users/me/notes.md"]` on a path-shaped property cuts the model's failure rate on the first call.
 - [ ] **Tool names are stable.** Renaming a tool in a minor version is a breaking change for every saved Claude Desktop workflow that references the old name. Treat tool names like CLI flags.
+- [ ] **Mutation vs. read is legible from the schema, not just the tool name.** A tool whose effect on data is ambiguous — `query_users` that can also delete, `update_doc` that sometimes only re-reads — forces the model to guess. Surface the axis explicitly: in the tool description (`"Mutating. Writes to ..."` / `"Read-only. Returns ..."`), in a `mutating: true` annotation if your client supports it, or via name prefixes (`read_*`, `list_*`, `update_*`, `delete_*`). For destructive operations, repeat the warning at the parameter that controls scope (e.g., a `where` clause that defaults to all rows).
 
 **Self-check:**
 ```bash
@@ -112,6 +115,7 @@ Half of MCP servers expose the filesystem, a database, or a remote API. Default-
 - [ ] **API keys validated at startup, not on first call.** A server that starts successfully then errors on every tool call because the API key is missing is a worse user experience than one that refuses to start.
 - [ ] **Path-accepting tools enforce an allowed-directory sandbox.** `realpath` the input, compare to an allowlist, refuse symlink escapes. The official `server-filesystem` is the reference implementation.
 - [ ] **SQL-accepting tools refuse multi-statement input by default.** A "run this query" tool that allows `; DROP TABLE` is a CTF challenge, not a product.
+- [ ] **Mutation tools advertise their blast radius.** A vague schema on a database, filesystem-write, or remote-API-mutation tool isn't only a usability issue — it's an access-control surface. If the model can't tell from the schema whether a parameter narrows a read or controls what gets written/deleted, it can't pick the safer of two plausible tools. Pair this with the schema-side requirement in Section 1: state mutating-vs-read at the tool level, and at the parameter level for any field that controls scope (a `where` clause, a `path` prefix, a `--force` flag). The harder version of "schema descriptions are load-bearing": on mutation tools, vague descriptions are a privilege-escalation surface.
 - [ ] **Outbound HTTP has a timeout.** `fetch()` with no timeout will hang on a slow remote forever and your tool will look broken.
 - [ ] **Secrets in transport URIs are stripped from logs.** A connection string like `postgres://user:pass@host/db` should never appear in error output.
 - [ ] **No `eval` and no shell-string interpolation.** If you must invoke a subprocess, use `execFile` with an array, never `exec` with a string.
@@ -166,6 +170,14 @@ The checks above don't substitute for each other — each one finds a different 
 
 This checklist is versioned with the `mcp-probe` repo. Filing an issue or PR against [`mcp-probe/docs/checklist.md`](https://github.com/incultnitollc/mcp-probe/blob/main/docs/checklist.md) is the canonical way to propose changes. If items get added or removed, the change is logged in `CHANGELOG.md` under the date.
 
-**Last revised:** 2026-05-05.
+**Last revised:** 2026-05-06.
 
 **Changes welcome from:** maintainers of MCP servers, MCP client implementers, anyone who has hit a real-world bug that traces to a gap in this list.
+
+---
+
+## Acknowledgments
+
+The 5-axis parameter contract in Section 1 — value type, constraints, what NOT to pass, mutation-vs-read, example — was contributed by **Mads Hansen** ([@mads_hansen_27b33ebfee4c9](https://dev.to/mads_hansen_27b33ebfee4c9) on dev.to, [original comment](https://dev.to/incultnitollc/schema-descriptions-are-load-bearing-why-missing-parameter-descriptions-break-mcp-clients-4l42#comment-37goo)) on the dev.to publication of "Schema descriptions are load-bearing." The mutation-vs-read framing in Sections 1 and 6, and the access-control / blast-radius framing for database tools in Section 6, are drawn from the same comment thread.
+
+If you have a contribution to this checklist and want to be credited under a specific handle (GitHub, dev.to, X, mailing-list email), open a PR with the change and the attribution you'd like, or comment on the originating article.
