@@ -110,5 +110,23 @@ mcp-probe test "npx -y @modelcontextprotocol/server-memory"
 - Repo: [github.com/incultnitollc/mcp-probe](https://github.com/incultnitollc/mcp-probe)
 - npm: [@incultnitollc/mcp-probe](https://www.npmjs.com/package/@incultnitollc/mcp-probe)
 - Raw scorecards from this post: [`docs/scorecards/`](https://github.com/incultnitollc/mcp-probe/tree/main/docs/scorecards)
+- Pre-publish checklist for MCP server maintainers: [`docs/checklist.md`](https://github.com/incultnitollc/mcp-probe/blob/main/docs/checklist.md)
 
 If you maintain an MCP server and you want a scorecard run against it, open an issue with the [test-my-server template](https://github.com/incultnitollc/mcp-probe/issues/new?template=test_my_server.yml) and I'll post the results as a comment. If mcp-probe reports something that looks like a server bug and isn't, open an issue against mcp-probe instead — that's the loop that produced commits `3825170` and `ce4f55e`, and it's the only way the diagnostic gets more trustworthy.
+
+---
+
+## Update — 2026-05-06: legacy `server-github` scorecard
+
+Ran mcp-probe against `@modelcontextprotocol/server-github@2025.4.8` (the legacy Node GitHub MCP server, since superseded by GitHub's own [`github/github-mcp-server`](https://github.com/github/github-mcp-server) but still installed in the wild). Results:
+
+```
+Tools callable:      3 / 26
+Schema warnings:     51   ← largest gap of any server tested
+```
+
+Three tools pass (the unauthenticated public-search endpoints — `search_repositories`, `search_issues`, `search_users`). The other 23 fail in two clusters: `Not Found` errors on read tools called with default test args (because no schema descriptions tell mcp-probe what valid `owner` / `repo` strings look like), and `Authentication Required` on write tools where the OAuth token didn't propagate to the spawned subprocess.
+
+51 schema warnings on a single server is the highest count to date — every property on every tool is missing a `description`. Same root cause as `server-filesystem` (18 warnings) at 3× the scale.
+
+Full scorecard + raw probe output: [`docs/scorecards/SUMMARY.md`](https://github.com/incultnitollc/mcp-probe/blob/main/docs/scorecards/SUMMARY.md). Discussion thread for replies and own-server scorecards: [#11 in the mcp-probe repo](https://github.com/Incultnitollc/mcp-probe/discussions/11).
