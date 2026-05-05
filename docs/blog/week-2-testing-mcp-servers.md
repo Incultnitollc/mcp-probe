@@ -2,9 +2,9 @@
 title: "Schema descriptions are load-bearing: why missing parameter descriptions break MCP clients"
 description: "I built mcp-probe to test MCP servers. Stress-testing it against the four official Node servers forced me to fix three real bugs in my own client before I could trust any failure I reported. Here's the loop."
 tags: [mcp, modelcontextprotocol, claude, cli, devtools, testing]
-cover_image: "docs/assets/og-card.png"
-canonical_url: ""
-published: false
+cover_image: "https://raw.githubusercontent.com/incultnitollc/mcp-probe/main/docs/assets/og-card.png"
+canonical_url: "https://github.com/incultnitollc/mcp-probe/blob/main/docs/blog/week-2-testing-mcp-servers.md"
+published: true
 ---
 
 <!--
