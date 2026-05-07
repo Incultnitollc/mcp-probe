@@ -59,7 +59,7 @@ Cold-launching a dev-tool with **zero warm audience** on HN + 3 Reddits + Twitte
 - PR to `punkpeye/awesome-mcp-servers` (Tools section)
 - Reshape blog into "MCP Server Conformance Checklist" → post as GitHub Discussion in `modelcontextprotocol/servers` (frame as community standard, NOT product post)
 - Tue 21:00 TPE: publish first community scorecard (Postgres MCP server)
-- Daily Discord/Reddit cadence: 4 helpful replies in MCP Discord using `mcp-probe test` evidence, 2 r/mcp replies on existing threads, 1 r/ClaudeAI
+- Daily community-presence cadence (revised 2026-05-07): **4 GitHub-venue replies** (Discussions / Issues / Cursor forum) using `mcp-probe test` evidence + **1-2 r/mcp replies** on existing threads + **1 r/ClaudeAI**. **NOT** the official MCP Contributor Discord — that server explicitly forbids product marketing and user-support questions per <https://modelcontextprotocol.io/community/communication>. See "Reply templates" § Venue routing for the canonical venue list.
 
 ### Week 2 — SEO Beachhead
 
@@ -114,9 +114,33 @@ mcp-probe — Week of YYYY-MM-DD
 - Decision: continue / launch / extend
 ```
 
-## Reply templates — Discord (4) + Reddit (1-2)
+## Reply templates — GitHub venues (4) + Reddit (1-2)
 
 Operational templates for the daily community presence cadence on line 62. All templates obey the same three rules.
+
+### Venue routing (UPDATED 2026-05-07)
+
+Originally drafted for "MCP Discord" — that's wrong. The canonical [MCP Contributor Discord](https://discord.gg/6CSzBmMkjX) explicitly forbids both user-support questions and product marketing per [modelcontextprotocol.io/community/communication](https://modelcontextprotocol.io/community/communication):
+
+> "Avoid: MCP user support — Read official documentation and use GitHub Discussions for questions"
+> "Avoid: Service or product marketing — Keep discussions vendor-neutral; mentions of brands are discouraged except as examples relevant to the specification"
+
+Pasting probe replies there violates server rules and risks a ban. Templates D1-D4 below are **forum-format-agnostic** — they fire on any thread-style venue. The actual venue routing is:
+
+| Priority | Venue | Why | Notes |
+|---|---|---|---|
+| 1 | `modelcontextprotocol/servers` Issues | Anthropic-owned repo; highest citation surface; OPs are server authors who care about schema quality | Reply to schema-quality-relevant issues only — never to feature requests or unrelated bugs |
+| 2 | `modelcontextprotocol/modelcontextprotocol` GitHub Discussions | Officially recommended user-support venue | Long-form discussion welcome; tool mentions tolerated when relevant |
+| 3 | `anthropics/claude-code` Issues | Highest-traffic claude-code repo; many MCP-related issues | **State-check first** — many issues auto-close + lock 7 days post-closure. Verify open state before drafting |
+| 4 | Cursor forum (`forum.cursor.com`) | Active MCP debugging community | Independent of Anthropic; broader IDE-agent context |
+| 5 | Individual MCP server repos with active issues | Direct relevance to server author + audience | Lower volume but high signal |
+| 6 | r/mcp + r/ClaudeAI | Reddit reach | See keyword search list at end of section |
+| ❌ | MCP Contributor Discord | Explicit rule violation | Skip entirely |
+| ❓ | Community-run "Model Context Protocol" Discord (`discord.com/invite/model-context-protocol-1312302100125843476`) | Rules unverified | Must join, read pinned messages, confirm self-promotion policy before any template fires there |
+
+**Pre-flight check before any GitHub reply:** verify issue state is OPEN (not CLOSED or LOCKED). Auto-bots lock issues 7 days after closure. Run `gh issue view <num> --repo <owner>/<repo> --json state,locked` before drafting.
+
+### Anti-patterns (DO NOT DO)
 
 ### Anti-patterns (DO NOT DO)
 
@@ -230,23 +254,51 @@ Paste a couple of your tool definitions (redact internals) and someone here can 
 
 ---
 
+### r/mcp keyword search list (manual browse — Reddit blocks WebFetch)
+
+Reddit's API blocks programmatic fetching from this environment. Browse `https://www.reddit.com/r/mcp/new/` and `/r/mcp/top/?t=week` manually, then `Ctrl+F` for any of these phrases. Each maps to a template:
+
+| Search phrase | Template fit | Why this matches |
+|---|---|---|
+| "tool not being called" / "tool isn't called" / "tool not used" | D1 / R2 | Wrong-tool-selection or skipped-tool — schema description problem |
+| "agent picks wrong tool" / "wrong tool selected" / "Claude picks the other tool" | D1 / R2 | Disambiguation failure — anti-purpose missing |
+| "Claude ignores my tool" / "Claude won't use" / "Cursor ignores" | D1 / R2 | Selection failure |
+| "Inspector says fine" / "Inspector passes" / "MCP Inspector is green" / "Inspector validates" | D3 | Protocol-clean but schema-poor |
+| "test my MCP server" / "validate my MCP" / "how do I check" | D2 / R1 | Pre-publish best-practices |
+| "before publishing" / "pre-publish" / "ready to ship" / "ready for production" | D2 / R1 | Same |
+| "hallucinating params" / "wrong types" / "made up values" / "garbage parameter" | D4 | Parameter-description quality |
+| "missing description" / "no description" / "schema warnings" | D1 / D2 / R1 / R2 | Direct match for probe's primary scoring axis |
+| "schema validation" / "schema strict" / "JSON Schema" | D2 / R1 | Pre-publish/CI angle |
+| "best practices" / "MCP server tips" / "writing MCP server" | R1 | Best-practices thread |
+| "tool description" / "tool descriptions" | D1 / D2 / R1 | Tool-level schema quality |
+| "anti-purpose" / "when not to use" / "disambiguate tools" | All | Direct match for the dev.to anti-purpose follow-up post angle |
+
+**Rules for r/mcp specifically:**
+- Verify thread is recent (≤30 days) — old threads don't surface in subscribers' feeds
+- Verify OP hasn't already marked the thread "solved" or accepted an answer
+- Check the comment count — if `>20`, your reply may get buried; pick mid-traffic threads (3-15 comments) where it's still visible
+- Skip showcase / "I built X" threads — those are promo-tolerant and don't fit the diagnostic-reply pattern
+- Skip news threads (Anthropic announcements, spec releases) — wrong context
+
 ### Daily execution checklist (paste into a scratch note before each session)
 
 ```
 Today's MCP community presence — YYYY-MM-DD
 
-Discord (target: 4 replies, all on existing threads)
-- [ ] D? — thread link: ____ — template used: ___ — probe-mentioned? Y/N
-- [ ] D? — thread link: ____ — template used: ___ — probe-mentioned? Y/N
-- [ ] D? — thread link: ____ — template used: ___ — probe-mentioned? Y/N
-- [ ] D? — thread link: ____ — template used: ___ — probe-mentioned? Y/N
+GitHub venues (target: 4 replies, all on existing OPEN threads)
+- [ ] thread URL: ____ — venue: gh-issues | gh-discussion | cursor-forum
+      template: D1 | D2 | D3 | D4 — probe-mentioned? Y/N
+- [ ] thread URL: ____ — venue: ____ — template: ___ — probe-mentioned? Y/N
+- [ ] thread URL: ____ — venue: ____ — template: ___ — probe-mentioned? Y/N
+- [ ] thread URL: ____ — venue: ____ — template: ___ — probe-mentioned? Y/N
 
 Reddit (target: 1-2 replies on r/mcp, existing threads)
-- [ ] R? — thread link: ____ — template used: ___ — probe-mentioned? Y/N
+- [ ] thread URL: ____ — template: R1 | R2 — probe-mentioned? Y/N
 
 Tally for the week:
 - Probe-mentioned ratio target: ≤50% of replies (reply value > probe surface)
 - Anti-pattern violations this session: 0
+- Closed/locked threads accidentally targeted: 0  (state-check before drafting)
 ```
 
 If the probe-mention ratio creeps above 50% across a week, the cadence is drifting toward promotion. Force a few replies that don't mention probe at all to recalibrate.
