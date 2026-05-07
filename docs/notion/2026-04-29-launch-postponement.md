@@ -114,6 +114,143 @@ mcp-probe — Week of YYYY-MM-DD
 - Decision: continue / launch / extend
 ```
 
+## Reply templates — Discord (4) + Reddit (1-2)
+
+Operational templates for the daily community presence cadence on line 62. All templates obey the same three rules.
+
+### Anti-patterns (DO NOT DO)
+
+- **No top-posts.** Only reply to existing threads where someone has already asked a question that probe evidence answers. Cold introductions read as promotion regardless of quality.
+- **Never lead with `npm install` or the package name.** Lead with the diagnosis or answer. The probe command appears at most once per reply, near the end, framed as one option among others.
+- **Never say "I built X" before being asked.** No authorship reveal in the first reply. If the OP asks "what's this tool, who made it?", that's the cue — not before.
+- **No "DM me" / "check out my post" / "subscribe" closers.** Reply ends on the technical point.
+- **Mention Anthropic's MCP Inspector by name when it's the better fit.** Probe is complementary to Inspector, not a replacement. Saying so out loud is what makes the probe mention land as honest.
+
+### When the probe mention is allowed
+
+Only when ALL of these are true:
+1. The OP's question is one probe's output materially answers (schema/conformance), not a generic MCP question
+2. The reply has already given useful information BEFORE the command appears
+3. The command is presented as a self-service diagnostic ("if you want a one-shot scan…"), not a recommendation to install
+4. There is at least one non-probe option also mentioned (Inspector, manual schema review, paste-and-debug)
+
+If any of those is false, send the reply WITHOUT the probe mention. A good reply with no probe mention is still a win — it builds the surface that lets the next reply land.
+
+---
+
+### Discord template D1 — "Claude isn't calling my tool" / "Agent picks the wrong tool"
+
+**Thread trigger:** OP reports their tool is being ignored, the wrong tool gets selected, or selection is unreliable.
+
+```
+If a tool isn't getting called, the schema is doing the talking — not the transport. Most "agent picks wrong tool" cases trace to one of:
+
+- Tool description is generic ("Searches data" gives the model nothing to disambiguate against three other search tools)
+- One or more parameters has no `description` field — Claude tends to skip tools with undescribed params or hallucinate values for them
+- The "anti-purpose" is missing — the description says what the tool is for, but not what it *isn't* for, so the agent has nothing to rule it out
+
+Paste your tool definition (redact whatever you need) and we can pinpoint which one. If you want a one-shot diagnostic across the whole server, `npx @incultnitostudiosllc/mcp-probe test "<your launch command>"` outputs a scorecard flagging weak/missing schemas — complements Anthropic's MCP Inspector (Inspector for interactive exploration, this for conformance gating).
+```
+
+### Discord template D2 — "How do I test my MCP server before shipping?"
+
+**Thread trigger:** OP asks for a pre-publish checklist, validation steps, or how to know their server is ready.
+
+```
+Things that bite people before publish, in order of frequency:
+
+1. Tool descriptions — generic descriptions cause wrong-tool-selection. Each description should answer: scope, trigger, anti-trigger, sibling pointer.
+2. Parameter descriptions — every parameter, every tool. Missing descriptions cause the model to skip the tool or hallucinate the value.
+3. Required-flag accuracy — params that are conceptually required but marked optional cause runtime failures the schema couldn't predict.
+4. Handshake — confirm `tools/list` returns cleanly and the first `tools/call` doesn't crash.
+5. Transport — stdio vs HTTP, and that your launch command actually matches the transport you're targeting.
+
+Anthropic's MCP Inspector (`@modelcontextprotocol/inspector`) is the standard interactive check — exploratory, click-through. For automated / CI gating, `npx @incultnitostudiosllc/mcp-probe test "<launch command>"` produces a scorecard you can fail a build on. Different surfaces; both worth running.
+```
+
+### Discord template D3 — "Inspector says my server is fine but Claude still doesn't use it"
+
+**Thread trigger:** OP has run MCP Inspector, gotten a green result, but the agent still ignores the server.
+
+```
+Inspector validates that the server *speaks the protocol* — handshake, tool listing, JSON-RPC framing. It doesn't grade whether the *schemas are good enough for the model to actually use*. Two different problems.
+
+If the protocol layer is clean (Inspector confirms that), the failure is at the schema-quality layer:
+- Tool description too generic
+- Parameter descriptions missing
+- Anti-purpose unspecified
+
+Quick way to distinguish: `npx @incultnitostudiosllc/mcp-probe test "<launch command>"` will tell you which tools have schema-quality warnings. If everything passes there too, the issue is on the client side — some agents only surface the first N tools, or trim long descriptions, or require server entries in a specific config block.
+```
+
+### Discord template D4 — "Agent is hallucinating parameter values / passing wrong types"
+
+**Thread trigger:** OP reports the agent calls the tool but with garbage values, wrong types, or made-up data.
+
+```
+Hallucinated parameter values almost always trace back to one of:
+
+1. The parameter has no `description` — the model has to guess what to put there.
+2. The description is too abstract ("the user's preference" instead of "the user's email address in RFC 5322 format").
+3. The `enum` constraint is missing on a finite-value field.
+4. The required vs optional split is wrong, so the model fills nominally-required fields with placeholders to satisfy the schema.
+
+The model can only be as specific as the schema lets it be. Paste the tool definition and one example of a bad call, and the line that caused it is usually obvious. `npx @incultnitostudiosllc/mcp-probe test "<launch command>"` flags #1 and #2 across the whole server in one pass.
+```
+
+---
+
+### r/mcp template R1 — "Best practices for MCP server design / pre-publish"
+
+**Thread trigger:** Reddit thread asking about server design conventions, pre-publish steps, or production-readiness.
+
+```
+Two patterns catch the majority of pre-launch issues, in order of impact:
+
+**1. Schema descriptions are load-bearing.** Every tool needs a description that says *when* to use it — and ideally *when not* to. Every parameter needs its own description. Missing parameter descriptions are the most common cause of "Claude won't call my tool" reports — the model treats undescribed params as a signal that it doesn't know what to do, and skips the tool.
+
+**2. Test against a conformance checker, not just an interactive inspector.** Anthropic's MCP Inspector is great for clicking through a server during development. For CI / pre-publish gating where you want to fail a build on schema warnings, `npx @incultnitostudiosllc/mcp-probe test "<launch command>"` outputs a scorecard. Different tools, different stages. Both worth running.
+
+The blog post that pulled together the parameter-description data is at <https://dev.to/incultnito/schema-descriptions-are-load-bearing-...> — relevant if you want the failure modes spelled out with examples.
+```
+
+### r/mcp template R2 — "MCP server tools aren't being selected reliably"
+
+**Thread trigger:** Reddit thread describing wrong-tool-selection happening in production or during evaluation.
+
+```
+This is almost never the model's fault — it's the schema's. Three diagnostics, in order of likelihood:
+
+1. Tool descriptions are generic. "Searches the web" doesn't disambiguate against three other search tools.
+2. Anti-purpose is missing. The description says what the tool is for, but not what it *isn't* for, so the agent has nothing to rule it out.
+3. Parameter descriptions are missing or vague. Even when the tool is correctly selected, the call fails because the model couldn't extract values.
+
+Paste a couple of your tool definitions (redact internals) and someone here can usually pinpoint which one is happening. For a one-shot scan, `npx @incultnitostudiosllc/mcp-probe test "<launch command>"` flags all three across the whole server.
+```
+
+---
+
+### Daily execution checklist (paste into a scratch note before each session)
+
+```
+Today's MCP community presence — YYYY-MM-DD
+
+Discord (target: 4 replies, all on existing threads)
+- [ ] D? — thread link: ____ — template used: ___ — probe-mentioned? Y/N
+- [ ] D? — thread link: ____ — template used: ___ — probe-mentioned? Y/N
+- [ ] D? — thread link: ____ — template used: ___ — probe-mentioned? Y/N
+- [ ] D? — thread link: ____ — template used: ___ — probe-mentioned? Y/N
+
+Reddit (target: 1-2 replies on r/mcp, existing threads)
+- [ ] R? — thread link: ____ — template used: ___ — probe-mentioned? Y/N
+
+Tally for the week:
+- Probe-mentioned ratio target: ≤50% of replies (reply value > probe surface)
+- Anti-pattern violations this session: 0
+```
+
+If the probe-mention ratio creeps above 50% across a week, the cadence is drifting toward promotion. Force a few replies that don't mention probe at all to recalibrate.
+
 ## Manual steps Claude cannot automate (Peng action required)
 
 1. **GCal cleanup** — suspend or move all 11 launch-week events from Wed 04-29 21:30 through Mon 05-05 22:00. Re-arm calendar around the trigger-hit week (likely Week 5 = ~2026-05-27 onwards). Original GCal-arming prompt preserved at `~/.claude/projects/.../memory/archive/project_gcal_prompt.md` if a full re-run is needed.
