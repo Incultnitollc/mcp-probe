@@ -22,6 +22,7 @@ Treat the schema as an API contract, not generated documentation. Every paramete
 - [ ] **Examples in the schema, not just the README.** `examples: ["/Users/me/notes.md"]` on a path-shaped property cuts the model's failure rate on the first call.
 - [ ] **Tool names are stable.** Renaming a tool in a minor version is a breaking change for every saved Claude Desktop workflow that references the old name. Treat tool names like CLI flags.
 - [ ] **Mutation vs. read is legible from the schema, not just the tool name.** A tool whose effect on data is ambiguous — `query_users` that can also delete, `update_doc` that sometimes only re-reads — forces the model to guess. Surface the axis explicitly: in the tool description (`"Mutating. Writes to ..."` / `"Read-only. Returns ..."`), in a `mutating: true` annotation if your client supports it, or via name prefixes (`read_*`, `list_*`, `update_*`, `delete_*`). For destructive operations, repeat the warning at the parameter that controls scope (e.g., a `where` clause that defaults to all rows).
+- [ ] **Tool descriptions include a "do not use for" clause when another tool can satisfy the same user intent more safely.** Two tools are often technically capable of answering the same request and only one is operationally safe. The description on the higher-blast tool is the model's decision surface at runtime, not documentation for a future human reader — every missing "do not use for" is an implicit permission. Pair positive scope on the wider tool (`run_sql`: *"Run read-only SQL against approved analytics views"*) with explicit negative scope (*"Do not use for schema changes, raw production tables, exports, or questions answerable from cached reports"*), and a positive pointer on the narrower tool (`get_fleet_summary`: *"Prefer this over `run_sql` unless the user explicitly needs custom analysis"*). The negative clause is what cuts the routing ambiguity between two plausible tools without needing a smarter model. (Credit: this anti-purpose framing — and the worked `run_sql` / `get_fleet_summary` example — was contributed by Mads Hansen in a follow-up dev.to comment, building on the runtime-policy framing in his blog post; see [Acknowledgments](#acknowledgments).)
 
 **Self-check:**
 ```bash
@@ -170,7 +171,7 @@ The checks above don't substitute for each other — each one finds a different 
 
 This checklist is versioned with the `mcp-probe` repo. Filing an issue or PR against [`mcp-probe/docs/checklist.md`](https://github.com/incultnitollc/mcp-probe/blob/main/docs/checklist.md) is the canonical way to propose changes. If items get added or removed, the change is logged in `CHANGELOG.md` under the date.
 
-**Last revised:** 2026-05-06.
+**Last revised:** 2026-05-09.
 
 **Changes welcome from:** maintainers of MCP servers, MCP client implementers, anyone who has hit a real-world bug that traces to a gap in this list.
 
@@ -178,6 +179,9 @@ This checklist is versioned with the `mcp-probe` repo. Filing an issue or PR aga
 
 ## Acknowledgments
 
-The 5-axis parameter contract in Section 1 — value type, constraints, what NOT to pass, mutation-vs-read, example — was contributed by **Mads Hansen** ([@mads_hansen_27b33ebfee4c9](https://dev.to/mads_hansen_27b33ebfee4c9) on dev.to, [original comment](https://dev.to/incultnitollc/schema-descriptions-are-load-bearing-why-missing-parameter-descriptions-break-mcp-clients-4l42#comment-37goo)) on the dev.to publication of "Schema descriptions are load-bearing." The mutation-vs-read framing in Sections 1 and 6, and the access-control / blast-radius framing for database tools in Section 6, are drawn from the same comment thread.
+**Mads Hansen** ([@mads_hansen_27b33ebfee4c9](https://dev.to/mads_hansen_27b33ebfee4c9) on dev.to, builds at [Conexor](https://conexor.io)) has contributed twice:
+
+1. The 5-axis parameter contract in Section 1 — value type, constraints, what NOT to pass, mutation-vs-read, example — and the mutation-vs-read framing in Sections 1 and 6, including the access-control / blast-radius framing for database tools in Section 6. ([original comment](https://dev.to/incultnitollc/schema-descriptions-are-load-bearing-why-missing-parameter-descriptions-break-mcp-clients-4l42#comment-37goo) on "Schema descriptions are load-bearing.")
+2. The anti-purpose / "do not use for" clause framing in Section 1, including the worked `run_sql` / `get_fleet_summary` example — descriptions as runtime policy on the model's decision surface, not documentation. ([follow-up comment](https://dev.to/mads_hansen_27b33ebfee4c9/comment/37j0f) on "Tool descriptions are load-bearing too: the anti-purpose pattern in MCP", building on his blog post [MCP Tool Descriptions as a Security Boundary](https://conexor.io/blog/mcp-tool-descriptions-security-boundary).)
 
 If you have a contribution to this checklist and want to be credited under a specific handle (GitHub, dev.to, X, mailing-list email), open a PR with the change and the attribution you'd like, or comment on the originating article.
