@@ -69,6 +69,8 @@ That validator looks for two things: (a) is `description` present at the tool le
 
 I do not have a public spec to point at for this — it's behavior I observed across multiple MCP clients while building the scorecards published in this repo's `docs/scorecards/` directory. Servers with full descriptions consistently saw 2–3× more tool invocations through the same agent task than servers without, holding everything else constant. The mechanism, as best I can reconstruct it, is the client treating description-completeness as a quality signal and routing around tools that score low.
 
+> **Sidebar — the legacy `server-github` scorecard.** The clearest stack of all four failure modes in one server: the deprecated Node `@modelcontextprotocol/server-github` lands at **3/26 tools passing** under `mcp-probe`, with **51 schema warnings** clustered on missing parameter descriptions. Every gap maps to a failure mode above — selection skips, argument-shape guesses, validator down-weighting, and routing leaking to better-described forks. Discussion thread with the full trace: [Incultnitollc/mcp-probe#11](https://github.com/Incultnitollc/mcp-probe/discussions/11).
+
 If that's right — and the scorecard data is the evidence I have — then a missing description doesn't just degrade tool selection. It degrades it twice: once at the model layer (failure mode 1) and once at the client layer (failure mode 3). Stacked, those move a tool from "occasionally used wrong" to "effectively unreachable."
 
 ## Failure mode 4 — routing collapse (your tool gets used, the wrong tool gets used instead)
