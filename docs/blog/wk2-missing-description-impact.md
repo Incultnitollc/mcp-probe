@@ -1,5 +1,5 @@
 ---
-title: "What does a missing description on an MCP tool actually do? Three failure modes I traced from real MCP servers"
+title: "What does a missing description on an MCP tool actually do? Four failure modes I traced from real MCP servers"
 description: "When an MCP tool ships with no parameter description, the model doesn't 'just guess.' It fails in four specific, reproducible ways — picked from the wrong tool entirely, called with the wrong argument shape, blocked by an LLM-side validator, or routed past your tool to a worse one. Here is each failure mode with the exact mechanism, traced against real servers."
 tags: [mcp, modelcontextprotocol, claude, devtools, ai, llm]
 cover_image: "https://raw.githubusercontent.com/incultnitollc/mcp-probe/main/docs/assets/og-card.png"

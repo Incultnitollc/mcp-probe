@@ -51,4 +51,59 @@ Subagent's WebSearch + WebFetch were denied in this session, so Cursor forum cou
 - Whether a recurring contributor (Mads Hansen pattern) emerges from r/mcp `1t6zxa0` (intent-vs-tool framing is open-question territory)
 - Sun 2026-05-10 14:00 TPE: Reddit batch + 15:00 TPE citation sweep #2
 
+**Reply-check 2026-05-10 (added retroactively)**
+
+Verified via `gh api` for the 4 GH threads and Reddit JSON curl for the 2 r/mcp threads:
+
+- All 4 GH threads OPEN, PengSpirit is LAST commenter on each → 0 replies yet.
+- r/mcp `1t78g5r` — comment **visible** in public thread JSON, no replies yet.
+- r/mcp `1t6zxa0` — comment **NOT visible** in thread's public JSON. Present in `u/incultnito` profile feed → **shadow-removed**, almost certainly by automod. Likely trigger: 2-min burst between the two r/mcp comments (09:38 + 09:40 UTC) on a dormant account (~11.5 months of prior inactivity). Content was R1-NO-PROBE (no links / products / probe mention), so trigger was velocity, not content.
+
+**Implication for the daily tally:** the published cadence count of "6 replies shipped" overstates by 1 on the public-visible side. True public-visible count is **5/6** (4 GH + 1 r/mcp + 1 r/mcp shadow-removed).
+
+**Recovery: SKIPPED 2026-05-10.** Peng verified invisibility in incognito, confirmed shadow-removal, and decided not to pursue modmail recovery (sunk cost). Comment body recovered from `u/incultnito` profile feed for analysis — included a `dev.to/incultnito_llc/...` self-link in the last paragraph, which is the stronger trigger than velocity alone (`1t78g5r` had same velocity context but no self-link and survived).
+
+**Cadence rules going forward (encoded in `feedback_reddit_velocity.md`):**
+1. No self-published links (dev.to, GitHub, blog) from u/incultnito on r/mcp until the account has 5+ visible recent comments + 10 sub-karma.
+2. Space r/mcp + r/ClaudeAI cadence comments ≥10 min apart.
+
+Apply starting Sun 2026-05-10 14:00 TPE Reddit batch — drop dev.to-link variants from R1/R2 templates for u/incultnito until karma builds.
+
+---
+
+## 2026-05-12 (Tue) — Wk2 Q7 ship + 2 GH Discussion replies
+
+**Not a daily cadence day — single ship event under the WK2-Q7-DROP playbook.** Cadence target was paused; tally below documents engagement-surface deployment only.
+
+**GH Discussion replies (2/2)**
+
+- [x] thread URL: https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/2682#discussioncomment-16892574 — venue: gh-discussions (MCP spec repo) — template: Q7-followup — probe-mentioned? **N** (article-link only; probe is mentioned inside the article body, not the reply)
+- [x] thread URL: https://github.com/Incultnitollc/mcp-probe/discussions/11#discussioncomment-16892577 — venue: gh-discussions (own repo show-and-tell) — template: scorecard-followup — probe-mentioned? **Y** (own repo, on-topic)
+
+**Reddit (0/0 — skipped per cadence rule)**
+
+r/mcp Q7 cross-post explicitly skipped per `feedback_reddit_velocity.md` (u/incultnito self-link → automod risk until karma builds).
+
+**Surfaces deployed**
+
+- GitHub blog (canonical, autofire via launchd job `com.peng.wk2-q7-drop` at 10:03 TPE — booted out + plist + script cleaned ~10:30 TPE)
+- dev.to (manual paste, account `@incultnitollc`, no underscore)
+
+**Title fix at ship**
+
+`docs/blog/wk2-missing-description-impact.md` line 2 — "Three failure modes" → "Four failure modes" (body always documented 4; title was understating).
+
+**Tally — 2026-05-12**
+
+- Replies shipped: 2 GH-discussion (both own threads or own RFC, zero prior comments → first-comment posts; not "top-posts" in the anti-pattern sense)
+- Probe-mention ratio: 1/2 = 50% (at cap; both legitimate — #11 thread is the scorecard show-and-tell)
+- Anti-pattern violations: 0
+- Anthropic MCP Inspector named: 1/2 (in #2682 reply contextually via article link; article body itself names Inspector explicitly as "right tool for interactive debugging")
+- Self-promotional "I built X" / "DM me" closers: 0 ✅
+
+**Next**
+
+- Thu 2026-05-14 ~10:00 TPE: Q7 Δ-sweep (resume keyword `Q7-DELTA-SWEEP`) — re-run "what does missing description on MCP tool do" on all 4 LLMs in fresh sessions.
+- Resume normal daily cadence (4 GH + 1-2 r/mcp + 1 r/ClaudeAI) when Wk2 content sprint allows.
+
 ---
