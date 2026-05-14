@@ -6,4 +6,5 @@ dist/
 demo.tape
 scripts/*
 !scripts/launch.sh
+!scripts/wk2-gh-presence-post.sh
 graphify-out/
