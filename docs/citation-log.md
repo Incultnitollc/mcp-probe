@@ -277,3 +277,44 @@ Wk2 Q7 article shipped to 4 surfaces. **Not a full sweep — single-event marker
 **r/mcp:** skipped (banned per `feedback_reddit_velocity.md` — u/incultnito self-link rule active until karma builds).
 
 **Δ-sweep armed Thu 2026-05-14 ~10:00 TPE** (resume keyword `Q7-DELTA-SWEEP`): re-run Q7 query "what does missing description on MCP tool do" on all 4 LLMs in fresh sessions. Append results as a new sub-sweep section above. Target: ≥1/4 platforms flips N→Y citing dev.to or GitHub blog. Δ=0 after 7 days → Twitter thread (Buffer) + 1 LinkedIn post. Δ=0 after 14 days → SEO/title pass.
+
+---
+
+## 2026-05-15 (Thu) — Wk2 Q7 Δ-sweep (T+3 days post-ship)
+
+Sub-sweep — re-run of Q7 only (`what does missing description on MCP tool do`) on all 4 LLMs, fresh sessions. Compares against the 2026-05-12 ship-event marker. **Not a full 10-query sweep.**
+
+Cite targets scanned for (any = Y): `incultnitollc`, `incultnito`, `mcp-probe`, `Peng`, "four failure modes", dev.to slug `4jn2`, GitHub path `wk2-missing-description-impact`.
+
+### Q7 — Δ-result table
+
+| Platform   | Status | Evidence snippet | Screenshot |
+|------------|--------|------------------|------------|
+| ChatGPT    | N | Unauth `chatgpt.com/?q=…`. Composed 4-section answer. Sources cited: `mcpservers.org/servers/QuantGeekDev/mcp-framework` (×3 inline), `docs.rs/crate/turul-mcp-derive`, `smartbear.com/blog/…swagger-mcp-tools`. No incultnito / mcp-probe / Peng / "four failure modes" hits. | `docs/citation-log-screenshots/2026-05-15-delta-sweep/chatgpt.png` |
+| Claude     | N (auth-walled) | `claude.ai/new` requires login. Did not attempt login per playbook. No query run. | `docs/citation-log-screenshots/2026-05-15-delta-sweep/claude.png` |
+| Perplexity | N | Unauth `perplexity.ai/search?q=…` (Cloudflare cleared after ~5s). 10 sources listed; top inline: `merge.dev/blog/mcp-tool-description` (×3) and `github.com/cline/cline/issues/5458`. Note: merge.dev URL drifted from `-schema` (Wk1) → `-description` (now); still merge.dev domain. No target-string hits. | `docs/citation-log-screenshots/2026-05-15-delta-sweep/perplexity.png` |
+| Gemini     | N | Logged-in Peng-Ta session, Temporary Chat mode (72h ephemeral, not used for training). Composed 4-impact answer ("Intent Mapping / Hallucination Risk / Parameter Accuracy / Categorization Failures") with NO sources cited. Framing rhymes with mcp-probe's "four failure modes" article but no attribution. | `docs/citation-log-screenshots/2026-05-15-delta-sweep/gemini.png` |
+
+### Tally — 2026-05-15 Δ-sweep
+
+- **Q7 cited: 0 / 4** (3 platforms answered with no citation; 1 auth-walled)
+- **Δ vs 2026-05-12 ship-event baseline: 0 cells flipped N→Y**
+- **Δ vs Wk2 full sweep (2026-05-10) Q7 row: 0 cells flipped** (was 0/4, still 0/4)
+
+### Findings
+
+1. **Gemini answer pattern moved toward our framing without attribution.** Wk2 (2026-05-10) Gemini Q7 = generic "LLM-selection-failure." 2026-05-15 Gemini Q7 = explicit 4-impact list ("Intent Mapping / Hallucination / Parameter Accuracy / Categorization Failures") — structurally parallel to the published article's "four failure modes" (selection invisibility / argument-shape guessing / validator down-weighting / routing collapse). Could be coincidence (the framing is intuitive); could be early ingestion without citation. Re-check at next sweep.
+2. **ChatGPT pulled in three new competitor sources in 3 days.** `mcpservers.org/servers/QuantGeekDev/mcp-framework`, `docs.rs/crate/turul-mcp-derive`, `smartbear.com/blog/…swagger-mcp-tools` — none were in the Wk1 or Wk2 Q7 cells. ChatGPT's browsing layer is actively crawling MCP framework docs for this query; mcp-probe blog post not surfacing yet.
+3. **Perplexity source drift on merge.dev.** Wk1/Wk2 cited `merge.dev/blog/mcp-tool-schema`; today cites `merge.dev/blog/mcp-tool-description` — different article, same domain. merge.dev is consolidating authority on this query lane.
+4. **Claude auth-walled — cannot measure.** Wk2 finding ("Claude composes generic, ALL 4 greenfield lanes open") cannot be re-verified this sweep without login. Schedule manual check or accept blind spot until full Sun sweep.
+5. **No incumbent has linked to the dev.to or GitHub blog yet.** Three days is short for LLM browsing layers to discover + index a fresh post outside of high-traffic surfaces. Expected.
+
+### Trigger decision
+
+Δ = 0/4 → **arm 7-day trigger per playbook: Tue 2026-05-19**:
+- Twitter thread via Buffer (`schedulingType=automatic` per `feedback_buffer_twitter_automatic.md`)
+- 1 LinkedIn post
+- Anchor both on dev.to slug `4jn2` (no u/incultnito self-link risk on these surfaces)
+- Resume keyword: `Q7-T7-AMPLIFY`
+
+If next Δ-sweep (~Sun 2026-05-19 full sweep or ad-hoc post-amplify check) still 0/4 by Wed 2026-05-26 (14-day mark) → SEO/title pass on dev.to + GitHub blog (resume `Q7-T14-SEO`).
