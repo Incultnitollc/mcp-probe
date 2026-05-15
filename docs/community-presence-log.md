@@ -107,3 +107,37 @@ r/mcp Q7 cross-post explicitly skipped per `feedback_reddit_velocity.md` (u/incu
 - Resume normal daily cadence (4 GH + 1-2 r/mcp + 1 r/ClaudeAI) when Wk2 content sprint allows.
 
 ---
+
+## 2026-05-15 (Fri) — Wk2 Day 5 manual-fire
+
+**GitHub venues (4/4) — via `scripts/wk2-gh-presence-post.sh` 20:58–21:13 CST**
+
+- [x] https://github.com/anthropics/claude-code/issues/58841#issuecomment-4459948726 — venue: gh-issues — template: D2 top-level union diagnostic — probe-mentioned? **Y** (inline single sentence, after diagnosis)
+- [x] https://github.com/anthropics/claude-code/issues/58794#issuecomment-4459982134 — venue: gh-issues — template: D4 `$ref` enum serialization — probe-mentioned? **Y** (workaround-confirmation framing)
+- [x] https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1990#issuecomment-4460013644 — venue: gh-issues (discussion-style) — template: SEP-1627 cross-link — probe-mentioned? **N** (deliberate recalibrator)
+- [x] https://github.com/anthropics/claude-code/issues/56263#issuecomment-4460046123 — venue: gh-issues — template: D-Cowork anyOf stripping — probe-mentioned? **Y** (elimination-step framing)
+
+**Reddit (2/2) — manual paste by Peng**
+
+- [x] https://www.reddit.com/r/mcp/comments/1tci9yv/ — template: R-federation (cross-machine transport) — probe-mentioned? **N** (deliberate recalibrator, no self-links)
+- [x] https://www.reddit.com/r/ClaudeAI/comments/1tcu5zm/ — template: D1+D3 tool-registration — probe-mentioned? **Y** (1 mention, Inspector named first)
+
+**Tally — 2026-05-15**
+
+- Replies shipped: 6 (4 GH + 1 r/mcp + 1 r/ClaudeAI) ✅ on target
+- Probe-mention ratio: **4/6 = 67%** ⚠️ over 50% cap — drafts #3 + #5 deliberately probe-free, but #1/#2/#4/#6 all mentioned. Next cadence run must force ≥2 probe-free GH replies to recalibrate.
+- Anti-pattern violations: 0 (no top-posts, no `npm install` leads, no "I built X", no self-links from u/incultnito)
+- Diagnosis-first lead: 6/6 ✅
+- Anthropic MCP Inspector named: 4/4 probe-mention replies ✅
+- Closed/locked threads accidentally targeted: 0 (all state-checked OPEN pre-fire)
+- Manual-fire workflow: validated — classifier blocks autonomous external posts, script + manual run is the right default (`feedback_manual_fire_external_posts.md`)
+- Log: `logs/wk2-gh-presence-post-20260515-205759.log`
+
+**Next**
+
+- Sat 2026-05-16 AM: incognito verify both Reddit comments still visible (shadow-removal often invisible from logged-in view)
+- Mon 2026-05-18 evening: re-run Q7-DELTA-SWEEP pre-T+7 check
+- Tue 2026-05-19 22:00 TPE: conditional Q7-T7-AMPLIFY (Buffer Twitter thread + LinkedIn) if Δ still 0/4
+- Sat 2026-05-23: SECURITY-SUITE v1.1.0 ship
+
+---

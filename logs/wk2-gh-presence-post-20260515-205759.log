@@ -1,0 +1,19 @@
+github.com
+  ✓ Logged in to github.com account PengSpirit (keyring)
+  - Active account: true
+  - Git operations protocol: https
+  - Token: gho_************************************
+  - Token scopes: 'gist', 'read:org', 'repo', 'workflow'
+>>> 2026-05-15 20:58:00 CST posting to anthropics/claude-code#58841
+    posted: https://github.com/anthropics/claude-code/issues/58841#issuecomment-4459948726
+    sleeping 300s before next post...
+>>> 2026-05-15 21:03:01 CST posting to anthropics/claude-code#58794
+    posted: https://github.com/anthropics/claude-code/issues/58794#issuecomment-4459982134
+    sleeping 300s before next post...
+>>> 2026-05-15 21:08:02 CST posting to modelcontextprotocol/modelcontextprotocol#1990
+    posted: https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1990#issuecomment-4460013644
+    sleeping 300s before next post...
+>>> 2026-05-15 21:13:04 CST posting to anthropics/claude-code#56263
+    posted: https://github.com/anthropics/claude-code/issues/56263#issuecomment-4460046123
+
+=== All 4 GH presence replies posted. Reddit (#5 r/mcp 22:30 + #6 r/ClaudeAI 22:45) still manual. ===
