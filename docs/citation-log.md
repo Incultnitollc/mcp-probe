@@ -318,3 +318,31 @@ Cite targets scanned for (any = Y): `incultnitollc`, `incultnito`, `mcp-probe`, 
 - Resume keyword: `Q7-T7-AMPLIFY`
 
 If next Δ-sweep (~Sun 2026-05-19 full sweep or ad-hoc post-amplify check) still 0/4 by Wed 2026-05-26 (14-day mark) → SEO/title pass on dev.to + GitHub blog (resume `Q7-T14-SEO`).
+
+---
+
+## 2026-05-18 (Mon) — Wk2 Q7 Δ-sweep T+6 — NOT MEASURED (skip)
+
+Pre-T+7 ad-hoc sweep slot per 5/15 plan: skipped. **No fresh 4-LLM measurement recorded.** Peng acknowledged completing the time slot but did not paste platform-by-platform Δ data before clear-and-quit; logged as skip rather than fabricate.
+
+### Why this is acceptable
+
+1. **Tue 5/19 22:00 Q7-T7-AMPLIFY is the binding decision point**, not the T+6 ad-hoc. T+6 was a courtesy pre-fire sanity check; the 7-day playbook trigger fires regardless unless Δ was already ≥3/4 (highly unlikely given 5/15 baseline of 0/4 + no amplification yet + no new content shipped between 5/15 and 5/18).
+2. **No state change shipped between 5/15 and 5/18** that would plausibly flip a cell — no new article, no new GitHub blog, no Twitter or LinkedIn yet. The hypothesis that Δ ≠ 0/4 at T+6 requires LLM browsing layers to have discovered + indexed the 5/12 dev.to post on their own, which the 5/15 sweep already showed was not happening (ChatGPT actively crawled competitor MCP framework docs in 3 days but missed our article).
+3. **Skip cost is bounded:** Tue 5/19 22:00 amplify-fire serves as both the next data point (post-amplify sweep) and the action trigger. If amplify cancels because Δ is already ≥3/4, we'll catch it at the 22:00 pre-fire check.
+
+### Action at Tue 2026-05-19 22:00 TPE
+
+Run full fresh-session sweep on all 4 LLMs **before** firing Buffer/LinkedIn. Decision matrix:
+
+| 5/19 sweep result | Action |
+|---|---|
+| Δ = 0/4 or 1/4 | Fire Q7-T7-AMPLIFY as planned (Buffer Twitter + LinkedIn) |
+| Δ = 2/4 | Fire Twitter only, hold LinkedIn for Wk3 |
+| Δ ≥ 3/4 | **Cancel amplify** — natural indexing succeeded, save LinkedIn slot |
+
+Resume keyword: `Q7-T7-AMPLIFY` (unchanged; pre-fire sweep is part of that workflow now).
+
+### 14-day trigger unchanged
+
+If Tue 5/19 amplify fires AND Sat 2026-05-23 (or next sweep ≥ Wed 5/26) still shows Δ = 0/4 → SEO/title pass (`Q7-T14-SEO`).
