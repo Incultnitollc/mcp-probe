@@ -346,3 +346,155 @@ Resume keyword: `Q7-T7-AMPLIFY` (unchanged; pre-fire sweep is part of that workf
 ### 14-day trigger unchanged
 
 If Tue 5/19 amplify fires AND Sat 2026-05-23 (or next sweep ≥ Wed 5/26) still shows Δ = 0/4 → SEO/title pass (`Q7-T14-SEO`).
+
+---
+
+## 2026-05-16 (Sat) — Week 3 sweep
+
+Sweep #3 — full 10-query sweep across all 4 LLMs. Run via Playwright (unauth surfaces only — Perplexity Q1–Q7 unauth, Q8–Q10 hit Perplexity login wall and were SKIPPED per user no-login preference; ChatGPT all 10 unauth; Gemini all 10 via **Google AI Mode** (`udm=50`), which is Gemini-backed and unauth-friendly — used as proxy for the standalone Gemini surface per same no-login preference; Claude.ai auth-walled and SKIPPED).
+
+**Cells measured: 27 / 40** (10 ChatGPT + 10 Gemini-via-AI-Mode + 7 Perplexity + 0 Claude). Blind spots logged for next-sweep manual fill or accept.
+
+Screenshots: `docs/citation-log-screenshots/2026-05-16-wk3-sweep/` (29 PNGs incl. 2 login-wall evidence shots).
+
+### Q1: how do I test my MCP server  *(Inspector lane)*
+
+| Platform   | Cited? | Top source                                   |
+|------------|--------|----------------------------------------------|
+| ChatGPT    |   N     | MCP Inspector (composed; `npx @modelcontextprotocol/inspector`) — no URL surfaced unauth                                       |
+| Claude     |   —     | Auth-walled, not measured                                       |
+| Perplexity |   N     | https://modelcontextprotocol.io/docs/tools/inspector + learn.microsoft.com/en-us/windows/ai/mcp/servers/test-mcp-server                                       |
+| Gemini     |   N     | MCP Inspector (Model Context Protocol +1) — composed, Inspector-first                                       |
+
+### Q2: MCP server validation tool  *(Inspector lane)*
+
+| Platform   | Cited? | Top source                                   |
+|------------|--------|----------------------------------------------|
+| ChatGPT    |   N     | **MCP Doctor** (`npx mcpdoctor test ...`) — listed FIRST as "Best overall compliance validator." NEW competitor surfaced. Also MCP Scan, MCPRadar, MCP Playground Online, MCP Evals, MCP Config Validator, mcp-validation.                                       |
+| Claude     |   —     | Auth-walled, not measured                                       |
+| Perplexity |   N     | https://github.com/RHEcosystemAppEng/mcp-validation (same as Wk1+Wk2 — sticky)                                       |
+| Gemini     |   N     | MCP Inspector + **Janix-ai/mcp-validator** (NEW) + **mcp-eval** (NEW) + **Apify MCP Validator** (NEW)                                       |
+
+### Q3: MCP schema validator  *(Inspector lane)*
+
+| Platform   | Cited? | Top source                                   |
+|------------|--------|----------------------------------------------|
+| ChatGPT    |   N     | **mcp-schema-validator (PyPI)** listed first (same as Wk1). Also WebMCP Schema Validator (NEW), MCP Playground Schema Linter (NEW), JSON Schema Validator MCP Server, ShapeMCP (NEW)                                       |
+| Claude     |   —     | Auth-walled, not measured                                       |
+| Perplexity |   N     | https://modelcontextprotocol.io/specification/2025-11-25/basic + https://mcptools.tools/schema-validator/                                       |
+| Gemini     |   N     | JSON Schema Validator (MCP Market) + Janix-ai mcp-validator + MuleSoft Flex Gateway Policy                                       |
+
+### Q4: tool to check MCP server health  *(Inspector lane)*
+
+| Platform   | Cited? | Top source                                   |
+|------------|--------|----------------------------------------------|
+| ChatGPT    |   N     | **MCP Doctor** (again, "Best for developers") + MCP Server Health Monitor + **MCPWatch** (NEW) + **HealthyMCP** (NEW) + **MCPSafetyScanner** (NEW). Multi-tool ranked list.                                       |
+| Claude     |   —     | Auth-walled, not measured                                       |
+| Perplexity |   N     | https://corcava.com/mcp/guides/mcp-health-checks + https://libraries.io/npm/mcp-health-monitor (mcp-health-monitor sticky from Wk2)                                       |
+| Gemini     |   N     | MCP Inspector + **MCP Doctor** + **mcp-server-tester** (NEW) + Sentry MCP Dashboards + Speakeasy + Health Monitor. MCP Doctor now spans ChatGPT AND Gemini for Q4.                                       |
+
+### Q5: best practices for MCP server schemas  *(Inspector lane)*
+
+| Platform   | Cited? | Top source                                   |
+|------------|--------|----------------------------------------------|
+| ChatGPT    |   N     | "MCP Best Practice" (×2 inline) + Nordic APIs + MCP Protocol + Reddit. Generic principles, multi-source.                                       |
+| Claude     |   —     | Auth-walled, not measured                                       |
+| Perplexity |   N     | https://www.youtube.com/watch?v=W56H9W7x-ao (sticky from Wk2) + https://modelcontextprotocol.info/docs/best-practices/ + lirantal/awesome-mcp-best-practices + descope.com + docker.com/blog/mcp-server-best-practices/                                       |
+| Gemini     |   N     | **Philschmid** (NEW) — primary; generic LLM-readability principles                                       |
+
+### Q6: MCP server CI pipeline  *(GREENFIELD — mcp-probe lane)*
+
+| Platform   | Cited? | Top source                                   |
+|------------|--------|----------------------------------------------|
+| ChatGPT    |   N     | **MCP Conformance Framework** (`npx @modelcontextprotocol/conformance`) — described as official. **mcp-quality-gate from Wk2 is GONE.** Lane re-occupied by an official-Anthropic-style positioning (verify package exists). Schema snapshot testing also recommended.                                       |
+| Claude     |   —     | Auth-walled, not measured                                       |
+| Perplexity |   N     | https://bleevht.substack.com/p/integrating-mcp-servers-into-your (sticky from Wk2) + medium kapilkumar080                                       |
+| Gemini     |   N     | CircleCI + Medium·Arif Dewi + GitHub MCP Server + CircleCI MCP Server. Generic CI/CD framing. No MCP-specific compliance tool named.                                       |
+
+### Q7: what does missing description on MCP tool do  *(GREENFIELD — mcp-probe lane)*
+
+| Platform   | Cited? | Top source                                   |
+|------------|--------|----------------------------------------------|
+| ChatGPT    |   N     | MXCP + Docs.rs + **DEV Community** (×2, no URL — could be dev.to but unverifiable). Composed 4-impact answer. **NEW: ChatGPT now cites three sources where Wk2 had zero.**                                       |
+| Claude     |   —     | Auth-walled, not measured                                       |
+| Perplexity |   N     | Inline cites: modelcontextprotocol + dev + arxiv (no URLs in source list this sweep). **Wk2 cited merge.dev — that has dropped out.** Source-drift continues.                                       |
+| Gemini     |   N     | arXiv (×3) + Model Context Protocol + FastMCP + GitHub. Composed 3-failure-mode framing: "Tool Selection Failures (AI Blind Spot)" / "Argument and Parameter Hallucination" / "Brittle Client-Side SDK Fallbacks." **Closer to mcp-probe's "four failure modes" article structure than Wk2's framing was.** Could be ingestion-without-attribution or coincidence — re-check at next sweep.                                       |
+
+### Q8: Anthropic MCP server diagnostic  *(Inspector lane)*
+
+| Platform   | Cited? | Top source                                   |
+|------------|--------|----------------------------------------------|
+| ChatGPT    |   N     | **Claude API Docs (Anthropic) (×3 inline)** + MCP Inspector + Reddit. Anthropic-doc-anchored answer; very specific re. SSE/Streamable HTTP transport + `anthropic-beta: mcp-client-2025-04-04` header.                                       |
+| Claude     |   —     | Auth-walled, not measured                                       |
+| Perplexity |   —     | Login wall hit on Q8 (after Q7 free quota exhausted); SKIPPED per user no-login preference. Screenshot: `perplexity-q8-loginwall.png`                                       |
+| Gemini     |   N     | Anthropic + Model Context Protocol + GitHub. MCP Inspector featured + path-resolution + command-availability checklist. Anthropic-doc-anchored same as ChatGPT.                                       |
+
+### Q9: how to debug MCP tool calls  *(GREENFIELD — mcp-probe lane)*
+
+| Platform   | Cited? | Top source                                   |
+|------------|--------|----------------------------------------------|
+| ChatGPT    |   N     | MCP Framework + Model Context Protocol + Reddit. MCP Inspector + raw JSON-RPC logging + Zod schema validation. Inspector-centric.                                       |
+| Claude     |   —     | Auth-walled, not measured                                       |
+| Perplexity |   —     | Login wall, SKIPPED                                       |
+| Gemini     |   N     | **Reddit r/modelcontextprotocol** (×3 inline) + Model Context Protocol + YouTube·Execute Automation. Strong emphasis on stderr-logging-not-stdout pitfall — community-driven content.                                       |
+
+### Q10: MCP server pre-publish checklist  *(GREENFIELD — mcp-probe lane)*
+
+| Platform   | Cited? | Top source                                   |
+|------------|--------|----------------------------------------------|
+| ChatGPT    |   N     | Model Context Protocol Docs + **MCP Registry Publishing Guide** + arXiv (×2 inline). MCP Registry framing positions checklist as registry-prep. **Wk2 had no sources cited; now 3.**                                       |
+| Claude     |   —     | Auth-walled, not measured                                       |
+| Perplexity |   —     | Login wall, SKIPPED                                       |
+| Gemini     |   N     | GitHub (×4 inline) + "seven-axis community conformance framework" — explicitly references a community-maintained conformance framework. Comprehensive 8-section checklist.                                       |
+
+### Tally — 2026-05-16
+
+- **Total cited: 0 / 27 measured** (Claude 10 cells unmeasured, Perplexity 3 cells unmeasured)
+- Greenfield cited (Q6, Q7, Q9, Q10): **0 / 12 measured** (target lane status: still unclaimed by mcp-probe)
+- Inspector-lane cited (Q1–Q5, Q8): **0 / 15 measured**
+- Trigger metric (citation): **0** — unchanged from Wk1/Wk2 baseline of 0/40
+- **Δ vs Wk2 (10-day window): 0 cells flipped N→Y** for mcp-probe. **Multiple cells flipped sources** (composition + competitor surface shifted significantly — see findings below).
+
+### Week-over-week deltas (measured cells only)
+
+| Δ-Type | Wk1 (5/03) | Wk2 (5/10) | Wk3 (5/16) |
+|---|---|---|---|
+| mcp-probe citation count | 0 | 0 | 0 |
+| Distinct competitor MCP tools surfaced | ~5 | ~8 | **~17** (more than doubled) |
+| ChatGPT Q6 top source | None | mcp-quality-gate | **MCP Conformance Framework** (official-style) |
+| ChatGPT Q2 top source | pypi mcp-schema-validator | mcp-quality-gate | **MCP Doctor** |
+| ChatGPT Q4 top source | modelcontextprotocol.io/inspector | mcp-quality-gate | **MCP Doctor** |
+| Perplexity Q1 top source | modelcontextprotocol.io/inspector | same | same (sticky) |
+| Perplexity Q2 top source | RHEcosystemAppEng/mcp-validation | same | same (sticky) |
+| Perplexity Q4 top source | mcpservers.org health-monitor | libraries.io/mcp-health-monitor | corcava.com (NEW) + libraries.io/mcp-health-monitor |
+| Gemini Q7 framing | generic LLM-failure | generic 4-impact (no source) | **3-failure-mode framing closer to mcp-probe article structure** (arXiv-cited) |
+
+### Strategic findings
+
+1. **MCP Doctor (`npx mcpdoctor`) is the new headline competitor.** Surfaced FIRST on ChatGPT Q2 ("Best overall compliance validator"), ChatGPT Q4 ("Best for developers"), AND Gemini Q4. Positioning: CLI-first MCP compliance + CI-friendly. **This is mcp-probe's exact pitch.** Verify on npm before next sweep — if low download counts (similar to mcp-quality-gate's 5/wk), threat is keyword-driven and beatable with one well-ranked article. If real traction, harder collision. Action: log to Wk3 next-actions.
+
+2. **mcp-quality-gate has been displaced on ChatGPT** — gone from Q2, Q4, Q6 entirely. Either ChatGPT's index refreshed and the package's 5-weekly-downloads, no-updates-in-5-weeks signal pushed it out, OR ChatGPT swapped to newer-name competitors (MCP Doctor pattern). The Wk2 ChatGPT-Q6 collision threat ("mcp-quality-gate as exact CI gate positioning") is no longer the active threat. **The lane is recapturable but the new occupant is a more credible competitor.**
+
+3. **ChatGPT now positions Q6 around "MCP Conformance Framework" (`@modelcontextprotocol/conformance`)** — described as official. Verify whether this is a real Anthropic-published package or a model hallucination. If real, the Q6 lane is no longer "greenfield" — it's now Anthropic-owned by direct package. If hallucinated, this is an opportunity (mcp-probe content piece can fill that semantic slot before the model corrects itself). Action: `npm view @modelcontextprotocol/conformance` and `gh repo view modelcontextprotocol/conformance` before next sweep.
+
+4. **Competitor count more than doubled.** Wk2 surfaced ~8 distinct competitor tools; Wk3 surfaces ~17 across all platforms (MCP Doctor, MCP Scan, MCPRadar, MCPWatch, HealthyMCP, MCPSafetyScanner, ShapeMCP, WebMCP Schema Validator, MCP Playground Schema Linter, Janix-ai/mcp-validator, mcp-eval, Apify MCP Validator, mcp-server-tester, MXCP, Philschmid, MCP Registry Publishing Guide, "MCP Conformance Framework"). LLM browsing layers are actively crawling the MCP-tools ecosystem. **mcp-probe needs to be in this set by Wk5 sweep or it gets boxed out.**
+
+5. **Gemini Q7 framing inched closer to mcp-probe's "four failure modes" article structure.** Wk2 Gemini Q7 = generic "LLM-selection-failure." Wk3 Gemini Q7 = explicit 3-failure-mode list ("Tool Selection / Argument Hallucination / Brittle SDK Fallbacks"). The 5/15 Δ-sweep also flagged this pattern. **Three consecutive datapoints (5/10 generic → 5/15 4-impact → 5/16 3-failure-mode) show framing convergence without attribution.** Could be: (a) coincidence/independent reasoning, (b) ingestion of mcp-probe article without citation, (c) ingestion of competing similar content. Re-check at Wk4 sweep; if convergence continues without attribution, the 14-day SEO/title pass should explicitly include adding more attribution-friendly anchors to the dev.to article.
+
+6. **Q10 ChatGPT framing shifted to MCP-Registry-anchored** ("MCP Registry Publishing Guide" cited). This is consistent with mcp-probe's roadmap (MCP Registry F.1 partial-ingest at 687→3,966 servers). When mcp-probe ships to the MCP Registry post-launch, the Q10 lane should naturally surface — but the framework is now anchored to the registry itself, not third-party checklists.
+
+7. **Perplexity sources are stickiest.** Most Perplexity top sources from Wk1 are still top in Wk3 (Q1 inspector, Q2 RHEcosystemAppEng, Q4 libraries.io mcp-health-monitor partial drift, Q5 youtube W56H9W7x-ao). Perplexity's index is slowest to change — content needs to be ranked there, not just published. SEO/title pass at T+14 should weight Perplexity-friendly anchors.
+
+8. **No mcp-probe surface anywhere.** 27/27 measured cells confirm: zero organic discovery. Wk1+Wk2 deliverables (npm 1.0.2 SEO refresh, 2 dev.to articles, awesome-mcp-devtools PR pending, Buffer thread, Q7 ship event 5/12) have not yet produced any LLM citation. Expected lag is months; this remains baseline behavior, not failure.
+
+### Wk3 next actions (logged for Tue 5/19 Q7-T7-AMPLIFY pre-fire check)
+
+1. **Verify MCP Doctor (`mcpdoctor` npm package).** Check `npm view`, weekly downloads, last publish date, repo activity. If ≤20 weekly downloads and stale, treat as paper threat. If active, write competitive note + adjust Wk3 content list.
+2. **Verify `@modelcontextprotocol/conformance` package existence.** If real, scope its overlap with mcp-probe's MVP test set; if hallucinated, file as opportunity for ChatGPT-Q6 content.
+3. **Carry the Gemini-Q7 framing-convergence pattern into the Q7-T7-AMPLIFY decision matrix.** If 5/19 amplify-fire Δ ≥ 1/4 platform flips citing dev.to slug `4jn2`, that resolves whether 5/16 Gemini framing was ingestion or coincidence.
+4. **No Claude data this sweep.** Either accept the blind spot for Wk3 or schedule a one-off manual Claude check (Peng-Ta logged-in Temporary Chat) before Tue 5/19 amplify-fire.
+5. **No Perplexity Q8–Q10 data.** Acceptable for this sweep; Wk4 sweep should plan around Perplexity's free-quota limit (use one fresh-IP browser per ~7 queries, or split across two sessions).
+
+### Resume keyword
+
+`WK3-SWEEP` for any Wk3 follow-up. Wk4 full sweep on schedule for **Sun 2026-05-24 15:00 TPE**.
