@@ -498,3 +498,58 @@ Screenshots: `docs/citation-log-screenshots/2026-05-16-wk3-sweep/` (29 PNGs incl
 ### Resume keyword
 
 `WK3-SWEEP` for any Wk3 follow-up. Wk4 full sweep on schedule for **Sun 2026-05-24 15:00 TPE**.
+
+---
+
+## 2026-05-17 — WK3-VERIFY competitive intel sprint
+
+**Trigger:** Wk3 sweep (5/16) surfaced 3 new sources that needed reality-check before Tue 5/19 Q7-T7-AMPLIFY pre-fire and Sat 5/23 SECURITY-SUITE ship. Sprint run 16:00 TPE.
+
+### Verification results
+
+| # | Claim from Wk3 sweep | Verification command | Result | Threat re-rating |
+|---|---|---|---|---|
+| 1 | `npx mcpdoctor` = new headline competitor (ChatGPT Q2/Q4, Gemini Q4) | `npm view mcpdoctor` | **404 — package does NOT exist** | **HALLUCINATED.** LLMs invented the bin name. Confirmed by `npm search mcp doctor` returning only unrelated scoped variants. |
+| 2 | `@modelcontextprotocol/conformance` (ChatGPT Q6) = official Anthropic | `npm view @modelcontextprotocol/conformance` | **REAL.** `0.1.16`, MIT, 14 versions, maintainers include `jspahrsummers`, `ashwin-ant@anthropic.com`, `fweinberger@anthropic.com`, `ochafik`. Repo `modelcontextprotocol/conformance` (64 stars, last push 2026-05-15). | **HIGH.** Official, actively shipping (3 commits in last 3 days incl. SEP-2243 HTTP Standardization), 5,717 weekly DL vs mcp-probe's 24 = **238× larger**. |
+| 3 | awesome-mcp-devtools PR #156 status | `gh pr view 156 --repo punkpeye/awesome-mcp-devtools` | OPEN, 0 comments, 0 reviews, no updates since 2026-05-05 (12 days stale). | **NEUTRAL.** Distribution-channel stall. |
+
+### Surprise finding — real `mcp-doctor` variants surfaced during verification
+
+While verifying claim 1, `npm search mcp doctor` returned three actually-published packages that the Wk3 sweep had NOT surfaced (LLMs were close on name but referenced the wrong slug):
+
+| Package | Published | Weekly DL | 4-wk total | GH stars | Lane |
+|---|---|---|---|---|---|
+| **`@stephenywilson/mcp-doctor@0.4.0`** | **2026-05-15 (2 days ago)** | **207** | **927** (active 13/28 days) | **0** | **Install-time security audit + tool-call firewall preview** (LOW/MED/HIGH/CRITICAL severity, ALLOW/ASK/BLOCK policy, writes `MCP_TOOL_AUDIT_REPORT.md`) |
+| `@maiife-ai-pub/mcp-doctor@0.2.2` | 2026-04-13 | 76 | — | — | "brew doctor for your MCP setup" — health check + auto-fixer |
+| `mcp-doctor@0.1.1` (Crooj026) | (older) | 12 | — | — | Config debugging across Claude Desktop / Cursor / VS Code |
+
+**Critical:** `@stephenywilson/mcp-doctor@0.3.0` already ships the **exact security-audit framing** mcp-probe's v1.1.0 SECURITY-SUITE was planned to enter — `.env` / `.ssh` / secrets-dir write detection, shell-execution flagging, credential-arg scanning, severity classification, policy-based ALLOW/ASK/BLOCK. Tagline: *"Before you paste an MCP config into Claude Desktop or Cursor — run MCP Doctor."* Repo created 2026-05-04, last push 2026-05-15. **0 GitHub stars** (npm-driven distribution, not viral) — scrappy newcomer tier, but ~8.6× mcp-probe's weekly DL and clear positioning lock on the install-time security lane.
+
+### Strategic implications for SECURITY-SUITE v1.1.0 (Sat 2026-05-23 ship deadline)
+
+The decision in `decision_security_suite_before_show_hn.md` (build v1.1.0 = 5 MVP security tests + 0–100 score) was made BEFORE knowing stephenywilson shipped install-time firewall preview on 5/15. **The original scope is now dead — that lane is occupied by a more polished, more downloaded incumbent with a 6-day head start.**
+
+**Recommended scope pivot — three lanes now visible:**
+
+| Tool | Audience | When run | Question answered |
+|---|---|---|---|
+| `@modelcontextprotocol/conformance` | SDK maintainers, spec authors | Continuous (CI) during server/client development | "Am I spec-compliant?" |
+| `@stephenywilson/mcp-doctor` | **Operators installing servers** | Pre-install (`mcp-doctor firewall audit ...`) | **"Will this server pwn me?"** |
+| **`@incultnitollc/mcp-probe`** (proposed pivot) | **Server authors before npm publish** | **Pre-publish (one-shot)** | **"Is my server publishable?"** |
+
+Differentiated v1.1.0 scope (NOT security suite): **publishability score** — schema completeness, parameter description quality (continues the 5-axis contract from the Mads-Hansen-credited checklist), anti-purpose `do not use for` coverage, semver/changelog hygiene, README + repo metadata checks, MCP-Registry submission readiness. Different audience than mcp-doctor, complementary to conformance.
+
+**T+7 amplification (Tue 5/19 22:00 TPE) — KEEP ON.** Q7 article ("Schema descriptions are load-bearing" / 4 failure modes) is already on-message for pre-publish quality positioning, not security positioning. The competitive shift doesn't kill the amplification — it sharpens the framing. Pre-fire check Mon 5/18 evening still gates the call (skip if Δ ≥ 1 by then).
+
+### Sprint exit state
+
+- Documentation appended to this file (citation-log.md) + memory updates queued for `project_wk3_sweep_findings.md`, `decision_security_suite_before_show_hn.md`, `project_launch.md`.
+- No new artifacts in `docs/community/` or `docs/launch/` yet — security-suite copy in `docs/launch/` was never written, so no churn.
+- `docs/competitive-notes-2026-05-03.md` is now 14 days stale; the Wk3 verification supersedes its threat ratings. Optional follow-up: write `docs/competitive-notes-2026-05-17.md` as a fresh snapshot before Tue 5/19. Not blocking.
+
+### Resume keywords
+
+- `SECURITY-SUITE` resume = pivot to `PUBLISHABILITY-SCORE` scope per this section before any v1.1.0 code is written.
+- `WK3-VERIFY` = this sprint (closed).
+- Wk4 full sweep still on schedule **Sun 2026-05-24 15:00 TPE**.
+
