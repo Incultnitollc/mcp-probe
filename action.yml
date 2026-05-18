@@ -1,0 +1,85 @@
+name: 'mcp-probe — MCP server health check'
+description: 'Validate your Model Context Protocol server in CI. Catches missing descriptions, broken tools, schema regressions, and pre-publish gotchas before users see them.'
+author: 'Incultnito LLC'
+
+branding:
+  icon: 'check-circle'
+  color: 'purple'
+
+inputs:
+  command:
+    description: 'Command that launches your MCP server (e.g., "node dist/index.js" or "npx -y @your-scope/your-server")'
+    required: true
+
+  fail-under:
+    description: 'Fail the job if the publishability composite score drops below this value (0–100). Requires publishability: "true". Default 0 (no gating, scorecard-only).'
+    required: false
+    default: '0'
+
+  publishability:
+    description: 'Run the publishability suite — 5 checks + 0–100 composite (requires mcp-probe >= 1.1.0). Default false (v1.1.0 ships 2026-05-23).'
+    required: false
+    default: 'false'
+
+  package:
+    description: 'Path to your MCP server''s package.json for the distribution-metadata check. Empty = skip the distribution check.'
+    required: false
+    default: ''
+
+  html-report:
+    description: 'Path to write the HTML report. Empty = skip HTML. Set to e.g. "mcp-report.html" then upload via actions/upload-artifact in a follow-on step.'
+    required: false
+    default: ''
+
+  mcp-probe-version:
+    description: 'mcp-probe npm version, dist-tag, or "latest". Default "latest". Pin to a specific version for reproducible builds.'
+    required: false
+    default: 'latest'
+
+  json-output:
+    description: 'Path to write the JSON report. Empty = skip JSON. Useful for downstream parsing.'
+    required: false
+    default: ''
+
+outputs:
+  composite-score:
+    description: 'Publishability composite (0–100). Only set when publishability: "true" and mcp-probe >= 1.1.0.'
+    value: ${{ steps.run-probe.outputs.composite-score }}
+
+  band:
+    description: 'Grade band: publishable / almost / rough / not-ready. Only set when publishability: "true".'
+    value: ${{ steps.run-probe.outputs.band }}
+
+  tools-pass-rate:
+    description: 'tools_callable / tools_listed (as decimal, e.g. "0.83").'
+    value: ${{ steps.run-probe.outputs.tools-pass-rate }}
+
+  schema-warnings:
+    description: 'Total schema warning count across all tools.'
+    value: ${{ steps.run-probe.outputs.schema-warnings }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Verify Node.js >= 20
+      shell: bash
+      run: |
+        node_version=$(node --version | sed 's/v//' | cut -d. -f1)
+        if [ "$node_version" -lt 20 ]; then
+          echo "::error::mcp-probe requires Node.js 20+. Got version: $(node --version)"
+          exit 1
+        fi
+        echo "Node.js $(node --version) — ok"
+
+    - name: Run mcp-probe
+      id: run-probe
+      shell: bash
+      env:
+        MCP_PROBE_VERSION: ${{ inputs.mcp-probe-version }}
+        COMMAND: ${{ inputs.command }}
+        FAIL_UNDER: ${{ inputs.fail-under }}
+        PUBLISHABILITY: ${{ inputs.publishability }}
+        PACKAGE_PATH: ${{ inputs.package }}
+        HTML_REPORT: ${{ inputs.html-report }}
+        JSON_OUTPUT: ${{ inputs.json-output }}
+      run: ${{ github.action_path }}/run-mcp-probe.sh
