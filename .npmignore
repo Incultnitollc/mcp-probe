@@ -8,3 +8,15 @@ demo.tape
 scripts/
 .DS_Store
 .env
+
+# Test fixtures (v1.1.0 publishability work — repo-root only)
+test-fixtures/
+
+# Documentation infrastructure
+docs/superpowers/
+.playwright-mcp/
+
+# Action artifacts (mcp-probe-action v1 — repo-root only)
+action.yml
+run-mcp-probe.sh
+examples/
