@@ -87,6 +87,8 @@ export interface InspectResult {
     complianceWarnings: number;
   };
   durationMs: number;
+  publishabilityResults?: PublishabilityResult[];
+  publishabilityScore?: PublishabilityScore;
 }
 
 export interface InspectOptions {
@@ -137,3 +139,56 @@ export interface HttpTargetSpec {
 }
 
 export type TargetSpec = StdioTargetSpec | HttpTargetSpec;
+
+export type PublishabilitySeverity = "high" | "medium" | "low" | "info";
+
+export type PublishabilityCheckId =
+  | "description-five-axis"
+  | "enum-shape"
+  | "mutation-legibility"
+  | "distribution-metadata"
+  | "anti-purpose-clause";
+
+export interface PublishabilityResult {
+  check: PublishabilityCheckId;
+  passed: boolean;
+  severity: PublishabilitySeverity;
+  title: string;
+  message: string;
+  perToolFailures?: Array<{ tool: string; reason: string }>;
+  evidence?: {
+    axisAvg?: number;
+    failedTools?: string[];
+    metadataField?: string;
+    skipped?: boolean;
+  };
+  remediation?: string;
+  durationMs: number;
+}
+
+export interface PublishabilityCheckContext {
+  result: InspectResult;
+  packageJsonPath?: string;
+  timeout: number;
+}
+
+export interface PublishabilityCheck {
+  id: PublishabilityCheckId;
+  title: string;
+  defaultSeverity: PublishabilitySeverity;
+  run(ctx: PublishabilityCheckContext): Promise<PublishabilityResult>;
+}
+
+export interface PublishabilityScore {
+  composite: number;
+  grade: "A" | "B" | "C" | "D" | "F";
+  bandName: "Publishable" | "Almost" | "Rough" | "Not ready";
+  passed: number;
+  failed: number;
+  capsApplied: Array<{ reason: string; ceiling: number }>;
+  byDomain: {
+    protocol: { score: number; hardZero: boolean };
+    edgeCases: { score: number };
+    publishability: { score: number; failures: PublishabilityCheckId[] };
+  };
+}

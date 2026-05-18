@@ -21,4 +21,10 @@ export type {
   StdioTargetSpec,
   HttpTargetSpec,
   TargetSpec,
+  PublishabilitySeverity,
+  PublishabilityCheckId,
+  PublishabilityResult,
+  PublishabilityCheckContext,
+  PublishabilityCheck,
+  PublishabilityScore,
 } from "./types.js";
