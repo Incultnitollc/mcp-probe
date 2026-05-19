@@ -1,5 +1,8 @@
 import { describe, it, expect } from "vitest";
-import { checkDescriptionFiveAxis } from "./publishability-checks.js";
+import {
+  checkDescriptionFiveAxis,
+  checkEnumShape,
+} from "./publishability-checks.js";
 import type { ToolInfo } from "./types.js";
 
 function makeTool(
@@ -80,5 +83,56 @@ describe("checkDescriptionFiveAxis", () => {
     // 2 of 3 tools (x, y) score <3 → triggers per-tool cap signal
     expect(out.evidence?.failedTools).toContain("x");
     expect(out.evidence?.failedTools).toContain("y");
+  });
+});
+
+describe("checkEnumShape", () => {
+  it("passes when no in-prose enum language exists", () => {
+    const tools = [
+      makeTool("x", "Reads.", { p: { type: "string", description: "the id" } }),
+    ];
+    const out = checkEnumShape(tools);
+    expect(out.passed).toBe(true);
+  });
+
+  it("passes when in-prose enum is matched by schema enum array", () => {
+    const tools: ToolInfo[] = [
+      {
+        name: "x",
+        description: "Reads.",
+        inputSchema: {
+          type: "object",
+          properties: {
+            mode: {
+              type: "string",
+              description: "Must be Text or Blob.",
+              enum: ["Text", "Blob"],
+            },
+          },
+        },
+      },
+    ];
+    const out = checkEnumShape(tools);
+    expect(out.passed).toBe(true);
+  });
+
+  it("fails when in-prose enum has no schema enum array", () => {
+    const tools = [
+      makeTool("x", "Reads.", {
+        mode: { type: "string", description: "Must be Text or Blob." },
+      }),
+    ];
+    const out = checkEnumShape(tools);
+    expect(out.passed).toBe(false);
+  });
+
+  it("ignores 'valid URL' style open-ended phrases", () => {
+    const tools = [
+      makeTool("x", "Reads.", {
+        url: { type: "string", description: "Must be a valid URL." },
+      }),
+    ];
+    const out = checkEnumShape(tools);
+    expect(out.passed).toBe(true);
   });
 });
