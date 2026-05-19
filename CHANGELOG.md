@@ -4,6 +4,19 @@ All notable changes to `@incultnitollc/mcp-probe` are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## action-v1.0.0 — 2026-05-20
+
+### Added — `mcp-probe-action` published to GitHub Marketplace
+
+- Composite GitHub Action wrapping `@incultnitollc/mcp-probe` CLI
+- Inputs: `command`, `fail-under`, `publishability`, `package`, `html-report`, `mcp-probe-version`, `json-output`
+- Outputs: `composite-score`, `band`, `tools-pass-rate`, `schema-warnings`
+- Marketplace listing: `github.com/marketplace/actions/mcp-probe`
+- Examples in `examples/basic.yml`, `examples/publishability-gate.yml`, `examples/matrix.yml`
+- Self-test workflow `.github/workflows/action-self-test.yml`
+
+Independent of npm CLI release cycle; users on `@v1` pick up CLI updates automatically via `mcp-probe-version: latest` default.
+
 ## [1.0.1] — 2026-04-23
 
 ### Changed
