@@ -321,6 +321,54 @@ If next Δ-sweep (~Sun 2026-05-19 full sweep or ad-hoc post-amplify check) still
 
 ---
 
+## 2026-05-19 (Tue) — Wk2 Q7 Δ-sweep T+7 PRE-FIRE — Δ = 0/2 measured, amplify ON
+
+Pre-amplify Δ-sweep fired ~19:53 TPE in this session (well before the 22:00 Buffer/LinkedIn fire window). Two platforms measured via unauth surfaces; ChatGPT + Claude blind-spotted per `feedback_no_login_sweep_preference.md` (logged-in surfaces not available in CLI session — would need Peng's manual hand-fire pre-22:00 to fill).
+
+**Cells measured: 2 / 4** (Gemini via Google AI Mode, Perplexity unauth). Cells skipped: 2 (ChatGPT, Claude — login wall).
+
+### Q7: what does missing description on MCP tool do
+
+| Platform   | Cited? | Top source                                   |
+|------------|--------|----------------------------------------------|
+| ChatGPT    |   —     | Login-walled, not measured (Peng manual fill if pre-fire desired)                                       |
+| Claude     |   —     | Auth-walled, not measured                                       |
+| Perplexity |   N     | https://modelcontextprotocol.info/docs/concepts/tools/ (3 cites) + arXiv 2602.14878 + r/ClaudeCode `1nvxho9` — 10 sources, no mcp-probe / dev.to / GitHub blog                                       |
+| Gemini     |   N     | **arxiv.org/html/2602.14878v2 "Model Context Protocol (MCP) Tool Descriptions Are Smelly!"** (Feb 16, 2026 paper, cited 3+ times) + FastMCP + modelcontextprotocol.io spec + LangChain + r/mcp `1ooqeqy` — 17 sources, no mcp-probe                                       |
+
+### Δ vs 5/15 T+3 baseline (0/4)
+
+**Δ = 0 / 2 measured.** No platform flipped N→Y in 7 days post-ship for the cells measurable from this session.
+
+### Major lane shift — new headline competitor
+
+**`arxiv.org/html/2602.14878` "MCP Tool Descriptions Are Smelly!"** — academic paper dated Feb 16, 2026 — now owns Gemini's answer structure for this query. Cited 3+ times in the Gemini AI Mode response and is the anchor source for "if descriptions are defective, underspecified, or misleading, the FM may select the wrong tool." This is the **new authoritative source** in the Q7 lane.
+
+**Implications:**
+1. Gemini's previous "four failure modes" drift (noted 5/15) has been **replaced** by an arXiv-anchored 3-category framing (execution failures / SDK framework behaviors / UI degradation). Convergence with the dev.to article framing was ingestion-without-attribution at best; now the paper has displaced it entirely.
+2. The arXiv paper is academic-authority — harder to displace than a competitor npm tool would be. Our dev.to article's "four failure modes" framing may now read as derivative against the paper unless we sharpen the differentiator: **mcp-probe is the pre-publish CLI that detects these failures before they ship**, not a survey of the failure types themselves.
+3. Perplexity converged on `modelcontextprotocol.info/docs/concepts/tools/` (a tertiary mirror of the official spec) — that mirror is now stickier than the canonical `modelcontextprotocol.io` for this query.
+
+### Decision matrix application (from 5/18 T+6 entry above)
+
+5/19 Δ = 0/2 measured → falls into "Δ = 0/4 or 1/4" row → **Fire Q7-T7-AMPLIFY as planned (Buffer Twitter + LinkedIn).**
+
+If Peng runs a manual ChatGPT/Claude check before 22:00 and either flips Y, append to this section + re-evaluate per the matrix (Δ = 2/4 → Twitter only, Δ ≥ 3/4 → cancel).
+
+### Amplify content framing (this fire only)
+
+Pivot the amplification copy from "four failure modes" (which the arXiv paper now owns at higher authority) to **"the pre-publish CLI that catches these failures before npm publish"** — drives the reader to the npm package and the upcoming v1.1.0 publishability-score (5/23 ship). The dev.to article remains the landing URL but the social copy must position mcp-probe as the *prevention layer*, not the *taxonomy*.
+
+### 14-day trigger unchanged
+
+If Sat 2026-05-23 (or next sweep ≥ Wed 5/26) still shows Δ = 0 across measured cells → SEO/title pass (`Q7-T14-SEO`) — but with the arXiv paper now in-lane, SEO pass probably needs a re-framing edit, not just a title tweak.
+
+### Screenshots
+
+`.playwright-mcp/page-2026-05-19T11-53-42-940Z.yml` (Google AI Mode Q7) + `.playwright-mcp/page-2026-05-19T11-54-39-031Z.yml` (Perplexity Q7) — accessibility-tree snapshots, not PNGs; sufficient for source-list verification.
+
+---
+
 ## 2026-05-18 (Mon) — Wk2 Q7 Δ-sweep T+6 — NOT MEASURED (skip)
 
 Pre-T+7 ad-hoc sweep slot per 5/15 plan: skipped. **No fresh 4-LLM measurement recorded.** Peng acknowledged completing the time slot but did not paste platform-by-platform Δ data before clear-and-quit; logged as skip rather than fabricate.
