@@ -1,0 +1,31 @@
+name: action-self-test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  self-test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: everything
+            command: 'npx -y @modelcontextprotocol/server-everything'
+          - name: filesystem
+            command: 'npx -y @modelcontextprotocol/server-filesystem /tmp'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Run the LOCAL action (./), not the Marketplace version.
+      # Do NOT add `publishability: 'true'` here until v1.1.0 ships 2026-05-23.
+      - uses: ./
+        with:
+          command: ${{ matrix.command }}
