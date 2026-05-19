@@ -1,0 +1,46 @@
+# examples/publishability-gate.yml — gate PRs on the publishability composite.
+#
+# Requires @incultnitollc/mcp-probe >= 1.1.0 (the publishability suite).
+# Adjust `command:` to match how you launch your server.
+
+name: Publishability gate
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - run: npm ci
+      - run: npm run build
+
+      - id: probe
+        uses: incultnitollc/mcp-probe@v1
+        with:
+          command: 'node dist/index.js'
+          publishability: 'true'
+          package: './package.json'
+          fail-under: '70'
+
+      - name: Comment on PR
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const score = '${{ steps.probe.outputs.composite-score }}';
+            const band  = '${{ steps.probe.outputs.band }}';
+            if (!score) return;
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo:  context.repo.repo,
+              body:  `**Publishability:** ${score}/100 (${band})`,
+            });
