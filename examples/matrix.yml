@@ -1,0 +1,41 @@
+# examples/matrix.yml — run mcp-probe across multiple MCP servers in parallel,
+# upload each run's HTML report as a build artifact.
+#
+# Use this pattern when your repo hosts several MCP servers, or when you want
+# regression coverage against upstream reference servers alongside your own.
+
+name: mcp-probe matrix
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  matrix:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: everything
+            command: 'npx -y @modelcontextprotocol/server-everything'
+          - name: filesystem
+            command: 'npx -y @modelcontextprotocol/server-filesystem /tmp'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - uses: incultnitollc/mcp-probe@v1
+        with:
+          command: ${{ matrix.command }}
+          html-report: 'mcp-report-${{ matrix.name }}.html'
+
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mcp-report-${{ matrix.name }}
+          path: mcp-report-${{ matrix.name }}.html
