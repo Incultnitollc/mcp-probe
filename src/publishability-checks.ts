@@ -114,3 +114,56 @@ export function checkEnumShape(tools: ToolInfo[]): PublishabilityResult {
     durationMs: Date.now() - start,
   };
 }
+
+const READ_PREFIX = /^(read|list|get|fetch|find|search|stat|describe|count|exists|view|inspect|query)_/i;
+const MUTATE_PREFIX = /^(create|update|delete|move|copy|write|append|set|put|patch|merge|remove|drop|truncate|insert|upsert)_/i;
+const MUTATION_TOOL_TOKENS = /\b(mutating|read[- ]only|writes? to|modifies?|destructive|side[- ]?effect|deletes?|creates?)\b/i;
+
+function toolHasMutationSignal(tool: ToolInfo): boolean {
+  if (READ_PREFIX.test(tool.name) || MUTATE_PREFIX.test(tool.name)) return true;
+  if (MUTATION_TOOL_TOKENS.test(tool.description ?? "")) return true;
+  if (
+    tool.annotations?.destructiveHint !== undefined ||
+    tool.annotations?.readOnlyHint !== undefined
+  ) {
+    return true;
+  }
+  return false;
+}
+
+export function checkMutationLegibility(
+  tools: ToolInfo[]
+): PublishabilityResult {
+  const start = Date.now();
+  if (tools.length === 0) {
+    return {
+      check: "mutation-legibility",
+      passed: true,
+      severity: "high",
+      title: "Mutation legibility",
+      message: "No tools to evaluate.",
+      durationMs: Date.now() - start,
+    };
+  }
+  const silent = tools.filter((t) => !toolHasMutationSignal(t));
+  const silentRatio = silent.length / tools.length;
+  const passed = silentRatio <= 0.4;
+
+  return {
+    check: "mutation-legibility",
+    passed,
+    severity: "high",
+    title: "Mutation legibility",
+    message: passed
+      ? `${tools.length - silent.length}/${tools.length} tools disclose mutating-vs-read.`
+      : `${silent.length}/${tools.length} tools silent on mutating-vs-read (>40% fails).`,
+    perToolFailures: silent.map((t) => ({
+      tool: t.name,
+      reason: "no name prefix, no description signal, no annotation",
+    })),
+    evidence: { failedTools: silent.map((t) => t.name) },
+    remediation:
+      "Per docs/checklist.md §1+§6: surface mutating-vs-read via tool name prefix (read_*, list_*, get_* / create_*, update_*, delete_*), description ('Read-only.' / 'Mutating.'), or annotations.destructiveHint.",
+    durationMs: Date.now() - start,
+  };
+}

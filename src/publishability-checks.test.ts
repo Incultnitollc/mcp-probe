@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import {
   checkDescriptionFiveAxis,
   checkEnumShape,
+  checkMutationLegibility,
 } from "./publishability-checks.js";
 import type { ToolInfo } from "./types.js";
 
@@ -134,5 +135,47 @@ describe("checkEnumShape", () => {
     ];
     const out = checkEnumShape(tools);
     expect(out.passed).toBe(true);
+  });
+});
+
+describe("checkMutationLegibility", () => {
+  it("passes when tool name prefix discloses read vs mutate", () => {
+    const tools = [
+      makeTool("read_note", "anything", {}),
+      makeTool("create_note", "anything", {}),
+      makeTool("delete_note", "anything", {}),
+    ];
+    const out = checkMutationLegibility(tools);
+    expect(out.passed).toBe(true);
+  });
+
+  it("passes when tool description signals mutation", () => {
+    const tools = [makeTool("frobnicate", "Mutating. Writes to disk.", {})];
+    const out = checkMutationLegibility(tools);
+    expect(out.passed).toBe(true);
+  });
+
+  it("passes when tool has annotations.destructiveHint set", () => {
+    const tools: ToolInfo[] = [
+      {
+        name: "frobnicate",
+        description: "anything",
+        inputSchema: { type: "object", properties: {} },
+        annotations: { destructiveHint: true },
+      },
+    ];
+    const out = checkMutationLegibility(tools);
+    expect(out.passed).toBe(true);
+  });
+
+  it("fails when >40% of tools have no mutation signal", () => {
+    const tools = [
+      makeTool("frobnicate", "Does a thing.", {}),
+      makeTool("process_record", "Processes it.", {}),
+      makeTool("read_note", "Read-only.", {}),
+    ];
+    // 2 of 3 (66%) have no signal — fails
+    const out = checkMutationLegibility(tools);
+    expect(out.passed).toBe(false);
   });
 });
