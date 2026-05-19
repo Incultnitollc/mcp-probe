@@ -1,0 +1,28 @@
+# examples/basic.yml — minimal workflow using mcp-probe-action.
+#
+# Copy this into .github/workflows/mcp-probe.yml in your MCP server's
+# repository. Adjust `command:` to match how you launch your server.
+
+name: mcp-probe health check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - run: npm ci
+      - run: npm run build
+
+      - uses: incultnitollc/mcp-probe@v1
+        with:
+          command: 'node dist/index.js'
