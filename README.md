@@ -128,7 +128,53 @@ This means tools with complex required inputs may fail — and that's useful inf
   run: npx @incultnitollc/mcp-probe test "$MCP_SERVER_CMD"
 ```
 
-Use `--json` for structured output and `jq` to gate on specific metrics (e.g. fail the build if `schemaWarnings > 0`). A dedicated GitHub Action is on the roadmap.
+Use `--json` for structured output and `jq` to gate on specific metrics (e.g. fail the build if `schemaWarnings > 0`).
+
+## GitHub Action
+
+Drop mcp-probe into your MCP server's GitHub Actions workflow in two lines:
+
+```yaml
+- uses: incultnitollc/mcp-probe@v1
+  with:
+    command: 'node dist/index.js'
+```
+
+Gate your PRs on a publishability composite:
+
+```yaml
+- uses: incultnitollc/mcp-probe@v1
+  with:
+    command: 'node dist/index.js'
+    publishability: 'true'
+    package: './package.json'
+    fail-under: '70'
+```
+
+### Inputs
+
+| Name | Required | Default | Description |
+|---|---|---|---|
+| `command` | yes | — | Command that launches your MCP server (e.g. `node dist/index.js` or `npx -y @your-scope/your-server`). |
+| `fail-under` | no | `0` | Fail the job if the publishability composite drops below this value (0–100). Requires `publishability: 'true'`. |
+| `publishability` | no | `false` | Run the publishability suite — 5 checks + 0–100 composite. Requires `mcp-probe >= 1.1.0` (ships 2026-05-23). |
+| `package` | no | `''` | Path to `package.json` for the distribution-metadata check. Empty skips the distribution check. |
+| `html-report` | no | `''` | Path to write the HTML scorecard. Upload via `actions/upload-artifact` in a follow-on step. |
+| `mcp-probe-version` | no | `latest` | npm version, dist-tag, or `latest`. Pin for reproducible builds. |
+| `json-output` | no | `''` | Path to write the JSON report for downstream parsing. |
+
+### Outputs
+
+| Name | Description |
+|---|---|
+| `composite-score` | Publishability composite (0–100). Only set when `publishability: 'true'`. |
+| `band` | Grade band: `publishable` / `almost` / `rough` / `not-ready`. Only set when `publishability: 'true'`. |
+| `tools-pass-rate` | `tools_callable / tools_listed` as a decimal (e.g. `0.83`). |
+| `schema-warnings` | Total schema warning count across all tools. |
+
+More examples: [`examples/basic.yml`](examples/basic.yml) · [`examples/publishability-gate.yml`](examples/publishability-gate.yml) · [`examples/matrix.yml`](examples/matrix.yml).
+
+Marketplace listing: [github.com/marketplace/actions/mcp-probe](https://github.com/marketplace/actions/mcp-probe).
 
 ## Compared to MCP Inspector
 
