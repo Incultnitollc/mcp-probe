@@ -4,6 +4,7 @@ import {
   checkEnumShape,
   checkMutationLegibility,
   checkDistributionMetadata,
+  checkAntiPurposeClause,
 } from "./publishability-checks.js";
 import type { ToolInfo } from "./types.js";
 import { writeFileSync, mkdtempSync } from "node:fs";
@@ -251,5 +252,47 @@ describe("checkDistributionMetadata", () => {
     });
     const out = await checkDistributionMetadata(path);
     expect(out.passed).toBe(false);
+  });
+});
+
+describe("checkAntiPurposeClause", () => {
+  it("passes when total tool count <= 2 (rule does not fire)", () => {
+    const tools = [
+      makeTool("run_sql", "Run SQL.", {}),
+      makeTool("read_note", "Read.", {}),
+    ];
+    const out = checkAntiPurposeClause(tools);
+    expect(out.passed).toBe(true);
+  });
+
+  it("passes when no high-blast tools exist", () => {
+    const tools = [
+      makeTool("read_note", "Read.", {}),
+      makeTool("list_notes", "List.", {}),
+      makeTool("get_note", "Get.", {}),
+    ];
+    const out = checkAntiPurposeClause(tools);
+    expect(out.passed).toBe(true);
+  });
+
+  it("passes when all high-blast tools have anti-purpose clauses", () => {
+    const tools = [
+      makeTool("read_note", "Read.", {}),
+      makeTool("run_sql", "Run SQL. Do not use for: schema changes.", {}),
+      makeTool("delete_note", "Mutating. Prefer update_note for soft delete.", {}),
+    ];
+    const out = checkAntiPurposeClause(tools);
+    expect(out.passed).toBe(true);
+  });
+
+  it("emits warning (still passes) when some high-blast tools lack clause", () => {
+    const tools = [
+      makeTool("read_note", "Read.", {}),
+      makeTool("run_sql", "Run SQL.", {}),
+      makeTool("delete_note", "Mutating. Prefer update_note.", {}),
+    ];
+    const out = checkAntiPurposeClause(tools);
+    expect(out.passed).toBe(false);
+    expect(out.severity).toBe("low");
   });
 });

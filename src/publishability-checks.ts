@@ -243,3 +243,58 @@ export async function checkDistributionMetadata(
     durationMs: Date.now() - start,
   };
 }
+
+const HIGH_BLAST_TOOL_NAME = /(sql|query|exec|run|delete|drop|truncate|update|write|put|move|copy|merge|fetch|http|post|insert|upsert|append)/i;
+const HIGH_BLAST_PROP_NAME = /^(query|sql|path|filepath|file_path|url|endpoint)$/i;
+const ANTI_PURPOSE_TOKENS = /\b(do not use|don't use|avoid using|prefer|instead of|rather than|never call)\b/i;
+
+function isHighBlast(tool: ToolInfo): boolean {
+  if (HIGH_BLAST_TOOL_NAME.test(tool.name)) return true;
+  const props = tool.inputSchema?.properties ?? {};
+  return Object.keys(props).some((n) => HIGH_BLAST_PROP_NAME.test(n));
+}
+
+export function checkAntiPurposeClause(tools: ToolInfo[]): PublishabilityResult {
+  const start = Date.now();
+  if (tools.length <= 2) {
+    return {
+      check: "anti-purpose-clause",
+      passed: true,
+      severity: "info",
+      title: "Anti-purpose clause coverage",
+      message: "Skipped — single-tool or two-tool server (no peer to 'prefer over').",
+      durationMs: Date.now() - start,
+    };
+  }
+  const highBlast = tools.filter(isHighBlast);
+  if (highBlast.length === 0) {
+    return {
+      check: "anti-purpose-clause",
+      passed: true,
+      severity: "info",
+      title: "Anti-purpose clause coverage",
+      message: "No high-blast tools detected.",
+      durationMs: Date.now() - start,
+    };
+  }
+  const missing = highBlast.filter(
+    (t) => !ANTI_PURPOSE_TOKENS.test(t.description ?? "")
+  );
+  const passed = missing.length === 0;
+  return {
+    check: "anti-purpose-clause",
+    passed,
+    severity: "low",
+    title: "Anti-purpose clause coverage",
+    message: passed
+      ? `All ${highBlast.length} high-blast tools have anti-purpose clauses.`
+      : `${missing.length}/${highBlast.length} high-blast tools missing "do not use for" / "prefer" clauses.`,
+    perToolFailures: missing.map((t) => ({
+      tool: t.name,
+      reason: "high-blast tool without anti-purpose clause",
+    })),
+    remediation:
+      "Per docs/checklist.md §1 (anti-purpose pattern): on tools that can satisfy the same intent as another tool, add 'Do not use for: X' or 'Prefer Y over this'.",
+    durationMs: Date.now() - start,
+  };
+}
