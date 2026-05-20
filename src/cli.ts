@@ -39,6 +39,26 @@ program
     "Print the args mcp-probe sent for every tool/prompt call (PASS rows too)",
     false
   )
+  .option(
+    "--publishability",
+    "Run publishability suite (5 checks + 0-100 composite)",
+    false
+  )
+  .option(
+    "--publishability-only",
+    "Run publishability suite only — skip tool calls, resource reads, prompt gets",
+    false
+  )
+  .option(
+    "--fail-under <score>",
+    "Exit non-zero if publishability composite below threshold (0–100)",
+    "0"
+  )
+  .option(
+    "--package <path>",
+    "Path to package.json for distribution-metadata check (publishability)",
+    ""
+  )
   .action(
     async (
       target: string,
@@ -49,6 +69,10 @@ program
         transport?: string;
         header: string[];
         verbose: boolean;
+        publishability: boolean;
+        publishabilityOnly: boolean;
+        failUnder: string;
+        package: string;
       }
     ) => {
       try {
@@ -72,6 +96,9 @@ program
           timeout: parseInt(opts.timeout, 10),
           html: opts.html,
           verbose: opts.verbose,
+          publishability: opts.publishability || opts.publishabilityOnly,
+          publishabilityOnly: opts.publishabilityOnly,
+          packageJsonPath: opts.package || undefined,
         });
 
         const { score } = result;
@@ -81,7 +108,14 @@ program
           score.promptsGettable === score.promptsTotal &&
           score.schemaErrors === 0;
 
-        if (!allPassed) {
+        const failUnder = parseInt(opts.failUnder, 10);
+        if (failUnder > 0 && result.publishabilityScore) {
+          if (result.publishabilityScore.composite < failUnder) {
+            process.exit(1);
+          }
+        }
+
+        if (!opts.publishabilityOnly && !allPassed) {
           process.exit(1);
         }
       } catch (error) {
@@ -89,6 +123,71 @@ program
           "Error:",
           error instanceof Error ? error.message : error
         );
+        process.exit(1);
+      }
+    }
+  );
+
+program
+  .command("score")
+  .description("Run publishability suite only — shorthand for `test --publishability-only`")
+  .argument("<target>", "MCP server target (command or URL)")
+  .option("--json", "Output results as JSON", false)
+  .option("--timeout <ms>", "Timeout per operation in milliseconds", "30000")
+  .option("--html <path>", "Save HTML report to file")
+  .option("--package <path>", "Path to package.json for distribution-metadata check", "")
+  .option("--fail-under <score>", "Exit non-zero if composite below threshold (0–100)", "0")
+  .option(
+    "--full",
+    "Also run standard inspection (equivalent to `test --publishability`)",
+    false
+  )
+  .option("--transport <kind>", "Force transport: stdio | sse | http")
+  .option(
+    "--header <header>",
+    'Header for remote transports. Repeatable.',
+    (value: string, prev: string[] = []) => [...prev, value],
+    [] as string[]
+  )
+  .action(
+    async (
+      target: string,
+      opts: {
+        json: boolean;
+        timeout: string;
+        html?: string;
+        package: string;
+        failUnder: string;
+        full: boolean;
+        transport?: string;
+        header: string[];
+      }
+    ) => {
+      try {
+        if (opts.transport && !["stdio", "sse", "http"].includes(opts.transport)) {
+          throw new Error(`Invalid --transport "${opts.transport}".`);
+        }
+        const spec = parseTarget(target, {
+          transport: opts.transport as TransportKind | undefined,
+          headers: opts.header,
+        });
+        const transport = createTransport(spec);
+        const result = await inspectServer(transport, {
+          json: opts.json,
+          timeout: parseInt(opts.timeout, 10),
+          html: opts.html,
+          publishability: true,
+          publishabilityOnly: !opts.full,
+          packageJsonPath: opts.package || undefined,
+        });
+        const failUnder = parseInt(opts.failUnder, 10);
+        if (failUnder > 0 && result.publishabilityScore) {
+          if (result.publishabilityScore.composite < failUnder) {
+            process.exit(1);
+          }
+        }
+      } catch (error) {
+        console.error("Error:", error instanceof Error ? error.message : error);
         process.exit(1);
       }
     }
