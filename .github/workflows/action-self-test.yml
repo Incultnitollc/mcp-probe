@@ -7,8 +7,30 @@ on:
   workflow_dispatch:
 
 jobs:
-  self-test:
+  fixture-gate:
+    name: Gate — clean publishable fixture (must pass)
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - run: npm ci
+
+      # Run the LOCAL action (./), not the Marketplace version.
+      # The publishable fixture scores 100% — any failure here means the
+      # Action wrapper itself broke, not the tested server.
+      # Do NOT add `publishability: 'true'` here until v1.1.0 ships 2026-05-23.
+      - uses: ./
+        with:
+          command: 'npx tsx test-fixtures/publishable-server.ts'
+
+  real-world-smoke:
+    name: Smoke — real-world MCP servers (informational)
+    runs-on: ubuntu-latest
+    continue-on-error: true
     strategy:
       fail-fast: false
       matrix:
@@ -24,8 +46,10 @@ jobs:
         with:
           node-version: '20'
 
-      # Run the LOCAL action (./), not the Marketplace version.
-      # Do NOT add `publishability: 'true'` here until v1.1.0 ships 2026-05-23.
+      # These reference MCP servers may have known warnings (un-callable tools,
+      # missing prompts). The Action exits non-zero on any failure — that is
+      # correct behavior. This job is informational; the fixture-gate is the
+      # hard pass/fail gate.
       - uses: ./
         with:
           command: ${{ matrix.command }}
