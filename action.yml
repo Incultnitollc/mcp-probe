@@ -1,5 +1,5 @@
 name: 'mcp-probe — MCP server health check'
-description: 'Validate your Model Context Protocol server in CI. Catches missing descriptions, broken tools, schema regressions, and pre-publish gotchas before users see them.'
+description: 'Validate your MCP server in CI. Catches missing descriptions, broken tools, and schema regressions before publish.'
 author: 'Incultnito LLC'
 
 branding:
