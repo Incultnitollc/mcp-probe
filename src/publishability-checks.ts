@@ -1,5 +1,6 @@
 import type { ToolInfo, PublishabilityResult } from "./types.js";
 import { scoreDescriptionAxes } from "./publishability-axes.js";
+import { readFile } from "node:fs/promises";
 
 interface ToolScore {
   tool: string;
@@ -164,6 +165,136 @@ export function checkMutationLegibility(
     evidence: { failedTools: silent.map((t) => t.name) },
     remediation:
       "Per docs/checklist.md §1+§6: surface mutating-vs-read via tool name prefix (read_*, list_*, get_* / create_*, update_*, delete_*), description ('Read-only.' / 'Mutating.'), or annotations.destructiveHint.",
+    durationMs: Date.now() - start,
+  };
+}
+
+const VALID_REPO_HOST = /^(https?:\/\/|git\+https?:\/\/|git@)(github\.com|gitlab\.com|codeberg\.org|bitbucket\.org)/i;
+
+export async function checkDistributionMetadata(
+  packageJsonPath: string | undefined
+): Promise<PublishabilityResult> {
+  const start = Date.now();
+  if (!packageJsonPath) {
+    return {
+      check: "distribution-metadata",
+      passed: true,
+      severity: "info",
+      title: "Distribution metadata",
+      message: "Skipped — pass --package <path> to enable.",
+      evidence: { skipped: true },
+      durationMs: Date.now() - start,
+    };
+  }
+
+  let pkg: Record<string, unknown>;
+  try {
+    const raw = await readFile(packageJsonPath, "utf8");
+    pkg = JSON.parse(raw);
+  } catch (err) {
+    return {
+      check: "distribution-metadata",
+      passed: false,
+      severity: "medium",
+      title: "Distribution metadata",
+      message: `Failed to read ${packageJsonPath}: ${
+        err instanceof Error ? err.message : String(err)
+      }`,
+      durationMs: Date.now() - start,
+    };
+  }
+
+  const failures: string[] = [];
+  const desc = typeof pkg.description === "string" ? pkg.description : "";
+  if (desc.length < 40) failures.push("description (<40 chars or missing)");
+
+  const kw = Array.isArray(pkg.keywords)
+    ? (pkg.keywords as unknown[]).map(String)
+    : [];
+  if (kw.length < 4) failures.push("keywords (need at least 4)");
+  if (!kw.includes("mcp")) failures.push("keywords (missing 'mcp')");
+  if (!kw.includes("model-context-protocol"))
+    failures.push("keywords (missing 'model-context-protocol')");
+
+  if (typeof pkg.license !== "string" || pkg.license.length === 0)
+    failures.push("license (missing)");
+
+  const engines = pkg.engines as Record<string, string> | undefined;
+  if (!engines?.node) failures.push("engines.node (missing)");
+
+  const repo = pkg.repository as { url?: string } | string | undefined;
+  const repoUrl =
+    typeof repo === "string" ? repo : typeof repo === "object" ? repo?.url : "";
+  if (!repoUrl || !VALID_REPO_HOST.test(repoUrl))
+    failures.push("repository.url (missing or unsupported host)");
+
+  const passed = failures.length === 0;
+  return {
+    check: "distribution-metadata",
+    passed,
+    severity: "medium",
+    title: "Distribution metadata",
+    message: passed
+      ? "package.json passes §5 metadata checks."
+      : `${failures.length} metadata issue(s): ${failures.join("; ")}`,
+    perToolFailures: failures.map((f) => ({ tool: "package.json", reason: f })),
+    remediation:
+      "Per docs/checklist.md §5: description ≥40 chars, keywords include both 'mcp' and 'model-context-protocol', SPDX license, engines.node, repository.url.",
+    durationMs: Date.now() - start,
+  };
+}
+
+const HIGH_BLAST_TOOL_NAME = /(sql|query|exec|run|delete|drop|truncate|update|write|put|move|copy|merge|fetch|http|post|insert|upsert|append)/i;
+const HIGH_BLAST_PROP_NAME = /^(query|sql|path|filepath|file_path|url|endpoint)$/i;
+const ANTI_PURPOSE_TOKENS = /\b(do not use|don't use|avoid using|prefer|instead of|rather than|never call)\b/i;
+
+function isHighBlast(tool: ToolInfo): boolean {
+  if (HIGH_BLAST_TOOL_NAME.test(tool.name)) return true;
+  const props = tool.inputSchema?.properties ?? {};
+  return Object.keys(props).some((n) => HIGH_BLAST_PROP_NAME.test(n));
+}
+
+export function checkAntiPurposeClause(tools: ToolInfo[]): PublishabilityResult {
+  const start = Date.now();
+  if (tools.length <= 2) {
+    return {
+      check: "anti-purpose-clause",
+      passed: true,
+      severity: "info",
+      title: "Anti-purpose clause coverage",
+      message: "Skipped — single-tool or two-tool server (no peer to 'prefer over').",
+      durationMs: Date.now() - start,
+    };
+  }
+  const highBlast = tools.filter(isHighBlast);
+  if (highBlast.length === 0) {
+    return {
+      check: "anti-purpose-clause",
+      passed: true,
+      severity: "info",
+      title: "Anti-purpose clause coverage",
+      message: "No high-blast tools detected.",
+      durationMs: Date.now() - start,
+    };
+  }
+  const missing = highBlast.filter(
+    (t) => !ANTI_PURPOSE_TOKENS.test(t.description ?? "")
+  );
+  const passed = missing.length === 0;
+  return {
+    check: "anti-purpose-clause",
+    passed,
+    severity: "low",
+    title: "Anti-purpose clause coverage",
+    message: passed
+      ? `All ${highBlast.length} high-blast tools have anti-purpose clauses.`
+      : `${missing.length}/${highBlast.length} high-blast tools missing "do not use for" / "prefer" clauses.`,
+    perToolFailures: missing.map((t) => ({
+      tool: t.name,
+      reason: "high-blast tool without anti-purpose clause",
+    })),
+    remediation:
+      "Per docs/checklist.md §1 (anti-purpose pattern): on tools that can satisfy the same intent as another tool, add 'Do not use for: X' or 'Prefer Y over this'.",
     durationMs: Date.now() - start,
   };
 }

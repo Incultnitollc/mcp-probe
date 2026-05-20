@@ -3,8 +3,20 @@ import {
   checkDescriptionFiveAxis,
   checkEnumShape,
   checkMutationLegibility,
+  checkDistributionMetadata,
+  checkAntiPurposeClause,
 } from "./publishability-checks.js";
 import type { ToolInfo } from "./types.js";
+import { writeFileSync, mkdtempSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+
+function writeTempPackageJson(content: object): string {
+  const dir = mkdtempSync(join(tmpdir(), "mcp-probe-test-"));
+  const path = join(dir, "package.json");
+  writeFileSync(path, JSON.stringify(content, null, 2));
+  return path;
+}
 
 function makeTool(
   name: string,
@@ -177,5 +189,110 @@ describe("checkMutationLegibility", () => {
     // 2 of 3 (66%) have no signal — fails
     const out = checkMutationLegibility(tools);
     expect(out.passed).toBe(false);
+  });
+});
+
+describe("checkDistributionMetadata", () => {
+  it("returns skipped severity when no path provided", async () => {
+    const out = await checkDistributionMetadata(undefined);
+    expect(out.passed).toBe(true);
+    expect(out.severity).toBe("info");
+    expect(out.evidence?.skipped).toBe(true);
+  });
+
+  it("passes a fully-formed package.json", async () => {
+    const path = writeTempPackageJson({
+      name: "my-mcp-server",
+      description:
+        "MCP server for fetching weather data — supports forecast, alerts, history",
+      keywords: ["mcp", "model-context-protocol", "weather", "api"],
+      license: "MIT",
+      engines: { node: ">=20" },
+      repository: { url: "https://github.com/example/weather-mcp" },
+    });
+    const out = await checkDistributionMetadata(path);
+    expect(out.passed).toBe(true);
+  });
+
+  it("fails when description is too short", async () => {
+    const path = writeTempPackageJson({
+      name: "x",
+      description: "MCP server",
+      keywords: ["mcp", "model-context-protocol", "x", "y"],
+      license: "MIT",
+      engines: { node: ">=20" },
+      repository: { url: "https://github.com/x/y" },
+    });
+    const out = await checkDistributionMetadata(path);
+    expect(out.passed).toBe(false);
+  });
+
+  it("fails when keywords missing both mcp tokens", async () => {
+    const path = writeTempPackageJson({
+      name: "x",
+      description:
+        "MCP server for fetching weather data — supports forecast, alerts, history",
+      keywords: ["weather", "api", "client", "data"],
+      license: "MIT",
+      engines: { node: ">=20" },
+      repository: { url: "https://github.com/x/y" },
+    });
+    const out = await checkDistributionMetadata(path);
+    expect(out.passed).toBe(false);
+  });
+
+  it("fails on missing license", async () => {
+    const path = writeTempPackageJson({
+      name: "x",
+      description:
+        "MCP server for fetching weather data — supports forecast, alerts, history",
+      keywords: ["mcp", "model-context-protocol", "x", "y"],
+      engines: { node: ">=20" },
+      repository: { url: "https://github.com/x/y" },
+    });
+    const out = await checkDistributionMetadata(path);
+    expect(out.passed).toBe(false);
+  });
+});
+
+describe("checkAntiPurposeClause", () => {
+  it("passes when total tool count <= 2 (rule does not fire)", () => {
+    const tools = [
+      makeTool("run_sql", "Run SQL.", {}),
+      makeTool("read_note", "Read.", {}),
+    ];
+    const out = checkAntiPurposeClause(tools);
+    expect(out.passed).toBe(true);
+  });
+
+  it("passes when no high-blast tools exist", () => {
+    const tools = [
+      makeTool("read_note", "Read.", {}),
+      makeTool("list_notes", "List.", {}),
+      makeTool("get_note", "Get.", {}),
+    ];
+    const out = checkAntiPurposeClause(tools);
+    expect(out.passed).toBe(true);
+  });
+
+  it("passes when all high-blast tools have anti-purpose clauses", () => {
+    const tools = [
+      makeTool("read_note", "Read.", {}),
+      makeTool("run_sql", "Run SQL. Do not use for: schema changes.", {}),
+      makeTool("delete_note", "Mutating. Prefer update_note for soft delete.", {}),
+    ];
+    const out = checkAntiPurposeClause(tools);
+    expect(out.passed).toBe(true);
+  });
+
+  it("emits warning (still passes) when some high-blast tools lack clause", () => {
+    const tools = [
+      makeTool("read_note", "Read.", {}),
+      makeTool("run_sql", "Run SQL.", {}),
+      makeTool("delete_note", "Mutating. Prefer update_note.", {}),
+    ];
+    const out = checkAntiPurposeClause(tools);
+    expect(out.passed).toBe(false);
+    expect(out.severity).toBe("low");
   });
 });
