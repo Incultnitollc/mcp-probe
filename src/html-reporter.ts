@@ -62,8 +62,99 @@ ${renderResources(result)}
 ${renderPrompts(result)}
 ${renderSchemaIssues(result)}
 ${renderComplianceIssues(result)}
+${renderPublishabilitySection(result)}
 </body>
 </html>`;
+}
+
+function renderPublishabilitySection(result: InspectResult): string {
+  const score = result.publishabilityScore;
+  const results = result.publishabilityResults;
+  if (!score || !results) return "";
+  const bar = (label: string, value: number) =>
+    `<div class="pub-bar-row"><span class="pub-bar-label">${label}</span><div class="pub-bar-track"><div class="pub-bar-fill" style="width:${value}%"></div></div><span class="pub-bar-value">${value}</span></div>`;
+  const radius = 56;
+  const circumference = 2 * Math.PI * radius;
+  const dashOffset = circumference * (1 - score.composite / 100);
+  const gaugeColor =
+    score.composite >= 85
+      ? "#4ade80"
+      : score.composite >= 65
+      ? "#fbbf24"
+      : score.composite >= 40
+      ? "#a855f7"
+      : "#f87171";
+  const gauge = `<svg class="pub-gauge" viewBox="0 0 140 140" width="140" height="140">
+    <circle cx="70" cy="70" r="${radius}" fill="none" stroke="#16213e" stroke-width="12"/>
+    <circle cx="70" cy="70" r="${radius}" fill="none" stroke="${gaugeColor}" stroke-width="12"
+      stroke-dasharray="${circumference}" stroke-dashoffset="${dashOffset}"
+      transform="rotate(-90 70 70)" stroke-linecap="round"/>
+    <text x="70" y="70" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-size="28" font-weight="bold">${score.composite}</text>
+    <text x="70" y="92" text-anchor="middle" fill="#888" font-size="11">/ 100</text>
+  </svg>`;
+  const caps =
+    score.capsApplied.length > 0
+      ? `<div class="pub-caps">${score.capsApplied
+          .map(
+            (c) =>
+              `<strong>≤${c.ceiling}</strong>: ${esc(c.reason)}`
+          )
+          .join("<br>")}</div>`
+      : "";
+  const checkList = results
+    .map((r) => {
+      const label =
+        r.severity === "info" ? "SKIP" : r.passed ? "PASS" : "FAIL";
+      const klass =
+        r.severity === "info" ? "warn" : r.passed ? "pass" : "fail";
+      const perTool =
+        !r.passed && r.perToolFailures?.length
+          ? `<div class="pub-fail-list">${r.perToolFailures
+              .slice(0, 5)
+              .map(
+                (f) =>
+                  `<div class="pub-fail-row">→ <strong>${esc(f.tool)}</strong>: ${esc(f.reason)}</div>`
+              )
+              .join("")}${
+              r.perToolFailures.length > 5
+                ? `<div class="pub-fail-row">+${r.perToolFailures.length - 5} more</div>`
+                : ""
+            }</div>`
+          : "";
+      return `<div class="item"><div class="item-header">
+        <span class="badge ${klass}">${label}</span>
+        <span class="item-name">${esc(r.check)}</span>
+        <span class="item-desc">${esc(r.message)}</span>
+      </div>${perTool}</div>`;
+    })
+    .join("\n");
+  return `<section class="publishability">
+<h2>Publishability — ${score.bandName} (${score.grade})</h2>
+<div class="pub-summary">
+  ${gauge}
+  <div class="pub-bars">
+    ${bar("Protocol", score.byDomain.protocol.score)}
+    ${bar("Edge cases", score.byDomain.edgeCases.score)}
+    ${bar("Publishability", score.byDomain.publishability.score)}
+  </div>
+</div>
+${caps}
+${checkList}
+</section>
+<style>
+.publishability h2{color:#fff}
+.pub-summary{display:flex;gap:1.5rem;align-items:center;background:#16213e;border-radius:8px;padding:1rem;margin-bottom:1rem}
+.pub-gauge{flex:0 0 auto}
+.pub-bars{flex:1;display:flex;flex-direction:column;gap:.5rem}
+.pub-bar-row{display:flex;align-items:center;gap:.75rem}
+.pub-bar-label{width:9rem;color:#aaa;font-size:.85rem}
+.pub-bar-track{flex:1;height:.6rem;background:#1a1a2e;border-radius:4px;overflow:hidden}
+.pub-bar-fill{height:100%;background:#820855}
+.pub-bar-value{width:2.5rem;text-align:right;color:#aaa;font-family:monospace;font-size:.85rem}
+.pub-caps{padding:.5rem 1rem;background:#3a2a0f;border-left:3px solid #fbbf24;color:#fbbf24;margin-bottom:1rem;border-radius:4px;font-size:.85rem}
+.pub-fail-list{margin-top:.5rem;padding-left:1.5rem;font-size:.8rem;color:#888}
+.pub-fail-row{margin:.15rem 0}
+</style>`;
 }
 
 function renderTools(result: InspectResult): string {
