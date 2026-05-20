@@ -7,6 +7,24 @@ Probe-mention ratio target: **≤50% across the week.** If creeping above, force
 
 ---
 
+## 2026-05-20 (Wed) — Wk3 OP-engagement closeout
+
+**r/ClaudeAI returning-OP reply** — thread `1thmpoq` ("142 tools, Ratel gateway, linear_search_issues misfire"):
+
+- [x] First reply: `reddit.com/r/ClaudeAI/comments/1thmpoq/comment/omufa6m/` — template: anti-purpose + parameter-description audit + soft probe mention — probe-mentioned? **Y** (1 mention, complementary to MCP Inspector)
+- [x] OP `AbjectBug5885` returned a substantive reply ~1h later — validated anti-purpose framing publicly, endorsed description-first audit, no probe pushback. Mentioned Ratel's BM25 ranking — confirms OP is the product author (gateway/router for MCP tools).
+- [x] Follow-up reply posted to OP — template: parameter-description-layer extension + linear_search_issues precise observation — probe-mentioned? **N** (probe-free per ≤50% cap; already mentioned in first reply)
+
+**Why this matters more than a normal cadence reply:**
+- Returning-OP engagement loop within the same thread = second-cycle validation pattern (analogous to Mads Hansen Day-2 on dev.to)
+- OP is a product author (Ratel) building in adjacent lane — the validation has commercial-builder weight, not just hobbyist enthusiasm
+- Anti-purpose sentence framing now externally endorsed in a high-traffic r/ClaudeAI thread by someone who shipped a gateway to work around the problem
+- Positions mcp-probe's v1.1.0 publishability rubric (anti-purpose-clause check is one of the 5) as solving an upstream problem the gateway works around at the downstream layer
+
+**Trigger-metric note:** not strictly "Unsolicited mention" (it was a reply chain), but is the highest-signal r/ClaudeAI engagement to date — first external endorsement of the anti-purpose framing on the platform.
+
+---
+
 ## 2026-05-09 (Sat) — Wk1 Day 6
 
 **GitHub venues (4/4)**

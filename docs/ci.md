@@ -7,6 +7,22 @@ canonical_url: "https://github.com/Incultnitollc/mcp-probe/blob/main/docs/ci.md"
 published: true
 ---
 
+## Quick start: just the one-liner
+
+If you only want the install, drop this into `.github/workflows/mcp-probe.yml`:
+
+```yaml
+- uses: incultnitollc/mcp-probe@v1
+  with:
+    command: 'node dist/index.js'
+```
+
+Marketplace listing: [github.com/marketplace/actions/mcp-probe-mcp-server-health-check](https://github.com/marketplace/actions/mcp-probe-mcp-server-health-check).
+
+The rest of this article explains how it works, what each input means, and where it fits in your CI pipeline.
+
+---
+
 Most MCP server repos I've looked at have a CI file that does three things: `npm ci`, `npm run build`, `npm test`. Tests pass, the badge goes green, the package ships. Then a client connects and half the calls fail in ways no unit test would catch — wrong argument shapes, missing schema descriptions, a publish that went out without provenance, a monorepo that built the wrong package.
 
 "Tests pass" is not a sufficient pre-publish gate for an MCP server. The contract surface is bigger than the function signatures. The schema you ship is part of the runtime behavior, the transport handshake is part of the runtime behavior, and the npm artifact you cut on tag has its own failure modes once it lands on a user's machine. CI has to cover all of that.

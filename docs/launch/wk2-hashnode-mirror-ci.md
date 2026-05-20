@@ -87,7 +87,23 @@
 
 ## Paste payload — body
 
-> Paste everything below the divider, starting at the first paragraph (no frontmatter, no title). Hashnode renders the title from the title field, not the body. The `docs/ci-example.md` link is rewritten to its absolute GitHub URL for Hashnode (repo-relative paths don't resolve on Hashnode).
+> Paste everything below the divider, starting at the first paragraph (no frontmatter, no title). Hashnode renders the title from the title field, not the body. The `docs/ci-example.md` link is rewritten to its absolute GitHub URL for Hashnode (repo-relative paths don't resolve on Hashnode). **2026-05-21 update:** prepended Marketplace one-liner lede to match `docs/ci.md` after `mcp-probe-action@v1` Marketplace publish.
+
+---
+
+## Quick start: just the one-liner
+
+If you only want the install, drop this into `.github/workflows/mcp-probe.yml`:
+
+```yaml
+- uses: incultnitollc/mcp-probe@v1
+  with:
+    command: 'node dist/index.js'
+```
+
+Marketplace listing: [github.com/marketplace/actions/mcp-probe-mcp-server-health-check](https://github.com/marketplace/actions/mcp-probe-mcp-server-health-check).
+
+The rest of this article explains how it works, what each input means, and where it fits in your CI pipeline.
 
 ---
 
