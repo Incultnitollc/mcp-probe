@@ -181,77 +181,81 @@ export async function inspectServer(
       }
     }
 
-    // ── Phase 3: Call every tool ─────────────────��───────────────
+    // ── Phase 3-5: Call every tool / read resources / get prompts ─
+    // Skipped when --publishability-only — publishability checks are static
+    // on listTools output, no callTool / readResource / getPrompt needed.
 
-    // Sandbox probe: if the server exposes `list_allowed_directories`
-    // (filesystem-style servers), call it first so we can seed path
-    // args with directories the server actually accepts. Falls back
-    // silently — servers without it are unaffected.
-    const sampleCtx: SampleArgsContext = {};
-    const allowedDirsTool = result.tools.find(
-      (t) => t.name === "list_allowed_directories"
-    );
-    if (allowedDirsTool) {
-      try {
-        const resp = await withTimeout(
-          client.callTool({ name: "list_allowed_directories", arguments: {} }),
-          options.timeout,
-          "list_allowed_directories timed out"
-        );
-        if (resp.isError !== true) {
-          sampleCtx.allowedDirectories = parseAllowedDirectories(resp.content);
+    if (!options.publishabilityOnly) {
+      // Sandbox probe: if the server exposes `list_allowed_directories`
+      // (filesystem-style servers), call it first so we can seed path
+      // args with directories the server actually accepts. Falls back
+      // silently — servers without it are unaffected.
+      const sampleCtx: SampleArgsContext = {};
+      const allowedDirsTool = result.tools.find(
+        (t) => t.name === "list_allowed_directories"
+      );
+      if (allowedDirsTool) {
+        try {
+          const resp = await withTimeout(
+            client.callTool({ name: "list_allowed_directories", arguments: {} }),
+            options.timeout,
+            "list_allowed_directories timed out"
+          );
+          if (resp.isError !== true) {
+            sampleCtx.allowedDirectories = parseAllowedDirectories(resp.content);
+          }
+        } catch {
+          // ignore — behave as if the tool weren't there
         }
-      } catch {
-        // ignore — behave as if the tool weren't there
       }
-    }
 
-    if (result.tools.length > 0) {
-      const s = makeSpinner("Calling tools...", silent);
-      for (const tool of result.tools) {
-        s.text = `Calling tool: ${tool.name}...`;
-        const callResult = await callTool(client, tool, options.timeout, sampleCtx);
-        result.toolResults.push(callResult);
+      if (result.tools.length > 0) {
+        const s = makeSpinner("Calling tools...", silent);
+        for (const tool of result.tools) {
+          s.text = `Calling tool: ${tool.name}...`;
+          const callResult = await callTool(client, tool, options.timeout, sampleCtx);
+          result.toolResults.push(callResult);
+        }
+        const passed = result.toolResults.filter((r) => r.success).length;
+        if (passed === result.toolResults.length) {
+          s.succeed(`All ${passed} tools callable`);
+        } else {
+          s.warn(`${passed}/${result.toolResults.length} tools callable`);
+        }
       }
-      const passed = result.toolResults.filter((r) => r.success).length;
-      if (passed === result.toolResults.length) {
-        s.succeed(`All ${passed} tools callable`);
-      } else {
-        s.warn(`${passed}/${result.toolResults.length} tools callable`);
-      }
-    }
 
-    // ── Phase 4: Read every resource ─────────────────────────────
+      // ── Phase 4: Read every resource ─────────────────────────────
 
-    if (result.resources.length > 0) {
-      const s = makeSpinner("Reading resources...", silent);
-      for (const resource of result.resources) {
-        s.text = `Reading resource: ${resource.uri}...`;
-        const readResult = await readResource(client, resource, options.timeout);
-        result.resourceResults.push(readResult);
+      if (result.resources.length > 0) {
+        const s = makeSpinner("Reading resources...", silent);
+        for (const resource of result.resources) {
+          s.text = `Reading resource: ${resource.uri}...`;
+          const readResult = await readResource(client, resource, options.timeout);
+          result.resourceResults.push(readResult);
+        }
+        const passed = result.resourceResults.filter((r) => r.success).length;
+        if (passed === result.resourceResults.length) {
+          s.succeed(`All ${passed} resources readable`);
+        } else {
+          s.warn(`${passed}/${result.resourceResults.length} resources readable`);
+        }
       }
-      const passed = result.resourceResults.filter((r) => r.success).length;
-      if (passed === result.resourceResults.length) {
-        s.succeed(`All ${passed} resources readable`);
-      } else {
-        s.warn(`${passed}/${result.resourceResults.length} resources readable`);
-      }
-    }
 
-    // ── Phase 5: Get every prompt ────────────────────────────────
+      // ── Phase 5: Get every prompt ────────────────────────────────
 
-    if (result.prompts.length > 0) {
-      const s = makeSpinner("Getting prompts...", silent);
-      for (const prompt of result.prompts) {
-        s.text = `Getting prompt: ${prompt.name}...`;
-        const getResult = await getPrompt(client, prompt, options.timeout);
-        result.promptResults.push(getResult);
-      }
-      const passed = result.promptResults.filter((r) => r.success).length;
-      if (passed === result.promptResults.length) {
-        s.succeed(`All ${passed} prompts gettable`);
-      } else {
-        s.warn(`${passed}/${result.promptResults.length} prompts gettable`);
+      if (result.prompts.length > 0) {
+        const s = makeSpinner("Getting prompts...", silent);
+        for (const prompt of result.prompts) {
+          s.text = `Getting prompt: ${prompt.name}...`;
+          const getResult = await getPrompt(client, prompt, options.timeout);
+          result.promptResults.push(getResult);
+        }
+        const passed = result.promptResults.filter((r) => r.success).length;
+        if (passed === result.promptResults.length) {
+          s.succeed(`All ${passed} prompts gettable`);
+        } else {
+          s.warn(`${passed}/${result.promptResults.length} prompts gettable`);
+        }
       }
     }
 
@@ -271,13 +275,50 @@ export async function inspectServer(
     };
     result.durationMs = Date.now() - startTime;
 
+    // ── Phase 6: Publishability suite (opt-in) ────────────────────
+
+    if (options.publishability) {
+      const s = makeSpinner("Running publishability checks...", silent);
+      try {
+        const { runPublishabilitySuite } = await import("./publishability-runner.js");
+        const { computeScore } = await import("./publishability-scorer.js");
+        result.publishabilityResults = await runPublishabilitySuite({
+          result,
+          packageJsonPath: options.packageJsonPath,
+          timeout: options.timeout,
+        });
+        result.publishabilityScore = computeScore(result);
+        s.succeed("Publishability checks complete");
+      } catch (err) {
+        s.fail(
+          `Publishability checks failed: ${
+            err instanceof Error ? err.message : String(err)
+          }`
+        );
+      }
+    }
+
     // ── Output ───────────────────────────────────────────────────
 
     if (!silent) {
       if (options.json) {
         console.log(JSON.stringify(result, null, 2));
       } else {
-        printResult(result, { verbose: options.verbose === true });
+        if (!options.publishabilityOnly) {
+          printResult(result, { verbose: options.verbose === true });
+        }
+        if (result.publishabilityResults && result.publishabilityScore) {
+          const { renderPublishabilityBlock } = await import(
+            "./publishability-printer.js"
+          );
+          console.log(
+            renderPublishabilityBlock(
+              result.publishabilityResults,
+              false,
+              result.publishabilityScore
+            )
+          );
+        }
       }
     }
 

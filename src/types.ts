@@ -97,6 +97,9 @@ export interface InspectOptions {
   html?: string;
   verbose?: boolean;
   silent?: boolean;
+  publishability?: boolean;
+  publishabilityOnly?: boolean;
+  packageJsonPath?: string;
 }
 
 export interface BenchResult {
