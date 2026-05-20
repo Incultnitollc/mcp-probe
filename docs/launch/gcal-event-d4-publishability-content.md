@@ -9,7 +9,7 @@ This session has no Google Calendar MCP connector (per `reference_gcal_connector
 ## Paste-ready Claude Desktop prompt
 
 ```
-Using Google Calendar connector, create ONE event on incultnito@gmail.com calendar.
+Using Google Calendar connector, create ONE event on pengtawang@gmail.com calendar.
 
 Event details:
 
@@ -108,4 +108,4 @@ When Peng types `PUBLISHABILITY-D4` on Fri 5/22 morning:
 
 - [ ] Friday 2026-05-22 10:00 TPE has no conflicting event already (check current GCal)
 - [ ] If conflict: shift to 14:00–16:00 TPE same day (afternoon teaching gap)
-- [ ] Confirm `incultnito@gmail.com` is the calendar the playbook events are on (matches D2/D5 prompts)
+- [ ] Confirm `pengtawang@gmail.com` is the calendar the playbook events are on (matches D2/D5 prompts)
