@@ -1,5 +1,23 @@
 # mcp-probe — AI citation sweep log
 
+## 2026-05-22 — v1.1.0 SHIPPED (lane lock-in)
+
+**`@incultnitollc/mcp-probe@1.1.0`** published to npm (~16:15 TPE Fri 2026-05-22), GitHub Release `v1.1.0` live at https://github.com/Incultnitollc/mcp-probe/releases/tag/v1.1.0. Pulled forward 1 day from original Sat 5/23 D5 slot to unblock tonight's Probe Clinic (#13 / #2768) and the Show HN draft gate.
+
+**New lane positioning (explicit in README + CHANGELOG):**
+
+| Tool | Audience | Question answered |
+|---|---|---|
+| `@modelcontextprotocol/conformance` | SDK / spec authors | "Am I spec-compliant?" |
+| `@stephenywilson/mcp-doctor` | Server **installers** (pre-install) | "Will this server pwn me?" |
+| **`@incultnitollc/mcp-probe`** | Server **authors** (pre-publish) | "Is my server publishable?" |
+
+mcp-probe v1.1.0 publishability composite (0–100, 5 axes: description-five-axis / enum-shape / mutation-legibility / anti-purpose-clause / distribution-metadata) is the differentiator. Launch-day headline finding (`docs/publishability-scorecards/SUMMARY.md`): all 5 official Anthropic MCP servers cluster at exactly 60/100 — the `description-five-axis` cap fires on every one.
+
+**Next measurement event:** Sun 2026-05-24 15:00 TPE — Q7 sweep (first sweep post-amplify-fire + post-v1.1.0-ship; both signals stacked). Watch Q6/Q7/Q9/Q10 greenfield lanes for any Δ from the 0/40 Wk3 baseline.
+
+---
+
 Weekly cadence: **Sunday 15:00 TPE**, ≤15 min, 10 queries × 4 LLMs = 40 cells.
 
 **Greenfield lanes** (mcp-probe should be winning these): Q6, Q7, Q9, Q10.
