@@ -1,0 +1,73 @@
+- Connecting to MCP server...
+[32m✔[39m Connected to MCP server
+- Listing tools...
+[32m✔[39m Found 9 tools
+- Validating tool schemas...
+[33m⚠[39m Schema: 0 errors, 4 warnings
+- Checking MCP spec compliance...
+[32m✔[39m MCP spec compliance OK
+- Calling tools...
+[32m✔[39m All 9 tools callable
+- Running publishability checks...
+[32m✔[39m Publishability checks complete
+
+═══════════════════════════════════════════
+  MCP Server Inspection Report
+  Server: memory-server
+═══════════════════════════════════════════
+
+Tools:
+  PASS create_entities — Create multiple new entities in the knowledge graph (6ms)
+  PASS create_relations — Create multiple new relations between entities in the knowledge graph. Relations should be in active voice (3ms)
+  PASS add_observations — Add new observations to existing entities in the knowledge graph (2ms)
+  PASS delete_entities — Delete multiple entities and their associated relations from the knowledge graph (1ms)
+  PASS delete_observations — Delete specific observations from entities in the knowledge graph (1ms)
+  PASS delete_relations — Delete multiple relations from the knowledge graph (2ms)
+  PASS read_graph — Read the entire knowledge graph (1ms)
+  PASS search_nodes — Search for nodes in the knowledge graph based on a query (1ms)
+  PASS open_nodes — Open specific nodes in the knowledge graph by their names (1ms)
+
+Schema Issues:
+  WARN  create_entities — Property "entities" missing description
+  WARN  create_relations — Property "relations" missing description
+  WARN  add_observations — Property "observations" missing description
+  WARN  delete_observations — Property "deletions" missing description
+
+═══════════════════════════════════════════
+  Health Check Score
+═══════════════════════════════════════════
+
+  Tools callable:      9/9
+  Resources readable:  N/A
+  Prompts gettable:    N/A
+  Schema errors:       0
+  Schema warnings:     4
+  Compliance errors:   0
+  Compliance warnings: 0
+  Total time:          1731ms
+
+  ALL CHECKS PASSED
+
+
+  Publishability
+
+    FAIL  description-five-axis        Global avg 1.00/5 axes (fail <3.0). 9/9 tools below per-tool threshold.
+           → create_entities: per-tool axes avg <3.0
+           → create_relations: per-tool axes avg <3.0
+           → add_observations: per-tool axes avg <3.0
+           +6 more
+    PASS  enum-shape                   No prose-only enums detected.
+    PASS  mutation-legibility          7/9 tools disclose mutating-vs-read.
+    SKIP  distribution-metadata        Skipped — pass --package <path> to enable.
+    FAIL  anti-purpose-clause          4/4 high-blast tools missing "do not use for" / "prefer" clauses.
+           → delete_entities: high-blast tool without anti-purpose clause
+           → delete_observations: high-blast tool without anti-purpose clause
+           → delete_relations: high-blast tool without anti-purpose clause
+           +1 more
+
+  Publishability score: 60 / 100  (Rough, C)
+    Protocol:           100 / 100
+    Edge cases:         85 / 100
+    Publishability:     50 / 100
+  Caps applied:
+    ≤60  description-five-axis: ≥50% of tools below per-tool axis threshold
