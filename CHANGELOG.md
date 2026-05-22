@@ -4,6 +4,39 @@ All notable changes to `@incultnitollc/mcp-probe` are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] — 2026-05-22
+
+### Added — publishability score
+
+A second, complementary diagnostic alongside the existing `test` flow: a **publishability composite** that scores an MCP server 0–100 on whether its schemas, descriptions, and metadata are ready for other people to install.
+
+- **New `score` subcommand** — shorthand for `test --publishability-only`. Skips the standard inspection phases by default and runs only the publishability suite. Add `--full` to run both.
+- **New `--publishability` flag** on `test` — runs the publishability suite alongside the standard inspection.
+- **New `--publishability-only` flag** on `test` — runs only the publishability suite, skipping tool/resource/prompt execution.
+- **New `--fail-under <score>` flag** — exits non-zero if the composite drops below the threshold (0–100). Wires into CI gates.
+- **New `--package <path>` flag** — points the `distribution-metadata` check at a local `package.json`. Skipped when omitted.
+- **Five-axis breakdown:**
+  - `description-five-axis` — per-tool description density across purpose, mutation, side-effects, invariants, examples. Tools averaging <3.0/5 axes fire a ≤60 composite cap.
+  - `enum-shape` — catches prose-only enums (description says "one of: A, B" with no JSON Schema `enum`).
+  - `mutation-legibility` — does each tool tell a planner it mutates or only reads (name prefix / description signal / annotation).
+  - `anti-purpose-clause` — high-blast tools (delete, send, transfer) should include a "do not use for X, prefer Y" pointer.
+  - `distribution-metadata` — npm package readiness: description length, keyword count, `repository` / `license` / `homepage` fields.
+- **HTML report extension** — `--html` output now includes a publishability section with an SVG quarter-arc gauge, sub-score bars, caps banner, and per-check listing.
+- **GitHub Action support** — `incultnitollc/mcp-probe@v1` (Marketplace listing shipped 2026-05-20) accepts `publishability: 'true'` + `package: './package.json'` + `fail-under: '70'` and exposes `composite-score` / `band` outputs. `examples/publishability-gate.yml` becomes live-usable with this release.
+- **Weekly canary workflow** — `.github/workflows/publishability-self-check.yml` re-scores the official MCP servers Sundays at 03:00 UTC; informational only, no fail-under.
+- **5 launch-baseline scorecards** — `docs/publishability-scorecards/{server-sequential-thinking,server-memory,server-everything,server-filesystem,server-github}.txt` plus `SUMMARY.md` leading with the 60-floor finding (every official MCP server lands at 60/100 under v1.1.0).
+
+### Not added (deliberate, deferred)
+
+- **Install-time security checks** — credential scanning, `.env`/`.ssh` detection, ALLOW/ASK/BLOCK firewall preview. This is the lane `@stephenywilson/mcp-doctor` already owns (shipped 2026-05-15); mcp-probe stays on the **pre-publish quality** side. See `decision_security_suite_before_show_hn.md` for the pivot rationale.
+- **Per-domain calibration thresholds** — composite math is server-agnostic in v1.1.0. Per-domain calibration (database vs filesystem vs API tools) deferred to a future release.
+
+### Reference
+
+- Spec: [`docs/specs/publishability-score-v1.1.0.md`](docs/specs/publishability-score-v1.1.0.md)
+- Calibration drift writeup (60-floor finding across 5 official servers): [`docs/specs/publishability-score-v1.1.0-amendments.md`](docs/specs/publishability-score-v1.1.0-amendments.md)
+- Launch baseline scorecards: [`docs/publishability-scorecards/SUMMARY.md`](docs/publishability-scorecards/SUMMARY.md)
+
 ## action-v1.0.0 — 2026-05-20
 
 ### Added — `mcp-probe-action` published to GitHub Marketplace

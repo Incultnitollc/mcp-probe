@@ -111,6 +111,49 @@ mcp-probe auto-generates arguments for each tool based on its `inputSchema`:
 
 This means tools with complex required inputs may fail — and that's useful information. It tells you your tool isn't self-contained enough for automated testing.
 
+## Publishability score (v1.1.0+)
+
+`mcp-probe` ships a second, complementary check: a **publishability composite** that scores your server 0–100 on whether its schemas, descriptions, and metadata are ready for other people to install. Run it as a shorthand:
+
+```bash
+npx @incultnitollc/mcp-probe score "npx -y @your-scope/your-server" --package ./package.json
+```
+
+Or fold it into a full `test` run with `--publishability`:
+
+```bash
+npx @incultnitollc/mcp-probe test "npx -y @your-scope/your-server" --publishability --package ./package.json
+```
+
+The composite combines three sub-scores — **Protocol** (does the wire format work), **Edge cases** (does it handle weird inputs), and **Publishability** (would a stranger understand your tools) — and a five-axis breakdown across the publishability dimension:
+
+| Axis | What it checks |
+|---|---|
+| `description-five-axis` | Per-tool description density across **purpose, mutation, side-effects, invariants, examples**. Tools below 3.0/5 axes fire a ≤60 composite cap. |
+| `enum-shape` | Catches prose-only enums (e.g. `"one of: open, closed"` in the description with no JSON Schema `enum`). |
+| `mutation-legibility` | Does each tool tell a planner it mutates, or only reads? Name prefix / description signal / annotation all count. |
+| `anti-purpose-clause` | High-blast tools (delete, send, transfer) should include a "do not use for X, prefer Y" pointer to a narrower tool. |
+| `distribution-metadata` | npm package readiness — description length, keyword count, `repository` / `license` / `homepage` fields. Skipped without `--package`. |
+
+### What scores look like on real servers
+
+The five official Anthropic MCP servers all land at **60/100** under v1.1.0 — the `description-five-axis` cap fires on every one. That's not a bug in the rubric; that's the bar Anthropic ships at, and the bar most servers will start from. Full scorecards in [`docs/publishability-scorecards/`](docs/publishability-scorecards/SUMMARY.md).
+
+### CI gate
+
+```yaml
+- uses: incultnitollc/mcp-probe@v1
+  with:
+    command: 'node dist/index.js'
+    publishability: 'true'
+    package: './package.json'
+    fail-under: '70'
+```
+
+### Pre-publish vs install-time
+
+`mcp-probe`'s publishability score is the **pre-publish quality** lane — for server authors before they ship. For the install-time **security** lane — server installers before they connect a third-party server — see [`@stephenywilson/mcp-doctor`](https://www.npmjs.com/package/@stephenywilson/mcp-doctor). Different audiences, complementary tools.
+
 ## Use cases
 
 - **MCP server development** — Run mcp-probe in your test suite to catch regressions
