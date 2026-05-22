@@ -1,0 +1,49 @@
+name: publishability-self-check
+
+# Weekly canary — re-runs the publishability suite against the 5 official MCP
+# servers and surfaces any drift from the v1.1.0 launch baseline (all 60/100).
+#
+# INFORMATIONAL ONLY — no `--fail-under` per
+# docs/specs/publishability-score-v1.1.0-amendments.md. A drop from 60 here
+# would be news worth surfacing, but is not a CI gate.
+
+on:
+  schedule:
+    # Sun 03:00 UTC = Sun 11:00 Asia/Taipei
+    - cron: '0 3 * * 0'
+  workflow_dispatch:
+
+jobs:
+  publishability-canary:
+    name: Publishability canary — official MCP servers
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: sequential-thinking
+            command: 'npx -y @modelcontextprotocol/server-sequential-thinking'
+          - name: memory
+            command: 'npx -y @modelcontextprotocol/server-memory'
+          - name: everything
+            command: 'npx -y @modelcontextprotocol/server-everything'
+          - name: filesystem
+            command: 'npx -y @modelcontextprotocol/server-filesystem /tmp'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Score ${{ matrix.name }}
+        run: node dist/cli.js score "${{ matrix.command }}" --full
+
+      # No --fail-under. A 60 floor is the launch-day reality; a 50 or a 70
+      # here is the interesting signal — read it in the job logs, do not
+      # block CI on it.
