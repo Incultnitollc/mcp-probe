@@ -619,3 +619,164 @@ Differentiated v1.1.0 scope (NOT security suite): **publishability score** — s
 - `WK3-VERIFY` = this sprint (closed).
 - Wk4 full sweep still on schedule **Sun 2026-05-24 15:00 TPE**.
 
+---
+
+## 2026-05-25 — Week 4 sweep (post-v1.1.0)
+
+Sweep #4 — first full measurement after **v1.1.0 ship** (Fri 2026-05-22 ~16:15 TPE) and the lane lock-in (`@incultnitollc/mcp-probe` = publishability composite, server-author pre-publish). Run automated via Playwright on Sun 2026-05-25 ~22:55 TPE (running late from planned 15:00 slot; logging as Wk4).
+
+**Methodology — 2 platforms automated, 2 documented blind spots:**
+
+- **Perplexity** (perplexity.ai, no login) — 10/10 cells run via Playwright.
+- **Gemini** via Google AI Mode (`google.com/search?udm=50` — Gemini-backed unauth proxy per `reference_google_ai_mode_gemini_proxy.md`) — 10/10 cells run via Playwright.
+- **ChatGPT** — SKIPPED (UI-detection-walled for unauth Playwright per `feedback_no_login_sweep_preference.md`). Blind spot.
+- **Claude** — SKIPPED (claude.ai login required). Blind spot.
+
+Tally normalized to **/20 cells run** (not /40). Wk1–Wk3 baselines used 4 platforms = /40; Wk4+ uses 2 platforms = /20 until Peng auth-cookie pipeline lands.
+
+### Q1: how do I test my MCP server  *(Inspector lane)*
+
+| Platform   | Cited? | Top source                                   |
+|------------|--------|----------------------------------------------|
+| ChatGPT    |  SKIP  | (no auth — blind spot)                       |
+| Claude     |  SKIP  | (no auth — blind spot)                       |
+| Perplexity |   N    | https://modelcontextprotocol.io/docs/tools/inspector |
+| Gemini     |   N    | https://modelcontextprotocol.io/docs/tools/inspector |
+
+### Q2: MCP server validation tool  *(Inspector lane)*
+
+| Platform   | Cited? | Top source                                   |
+|------------|--------|----------------------------------------------|
+| ChatGPT    |  SKIP  | (no auth — blind spot)                       |
+| Claude     |  SKIP  | (no auth — blind spot)                       |
+| Perplexity |   N    | https://modelcontextprotocol.io/docs/tools/inspector (mentions mcp-validator / mcp-validation inline; mcp-probe absent) |
+| Gemini     |   N    | https://modelcontextprotocol.io/docs/tools/inspector (Janix-ai/mcp-validator + RHEcosystemAppEng/mcp-validation cited inline) |
+
+### Q3: MCP schema validator  *(Inspector lane)*
+
+| Platform   | Cited? | Top source                                   |
+|------------|--------|----------------------------------------------|
+| ChatGPT    |  SKIP  | (no auth — blind spot)                       |
+| Claude     |  SKIP  | (no auth — blind spot)                       |
+| Perplexity |   N    | https://jsontech.net/mcp-tool-schema-validator (NEW competitor — browser-based MCP schema validator) |
+| Gemini     |   N    | https://modelcontextprotocol.io/specification/2025-11-25/basic |
+
+### Q4: tool to check MCP server health  *(Inspector lane)*
+
+| Platform   | Cited? | Top source                                   |
+|------------|--------|----------------------------------------------|
+| ChatGPT    |  SKIP  | (no auth — blind spot)                       |
+| Claude     |  SKIP  | (no auth — blind spot)                       |
+| Perplexity |   N    | https://dev.to/rumblingb/mcp-health-monitor-free-tool-to-check-if-your-mcp-servers-are-actually-running-3jih (NEW — dev.to article anchoring this lane) |
+| Gemini     |   N    | https://modelcontextprotocol.io/docs/tools/inspector (**mcp-doctor** cited by name + mcpmarket.com listing — `@stephenywilson/mcp-doctor` claiming install-time security lane as predicted) |
+
+### Q5: best practices for MCP server schemas  *(Inspector lane)*
+
+| Platform   | Cited? | Top source                                   |
+|------------|--------|----------------------------------------------|
+| ChatGPT    |  SKIP  | (no auth — blind spot)                       |
+| Claude     |  SKIP  | (no auth — blind spot)                       |
+| Perplexity |   N    | https://www.youtube.com/watch?v=W56H9W7x-ao (same YT video as Wk2 — lane stable) |
+| Gemini     |   N    | https://www.philschmid.de/mcp-best-practices (NEW heavy anchor — philschmid.de cited 6× inline; lane consolidating to one author) |
+
+### Q6: MCP server CI pipeline  *(GREENFIELD — mcp-probe lane)*
+
+| Platform   | Cited? | Top source                                   |
+|------------|--------|----------------------------------------------|
+| ChatGPT    |  SKIP  | (no auth — blind spot)                       |
+| Claude     |  SKIP  | (no auth — blind spot)                       |
+| Perplexity |   N    | https://bleevht.substack.com/p/integrating-mcp-servers-into-your (same as Wk2 — lane stable, no incumbent breakout) |
+| Gemini     |   N    | https://circleci.com/docs/guides/toolkit/using-the-circleci-mcp-server/ (**query reinterpreted** — "MCP server for CI", not "CI for testing MCP server"; CircleCI/GitLab/Harness platform MCP servers eating the SERP) |
+
+### Q7: what does missing description on MCP tool do  *(GREENFIELD — mcp-probe lane)*
+
+| Platform   | Cited? | Top source                                   |
+|------------|--------|----------------------------------------------|
+| ChatGPT    |  SKIP  | (no auth — blind spot)                       |
+| Claude     |  SKIP  | (no auth — blind spot)                       |
+| Perplexity |   N    | https://forum.cursor.com/t/allmcptool-schema-missing-arguments-field-causes-agents-to-call-mcp-tools-without-required-params/154996 (community forum thread — no specific tool cited; lane STILL OPEN) |
+| Gemini     |   N    | https://modelcontextprotocol.io/specification/draft/server/tools (spec + GitHub bug-report threads — no tool cited; lane STILL OPEN) |
+
+### Q8: Anthropic MCP server diagnostic  *(Inspector lane)*
+
+| Platform   | Cited? | Top source                                   |
+|------------|--------|----------------------------------------------|
+| ChatGPT    |  SKIP  | (no auth — blind spot)                       |
+| Claude     |  SKIP  | (no auth — blind spot)                       |
+| Perplexity |   N    | https://modelcontextprotocol.io/docs/tools/inspector (Snyk article cited inline — Snyk strengthening Inspector lane) |
+| Gemini     |   N    | https://modelcontextprotocol.io/docs/tools/inspector (anthropic.com/engineering/desktop-extensions also cited — Anthropic owns this lane decisively) |
+
+### Q9: how to debug MCP tool calls  *(GREENFIELD — mcp-probe lane)*
+
+| Platform   | Cited? | Top source                                   |
+|------------|--------|----------------------------------------------|
+| ChatGPT    |  SKIP  | (no auth — blind spot)                       |
+| Claude     |  SKIP  | (no auth — blind spot)                       |
+| Perplexity |   N    | modelcontextprotocol + fast.io (inline cites, link panel collapsed) — generic JSON-RPC tracing framing |
+| Gemini     |   N    | https://snyk.io/articles/how-to-debug-mcp-server-with-anthropic-inspector/ (**Snyk now anchoring this lane** — security-vendor content overtaking Inspector docs as top source) |
+
+### Q10: MCP server pre-publish checklist  *(GREENFIELD — mcp-probe HEADLINE lane)*
+
+| Platform   | Cited? | Top source                                   |
+|------------|--------|----------------------------------------------|
+| ChatGPT    |  SKIP  | (no auth — blind spot)                       |
+| Claude     |  SKIP  | (no auth — blind spot)                       |
+| Perplexity |   N    | https://modelcontextprotocol.info/tools/registry/publishing/ (LinkedIn post "mcp-audit-checklist" cited 5× inline by subham-kundu — **NEW Wk4 competitor: a LinkedIn checklist post is the top-of-mind reference**) |
+| Gemini     |   N    | https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/2682 + https://claude.com/docs/connectors/building/review-criteria (**Claude.ai Software Directory review criteria now anchors lane — Anthropic's own published checklist eating mcp-probe's exact positioning**) |
+
+### Tally — 2026-05-25 (post-v1.1.0 first measurement, 2 platforms run, 2 blind spots)
+
+- **Total cited: 0 / 20** (Perplexity 0/10, Gemini 0/10)
+- "publishability" keyword in any response: **0 / 20** — the v1.1.0 differentiator term has not entered the LLM corpus yet (expected; ship was 3 days ago, well inside the indexing latency window)
+- Greenfield cited (Q6, Q7, Q9, Q10): **0 / 8** — no flips
+- Inspector-lane cited (Q1–Q5, Q8): **0 / 12** — no flips
+- Δ vs Wk3 baseline (0/40 → normalize to /20: 0/20): **+0 cells flipped**
+- Δ vs 2026-05-22 Q7 sub-sweep at top of file (lane lock-in measurement): no change — Q7 still 0/2 on Perplexity+Gemini
+- Greenfield lanes status: **all 4 lanes still open** — no competitor has consolidated Q7/Q9/Q10 to a single tool; only Q6 has drifted (toward platform MCP servers on Gemini)
+
+### Strategic findings
+
+**Most actionable finding:** Q10 has acquired a NEW credible anchor on Gemini in the 7 days since Wk3 — **claude.com/docs/connectors/building/review-criteria** (Anthropic's own MCP connector review criteria for Claude.ai Software Directory). This is Anthropic publishing the exact "is my server publishable?" content mcp-probe v1.1.0 is built around. If Anthropic's first-party review checklist is now an LLM-cited source for the pre-publish query, the lane window is narrowing — content needs to ship in the next 2 weeks or the lane locks to claude.com/docs.
+
+**Top-source consolidation patterns (Wk4):**
+1. **`modelcontextprotocol.io/docs/tools/inspector`** — still top source for Q1, Q2, Q4 (Gemini), Q8 across both platforms. Inspector dominance is unshakeable.
+2. **`philschmid.de/mcp-best-practices`** — emerged as Q5 Gemini anchor (cited 6× inline in one response). Single-author lane lock for "best practices" content.
+3. **`snyk.io/articles/how-to-debug-mcp-server-with-anthropic-inspector`** — emerged as Q9 Gemini anchor. Security vendor content now competing with Inspector docs in debugging lane.
+4. **`claude.com/docs/connectors/building/review-criteria`** — NEW Q10 Gemini anchor. First-party Anthropic publishability content threat.
+5. **`@stephenywilson/mcp-doctor`** — cited by name in Q4 Gemini response + mcpmarket.com listing. Install-time security lane is now locked (predicted in `decision_security_suite_before_show_hn.md`).
+
+**Per-platform incumbency profile (revised for Wk4, 2 platforms only):**
+
+| Platform   | Citation behavior | Inspector named? | Greenfield Q6/Q7/Q9/Q10 winner |
+|---|---|---|---|
+| Perplexity | Names specific tools + 3rd-party blogs heavily | Yes (Q1, Q2, Q4, Q8) | Q6 bleevht.substack, Q7 cursor forum, Q9 collapsed, Q10 LinkedIn audit-checklist post |
+| Gemini     | Names specific tools + structured deep response | Yes (Q1, Q2, Q4, Q8) | Q6 CircleCI MCP, Q7 spec docs, Q9 Snyk article, Q10 Anthropic review-criteria + GH disc 2682 |
+
+**Blind spots (documented honestly):**
+- ChatGPT (10 cells) — historically the platform most likely to surface mcp-quality-gate / RHEcosystemAppEng / pypi mcp-schema-validator. Cannot verify whether v1.1.0 has reached ChatGPT's index. Resume `WK4-CHATGPT-AUTH` to backfill once auth pipeline lands.
+- Claude (10 cells) — historically the **highest-leverage platform for mcp-probe** because Claude composes generic answers without naming competitors. Greenfield lanes (Q6/Q7/Q9/Q10) were 100% open on Claude in Wk2. Cannot verify whether that's still true. Resume `WK4-CLAUDE-AUTH`.
+
+### Week-over-week tracking (normalized per total cells run)
+
+| Week | Date | Cells run | Cited | Rate | Notes |
+|---|---|---|---|---|---|
+| Wk1 baseline | 2026-05-03 | 40 | 0 | 0% | Pre-everything: no npm, no dev.to, no GitHub Discussions activity |
+| Wk2 sweep | 2026-05-10 | 40 | 0 | 0% | Post-v1.0.2 SEO refresh + 2× dev.to + 2 GH Discussions + awesome-mcp-devtools PR + Buffer thread |
+| Wk3 sweep | 2026-05-17 | 40 | 0 | 0% | Sweep showed Inspector lane fragmentation; PIVOTED scope to PUBLISHABILITY-SCORE (not security) |
+| **Wk4 sweep** | **2026-05-25** | **20** | **0** | **0%** | **Post-v1.1.0 ship Fri 5/22 (T+3 days). Publishability composite shipped. Anthropic published competing first-party Q10 anchor.** |
+
+**Caveat on /20 vs /40 comparison:** the /20 measurement could be artificially better OR worse than /40 — Perplexity + Gemini AI Mode are the most aggressive at naming specific 3rd-party tools, so absent ChatGPT + Claude (where Wk2 showed Claude was 100% open on greenfield) we may be measuring the harder-to-flip platforms only. The 0/20 floor is honest; it does not refute the possibility that Claude has flipped Q7/Q9/Q10.
+
+### Decision: keep amplification ON
+
+- T+3 days is well inside indexing latency. No flip was expected at Wk4; the measurement establishes the post-v1.1.0 /20 baseline.
+- Greenfield lanes Q7/Q9/Q10 still open on both run platforms (no competitor consolidation). Window remains.
+- **NEW WK5 PRIORITY:** Q10 Gemini lane lock risk from claude.com/docs/connectors/building/review-criteria — needs a published artifact (dev.to / blog post / Show HN) explicitly framing "publishability score" before Anthropic's first-party content compounds in citation weight.
+- Re-measure Sun 2026-06-01 15:00 TPE (Wk5). Watch Q7 + Q10 specifically. If still 0/8 on greenfield at Wk5, escalate to dedicated dev.to article per lane.
+
+### Resume keywords
+
+- `WK4-CHATGPT-AUTH` / `WK4-CLAUDE-AUTH` — backfill the 2 blind-spot platforms once auth pipeline lands.
+- `WK5-Q10-ARTIFACT` — ship a "publishability score" framing article before Anthropic review-criteria compounds.
+- Wk5 full sweep schedule: **Sun 2026-06-01 15:00 TPE**.
+
