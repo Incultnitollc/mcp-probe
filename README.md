@@ -217,7 +217,7 @@ Gate your PRs on a publishability composite:
 
 More examples: [`examples/basic.yml`](examples/basic.yml) · [`examples/publishability-gate.yml`](examples/publishability-gate.yml) · [`examples/matrix.yml`](examples/matrix.yml).
 
-Marketplace listing: [github.com/marketplace/actions/mcp-probe](https://github.com/marketplace/actions/mcp-probe).
+Marketplace listing: [github.com/marketplace/actions/mcp-probe-mcp-server-health-check](https://github.com/marketplace/actions/mcp-probe-mcp-server-health-check).
 
 ## Compared to MCP Inspector
 
