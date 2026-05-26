@@ -1,0 +1,33 @@
+SERVER: @modelcontextprotocol/server-postgres@0.6.2  (deprecated on npm)
+SCORED: 2026-05-26 (TPE) with @incultnitollc/mcp-probe@1.1.0
+RESULT: BLOCKED — no publishability composite produced
+
+Command:
+  node dist/cli.js score "npx -y @modelcontextprotocol/server-postgres postgresql://test:test@localhost:5432/test" --full
+
+Raw output:
+  - Connecting to MCP server...
+  ✔ Connected to MCP server
+  - Listing tools...
+  ✔ Found 1 tools
+  - Listing resources...
+  ✖ Failed to inspect MCP server
+  Error: MCP error -32603
+
+Root cause:
+  The server advertises a `resources` capability and unconditionally tries to enumerate
+  database tables when `resources/list` is called. Without a reachable Postgres database,
+  the underlying pg query throws and is surfaced as JSON-RPC error -32603 — which mcp-probe
+  treats as a fatal inspection failure (src/client.ts:125 listResources call inside the
+  Phase-1 protocol walk).
+
+Follow-up (mcp-probe side, v1.1.1 candidate):
+  Add graceful fallback when listResources / listPrompts throws — capture the error in
+  result.complianceIssues (as a server-side warning) and continue with publishability
+  scoring. tools/list already succeeded (1 tool); the publishability suite should still
+  be able to score that one tool's schema.
+
+Follow-up (Postgres scorecard):
+  Re-score under one of:
+    (a) Live Postgres (Docker / Supabase / Render free tier) so resources/list resolves.
+    (b) After mcp-probe v1.1.1 ships the graceful-degrade patch above.

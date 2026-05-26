@@ -1,10 +1,10 @@
 # Publishability scorecards — v1.1.0 launch baseline
 
-**Captured:** 2026-05-22 (TPE) with `@incultnitollc/mcp-probe@1.1.0` on `node dist/cli.js score "<server>" --full`.
+**Captured:** 2026-05-22 (TPE, 5-server baseline) + 2026-05-26 (Puppeteer addition) with `@incultnitollc/mcp-probe@1.1.0` on `node dist/cli.js score "<server>" --full`.
 
-## TL;DR — every official Anthropic MCP server scores 60/100
+## TL;DR — every official Anthropic MCP server scores 56–60/100
 
-**4 of 5 official Anthropic-shipped MCP servers cluster at exactly 60/100** under the v1.1.0 publishability rubric. The fifth (`server-filesystem`) lands at the same 60. The cap is fired by the same axis every time: **`description-five-axis`** — schema descriptions are too thin on per-tool axis density (purpose, mutation, side-effects, invariants, examples), so the composite hits the ≤60 publishability ceiling.
+**6 of 6 official Anthropic-shipped MCP servers cluster in the 56–60/100 band** under the v1.1.0 publishability rubric. The cap is fired by the same axis every time: **`description-five-axis`** — schema descriptions are too thin on per-tool axis density (purpose, mutation, side-effects, invariants, examples), so the composite hits the ≤60 publishability ceiling.
 
 This is the v1.1.0 value proposition surfaced empirically: **the bar Anthropic ships at is the bar most MCP servers will start from. mcp-probe shows authors exactly where the 40 points are.**
 
@@ -17,6 +17,7 @@ This is the v1.1.0 value proposition surfaced empirically: **the bar Anthropic s
 | `@modelcontextprotocol/server-everything` | **60** | Rough (C) | 100 | 94 | 20 | `description-five-axis` |
 | `@modelcontextprotocol/server-filesystem` | **60** | Rough (C) | 100 | 57 | 50 | `description-five-axis` |
 | `@modelcontextprotocol/server-github` (legacy) | **60** | Rough (C) | 100 | 26 | 50 | `description-five-axis` |
+| `@modelcontextprotocol/server-puppeteer` (deprecated) | **56** | Rough (C) | 100 | 50 | 20 | `description-five-axis` |
 
 All five protocol scores are 100/100 — these servers are protocol-correct. The 40-point gap is entirely about how the schemas read, not whether the wire format is right.
 
@@ -29,6 +30,7 @@ All five protocol scores are 100/100 — these servers are protocol-correct. The
 | everything | FAIL (13/13 below 3.0, global avg 0.55/5) | PASS | FAIL (13/13 silent) | FAIL (3/3 high-blast missing) |
 | filesystem | FAIL (14/14 below 3.0, global avg 0.88/5) | PASS | PASS (14/14 disclose) | FAIL (12/12 high-blast missing) |
 | github (legacy) | FAIL (26/26 below 3.0, global avg 0.44/5) | PASS | PASS (23/26 disclose) | FAIL (6/6 high-blast missing) |
+| puppeteer | FAIL (7/7 below 3.0, global avg 0.17/5) | PASS | FAIL (7/7 silent) | FAIL (1/1 high-blast missing) |
 
 **Two universals:** `enum-shape` passes everywhere (no prose-only enums in any official server), and `description-five-axis` fails everywhere. **One pattern:** every multi-tool server with mutating tools fails `anti-purpose-clause` — no official server tells a planner "do not use for X, prefer Y."
 
@@ -50,6 +52,7 @@ node dist/cli.js score "npx -y @modelcontextprotocol/server-<name>" --full
 - [`server-everything.txt`](server-everything.txt)
 - [`server-filesystem.txt`](server-filesystem.txt)
 - [`server-github.txt`](server-github.txt) — legacy `@modelcontextprotocol/server-github@2025.4.8`; superseded by `github/github-mcp-server` (Go).
+- [`server-puppeteer.txt`](server-puppeteer.txt) — deprecated `@modelcontextprotocol/server-puppeteer@2025.5.12`; still installed in the wild via Claude Desktop configs. Tool-call rows show 0/7 because Chrome wasn't pre-installed in the scoring env (`npx puppeteer browsers install chrome`); the publishability axes don't depend on tool calls so the 56/100 score is the schema-level number regardless.
 
 ## What about install-time security?
 

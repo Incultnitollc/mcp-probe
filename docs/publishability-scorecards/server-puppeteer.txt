@@ -1,0 +1,108 @@
+- Connecting to MCP server...
+[32m✔[39m Connected to MCP server
+- Listing tools...
+[32m✔[39m Found 7 tools
+- Listing resources...
+[32m✔[39m Found 1 resources
+- Validating tool schemas...
+[32m✔[39m All tool schemas valid
+- Checking MCP spec compliance...
+[32m✔[39m MCP spec compliance OK
+- Calling tools...
+[33m⚠[39m 0/7 tools callable
+- Reading resources...
+[32m✔[39m All 1 resources readable
+- Running publishability checks...
+[32m✔[39m Publishability checks complete
+
+═══════════════════════════════════════════
+  MCP Server Inspection Report
+  Server: example-servers/puppeteer
+═══════════════════════════════════════════
+
+Tools:
+  FAIL puppeteer_navigate — Navigate to a URL (3ms)
+       MCP error -32603: Could not find Chrome (ver. 131.0.6778.204). This can occur if either
+ 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or
+ 2. your cache path is incorrectly configured (which is: /Users/pengspirit/.cache/puppeteer).
+For (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration.
+       args sent: {"url":"https://example.com"}
+  FAIL puppeteer_screenshot — Take a screenshot of the current page or a specific element (2ms)
+       MCP error -32603: Could not find Chrome (ver. 131.0.6778.204). This can occur if either
+ 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or
+ 2. your cache path is incorrectly configured (which is: /Users/pengspirit/.cache/puppeteer).
+For (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration.
+       args sent: {"name":"test"}
+  FAIL puppeteer_click — Click an element on the page (1ms)
+       MCP error -32603: Could not find Chrome (ver. 131.0.6778.204). This can occur if either
+ 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or
+ 2. your cache path is incorrectly configured (which is: /Users/pengspirit/.cache/puppeteer).
+For (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration.
+       args sent: {"selector":"test"}
+  FAIL puppeteer_fill — Fill out an input field (1ms)
+       MCP error -32603: Could not find Chrome (ver. 131.0.6778.204). This can occur if either
+ 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or
+ 2. your cache path is incorrectly configured (which is: /Users/pengspirit/.cache/puppeteer).
+For (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration.
+       args sent: {"selector":"test","value":"test"}
+  FAIL puppeteer_select — Select an element on the page with Select tag (1ms)
+       MCP error -32603: Could not find Chrome (ver. 131.0.6778.204). This can occur if either
+ 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or
+ 2. your cache path is incorrectly configured (which is: /Users/pengspirit/.cache/puppeteer).
+For (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration.
+       args sent: {"selector":"test","value":"test"}
+  FAIL puppeteer_hover — Hover an element on the page (1ms)
+       MCP error -32603: Could not find Chrome (ver. 131.0.6778.204). This can occur if either
+ 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or
+ 2. your cache path is incorrectly configured (which is: /Users/pengspirit/.cache/puppeteer).
+For (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration.
+       args sent: {"selector":"test"}
+  FAIL puppeteer_evaluate — Execute JavaScript in the browser console (0ms)
+       MCP error -32603: Could not find Chrome (ver. 131.0.6778.204). This can occur if either
+ 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or
+ 2. your cache path is incorrectly configured (which is: /Users/pengspirit/.cache/puppeteer).
+For (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration.
+       args sent: {"script":"test"}
+
+Resources:
+  PASS console://logs (0ms)
+
+═══════════════════════════════════════════
+  Health Check Score
+═══════════════════════════════════════════
+
+  Tools callable:      0/7
+  Resources readable:  1/1
+  Prompts gettable:    N/A
+  Schema errors:       0
+  Schema warnings:     0
+  Compliance errors:   0
+  Compliance warnings: 0
+  Total time:          43389ms
+
+  SOME CHECKS FAILED
+
+
+  Publishability
+
+    FAIL  description-five-axis        Global avg 0.17/5 axes (fail <3.0). 7/7 tools below per-tool threshold.
+           → puppeteer_navigate: per-tool axes avg <3.0
+           → puppeteer_screenshot: per-tool axes avg <3.0
+           → puppeteer_click: per-tool axes avg <3.0
+           +4 more
+    PASS  enum-shape                   No prose-only enums detected.
+    FAIL  mutation-legibility          7/7 tools silent on mutating-vs-read (>40% fails).
+           → puppeteer_navigate: no name prefix, no description signal, no annotation
+           → puppeteer_screenshot: no name prefix, no description signal, no annotation
+           → puppeteer_click: no name prefix, no description signal, no annotation
+           +4 more
+    SKIP  distribution-metadata        Skipped — pass --package <path> to enable.
+    FAIL  anti-purpose-clause          1/1 high-blast tools missing "do not use for" / "prefer" clauses.
+           → puppeteer_navigate: high-blast tool without anti-purpose clause
+
+  Publishability score: 56 / 100  (Rough, C)
+    Protocol:           100 / 100
+    Edge cases:         50 / 100
+    Publishability:     20 / 100
+  Caps applied:
+    ≤60  description-five-axis: ≥50% of tools below per-tool axis threshold
