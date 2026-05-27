@@ -780,3 +780,55 @@ Tally normalized to **/20 cells run** (not /40). Wk1–Wk3 baselines used 4 plat
 - `WK5-Q10-ARTIFACT` — ship a "publishability score" framing article before Anthropic review-criteria compounds.
 - Wk5 full sweep schedule: **Sun 2026-06-01 15:00 TPE**.
 
+
+---
+
+## 2026-05-27 — Wk5 daily-presence fire (3 GH + 1 Twitter, scheduled)
+
+**Fired Tue 2026-05-27 ~09:55 TPE** via gh CLI + Buffer MCP (autonomous, user-authorized override of `feedback_manual_fire_external_posts.md` for this run).
+
+### GitHub-venue replies (3/4 fired)
+
+| # | Venue | Thread | Template | Probe? | Permalink |
+|---|---|---|---|---|---|
+| 1 | gh-issue | modelcontextprotocol/servers#3401 | D2 | Y | https://github.com/modelcontextprotocol/servers/issues/3401#issuecomment-4550568313 |
+| 2 | gh-discussion | modelcontextprotocol/modelcontextprotocol#2733 | D2 | Y | https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/2733#discussioncomment-17069684 |
+| 3 | gh-issue | anthropics/claude-code#47565 | D1 | N | https://github.com/anthropics/claude-code/issues/47565#issuecomment-4550568449 |
+| 4 | cursor-forum | forum.cursor.com/t/.../161459 | D2-adj | N | **NOT FIRED** — no Discourse auth; draft at `docs/launch/wk4-presence-2026-05-27/gh-replies/04-cursor-161459-list-changed-not-acted.md` |
+
+**Fired probe-mention ratio:** 2/3 = 67% (slightly over ≤50% ceiling — recalibrate Wk5 D2 with more probe-free replies).
+
+### Reddit (0/2 fired — all blocked)
+
+| # | Venue | Thread | Template | Probe? | Status |
+|---|---|---|---|---|---|
+| 5 | reddit-r-mcp | r/mcp/1tmwzoj "How can i improve the use of tools?" | R2 | Y | **DRAFT ONLY** — `feedback_reddit_velocity` blocker (u/incultnito karma) |
+| 6 | reddit-r-ClaudeAI | r/ClaudeAI/1tn6cey "MCP stack on 2 axes" | R1-adapted | Y | **DRAFT ONLY** — same blocker |
+
+### Twitter (1 fire — Puppeteer scorecard amplify)
+
+| # | Venue | Surface | Status |
+|---|---|---|---|
+| 7 | twitter | 4-tweet thread @Incultnito via Buffer | **QUEUED** — Buffer post id `6a164f29aa612799d203b88a`, dueAt 2026-05-27T01:58Z (≈09:58 TPE). Tweets 2+3 compressed to fit 280-char limit; content equivalent. |
+
+### Own-repo Q&A seeded earlier this session
+
+5 Discussions LIVE on `Incultnitollc/mcp-probe` — Perplexity-friendly Q&A surface for greenfield lanes:
+
+- #15 https://github.com/Incultnitollc/mcp-probe/discussions/15 — Q6 CI pipeline
+- #16 https://github.com/Incultnitollc/mcp-probe/discussions/16 — Q7 missing description
+- #17 https://github.com/Incultnitollc/mcp-probe/discussions/17 — Q9 debug tool calls
+- #18 https://github.com/Incultnitollc/mcp-probe/discussions/18 — Q10 pre-publish checklist
+- #19 https://github.com/Incultnitollc/mcp-probe/discussions/19 — synthesis (publishability scorecard 5-axis)
+
+### Outstanding pre-Wk5-sweep manual fires (Peng action)
+
+- Cursor forum #161459 reply
+- r/mcp `1tmwzoj` reply
+- r/ClaudeAI `1tn6cey` reply
+- r/mcp Puppeteer cross-post (`1to5c9c` or `1tle6gl`)
+- dev.to Puppeteer blog (incultnitollc acct, manual paste)
+
+### Resume keyword
+
+`WK4-PRESENCE` — drafts under `docs/launch/wk4-presence-2026-05-27/` and `docs/launch/scorecards-puppeteer/`.
