@@ -1,0 +1,216 @@
+- generic [ref=e1]:
+  - generic [ref=e5]:
+    - navigation "Main" [ref=e7]:
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - link "Perplexity" [ref=e11] [cursor=pointer]:
+            - /url: /
+            - img "Perplexity" [ref=e14]
+          - button "Collapse sidebar" [ref=e17] [cursor=pointer]:
+            - img [ref=e18]
+        - generic [ref=e23]:
+          - generic [ref=e26]:
+            - link "New" [ref=e27] [cursor=pointer]:
+              - /url: /
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - img
+                - generic:
+                  - generic:
+                    - generic: New
+                  - generic: ⌘K
+          - generic [ref=e30]:
+            - link "Computer" [ref=e31] [cursor=pointer]:
+              - /url: /computer/tasks
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Computer":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Computer
+          - generic [ref=e35]:
+            - link "Spaces" [ref=e36] [cursor=pointer]:
+              - /url: /spaces
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Spaces":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Spaces
+          - generic [ref=e40]:
+            - link "Artifacts" [ref=e41] [cursor=pointer]:
+              - /url: /computer/artifacts
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Artifacts":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Artifacts
+          - generic [ref=e45]:
+            - link "Customize" [ref=e46] [cursor=pointer]:
+              - /url: /computer/connectors
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Customize":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Customize
+          - generic [ref=e48]:
+            - generic [ref=e50]:
+              - link "History" [ref=e51] [cursor=pointer]:
+                - /url: /library
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - button "Collapse History" [expanded]:
+                        - generic:
+                          - img
+                    - generic:
+                      - img
+                  - generic:
+                    - generic:
+                      - generic: History
+            - generic [ref=e54]:
+              - link "what does missing description on MCP tool do" [ref=e55] [cursor=pointer]:
+                - /url: /search/4bed57e6-b78b-4a40-b85e-d472e511f630
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: what does missing description on MCP tool do
+                  - button "Thread actions" [ref=e59] [cursor=pointer]:
+                    - img [ref=e62]
+        - button "Sign In" [ref=e73] [cursor=pointer]:
+          - generic [ref=e74]:
+            - generic [ref=e76]:
+              - img [ref=e79]
+              - generic [ref=e82]: Sign In
+            - generic:
+              - img
+    - main [ref=e84]:
+      - generic [ref=e87]:
+        - generic:
+          - generic:
+            - tablist "Answer mode tabs" [ref=e89]:
+              - tab "Answer" [selected] [ref=e90] [cursor=pointer]:
+                - img [ref=e91]
+                - text: Answer
+              - tab "Links" [ref=e93] [cursor=pointer]:
+                - img [ref=e94]
+                - text: Links
+              - tab "Images" [ref=e96] [cursor=pointer]:
+                - img [ref=e97]
+                - text: Images
+            - generic [ref=e99]:
+              - button "Share" [ref=e101] [cursor=pointer]:
+                - img [ref=e103]
+                - generic [ref=e105]: Share
+              - button "Download Comet" [ref=e108] [cursor=pointer]:
+                - img [ref=e110]
+                - generic [ref=e112]: Download Comet
+        - generic [ref=e115]:
+          - tabpanel "Answer" [ref=e125]:
+            - generic [ref=e126]:
+              - generic [ref=e131]:
+                - generic:
+                  - button "Edit query":
+                    - generic:
+                      - generic:
+                        - img
+                  - button "Copy query":
+                    - generic:
+                      - generic:
+                        - img
+                - heading "what does missing description on MCP tool do" [level=1] [ref=e137]:
+                  - generic [ref=e139]: what does missing description on MCP tool do
+              - generic [ref=e148]: Thinking
+          - generic [ref=e162]:
+            - generic [ref=e164]:
+              - textbox [active] [ref=e165]:
+                - paragraph [ref=e166]
+              - generic: Ask a follow-up
+            - generic [ref=e168]:
+              - button "Add files or tools" [ref=e169] [cursor=pointer]:
+                - img [ref=e172]
+              - button "Search" [pressed] [ref=e178] [cursor=pointer]:
+                - img [ref=e180]
+                - generic [ref=e182]:
+                  - text: Search
+                  - img [ref=e183]
+            - generic [ref=e185]:
+              - button "Model" [ref=e187] [cursor=pointer]:
+                - generic [ref=e188]: Model
+                - img [ref=e190]
+              - button "Stop response (Esc)" [ref=e195] [cursor=pointer]:
+                - img [ref=e198]
+  - dialog [ref=e208]:
+    - generic [ref=e212]:
+      - generic [ref=e213]:
+        - generic [ref=e214]: Sign up below to unlock the full potential of Perplexity
+        - generic [ref=e215]:
+          - text: By continuing, you agree to our
+          - link "privacy policy" [ref=e216] [cursor=pointer]:
+            - /url: https://www.perplexity.com/hub/legal/privacy-policy
+          - text: .
+      - generic [ref=e217]:
+        - button "Back home" [ref=e219] [cursor=pointer]:
+          - img [ref=e221]
+          - generic [ref=e223]: Back home
+        - generic [ref=e225]:
+          - generic [ref=e226]:
+            - button "Continue with Google" [ref=e227] [cursor=pointer]:
+              - img [ref=e229]
+              - generic [ref=e231]: Continue with Google
+            - button "Continue with Apple" [ref=e233] [cursor=pointer]:
+              - img [ref=e235]
+              - generic [ref=e237]: Continue with Apple
+          - generic [ref=e240]:
+            - generic [ref=e242]:
+              - textbox "Enter your email" [ref=e247]
+              - generic [ref=e248]:
+                - button "Continue with email" [disabled]:
+                  - generic: Continue with email
+            - button "Single sign-on (SSO)" [ref=e250] [cursor=pointer]:
+              - generic [ref=e251]: Single sign-on (SSO)
+  - listbox "Typeahead menu"
+  - dialog "Cookie Policy" [ref=e253]:
+    - generic [ref=e254]:
+      - heading "Cookie Policy" [level=2] [ref=e255]
+      - paragraph [ref=e256]: We and our partners use cookies, pixels, SDKs, APIs, and server-to-server integrations. Perplexity does not use these technologies to sell third party ads on our services. Perplexity uses them to measure our ad performance on third party partner websites and to improve our services. If you continue using Perplexity, without adjusting your settings, you are consenting to these technologies.
+    - generic [ref=e257]:
+      - img [ref=e258]
+      - generic [ref=e260]: Cookie Policy
+    - generic [ref=e261]: We and our partners use cookies, pixels, SDKs, APIs, and server-to-server integrations. Perplexity does not use these technologies to sell third party ads on our services. Perplexity uses them to measure our ad performance on third party partner websites and to improve our services. If you continue using Perplexity, without adjusting your settings, you are consenting to these technologies.
+    - generic [ref=e262]:
+      - button "Decline optional" [ref=e263] [cursor=pointer]:
+        - generic [ref=e264]: Decline optional
+      - button "Got it" [ref=e266] [cursor=pointer]:
+        - generic [ref=e267]: Got it

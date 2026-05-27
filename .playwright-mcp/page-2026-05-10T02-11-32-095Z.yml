@@ -1,0 +1,354 @@
+- generic [ref=e1]:
+  - generic [ref=e5]:
+    - navigation "Main" [ref=e7]:
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - link "Perplexity" [ref=e11] [cursor=pointer]:
+            - /url: /
+            - img "Perplexity" [ref=e14]
+          - button "Collapse sidebar" [ref=e17] [cursor=pointer]:
+            - img [ref=e18]
+        - generic [ref=e21]:
+          - generic [ref=e24]:
+            - link "New" [ref=e25] [cursor=pointer]:
+              - /url: /
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - img
+                - generic:
+                  - generic:
+                    - generic: New
+                  - generic: ⌘K
+          - generic [ref=e28]:
+            - link "Computer" [ref=e29] [cursor=pointer]:
+              - /url: /computer/tasks
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Computer":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Computer
+          - generic [ref=e33]:
+            - link "Spaces" [ref=e34] [cursor=pointer]:
+              - /url: /spaces
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Spaces":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Spaces
+          - generic [ref=e38]:
+            - link "Artifacts" [ref=e39] [cursor=pointer]:
+              - /url: /computer/artifacts
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Artifacts":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Artifacts
+          - generic [ref=e43]:
+            - link "Customize" [ref=e44] [cursor=pointer]:
+              - /url: /computer/connectors
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Customize":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Customize
+          - generic [ref=e46]:
+            - generic [ref=e48]:
+              - link "History" [ref=e49] [cursor=pointer]:
+                - /url: /library
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - button "Collapse History" [expanded]:
+                        - generic:
+                          - img
+                    - generic:
+                      - img
+                  - generic:
+                    - generic:
+                      - generic: History
+            - generic [ref=e52]:
+              - link "MCP server pre-publish checklist" [ref=e53] [cursor=pointer]:
+                - /url: /search/mcp-server-pre-publish-checkli-FB_W6mcYTXacmVGYPSaSmA
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: MCP server pre-publish checklist
+                  - button "Thread actions" [ref=e57] [cursor=pointer]:
+                    - img [ref=e60]
+        - button "Sign In" [ref=e74] [cursor=pointer]:
+          - generic [ref=e75]:
+            - generic [ref=e77]:
+              - img [ref=e80]
+              - generic [ref=e83]: Sign In
+            - generic:
+              - img
+    - main [ref=e85]:
+      - generic [ref=e88]:
+        - generic:
+          - generic:
+            - tablist "Answer mode tabs" [ref=e90]:
+              - tab "Answer" [selected] [ref=e91] [cursor=pointer]:
+                - img [ref=e92]
+                - text: Answer
+              - tab "Links" [ref=e94] [cursor=pointer]:
+                - img [ref=e95]
+                - text: Links
+              - tab "Images" [ref=e97] [cursor=pointer]:
+                - img [ref=e98]
+                - text: Images
+            - generic [ref=e100]:
+              - button "Thread actions" [ref=e102] [cursor=pointer]:
+                - img [ref=e105]
+              - button "Share" [ref=e110] [cursor=pointer]:
+                - img [ref=e112]
+                - generic [ref=e114]: Share
+              - button "Download Comet" [ref=e117] [cursor=pointer]:
+                - img [ref=e119]
+                - generic [ref=e121]: Download Comet
+        - generic [ref=e124]:
+          - tabpanel "Answer" [ref=e134]:
+            - generic [ref=e135]:
+              - generic [ref=e140]:
+                - generic:
+                  - button "Edit query":
+                    - generic:
+                      - generic:
+                        - img
+                  - button "Copy query":
+                    - generic:
+                      - generic:
+                        - img
+                - heading "MCP server pre-publish checklist" [level=1] [ref=e146]:
+                  - generic [ref=e148]: MCP server pre-publish checklist
+              - generic [ref=e149]:
+                - generic [ref=e157]:
+                  - paragraph [ref=e158]:
+                    - text: MCP (Model Context Protocol) servers enable AI agents to access tools and data securely. A pre-publish checklist ensures your server is secure, reliable, and ready for the MCP registry or production use.
+                    - generic [ref=e163] [cursor=pointer]:
+                      - generic [ref=e164]: zealynx
+                      - generic [ref=e165]: "+1"
+                  - heading "Security Essentials" [level=2] [ref=e166]
+                  - paragraph [ref=e167]:
+                    - text: Run these critical checks first to prevent exploits like path traversal (82% of servers vulnerable) or command injection.
+                    - 'generic "MCP Security Guide: 24 Checks for AI Agents & MCP Servers" [ref=e169]':
+                      - link "zealynx" [ref=e171] [cursor=pointer]:
+                        - /url: https://www.zealynx.io/blogs/mcp-security-checklist
+                        - generic [ref=e174]: zealynx
+                  - list [ref=e175]:
+                    - listitem [ref=e176]:
+                      - paragraph [ref=e177]:
+                        - text: Validate tool arguments against boundaries; block
+                        - code [ref=e178]: ../
+                        - text: traversal in file paths.
+                    - listitem [ref=e179]:
+                      - paragraph [ref=e180]: Sanitize CLI parameters and disable risky git hooks/aliases.
+                    - listitem [ref=e181]:
+                      - paragraph [ref=e182]: Restrict writes to designated directories only.
+                    - listitem [ref=e183]:
+                      - paragraph [ref=e184]: Test for prompt injection in tool outputs and sanitize responses.
+                  - heading "Source and Config Audit" [level=2] [ref=e185]
+                  - paragraph [ref=e186]:
+                    - text: Verify trustworthiness before publishing.
+                    - generic "MCP Server Pre-Deployment Checklist for Enterprise Clients" [ref=e188]:
+                      - link "linkedin" [ref=e190] [cursor=pointer]:
+                        - /url: https://www.linkedin.com/posts/subham-kundu-2746b515b_mcp-audit-checklist-activity-7456312288095051776-Qsga
+                        - generic [ref=e193]: linkedin
+                  - list [ref=e194]:
+                    - listitem [ref=e195]:
+                      - paragraph [ref=e196]:
+                        - text: Confirm repo has 50+ stars and commits within 30 days via
+                        - code [ref=e197]: gh repo view
+                        - text: .
+                    - listitem [ref=e198]:
+                      - paragraph [ref=e199]:
+                        - text: Review
+                        - code [ref=e200]: mcp.json
+                        - text: ": No"
+                        - code [ref=e201]: "--dangerous-*"
+                        - text: flags enabled.
+                    - listitem [ref=e202]:
+                      - paragraph [ref=e203]: Pin to specific version (not "latest"); match SHA256 checksums.
+                    - listitem [ref=e204]:
+                      - paragraph [ref=e205]: Scan recent commits (10-20) for suspicious code, network calls, or obfuscation.
+                  - heading "Deployment Gates" [level=2] [ref=e206]
+                  - paragraph [ref=e207]:
+                    - text: Perform these before final publish or deployment.
+                    - 'generic "MCP Security Guide: 24 Checks for AI Agents & MCP Servers" [ref=e209]':
+                      - link "zealynx" [ref=e211] [cursor=pointer]:
+                        - /url: https://www.zealynx.io/blogs/mcp-security-checklist
+                        - generic [ref=e214]: zealynx
+                  - list [ref=e215]:
+                    - listitem [ref=e216]:
+                      - paragraph [ref=e217]: OWASP Agentic Top 10 assessment plus LLM integration tests.
+                    - listitem [ref=e218]:
+                      - paragraph [ref=e219]: Audit multi-server combos (e.g., Git + Filesystem) for chaining risks.
+                    - listitem [ref=e220]:
+                      - paragraph [ref=e221]: Set minimal privileges; enable audit logging and rate limits.
+                    - listitem [ref=e222]:
+                      - paragraph [ref=e223]: Penetration test and document incident response.
+                  - heading "Publishing Steps" [level=2] [ref=e224]
+                  - paragraph [ref=e225]:
+                    - text: Follow official guidelines for registry submission.
+                    - generic "Publish Your MCP Server" [ref=e227]:
+                      - link "modelcontextprotocol" [ref=e229] [cursor=pointer]:
+                        - /url: https://modelcontextprotocol.info/tools/registry/publishing/
+                        - generic [ref=e232]: modelcontextprotocol
+                    - text: Package via SDK (PyPI/NPM/NuGet), test locally, then submit with verified metadata. Use minimal permissions and clear docs on capabilities.
+                    - generic "Build an MCP server - Model Context Protocol" [ref=e234]:
+                      - link "modelcontextprotocol" [ref=e236] [cursor=pointer]:
+                        - /url: https://modelcontextprotocol.io/docs/develop/build-server
+                        - generic [ref=e239]: modelcontextprotocol
+                    - generic "How to Build and Publish an MCP Server - A Detailed Guide" [ref=e241]:
+                      - link "youtube" [ref=e243] [cursor=pointer]:
+                        - /url: https://www.youtube.com/watch?v=CiArUs_2jm4
+                        - generic [ref=e245]:
+                          - img [ref=e247]
+                          - generic [ref=e249]: youtube
+                - generic [ref=e250]:
+                  - generic [ref=e251]:
+                    - button "Share" [ref=e252] [cursor=pointer]:
+                      - img [ref=e255]
+                    - button "Download" [ref=e258] [cursor=pointer]:
+                      - img [ref=e261]
+                    - button "Copy" [ref=e264] [cursor=pointer]:
+                      - img [ref=e267]
+                    - button "Rewrite Thread" [ref=e270] [cursor=pointer]:
+                      - img [ref=e273]
+                    - button "10 sources" [ref=e277] [cursor=pointer]:
+                      - generic [ref=e279]:
+                        - img [ref=e280]
+                        - img [ref=e281]
+                        - generic [ref=e283]:
+                          - img [ref=e286]
+                          - img [ref=e290]
+                          - img [ref=e294]
+                        - text: 10 sources
+                  - generic [ref=e297]:
+                    - generic [ref=e299]:
+                      - button "Helpful" [ref=e300] [cursor=pointer]:
+                        - img [ref=e303]
+                      - button "Not helpful" [ref=e306] [cursor=pointer]:
+                        - img [ref=e309]
+                    - button "More actions" [ref=e313] [cursor=pointer]:
+                      - img [ref=e316]
+                - generic [ref=e320]:
+                  - generic [ref=e325]: Follow-ups
+                  - generic [ref=e326]:
+                    - button "What are common MCP server publishing mistakes to avoid" [ref=e327] [cursor=pointer]:
+                      - img [ref=e329]
+                      - generic [ref=e332]: What are common MCP server publishing mistakes to avoid
+                    - button "How to publish MCP server to the official registry" [ref=e333] [cursor=pointer]:
+                      - img [ref=e335]
+                      - generic [ref=e338]: How to publish MCP server to the official registry
+                    - button "MCP server security checklist for enterprise deployment" [ref=e339] [cursor=pointer]:
+                      - img [ref=e341]
+                      - generic [ref=e344]: MCP server security checklist for enterprise deployment
+                    - button "NET MCP server template packaging and NuGet publish steps" [ref=e345] [cursor=pointer]:
+                      - img [ref=e347]
+                      - generic [ref=e350]: NET MCP server template packaging and NuGet publish steps
+                    - button "Real-world examples of MCP server breaches and fixes" [ref=e351] [cursor=pointer]:
+                      - img [ref=e353]
+                      - generic [ref=e356]: Real-world examples of MCP server breaches and fixes
+          - generic [ref=e368]:
+            - generic [ref=e370]:
+              - textbox [ref=e371]:
+                - paragraph [ref=e372]
+              - generic:
+                - generic: Ask a follow-up
+            - generic [ref=e374]:
+              - button "Add files or tools" [ref=e375] [cursor=pointer]:
+                - img [ref=e378]
+              - button "Search" [pressed] [ref=e385] [cursor=pointer]:
+                - img [ref=e387]
+                - generic [ref=e389]:
+                  - text: Search
+                  - img [ref=e390]
+            - generic [ref=e392]:
+              - button "Model" [ref=e394] [cursor=pointer]:
+                - generic [ref=e395]: Model
+                - img [ref=e397]
+              - button "Dictation" [ref=e401] [cursor=pointer]:
+                - img [ref=e404]
+              - button "Submit" [disabled]:
+                - generic:
+                  - generic:
+                    - img
+  - dialog "Cookie Policy" [ref=e409]:
+    - generic [ref=e410]:
+      - heading "Cookie Policy" [level=2] [ref=e411]
+      - paragraph [ref=e412]: This website uses third party cookies to serve you relevant ads and provide personalization.
+    - generic [ref=e413]:
+      - img [ref=e414]
+      - generic [ref=e416]: Cookie Policy
+    - generic [ref=e417]:
+      - text: This website uses third party cookies to serve you relevant ads and provide personalization by remembering your location. You may opt out from these cookies by selecting the "Opt out" button below. If you have a Perplexity account, you may opt out of the "sale" or "sharing" of your data
+      - link "here" [ref=e418] [cursor=pointer]:
+        - /url: https://www.perplexity.ai/hub/legal/privacy-policy
+      - text: .
+    - generic [ref=e419]:
+      - button "Opt out" [ref=e420] [cursor=pointer]:
+        - generic [ref=e421]: Opt out
+      - button "Got it" [ref=e423] [cursor=pointer]:
+        - generic [ref=e424]: Got it
+  - dialog [ref=e431]:
+    - generic [ref=e435]:
+      - generic [ref=e436]:
+        - generic [ref=e437]: Sign up below to unlock the full potential of Perplexity
+        - generic [ref=e438]:
+          - text: By continuing, you agree to our
+          - link "privacy policy" [ref=e439] [cursor=pointer]:
+            - /url: https://www.perplexity.com/hub/legal/privacy-policy
+          - text: .
+      - generic [ref=e440]:
+        - button "Back home" [ref=e442] [cursor=pointer]:
+          - img [ref=e444]
+          - generic [ref=e446]: Back home
+        - generic [ref=e448]:
+          - generic [ref=e449]:
+            - button "Continue with Google" [ref=e450] [cursor=pointer]:
+              - img [ref=e452]
+              - generic [ref=e454]: Continue with Google
+            - button "Continue with Apple" [ref=e456] [cursor=pointer]:
+              - img [ref=e458]
+              - generic [ref=e460]: Continue with Apple
+          - generic [ref=e463]:
+            - generic [ref=e465]:
+              - textbox "Enter your email" [active] [ref=e470]
+              - generic [ref=e471]:
+                - button "Continue with email" [disabled]:
+                  - generic: Continue with email
+            - button "Single sign-on (SSO)" [ref=e473] [cursor=pointer]:
+              - generic [ref=e474]: Single sign-on (SSO)

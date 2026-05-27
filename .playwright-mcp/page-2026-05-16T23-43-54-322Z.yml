@@ -1,0 +1,746 @@
+- generic [ref=e1]:
+  - link "Skip to content" [ref=e3] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e7]:
+    - generic [ref=e9]:
+      - navigation "Sidebar":
+        - generic:
+          - generic:
+            - generic:
+              - button "Open sidebar":
+                - img
+        - generic:
+          - generic:
+            - link "New chat":
+              - /url: /
+              - generic:
+                - img
+              - generic: New chat
+          - generic:
+            - generic:
+              - generic:
+                - img
+              - generic: Search chats
+          - generic:
+            - link "Images":
+              - /url: /images
+              - generic:
+                - img
+              - generic: Images
+        - generic:
+          - generic:
+            - button "Open profile menu":
+              - generic:
+                - generic:
+                  - img
+      - generic [ref=e10]:
+        - heading "Chat history" [level=2] [ref=e11]
+        - navigation "Chat history" [ref=e13]:
+          - generic [ref=e16]:
+            - link "Home" [ref=e17] [cursor=pointer]:
+              - /url: /
+              - img [ref=e18]
+            - button "Close sidebar" [expanded] [ref=e21]:
+              - img [ref=e22]
+          - list [ref=e25]:
+            - listitem [ref=e26]:
+              - link "New chat Shift Command O" [ref=e154] [cursor=pointer]:
+                - /url: /
+                - generic [ref=e28]:
+                  - img [ref=e156]
+                  - generic [ref=e159]: New chat
+                - generic [ref=e160]:
+                  - generic "Shift" [ref=e161]:
+                    - generic [ref=e162]: ⇧
+                  - generic "Command" [ref=e163]:
+                    - generic [ref=e164]: ⌘
+                  - generic [ref=e166]: O
+            - listitem [ref=e33]:
+              - generic [ref=e34] [cursor=pointer]:
+                - generic [ref=e35]:
+                  - img [ref=e168]
+                  - generic [ref=e171]: Search chats
+                - generic [ref=e172]:
+                  - generic "Command" [ref=e173]:
+                    - generic [ref=e174]: ⌘
+                  - generic [ref=e176]: K
+          - link "Images" [ref=e40] [cursor=pointer]:
+            - /url: /images
+            - img [ref=e42]
+            - generic [ref=e45]: Images
+          - generic [ref=e46]:
+            - link "Apps" [ref=e47] [cursor=pointer]:
+              - /url: /apps
+              - img [ref=e49]
+              - generic [ref=e52]: Apps
+            - generic [ref=e53] [cursor=pointer]:
+              - img [ref=e55]
+              - generic [ref=e58]: Deep research
+          - generic [ref=e60]:
+            - link "See plans and pricing" [ref=e61] [cursor=pointer]:
+              - /url: https://openai.com/chatgpt/pricing/
+              - generic [ref=e62]:
+                - img [ref=e64]
+                - text: See plans and pricing
+              - img [ref=e67]
+            - generic [ref=e69] [cursor=pointer]:
+              - img [ref=e71]
+              - text: Settings
+            - generic [ref=e73] [cursor=pointer]:
+              - generic [ref=e74]:
+                - img [ref=e76]
+                - generic [ref=e79]: Help
+              - img [ref=e81]
+          - generic [ref=e83]:
+            - generic [ref=e84]:
+              - paragraph [ref=e85]: Get responses tailored to you
+              - paragraph [ref=e86]: Log in to get answers based on saved chats, plus create images and upload files.
+            - button "Log in" [ref=e88] [cursor=pointer]:
+              - generic [ref=e89]: Log in
+    - generic [ref=e91]:
+      - banner:
+        - button "Model selector" [ref=e93] [cursor=pointer]:
+          - generic [ref=e94]:
+            - generic [ref=e95]: ChatGPT
+            - img [ref=e96]
+        - generic [ref=e102]:
+          - button "Log in" [ref=e103] [cursor=pointer]:
+            - generic [ref=e105]: Log in
+          - button "Sign up for free" [ref=e106] [cursor=pointer]:
+            - generic [ref=e107]: Sign up for free
+      - main [ref=e108]:
+        - generic [ref=e109]:
+          - generic [ref=e178]:
+            - generic [ref=e181]:
+              - heading "You said:" [level=4] [ref=e182]
+              - generic [ref=e184]:
+                - generic [ref=e192]: MCP server pre-publish checklist
+                - generic [ref=e193]:
+                  - group "Your message actions":
+                    - button "Copy message":
+                      - generic:
+                        - img
+            - generic [ref=e197]:
+              - heading "ChatGPT said:" [level=4] [ref=e198]
+              - generic [ref=e200]:
+                - generic [ref=e204]:
+                  - paragraph [ref=e205]: Here’s a practical pre-publish checklist for an MCP server before you release it to the MCP Registry, npm/PyPI, Docker, or production users.
+                  - separator [ref=e206]
+                  - heading "MCP Server Pre-Publish Checklist" [level=1] [ref=e207]
+                  - heading "1. Core Functionality" [level=2] [ref=e208]
+                  - list [ref=e209]:
+                    - listitem [ref=e210]:
+                      - paragraph [ref=e211]:
+                        - checkbox [disabled] [ref=e212]
+                        - text: Server starts cleanly with no warnings/errors
+                    - listitem [ref=e213]:
+                      - paragraph [ref=e214]:
+                        - checkbox [disabled] [ref=e215]
+                        - text: All tools execute successfully
+                    - listitem [ref=e216]:
+                      - paragraph [ref=e217]:
+                        - checkbox [disabled] [ref=e218]
+                        - text: Resources/prompts load correctly
+                    - listitem [ref=e219]:
+                      - paragraph [ref=e220]:
+                        - checkbox [disabled] [ref=e221]
+                        - text: STDIO transport works
+                    - listitem [ref=e222]:
+                      - paragraph [ref=e223]:
+                        - checkbox [disabled] [ref=e224]
+                        - text: SSE or streamable HTTP transport works (if supported)
+                    - listitem [ref=e225]:
+                      - paragraph [ref=e226]:
+                        - checkbox [disabled] [ref=e227]
+                        - text: Graceful shutdown implemented
+                    - listitem [ref=e228]:
+                      - paragraph [ref=e229]:
+                        - checkbox [disabled] [ref=e230]
+                        - text: Timeouts handled properly
+                    - listitem [ref=e231]:
+                      - paragraph [ref=e232]:
+                        - checkbox [disabled] [ref=e233]
+                        - text: Invalid input returns structured errors
+                    - listitem [ref=e234]:
+                      - paragraph [ref=e235]:
+                        - checkbox [disabled] [ref=e236]
+                        - text: Empty/null edge cases tested
+                    - listitem [ref=e237]:
+                      - paragraph [ref=e238]:
+                        - checkbox [disabled] [ref=e239]
+                        - text: Large payload behavior tested
+                  - separator [ref=e240]
+                  - heading "2. MCP Protocol Compliance" [level=2] [ref=e241]
+                  - list [ref=e242]:
+                    - listitem [ref=e243]:
+                      - paragraph [ref=e244]:
+                        - checkbox [disabled] [ref=e245]
+                        - text: Implements latest MCP spec version you target
+                    - listitem [ref=e246]:
+                      - paragraph [ref=e247]:
+                        - checkbox [disabled] [ref=e248]
+                        - code [ref=e249]: initialize
+                        - text: handshake works correctly
+                    - listitem [ref=e250]:
+                      - paragraph [ref=e251]:
+                        - checkbox [disabled] [ref=e252]
+                        - text: Capabilities accurately declared
+                    - listitem [ref=e253]:
+                      - paragraph [ref=e254]:
+                        - checkbox [disabled] [ref=e255]
+                        - text: Tool schemas are valid JSON Schema
+                    - listitem [ref=e256]:
+                      - paragraph [ref=e257]:
+                        - checkbox [disabled] [ref=e258]
+                        - text: Tool descriptions are concise and accurate
+                    - listitem [ref=e259]:
+                      - paragraph [ref=e260]:
+                        - checkbox [disabled] [ref=e261]
+                        - text: Resource URIs are stable and deterministic
+                    - listitem [ref=e262]:
+                      - paragraph [ref=e263]:
+                        - checkbox [disabled] [ref=e264]
+                        - text: Prompt templates validated
+                    - listitem [ref=e265]:
+                      - paragraph [ref=e266]:
+                        - checkbox [disabled] [ref=e267]
+                        - text: Pagination/cursor behavior tested (if applicable)
+                    - listitem [ref=e268]:
+                      - paragraph [ref=e269]:
+                        - checkbox [disabled] [ref=e270]
+                        - text: Notifications/events behave correctly
+                    - listitem [ref=e271]:
+                      - paragraph [ref=e272]:
+                        - checkbox [disabled] [ref=e273]
+                        - text: Server metadata is complete
+                  - paragraph [ref=e274]: "Useful references:"
+                  - list [ref=e275]:
+                    - listitem [ref=e276]:
+                      - paragraph [ref=e277]:
+                        - link "Model Context Protocol Docs" [ref=e279] [cursor=pointer]:
+                          - /url: https://modelcontextprotocol.io?utm_source=chatgpt.com
+                          - text: Model Context Protocol Docs
+                          - img [ref=e281]
+                    - listitem [ref=e283]:
+                      - paragraph [ref=e284]:
+                        - link "MCP Registry Publishing Guide" [ref=e286] [cursor=pointer]:
+                          - /url: https://modelcontextprotocol.info/tools/registry/publishing/?utm_source=chatgpt.com
+                          - text: MCP Registry Publishing Guide
+                          - img [ref=e288]
+                  - separator [ref=e290]
+                  - heading "3. Security Review" [level=2] [ref=e291]
+                  - list [ref=e292]:
+                    - listitem [ref=e293]:
+                      - paragraph [ref=e294]:
+                        - checkbox [disabled] [ref=e295]
+                        - text: No secrets hardcoded
+                    - listitem [ref=e296]:
+                      - paragraph [ref=e297]:
+                        - checkbox [disabled] [ref=e298]
+                        - text: Environment variables documented
+                    - listitem [ref=e299]:
+                      - paragraph [ref=e300]:
+                        - checkbox [disabled] [ref=e301]
+                        - text: API keys scoped minimally
+                    - listitem [ref=e302]:
+                      - paragraph [ref=e303]:
+                        - checkbox [disabled] [ref=e304]
+                        - text: Input validation added everywhere
+                    - listitem [ref=e305]:
+                      - paragraph [ref=e306]:
+                        - checkbox [disabled] [ref=e307]
+                        - text: Path traversal prevented
+                    - listitem [ref=e308]:
+                      - paragraph [ref=e309]:
+                        - checkbox [disabled] [ref=e310]
+                        - text: Command injection risks reviewed
+                    - listitem [ref=e311]:
+                      - paragraph [ref=e312]:
+                        - checkbox [disabled] [ref=e313]
+                        - text: Prompt injection attack surface reviewed
+                    - listitem [ref=e314]:
+                      - paragraph [ref=e315]:
+                        - checkbox [disabled] [ref=e316]
+                        - text: External URLs sanitized/validated
+                    - listitem [ref=e317]:
+                      - paragraph [ref=e318]:
+                        - checkbox [disabled] [ref=e319]
+                        - text: Sensitive logs removed/redacted
+                    - listitem [ref=e320]:
+                      - paragraph [ref=e321]:
+                        - checkbox [disabled] [ref=e322]
+                        - text: Auth/authz enforced where needed
+                    - listitem [ref=e323]:
+                      - paragraph [ref=e324]:
+                        - checkbox [disabled] [ref=e325]
+                        - text: Rate limiting considered
+                    - listitem [ref=e326]:
+                      - paragraph [ref=e327]:
+                        - checkbox [disabled] [ref=e328]
+                        - text: Dangerous tools clearly labeled
+                  - paragraph [ref=e329]:
+                    - text: Recent MCP security studies found common issues around prompt injection, unsafe tool exposure, and server misconfiguration.
+                    - link "arXiv +1" [ref=e332] [cursor=pointer]:
+                      - /url: https://arxiv.org/abs/2506.13538?utm_source=chatgpt.com
+                      - generic [ref=e334]:
+                        - generic [ref=e335]: arXiv
+                        - generic [ref=e336]: "+1"
+                  - separator [ref=e337]
+                  - heading "4. Tool Quality" [level=2] [ref=e338]
+                  - paragraph [ref=e339]: "For every tool:"
+                  - list [ref=e340]:
+                    - listitem [ref=e341]:
+                      - paragraph [ref=e342]:
+                        - checkbox [disabled] [ref=e343]
+                        - text: Clear name
+                    - listitem [ref=e344]:
+                      - paragraph [ref=e345]:
+                        - checkbox [disabled] [ref=e346]
+                        - text: Strong description
+                    - listitem [ref=e347]:
+                      - paragraph [ref=e348]:
+                        - checkbox [disabled] [ref=e349]
+                        - text: Accurate argument schema
+                    - listitem [ref=e350]:
+                      - paragraph [ref=e351]:
+                        - checkbox [disabled] [ref=e352]
+                        - text: Helpful examples
+                    - listitem [ref=e353]:
+                      - paragraph [ref=e354]:
+                        - checkbox [disabled] [ref=e355]
+                        - text: Predictable output format
+                    - listitem [ref=e356]:
+                      - paragraph [ref=e357]:
+                        - checkbox [disabled] [ref=e358]
+                        - text: Consistent error handling
+                    - listitem [ref=e359]:
+                      - paragraph [ref=e360]:
+                        - checkbox [disabled] [ref=e361]
+                        - text: Idempotent behavior where possible
+                    - listitem [ref=e362]:
+                      - paragraph [ref=e363]:
+                        - checkbox [disabled] [ref=e364]
+                        - text: Human-readable error messages
+                  - paragraph [ref=e365]:
+                    - text: Poor tool descriptions significantly reduce agent reliability.
+                    - link "arXiv" [ref=e368] [cursor=pointer]:
+                      - /url: https://arxiv.org/abs/2602.14878?utm_source=chatgpt.com
+                      - generic [ref=e371]: arXiv
+                  - separator [ref=e372]
+                  - heading "5. Performance & Reliability" [level=2] [ref=e373]
+                  - list [ref=e374]:
+                    - listitem [ref=e375]:
+                      - paragraph [ref=e376]:
+                        - checkbox [disabled] [ref=e377]
+                        - text: Cold start time measured
+                    - listitem [ref=e378]:
+                      - paragraph [ref=e379]:
+                        - checkbox [disabled] [ref=e380]
+                        - text: Concurrency tested
+                    - listitem [ref=e381]:
+                      - paragraph [ref=e382]:
+                        - checkbox [disabled] [ref=e383]
+                        - text: Memory usage checked
+                    - listitem [ref=e384]:
+                      - paragraph [ref=e385]:
+                        - checkbox [disabled] [ref=e386]
+                        - text: Retry logic implemented
+                    - listitem [ref=e387]:
+                      - paragraph [ref=e388]:
+                        - checkbox [disabled] [ref=e389]
+                        - text: External API failures handled
+                    - listitem [ref=e390]:
+                      - paragraph [ref=e391]:
+                        - checkbox [disabled] [ref=e392]
+                        - text: Circuit breakers/timeouts considered
+                    - listitem [ref=e393]:
+                      - paragraph [ref=e394]:
+                        - checkbox [disabled] [ref=e395]
+                        - text: Long-running operations streamed or chunked
+                    - listitem [ref=e396]:
+                      - paragraph [ref=e397]:
+                        - checkbox [disabled] [ref=e398]
+                        - text: Load test completed
+                    - listitem [ref=e399]:
+                      - paragraph [ref=e400]:
+                        - checkbox [disabled] [ref=e401]
+                        - text: Logging structured and searchable
+                  - separator [ref=e402]
+                  - heading "6. Developer Experience" [level=2] [ref=e403]
+                  - list [ref=e404]:
+                    - listitem [ref=e405]:
+                      - paragraph [ref=e406]:
+                        - checkbox [disabled] [ref=e407]
+                        - text: README complete
+                    - listitem [ref=e408]:
+                      - paragraph [ref=e409]:
+                        - checkbox [disabled] [ref=e410]
+                        - text: Installation instructions verified
+                    - listitem [ref=e411]:
+                      - paragraph [ref=e412]:
+                        - checkbox [disabled] [ref=e413]
+                        - text: Quickstart under 5 minutes
+                    - listitem [ref=e414]:
+                      - paragraph [ref=e415]:
+                        - checkbox [disabled] [ref=e416]
+                        - text: Example client configs included
+                    - listitem [ref=e417]:
+                      - paragraph [ref=e418]:
+                        - checkbox [disabled] [ref=e419]
+                        - text: Cursor/Claude/Desktop examples included
+                    - listitem [ref=e420]:
+                      - paragraph [ref=e421]:
+                        - checkbox [disabled] [ref=e422]
+                        - text: Environment variable examples provided
+                    - listitem [ref=e423]:
+                      - paragraph [ref=e424]:
+                        - checkbox [disabled] [ref=e425]
+                        - text: Troubleshooting section added
+                    - listitem [ref=e426]:
+                      - paragraph [ref=e427]:
+                        - checkbox [disabled] [ref=e428]
+                        - text: License included
+                    - listitem [ref=e429]:
+                      - paragraph [ref=e430]:
+                        - checkbox [disabled] [ref=e431]
+                        - text: CHANGELOG updated
+                    - listitem [ref=e432]:
+                      - paragraph [ref=e433]:
+                        - checkbox [disabled] [ref=e434]
+                        - text: CONTRIBUTING guide added
+                  - separator [ref=e435]
+                  - heading "7. Packaging & Distribution" [level=2] [ref=e436]
+                  - heading "npm" [level=3] [ref=e437]
+                  - list [ref=e438]:
+                    - listitem [ref=e439]:
+                      - paragraph [ref=e440]:
+                        - checkbox [disabled] [ref=e441]
+                        - code [ref=e442]: package.json
+                        - text: valid
+                    - listitem [ref=e443]:
+                      - paragraph [ref=e444]:
+                        - checkbox [disabled] [ref=e445]
+                        - code [ref=e446]: mcpName
+                        - text: added
+                  - paragraph [ref=e447]: "Example:"
+                  - generic [ref=e455]:
+                    - generic [ref=e457]:
+                      - generic [ref=e458]:
+                        - img [ref=e459]
+                        - text: JSON
+                      - button "Copy" [ref=e462] [cursor=pointer]:
+                        - img [ref=e463]
+                    - code [ref=e471]:
+                      - text: "{"
+                      - text: "\"mcpName\": \"io.github.username/server-name\""
+                      - text: "}"
+                  - heading "PyPI" [level=3] [ref=e472]
+                  - list [ref=e473]:
+                    - listitem [ref=e474]:
+                      - paragraph [ref=e475]:
+                        - checkbox [disabled] [ref=e476]
+                        - text: "README contains:"
+                  - generic [ref=e484]:
+                    - button "Copy" [ref=e485] [cursor=pointer]:
+                      - img [ref=e486]
+                    - code [ref=e494]: "mcp-name: io.github.username/server-name"
+                  - heading "Docker/OCI" [level=3] [ref=e495]
+                  - list [ref=e496]:
+                    - listitem [ref=e497]:
+                      - paragraph [ref=e498]:
+                        - checkbox [disabled] [ref=e499]
+                        - text: Image labels configured
+                    - listitem [ref=e500]:
+                      - paragraph [ref=e501]:
+                        - checkbox [disabled] [ref=e502]
+                        - text: Multi-arch build tested
+                    - listitem [ref=e503]:
+                      - paragraph [ref=e504]:
+                        - checkbox [disabled] [ref=e505]
+                        - text: Non-root container user used
+                    - listitem [ref=e506]:
+                      - paragraph [ref=e507]:
+                        - checkbox [disabled] [ref=e508]
+                        - text: Minimal base image used
+                  - heading "MCPB" [level=3] [ref=e509]
+                  - list [ref=e510]:
+                    - listitem [ref=e511]:
+                      - paragraph [ref=e512]:
+                        - checkbox [disabled] [ref=e513]
+                        - text: SHA256 generated
+                    - listitem [ref=e514]:
+                      - paragraph [ref=e515]:
+                        - checkbox [disabled] [ref=e516]
+                        - text: Artifact downloadable
+                    - listitem [ref=e517]:
+                      - paragraph [ref=e518]:
+                        - checkbox [disabled] [ref=e519]
+                        - text: Release URL stable
+                  - paragraph [ref=e520]:
+                    - text: "Registry requirements documented here:"
+                    - link "MCP Protocol +1" [ref=e523] [cursor=pointer]:
+                      - /url: https://modelcontextprotocol.info/tools/registry/publishing/?utm_source=chatgpt.com
+                      - generic [ref=e525]:
+                        - generic [ref=e526]: MCP Protocol
+                        - generic [ref=e527]: "+1"
+                  - separator [ref=e528]
+                  - heading "8. Registry Publication Readiness" [level=2] [ref=e529]
+                  - list [ref=e530]:
+                    - listitem [ref=e531]:
+                      - paragraph [ref=e532]:
+                        - checkbox [disabled] [ref=e533]
+                        - code [ref=e534]: server.json
+                        - text: exists
+                    - listitem [ref=e535]:
+                      - paragraph [ref=e536]:
+                        - checkbox [disabled] [ref=e537]
+                        - code [ref=e538]: $schema
+                        - text: valid
+                    - listitem [ref=e539]:
+                      - paragraph [ref=e540]:
+                        - checkbox [disabled] [ref=e541]
+                        - text: Version matches package version
+                    - listitem [ref=e542]:
+                      - paragraph [ref=e543]:
+                        - checkbox [disabled] [ref=e544]
+                        - text: Namespace finalized
+                    - listitem [ref=e545]:
+                      - paragraph [ref=e546]:
+                        - checkbox [disabled] [ref=e547]
+                        - text: Authentication configured
+                    - listitem [ref=e548]:
+                      - paragraph [ref=e549]:
+                        - checkbox [disabled] [ref=e550]
+                        - text: GitHub/DNS ownership verified
+                    - listitem [ref=e551]:
+                      - paragraph [ref=e552]:
+                        - checkbox [disabled] [ref=e553]
+                        - text: Registry validation passes
+                  - paragraph [ref=e554]: "Typical flow:"
+                  - generic [ref=e562]:
+                    - generic [ref=e564]:
+                      - generic [ref=e565]:
+                        - img [ref=e566]
+                        - text: Bash
+                      - button "Copy" [ref=e569] [cursor=pointer]:
+                        - img [ref=e570]
+                    - code [ref=e578]:
+                      - text: mcp-publisher init
+                      - text: mcp-publisher login github
+                      - text: mcp-publisher publish
+                  - paragraph [ref=e579]: "Reference:"
+                  - list [ref=e580]:
+                    - listitem [ref=e581]:
+                      - paragraph [ref=e582]:
+                        - link "MCP Publisher Quickstart" [ref=e584] [cursor=pointer]:
+                          - /url: https://modelcontextprotocol.org/registry/quickstart?utm_source=chatgpt.com
+                          - text: MCP Publisher Quickstart
+                          - img [ref=e586]
+                  - separator [ref=e588]
+                  - heading "9. CI/CD" [level=2] [ref=e589]
+                  - list [ref=e590]:
+                    - listitem [ref=e591]:
+                      - paragraph [ref=e592]:
+                        - checkbox [disabled] [ref=e593]
+                        - text: Linting enabled
+                    - listitem [ref=e594]:
+                      - paragraph [ref=e595]:
+                        - checkbox [disabled] [ref=e596]
+                        - text: Type checking enabled
+                    - listitem [ref=e597]:
+                      - paragraph [ref=e598]:
+                        - checkbox [disabled] [ref=e599]
+                        - text: Tests run in CI
+                    - listitem [ref=e600]:
+                      - paragraph [ref=e601]:
+                        - checkbox [disabled] [ref=e602]
+                        - text: Release workflow automated
+                    - listitem [ref=e603]:
+                      - paragraph [ref=e604]:
+                        - checkbox [disabled] [ref=e605]
+                        - text: Semantic versioning enforced
+                    - listitem [ref=e606]:
+                      - paragraph [ref=e607]:
+                        - checkbox [disabled] [ref=e608]
+                        - text: Dependabot/Renovate configured
+                    - listitem [ref=e609]:
+                      - paragraph [ref=e610]:
+                        - checkbox [disabled] [ref=e611]
+                        - text: Security scanning enabled
+                    - listitem [ref=e612]:
+                      - paragraph [ref=e613]:
+                        - checkbox [disabled] [ref=e614]
+                        - text: SBOM generation considered
+                    - listitem [ref=e615]:
+                      - paragraph [ref=e616]:
+                        - checkbox [disabled] [ref=e617]
+                        - text: Signed releases considered
+                  - separator [ref=e618]
+                  - heading "10. Observability" [level=2] [ref=e619]
+                  - list [ref=e620]:
+                    - listitem [ref=e621]:
+                      - paragraph [ref=e622]:
+                        - checkbox [disabled] [ref=e623]
+                        - text: Structured logs
+                    - listitem [ref=e624]:
+                      - paragraph [ref=e625]:
+                        - checkbox [disabled] [ref=e626]
+                        - text: Request IDs/correlation IDs
+                    - listitem [ref=e627]:
+                      - paragraph [ref=e628]:
+                        - checkbox [disabled] [ref=e629]
+                        - text: Metrics exposed
+                    - listitem [ref=e630]:
+                      - paragraph [ref=e631]:
+                        - checkbox [disabled] [ref=e632]
+                        - text: Error telemetry added
+                    - listitem [ref=e633]:
+                      - paragraph [ref=e634]:
+                        - checkbox [disabled] [ref=e635]
+                        - text: Health endpoint added (remote servers)
+                    - listitem [ref=e636]:
+                      - paragraph [ref=e637]:
+                        - checkbox [disabled] [ref=e638]
+                        - text: Traceability for tool execution
+                    - listitem [ref=e639]:
+                      - paragraph [ref=e640]:
+                        - checkbox [disabled] [ref=e641]
+                        - text: Audit logging for sensitive actions
+                  - separator [ref=e642]
+                  - heading "Recommended “Gold Standard” Before Publish" [level=1] [ref=e643]
+                  - paragraph [ref=e644]: "Minimum high-confidence release gate:"
+                  - list [ref=e645]:
+                    - listitem [ref=e646]:
+                      - paragraph [ref=e647]: 90%+ test pass coverage on core tools
+                    - listitem [ref=e648]:
+                      - paragraph [ref=e649]: Zero known critical vulnerabilities
+                    - listitem [ref=e650]:
+                      - paragraph [ref=e651]:
+                        - text: Validated
+                        - code [ref=e652]: server.json
+                    - listitem [ref=e653]:
+                      - paragraph [ref=e654]: "End-to-end test with:"
+                      - list [ref=e655]:
+                        - listitem [ref=e656]:
+                          - paragraph [ref=e657]: Claude Desktop
+                        - listitem [ref=e658]:
+                          - paragraph [ref=e659]: Cursor
+                        - listitem [ref=e660]:
+                          - paragraph [ref=e661]: OpenAI-compatible MCP client
+                    - listitem [ref=e662]:
+                      - paragraph [ref=e663]: Fresh install tested on clean machine/container
+                  - separator [ref=e664]
+                  - heading "Common Release Mistakes" [level=1] [ref=e665]
+                  - list [ref=e666]:
+                    - listitem [ref=e667]:
+                      - paragraph [ref=e668]:
+                        - text: Missing
+                        - code [ref=e669]: mcpName
+                    - listitem [ref=e670]:
+                      - paragraph [ref=e671]: Invalid JSON schema
+                    - listitem [ref=e672]:
+                      - paragraph [ref=e673]: Overly verbose tool descriptions
+                    - listitem [ref=e674]:
+                      - paragraph [ref=e675]: Tools returning inconsistent shapes
+                    - listitem [ref=e676]:
+                      - paragraph [ref=e677]: Secrets leaking into logs
+                    - listitem [ref=e678]:
+                      - paragraph [ref=e679]: Blocking synchronous operations
+                    - listitem [ref=e680]:
+                      - paragraph [ref=e681]: Unbounded filesystem/network access
+                    - listitem [ref=e682]:
+                      - paragraph [ref=e683]: Publishing without load testing
+                    - listitem [ref=e684]:
+                      - paragraph [ref=e685]: Forgetting transport compatibility
+                  - separator [ref=e686]
+                  - heading "Lightweight Final Smoke Test" [level=1] [ref=e687]
+                  - paragraph [ref=e688]: "Before tagging release:"
+                  - generic [ref=e696]:
+                    - generic [ref=e698]:
+                      - generic [ref=e699]:
+                        - img [ref=e700]
+                        - text: Bash
+                      - button "Copy" [ref=e703] [cursor=pointer]:
+                        - img [ref=e704]
+                    - code [ref=e712]:
+                      - text: "# clean install"
+                      - text: npm ci
+                      - text: "# lint"
+                      - text: npm run lint
+                      - text: "# typecheck"
+                      - text: npm run typecheck
+                      - text: "# tests"
+                      - text: npm test
+                      - text: "# build"
+                      - text: npm run build
+                      - text: "# launch server"
+                      - text: node dist/index.js
+                      - text: "# validate registry metadata"
+                      - text: mcp-publisher init
+                      - text: mcp-publisher publish --dry-run
+                  - paragraph [ref=e713]: "If you want, I can also provide:"
+                  - list [ref=e714]:
+                    - listitem [ref=e715]:
+                      - paragraph [ref=e716]:
+                        - text: a
+                        - strong [ref=e717]: production-grade MCP release checklist template
+                    - listitem [ref=e718]:
+                      - paragraph [ref=e719]:
+                        - text: a
+                        - strong [ref=e720]: GitHub Actions workflow for MCP publishing
+                    - listitem [ref=e721]:
+                      - paragraph [ref=e722]:
+                        - text: a
+                        - strong [ref=e723]: security audit checklist specifically for MCP tools
+                    - listitem [ref=e724]:
+                      - paragraph [ref=e725]:
+                        - text: a
+                        - strong [ref=e726]: server.json validation checklist
+                    - listitem [ref=e727]:
+                      - paragraph [ref=e728]:
+                        - text: a
+                        - strong [ref=e729]: preflight script that automates these checks
+                - generic [ref=e730]:
+                  - group "Response actions":
+                    - button "Copy response":
+                      - generic:
+                        - img
+                    - button "Share":
+                      - generic:
+                        - img
+                    - button "Sources":
+                      - generic: Sources
+          - generic [ref=e111]:
+            - button [ref=e731] [cursor=pointer]:
+              - img [ref=e732]
+            - generic [ref=e117]:
+              - generic [ref=e118]:
+                - complementary [ref=e742]:
+                  - generic [ref=e743]:
+                    - generic [ref=e744]:
+                      - generic [ref=e745]:
+                        - heading "You’re now using our basic model" [level=3] [ref=e746]
+                        - generic [ref=e748]: To access more intelligence, create an account or log in.
+                      - generic [ref=e750]:
+                        - button "Log in" [ref=e751] [cursor=pointer]:
+                          - generic [ref=e752]: Log in
+                        - button "Sign up for free" [ref=e753] [cursor=pointer]:
+                          - generic [ref=e754]: Sign up for free
+                    - button "Close" [ref=e756] [cursor=pointer]:
+                      - img
+                - generic [ref=e121]:
+                  - button "Add files and more" [ref=e124] [cursor=pointer]:
+                    - img
+                  - textbox "Chat with ChatGPT" [active] [ref=e757]:
+                    - paragraph [ref=e758]: Ask anything
+                  - generic [ref=e129]:
+                    - button "Start dictation" [ref=e130] [cursor=pointer]:
+                      - img
+                    - button "Start Voice" [ref=e761] [cursor=pointer]:
+                      - img [ref=e763]
+                      - generic [ref=e765]: Voice
+              - button [ref=e139]
+              - button [ref=e140]
+            - generic [ref=e767]: ChatGPT can make mistakes. Check important info. See Cookie Preferences.
+  - alert [ref=e152]
+  - status [ref=e153]

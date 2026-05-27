@@ -1,0 +1,241 @@
+- generic [ref=e1]:
+  - generic:
+    - generic:
+      - link "Skip to main content" [ref=e2] [cursor=pointer]
+      - link "Accessibility help" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=en-TW
+  - banner [ref=e4]:
+    - banner [ref=e5]:
+      - link "Go to Google Home" [ref=e7] [cursor=pointer]:
+        - /url: https://www.google.com/webhp?hl=en&ictx=0&sa=X&ved=0ahUKEwjRteyC29SUAxV_lK8BHb3_IZ4QPAgH
+        - img [ref=e8]
+  - generic [ref=e14]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - navigation [ref=e20]:
+          - list [ref=e22]:
+            - listitem [ref=e23]:
+              - button "AI Mode" [ref=e29] [cursor=pointer]:
+                - generic [ref=e31]:
+                  - generic [ref=e32]: AI Mode
+                  - img [ref=e34]
+            - listitem [ref=e36]:
+              - link "All" [ref=e37] [cursor=pointer]:
+                - /url: /search?q=tool+to+check+MCP+server+health&sca_esv=a223578c24fb7019&prmd=ivns&sxsrf=ANbL-n420E6NN3OSeEPL3cIpbhr2-V2z_w:1779721442110&source=lnms&sa=X&ved=2ahUKEwjRteyC29SUAxV_lK8BHb3_IZ4Q0pQJegQIBhAI
+                - generic [ref=e39]: All
+            - listitem [ref=e40]:
+              - link "Images" [ref=e41] [cursor=pointer]:
+                - /url: /search?q=tool+to+check+MCP+server+health&sca_esv=a223578c24fb7019&udm=2&prmd=ivns&sxsrf=ANbL-n420E6NN3OSeEPL3cIpbhr2-V2z_w:1779721442110&source=lnms&sa=X&ved=2ahUKEwjRteyC29SUAxV_lK8BHb3_IZ4Q0pQJegQIBhAK
+                - generic [ref=e43]: Images
+            - listitem [ref=e44]:
+              - link "Videos" [ref=e45] [cursor=pointer]:
+                - /url: /search?q=tool+to+check+MCP+server+health&sca_esv=a223578c24fb7019&udm=7&prmd=ivns&sxsrf=ANbL-n420E6NN3OSeEPL3cIpbhr2-V2z_w:1779721442110&source=lnms&sa=X&ved=2ahUKEwjRteyC29SUAxV_lK8BHb3_IZ4Q0pQJegQIBhAM
+                - generic [ref=e47]: Videos
+            - listitem [ref=e48]:
+              - link "News" [ref=e49] [cursor=pointer]:
+                - /url: /search?q=tool+to+check+MCP+server+health&sca_esv=a223578c24fb7019&tbm=nws&prmd=ivns&sxsrf=ANbL-n420E6NN3OSeEPL3cIpbhr2-V2z_w:1779721442110&source=lnms&sa=X&ved=2ahUKEwjRteyC29SUAxV_lK8BHb3_IZ4Q0pQJegQIBhAO
+                - generic [ref=e51]: News
+            - listitem [ref=e52]:
+              - button "More filters" [ref=e53] [cursor=pointer]:
+                - generic "More filters" [ref=e54]:
+                  - generic [ref=e55]: More
+                  - img [ref=e57]
+        - generic [ref=e60]:
+          - link "Search Labs" [ref=e62] [cursor=pointer]:
+            - /url: https://labs.google.com/search?source=srp
+            - img [ref=e63]
+          - button "Google apps" [ref=e66] [cursor=pointer]:
+            - img [ref=e67]
+          - 'button "Google Account: Peng-Ta (incultnito@gmail.com)" [ref=e71] [cursor=pointer]':
+            - img [ref=e72]
+      - separator [ref=e73]
+    - heading "Search Results" [level=1] [ref=e74]
+    - generic [ref=e82]:
+      - generic [ref=e85]:
+        - button "AI Mode history" [ref=e87] [cursor=pointer]:
+          - img [ref=e89]
+        - button "New thread" [ref=e92] [cursor=pointer]:
+          - img [ref=e94]
+      - generic [ref=e99]:
+        - 'heading "You said: tool to check MCP server health" [level=2] [ref=e105]':
+          - generic [ref=e106]: "You said:"
+          - text: tool to check MCP server health
+        - generic [ref=e169]:
+          - generic [ref=e172]:
+            - generic [ref=e173]:
+              - text: Several excellent tools exist to check Model Context Protocol (MCP) server health, depending on whether you are looking for an official debugging client, a fast browser-based checker, a command-line tool, or a production monitoring suite.
+              - button "View related links" [ref=e176] [cursor=pointer]:
+                - img [ref=e178]
+            - heading "1. Official & Native Developer Tools" [level=3] [ref=e180]
+            - list [ref=e181]:
+              - listitem [ref=e182]:
+                - generic [ref=e183]:
+                  - strong [ref=e184]:
+                    - link "MCP Inspector" [ref=e186] [cursor=pointer]:
+                      - /url: https://modelcontextprotocol.io/docs/tools/inspector
+                  - text: ": This is the"
+                  - strong [ref=e187]: official interactive developer tool
+                  - text: built by Anthropic. It acts as a local testing client that opens a browser UI (typically on
+                  - code [ref=e188]: localhost:5173
+                  - text: ) to initialize handshakes, view server capabilities, and manually run tool calls.
+                - list [ref=e189]:
+                  - listitem [ref=e190]:
+                    - generic [ref=e191]:
+                      - emphasis [ref=e192]: "To use it:"
+                      - text: Run
+                      - code [ref=e193]: npx @modelcontextprotocol/inspector <your-server-command>
+                      - text: .
+              - listitem [ref=e194]:
+                - generic [ref=e195]:
+                  - strong [ref=e196]:
+                    - link "MCP Doctor" [ref=e198] [cursor=pointer]:
+                      - /url: https://mcpmarket.com/tools/skills/mcp-doctor
+                  - text: ": A robust"
+                  - strong [ref=e199]: diagnostic command-line tool
+                  - text: specifically designed to audit server health, detect missing environment variables, measure exact response latency, and catch duplicate tool names.
+                - list [ref=e200]:
+                  - listitem [ref=e201]:
+                    - generic [ref=e202]:
+                      - emphasis [ref=e203]: "To use it:"
+                      - text: It runs as a CLI or a skill directly within environments like Claude Code.
+                    - generic [ref=e205]:
+                      - link "Model Context Protocol (+5) – View related links" [ref=e206] [cursor=pointer]:
+                        - /url: https://modelcontextprotocol.io/docs/tools/inspector
+                      - button "Model Context Protocol (+5) – View related links" [ref=e207] [cursor=pointer]:
+                        - generic [ref=e209]:
+                          - generic [ref=e210]: Model Context Protocol
+                          - generic [ref=e211]: "+5"
+            - heading "2. Browser & Web Checkers (No Setup)" [level=3] [ref=e212]
+            - list [ref=e213]:
+              - listitem [ref=e214]:
+                - generic [ref=e215]:
+                  - strong [ref=e216]:
+                    - link "OpenStatus MCP Health Check" [ref=e218] [cursor=pointer]:
+                      - /url: https://www.openstatus.dev/play/mcp-health
+                  - text: ": A free,"
+                  - strong [ref=e219]: open-source web utility
+                  - text: that tests remote streamable HTTP endpoints directly from your browser. It executes the standard three-step MCP connection sequence (
+                  - code [ref=e220]: initialize
+                  - text: ","
+                  - code [ref=e221]: notifications/initialized
+                  - text: ", and"
+                  - code [ref=e222]: tools/list
+                  - text: ) to evaluate if the server is healthy.
+              - listitem [ref=e223]:
+                - generic [ref=e224]:
+                  - strong [ref=e225]:
+                    - generic [ref=e226]: Postman MCP Client
+                  - text: ": Postman includes first-class protocol-level support for MCP. You can paste a server URL using standard"
+                  - code [ref=e227]: stdio
+                  - text: or streamable HTTP transports to visually explore, debug, and monitor response timelines.
+                - generic [ref=e229]:
+                  - link "OpenStatus (+1) – View related links" [ref=e230] [cursor=pointer]:
+                    - /url: https://www.openstatus.dev/play/mcp-health
+                  - button "OpenStatus (+1) – View related links" [ref=e231] [cursor=pointer]:
+                    - generic [ref=e233]:
+                      - generic [ref=e234]: OpenStatus
+                      - generic [ref=e235]: "+1"
+            - heading "3. Production Monitoring & Automated Testing" [level=3] [ref=e236]
+            - list [ref=e237]:
+              - listitem [ref=e238]:
+                - generic [ref=e239]:
+                  - strong [ref=e240]:
+                    - link "OpenStatus (Continuous Monitoring)" [ref=e242] [cursor=pointer]:
+                      - /url: https://docs.openstatus.dev/guides/how-to-monitor-mcp-server/
+                  - text: ": Beyond their one-off browser tool, they provide ongoing synthetic monitoring that asserts protocol-compliant JSON-RPC"
+                  - code [ref=e243]: "{\"result\":{},\"jsonrpc\":\"2.0\"}"
+                  - text: responses instead of basic HTTP 200 checks.
+              - listitem [ref=e244]:
+                - generic [ref=e245]:
+                  - strong [ref=e246]:
+                    - link "Specmatic MCP Auto-Test" [ref=e248] [cursor=pointer]:
+                      - /url: https://specmatic.io/updates/testing-mcp-servers-how-specmatic-mcp-auto-test-catches-schema-drift-and-automates-regression/
+                  - text: ": An"
+                  - strong [ref=e249]: automated testing framework
+                  - text: built to detect schema drift in CI/CD pipelines. It queries your tools, auto-generates test scenarios using Claude, and flags runtime discrepancies.
+              - listitem [ref=e250]:
+                - generic [ref=e251]:
+                  - strong [ref=e252]:
+                    - link "Sentry" [ref=e254] [cursor=pointer]:
+                      - /url: https://www.speakeasy.com/mcp/monitoring-mcp-servers
+                  - text: ": Best for"
+                  - strong [ref=e255]: application-level tracking
+                  - text: . It captures server-side crashes, registers runtime error rates, and handles distributed tracing across individual MCP tool calls.
+                - generic [ref=e257]:
+                  - link "OpenStatus (+4) – View related links" [ref=e258] [cursor=pointer]:
+                    - /url: https://www.openstatus.dev/play/mcp-health
+                  - button "OpenStatus (+4) – View related links" [ref=e259] [cursor=pointer]:
+                    - generic [ref=e261]:
+                      - generic [ref=e262]: OpenStatus
+                      - generic [ref=e263]: "+4"
+            - generic [ref=e264]:
+              - text: Are you checking a
+              - strong [ref=e265]: local
+              - text: server during development or monitoring a
+              - strong [ref=e266]: remote
+              - text: production server? Let me know, and I can give you the exact command or setup steps.
+            - generic [ref=e269]:
+              - button "Copy text" [ref=e272] [cursor=pointer]:
+                - img [ref=e275]
+              - button "Share" [ref=e281] [cursor=pointer]:
+                - img [ref=e284]
+              - generic [ref=e287]:
+                - button "Good response" [ref=e289] [cursor=pointer]:
+                  - img [ref=e291]
+                - button "Bad response" [ref=e294] [cursor=pointer]:
+                  - img [ref=e296]
+              - button "More options" [ref=e301] [cursor=pointer]:
+                - img [ref=e305]
+          - generic [ref=e312]:
+            - generic [ref=e314]:
+              - button "13 sites" [ref=e315] [cursor=pointer]:
+                - generic [ref=e324]: 13 sites
+              - button "About this result" [ref=e329] [cursor=pointer]:
+                - img [ref=e331]
+            - list [ref=e334]:
+              - listitem [ref=e335]:
+                - generic [ref=e336]:
+                  - link "MCP Inspector - Model Context Protocol. Opens in new tab." [ref=e337] [cursor=pointer]:
+                    - /url: https://modelcontextprotocol.io/docs/tools/inspector
+                  - generic [ref=e338]:
+                    - generic [ref=e340]:
+                      - generic [ref=e341]: MCP Inspector - Model Context Protocol
+                      - generic [ref=e342]: "Documentation Index. Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt. Use this file to discove..."
+                    - generic [ref=e344]:
+                      - generic [ref=e349]: Model Context Protocol
+                      - button "About this result" [ref=e353] [cursor=pointer]:
+                        - img [ref=e355]
+              - listitem [ref=e359]:
+                - generic [ref=e360]:
+                  - link "MCP Server Health Check - OpenStatus. Opens in new tab." [ref=e361] [cursor=pointer]:
+                    - /url: https://www.openstatus.dev/play/mcp-health
+                  - generic [ref=e362]:
+                    - generic [ref=e364]:
+                      - generic [ref=e365]: MCP Server Health Check - OpenStatus
+                      - generic [ref=e366]: May 25, 2026 — How to test your MCP server. Paste your MCP server URL. Any Streamable HTTP endpoint works — for example https://hf.co/mcp or your...
+                    - generic [ref=e368]:
+                      - generic [ref=e373]: OpenStatus
+                      - button "About this result" [ref=e377] [cursor=pointer]:
+                        - img [ref=e379]
+              - listitem [ref=e383]:
+                - generic [ref=e384]:
+                  - link "Monitor your MCP server | Speakeasy. Opens in new tab." [ref=e385] [cursor=pointer]:
+                    - /url: https://www.speakeasy.com/mcp/monitoring-mcp-servers
+                  - generic [ref=e386]:
+                    - generic [ref=e388]:
+                      - generic [ref=e389]: Monitor your MCP server | Speakeasy
+                      - generic [ref=e390]: May 14, 2026 — Server-level monitoring with Sentry. Server-level monitoring tracks your MCP server's overall health, recording error rates, uptim...
+                    - generic [ref=e392]:
+                      - generic [ref=e397]: www.speakeasy.com
+                      - button "About this result" [ref=e401] [cursor=pointer]:
+                        - img [ref=e403]
+            - button "Show all related links" [ref=e407] [cursor=pointer]:
+              - generic [ref=e408]: Show all
+      - generic [ref=e133]:
+        - textbox "Ask anything" [active] [ref=e135]
+        - button "More input options" [ref=e139] [cursor=pointer]:
+          - img [ref=e141]
+        - button "Microphone" [ref=e158] [cursor=pointer]:
+          - img [ref=e160]
+    - contentinfo
+  - generic [ref=e409]: AI Mode response is ready

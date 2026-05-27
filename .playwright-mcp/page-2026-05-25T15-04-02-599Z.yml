@@ -1,0 +1,68 @@
+- generic [ref=e1]:
+  - generic:
+    - generic:
+      - link "Skip to main content" [ref=e2] [cursor=pointer]
+      - link "Accessibility help" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=en-TW
+  - banner [ref=e4]:
+    - banner [ref=e5]:
+      - link "Go to Google Home" [ref=e7] [cursor=pointer]:
+        - /url: https://www.google.com/webhp?hl=en&ictx=0&sa=X&ved=0ahUKEwjRteyC29SUAxV_lK8BHb3_IZ4QPAgH
+        - img [ref=e8]
+  - generic [ref=e14]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - navigation [ref=e20]:
+          - list [ref=e22]:
+            - listitem [ref=e23]:
+              - button "AI Mode" [ref=e29] [cursor=pointer]:
+                - generic [ref=e31]:
+                  - generic [ref=e32]: AI Mode
+                  - img [ref=e34]
+            - listitem [ref=e36]:
+              - link "All" [ref=e37] [cursor=pointer]:
+                - /url: /search?q=tool+to+check+MCP+server+health&sca_esv=a223578c24fb7019&prmd=ivns&sxsrf=ANbL-n420E6NN3OSeEPL3cIpbhr2-V2z_w:1779721442110&source=lnms&sa=X&ved=2ahUKEwjRteyC29SUAxV_lK8BHb3_IZ4Q0pQJegQIBhAI
+                - generic [ref=e39]: All
+            - listitem [ref=e40]:
+              - link "Images" [ref=e41] [cursor=pointer]:
+                - /url: /search?q=tool+to+check+MCP+server+health&sca_esv=a223578c24fb7019&udm=2&prmd=ivns&sxsrf=ANbL-n420E6NN3OSeEPL3cIpbhr2-V2z_w:1779721442110&source=lnms&sa=X&ved=2ahUKEwjRteyC29SUAxV_lK8BHb3_IZ4Q0pQJegQIBhAK
+                - generic [ref=e43]: Images
+            - listitem [ref=e44]:
+              - link "Videos" [ref=e45] [cursor=pointer]:
+                - /url: /search?q=tool+to+check+MCP+server+health&sca_esv=a223578c24fb7019&udm=7&prmd=ivns&sxsrf=ANbL-n420E6NN3OSeEPL3cIpbhr2-V2z_w:1779721442110&source=lnms&sa=X&ved=2ahUKEwjRteyC29SUAxV_lK8BHb3_IZ4Q0pQJegQIBhAM
+                - generic [ref=e47]: Videos
+            - listitem [ref=e48]:
+              - link "News" [ref=e49] [cursor=pointer]:
+                - /url: /search?q=tool+to+check+MCP+server+health&sca_esv=a223578c24fb7019&tbm=nws&prmd=ivns&sxsrf=ANbL-n420E6NN3OSeEPL3cIpbhr2-V2z_w:1779721442110&source=lnms&sa=X&ved=2ahUKEwjRteyC29SUAxV_lK8BHb3_IZ4Q0pQJegQIBhAO
+                - generic [ref=e51]: News
+            - listitem [ref=e52]:
+              - button "More filters" [ref=e53] [cursor=pointer]:
+                - generic "More filters" [ref=e54]:
+                  - generic [ref=e55]: More
+                  - img [ref=e57]
+        - generic [ref=e60]:
+          - link "Search Labs" [ref=e62] [cursor=pointer]:
+            - /url: https://labs.google.com/search?source=srp
+            - img [ref=e63]
+          - button "Google apps" [ref=e66] [cursor=pointer]:
+            - img [ref=e67]
+          - 'button "Google Account: Peng-Ta (incultnito@gmail.com)" [ref=e71] [cursor=pointer]':
+            - img [ref=e72]
+      - separator [ref=e73]
+    - heading "Search Results" [level=1] [ref=e74]
+    - generic [ref=e82]:
+      - generic [ref=e85]:
+        - button "AI Mode history" [ref=e87] [cursor=pointer]:
+          - img [ref=e89]
+        - button "New thread" [ref=e92] [cursor=pointer]:
+          - img [ref=e94]
+      - 'heading "You said: tool to check MCP server health" [level=2] [ref=e105]':
+        - generic [ref=e106]: "You said:"
+        - text: tool to check MCP server health
+      - generic [ref=e133]:
+        - textbox "Ask anything" [active] [ref=e135]
+        - button "More input options" [ref=e139] [cursor=pointer]:
+          - img [ref=e141]
+        - button "Microphone" [ref=e158] [cursor=pointer]:
+          - img [ref=e160]
+    - contentinfo

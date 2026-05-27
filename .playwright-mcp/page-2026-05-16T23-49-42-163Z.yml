@@ -1,0 +1,413 @@
+- generic [ref=e1]:
+  - generic:
+    - generic:
+      - link "Skip to main content" [ref=e2] [cursor=pointer]
+      - link "Accessibility help" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=en-TW
+      - link "Accessibility feedback" [ref=e4] [cursor=pointer]
+  - banner [ref=e5]:
+    - banner [ref=e6]:
+      - link "Go to Google Home" [ref=e8] [cursor=pointer]:
+        - /url: https://www.google.com/webhp?hl=en&ictx=0&sa=X&ved=0ahUKEwiS5KTV_76UAxUUZvUHHZWwC3MQPAgJ
+        - img [ref=e9]
+  - generic [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - navigation [ref=e21]:
+          - list [ref=e23]:
+            - listitem [ref=e24]:
+              - button "AI Mode" [ref=e30] [cursor=pointer]:
+                - generic [ref=e32]:
+                  - generic [ref=e33]: AI Mode
+                  - img [ref=e35]
+            - listitem [ref=e37]:
+              - link "All" [ref=e38] [cursor=pointer]:
+                - /url: /search?q=how+to+debug+MCP+tool+calls&sca_esv=19e12980e28944c9&prmd=ivns&sxsrf=ANbL-n4_nZgxDm0ib-4WK4thio37srNHaA:1778975364433&source=lnms&sa=X&ved=2ahUKEwiS5KTV_76UAxUUZvUHHZWwC3MQ0pQJegQIBhAI
+                - generic [ref=e40]: All
+            - listitem [ref=e41]:
+              - link "Images" [ref=e42] [cursor=pointer]:
+                - /url: /search?q=how+to+debug+MCP+tool+calls&sca_esv=19e12980e28944c9&udm=2&prmd=ivns&sxsrf=ANbL-n4_nZgxDm0ib-4WK4thio37srNHaA:1778975364433&source=lnms&sa=X&ved=2ahUKEwiS5KTV_76UAxUUZvUHHZWwC3MQ0pQJegQIBhAK
+                - generic [ref=e44]: Images
+            - listitem [ref=e45]:
+              - link "Videos" [ref=e46] [cursor=pointer]:
+                - /url: /search?q=how+to+debug+MCP+tool+calls&sca_esv=19e12980e28944c9&udm=7&prmd=ivns&sxsrf=ANbL-n4_nZgxDm0ib-4WK4thio37srNHaA:1778975364433&source=lnms&sa=X&ved=2ahUKEwiS5KTV_76UAxUUZvUHHZWwC3MQ0pQJegQIBhAM
+                - generic [ref=e48]: Videos
+            - listitem [ref=e49]:
+              - link "News" [ref=e50] [cursor=pointer]:
+                - /url: /search?q=how+to+debug+MCP+tool+calls&sca_esv=19e12980e28944c9&tbm=nws&prmd=ivns&sxsrf=ANbL-n4_nZgxDm0ib-4WK4thio37srNHaA:1778975364433&source=lnms&sa=X&ved=2ahUKEwiS5KTV_76UAxUUZvUHHZWwC3MQ0pQJegQIBhAO
+                - generic [ref=e52]: News
+            - listitem [ref=e53]:
+              - button "More filters" [ref=e54] [cursor=pointer]:
+                - generic "More filters" [ref=e55]:
+                  - generic [ref=e56]: More
+                  - img [ref=e58]
+        - generic [ref=e61]:
+          - link "Search Labs" [ref=e63] [cursor=pointer]:
+            - /url: https://labs.google.com/search?source=srp
+            - img [ref=e64]
+          - button "Google apps" [ref=e67] [cursor=pointer]:
+            - img [ref=e68]
+          - 'button "Google Account: Peng-Ta (incultnito@gmail.com)" [ref=e72] [cursor=pointer]':
+            - img [ref=e73]
+      - separator [ref=e74]
+    - heading "Search Results" [level=1] [ref=e75]
+    - generic [ref=e83]:
+      - generic [ref=e86]:
+        - button "AI Mode history" [ref=e88] [cursor=pointer]:
+          - img [ref=e90]
+        - button "New thread" [ref=e93] [cursor=pointer]:
+          - img [ref=e95]
+      - generic [ref=e100]:
+        - heading "how to debug MCP tool calls" [level=2] [ref=e106]
+        - generic [ref=e169]:
+          - generic [ref=e172]:
+            - generic [ref=e173]:
+              - text: Debugging Model Context Protocol (MCP) tool calls requires shifting away from traditional
+              - code [ref=e174]: console.log()
+              - text: outputs, as logging directly to standard output (
+              - code [ref=e175]: stdout
+              - text: ) disrupts the raw JSON-RPC protocol communication used by MCP clients.
+              - generic [ref=e177]:
+                - link "Reddit (+3) – View related links" [ref=e178] [cursor=pointer]:
+                  - /url: https://www.reddit.com/r/modelcontextprotocol/comments/1rd2xvd/how_is_everyone_debugging_their_mcp_servers/
+                - button "Reddit (+3) – View related links" [ref=e179] [cursor=pointer]:
+                  - generic [ref=e181]:
+                    - generic [ref=e182]: Reddit
+                    - generic [ref=e183]: ·r/modelcontextprotocol
+                    - generic [ref=e184]: "+3"
+            - generic [ref=e185]:
+              - text: The most effective approach is to isolate your server using the official
+              - strong [ref=e186]: MCP Inspector
+              - text: ", direct your logs to alternative outputs, or track the raw JSON-RPC traffic."
+              - generic [ref=e188]:
+                - link "Model Context Protocol (+3) – View related links" [ref=e189] [cursor=pointer]:
+                  - /url: https://modelcontextprotocol.io/docs/tools/debugging
+                - button "Model Context Protocol (+3) – View related links" [ref=e190] [cursor=pointer]:
+                  - generic [ref=e192]:
+                    - generic [ref=e193]: Model Context Protocol
+                    - generic [ref=e194]: "+3"
+            - separator [ref=e195]
+            - heading "1. Use the Official MCP Inspector (Recommended) View related links" [level=3] [ref=e196]:
+              - text: 1. Use the Official MCP Inspector (Recommended)
+              - button "View related links" [ref=e199] [cursor=pointer]:
+                - img [ref=e201]
+            - generic [ref=e203]:
+              - text: The
+              - link "Official Model Context Protocol Inspector" [ref=e205] [cursor=pointer]:
+                - /url: https://modelcontextprotocol.io/docs/tools/inspector
+              - text: is a browser-based user interface that mimics an LLM client. It allows you to manually trigger individual tool calls, look at your tool schemas, and inspect raw request/response payloads.
+              - generic [ref=e207]:
+                - link "YouTube (+4) – View related links" [ref=e208] [cursor=pointer]:
+                  - /url: https://www.youtube.com/watch?v=98l_k0XYXKs
+                - button "YouTube (+4) – View related links" [ref=e209] [cursor=pointer]:
+                  - generic [ref=e211]:
+                    - generic [ref=e212]: YouTube
+                    - generic [ref=e213]: ·Execute Automation
+                    - generic [ref=e214]: "+4"
+            - list [ref=e215]:
+              - listitem [ref=e216]:
+                - generic [ref=e217]:
+                  - text: Run the inspector via
+                  - code [ref=e218]: npx
+                  - text: "by pointing it straight to your compiled server file:"
+                - generic [ref=e220]:
+                  - generic [ref=e221]:
+                    - generic [ref=e223]: bash
+                    - code [ref=e226]: npx @modelcontextprotocol/inspector node build/index.js
+                  - generic [ref=e227]:
+                    - generic [ref=e228]: Use code with caution.
+                    - button "Copy code text to clipboard." [ref=e231] [cursor=pointer]:
+                      - img [ref=e233]
+              - listitem [ref=e236]:
+                - generic [ref=e237]:
+                  - text: Open the URL provided in your terminal (usually
+                  - code [ref=e238]: http://localhost:5173
+                  - text: or
+                  - code [ref=e239]: http://localhost:3000
+                  - text: ).
+              - listitem [ref=e240]:
+                - generic [ref=e241]:
+                  - text: Navigate to the
+                  - strong [ref=e242]: Tools
+                  - text: tab, fill out the required JSON arguments, and click
+                  - strong [ref=e243]: Run
+                  - text: to execute the tool independently of an AI agent.
+                - generic [ref=e245]:
+                  - link "YouTube (+4) – View related links" [ref=e246] [cursor=pointer]:
+                    - /url: https://www.youtube.com/watch?v=98l_k0XYXKs
+                  - button "YouTube (+4) – View related links" [ref=e247] [cursor=pointer]:
+                    - generic [ref=e249]:
+                      - generic [ref=e250]: YouTube
+                      - generic [ref=e251]: ·Execute Automation
+                      - generic [ref=e252]: "+4"
+            - separator [ref=e253]
+            - heading "2. Configure Safe Logging (File or stderr)" [level=3] [ref=e254]:
+              - text: 2. Configure Safe Logging (File or
+              - code [ref=e255]: stderr
+              - text: )
+            - generic [ref=e256]:
+              - text: Standard
+              - code [ref=e257]: stdout
+              - text: "logs will crash your MCP session because they pollute the data stream between the client and server. Use these two alternatives:"
+              - generic [ref=e259]:
+                - link "Reddit (+3) – View related links" [ref=e260] [cursor=pointer]:
+                  - /url: https://www.reddit.com/r/modelcontextprotocol/comments/1rd2xvd/how_is_everyone_debugging_their_mcp_servers/
+                - button "Reddit (+3) – View related links" [ref=e261] [cursor=pointer]:
+                  - generic [ref=e263]:
+                    - generic [ref=e264]: Reddit
+                    - generic [ref=e265]: ·r/modelcontextprotocol
+                    - generic [ref=e266]: "+3"
+            - list [ref=e267]:
+              - listitem [ref=e268]:
+                - generic [ref=e269]:
+                  - strong [ref=e270]:
+                    - text: Log to standard error (
+                    - code [ref=e271]: stderr
+                    - text: "):"
+                  - text: The MCP specification captures
+                  - code [ref=e272]: stderr
+                  - text: and safely passes it to client log logs without breaking JSON-RPC.
+                - generic [ref=e274]:
+                  - generic [ref=e275]:
+                    - generic [ref=e277]: javascript
+                    - code [ref=e280]: // JavaScript/TypeScript console.error("Debug payload:", JSON.stringify(args));
+                  - generic [ref=e281]:
+                    - generic [ref=e282]: Use code with caution.
+                    - button "Copy code text to clipboard." [ref=e285] [cursor=pointer]:
+                      - img [ref=e287]
+                - generic [ref=e291]:
+                  - generic [ref=e292]:
+                    - generic [ref=e294]: python
+                    - code [ref=e297]: "# Python import sys print(\"Debug payload:\", args, file=sys.stderr)"
+                  - generic [ref=e298]:
+                    - generic [ref=e299]: Use code with caution.
+                    - button "Copy code text to clipboard." [ref=e302] [cursor=pointer]:
+                      - img [ref=e304]
+              - listitem [ref=e307]:
+                - generic [ref=e308]:
+                  - strong [ref=e309]: "Write to a temporary log file:"
+                  - text: "Append your JSON data blocks to a local system file and follow them in a separate terminal panel:"
+                - generic [ref=e311]:
+                  - generic [ref=e312]:
+                    - generic [ref=e314]: bash
+                    - code [ref=e317]: tail -f /tmp/mcp-debug.log
+                  - generic [ref=e318]:
+                    - generic [ref=e319]: Use code with caution.
+                    - button "Copy code text to clipboard." [ref=e322] [cursor=pointer]:
+                      - img [ref=e324]
+                - generic [ref=e328]:
+                  - link "DEV Community (+4) – View related links" [ref=e329] [cursor=pointer]:
+                    - /url: https://dev.to/abdlrahmansaberabdo/debug-mcp-like-network-tab-seeing-every-tool-call-in-real-time-2gdf
+                  - button "DEV Community (+4) – View related links" [ref=e330] [cursor=pointer]:
+                    - generic [ref=e332]:
+                      - generic [ref=e333]: DEV Community
+                      - generic [ref=e334]: "+4"
+            - separator [ref=e335]
+            - heading "3. Diagnose Client-Side Log Files" [level=3] [ref=e336]
+            - generic [ref=e337]:
+              - text: If your server runs smoothly in the inspector but fails inside a live client like
+              - strong [ref=e338]: Claude Desktop
+              - text: ", check the client-specific logs."
+              - generic [ref=e340]:
+                - link "Model Context Protocol – View related links" [ref=e341] [cursor=pointer]:
+                  - /url: https://modelcontextprotocol.io/docs/tools/debugging
+                - button "Model Context Protocol – View related links" [ref=e342] [cursor=pointer]:
+                  - generic [ref=e345]: Model Context Protocol
+            - list [ref=e346]:
+              - listitem [ref=e347]:
+                - generic [ref=e348]:
+                  - strong [ref=e349]: "MacOS Claude Desktop Logs:"
+                  - code [ref=e350]: ~/Library/Logs/Claude/mcp.log
+                  - text: or
+                  - code [ref=e351]: ~/Library/Logs/Claude/mcp-server-<name>.log
+              - listitem [ref=e352]:
+                - generic [ref=e353]:
+                  - strong [ref=e354]: "Windows Claude Desktop Logs:"
+                  - code [ref=e355]: "%APPDATA%\\Claude\\logs\\mcp.log"
+                - button "View related links" [ref=e358] [cursor=pointer]:
+                  - img [ref=e360]
+            - generic [ref=e362]:
+              - text: Look for
+              - strong [ref=e363]:
+                - text: JSON-RPC Error
+                - code [ref=e364]: "-32602"
+                - text: (Invalid params)
+              - text: ", which indicates that the LLM generated arguments that failed to match your tool's Zod or JSON schema requirements."
+              - generic [ref=e366]:
+                - link "Model Context Protocol (+2) – View related links" [ref=e367] [cursor=pointer]:
+                  - /url: https://modelcontextprotocol.io/docs/tools/debugging
+                - button "Model Context Protocol (+2) – View related links" [ref=e368] [cursor=pointer]:
+                  - generic [ref=e370]:
+                    - generic [ref=e371]: Model Context Protocol
+                    - generic [ref=e372]: "+2"
+            - separator [ref=e373]
+            - heading "4. Monitor JSON-RPC Traffic with Ecosystem Proxies View related links" [level=3] [ref=e374]:
+              - text: 4. Monitor JSON-RPC Traffic with Ecosystem Proxies
+              - button "View related links" [ref=e377] [cursor=pointer]:
+                - img [ref=e379]
+            - generic [ref=e381]:
+              - text: "For production workloads or multi-tool execution tracking, use a specialized proxy to view live payloads like a network debugger:"
+              - generic [ref=e383]:
+                - link "DEV Community (+1) – View related links" [ref=e384] [cursor=pointer]:
+                  - /url: https://dev.to/abdlrahmansaberabdo/debug-mcp-like-network-tab-seeing-every-tool-call-in-real-time-2gdf
+                - button "DEV Community (+1) – View related links" [ref=e385] [cursor=pointer]:
+                  - generic [ref=e387]:
+                    - generic [ref=e388]: DEV Community
+                    - generic [ref=e389]: "+1"
+            - list [ref=e390]:
+              - listitem [ref=e391]:
+                - generic [ref=e392]:
+                  - strong [ref=e393]: "MCPKit:"
+                  - text: Run
+                  - code [ref=e394]: mcpkit inspect -- node build/index.js
+                  - text: to view an active dashboard showing latency, status codes, and precise
+                  - code [ref=e395]: tools/call
+                  - text: schemas.
+              - listitem [ref=e396]:
+                - generic [ref=e397]:
+                  - strong [ref=e398]: "Postman:"
+                  - text: Connect your server using standard I/O or HTTP via the
+                  - link "Postman MCP Client" [ref=e400] [cursor=pointer]:
+                    - /url: https://learning.postman.com/docs/postman-ai/mcp-requests/interact
+                  - text: to construct, save, and replay tool sequences visually.
+                - generic [ref=e402]:
+                  - link "YouTube (+2) – View related links" [ref=e403] [cursor=pointer]:
+                    - /url: https://www.youtube.com/watch?v=5MdSgQ87FfM
+                  - button "YouTube (+2) – View related links" [ref=e404] [cursor=pointer]:
+                    - generic [ref=e406]:
+                      - generic [ref=e407]: YouTube
+                      - generic [ref=e408]: ·Postman
+                      - generic [ref=e409]: "+2"
+            - generic [ref=e410]:
+              - generic [ref=e411]: "Watch these video walkthroughs to set up and navigate the MCP Inspector or trace your calls in real-time:"
+              - list [ref=e415]:
+                - listitem [ref=e416]:
+                  - generic [ref=e418]:
+                    - button "Debug MCP Server Like a PRO with MCP Inspector 🚀 - 12:02" [ref=e421] [cursor=pointer]:
+                      - 'img "Video thumbnail for: Debug MCP Server Like a PRO with MCP Inspector 🚀" [ref=e422]'
+                      - img [ref=e425]
+                      - generic [ref=e427]:
+                        - img [ref=e428]
+                        - generic [ref=e430]: 12:02
+                    - link "Debug MCP Server Like a PRO with MCP Inspector 🚀 11K views · 1 year ago YouTube · Execute Automation" [ref=e431] [cursor=pointer]:
+                      - /url: https://www.youtube.com/watch?v=98l_k0XYXKs&t=0s
+                      - generic [ref=e432]: Debug MCP Server Like a PRO with MCP Inspector 🚀
+                      - generic [ref=e433]: 11K views · 1 year ago
+                      - generic [ref=e435]: YouTube · Execute Automation
+                - listitem [ref=e436]:
+                  - generic [ref=e438]:
+                    - 'button "MCP Inspector: Test and Debug your MCP Server Locally - Segment Duration: 7 min - Starts at: 00:03 - Total Duration: 08:22" [ref=e441] [cursor=pointer]':
+                      - 'img "Video thumbnail for: MCP Inspector: Test and Debug your MCP Server Locally" [ref=e442]'
+                      - img [ref=e445]
+                      - generic [ref=e448]:
+                        - img [ref=e449]
+                        - generic [ref=e451]: 7 min
+                    - 'link "MCP Inspector: Test and Debug your MCP Server Locally 20K views · 1 year ago YouTube · AI Anytime" [ref=e454] [cursor=pointer]':
+                      - /url: https://www.youtube.com/watch?v=Y0tZ35dFFx4&t=3&t=3s
+                      - generic [ref=e455]: "MCP Inspector: Test and Debug your MCP Server Locally"
+                      - generic [ref=e456]: 20K views · 1 year ago
+                      - generic [ref=e458]: YouTube · AI Anytime
+                - listitem [ref=e459]:
+                  - generic [ref=e461]:
+                    - button "How to Test and Debug Servers with Postman&#39;s MCP Client - 05:37" [ref=e464] [cursor=pointer]:
+                      - 'img "Video thumbnail for: How to Test and Debug Servers with Postman''s MCP Client" [ref=e465]'
+                      - img [ref=e468]
+                      - generic [ref=e470]:
+                        - img [ref=e471]
+                        - generic [ref=e473]: 05:37
+                    - link "How to Test and Debug Servers with Postman's MCP Client 7K views · 1 year ago YouTube · Postman" [ref=e474] [cursor=pointer]:
+                      - /url: https://www.youtube.com/watch?v=5MdSgQ87FfM&t=0s
+                      - generic [ref=e475]: How to Test and Debug Servers with Postman's MCP Client
+                      - generic [ref=e476]: 7K views · 1 year ago
+                      - generic [ref=e478]: YouTube · Postman
+            - generic [ref=e479]: "To help tailor a solution, let me know:"
+            - list [ref=e480]:
+              - listitem [ref=e481]:
+                - generic [ref=e482]:
+                  - text: What
+                  - strong [ref=e483]: programming language
+                  - text: is your MCP server built with?
+              - listitem [ref=e484]:
+                - generic [ref=e485]:
+                  - text: Which
+                  - strong [ref=e486]: MCP client
+                  - text: are you targeting (e.g., Claude Desktop, VS Code, Cursor)?
+              - listitem [ref=e487]:
+                - generic [ref=e488]:
+                  - text: Are you getting a
+                  - strong [ref=e489]: specific error code
+                  - text: (like a connection timeout or protocol mismatch)?
+            - generic [ref=e492]:
+              - button "Copy text" [ref=e495] [cursor=pointer]:
+                - img [ref=e498]
+              - button "Share" [ref=e504] [cursor=pointer]:
+                - img [ref=e507]
+              - generic [ref=e510]:
+                - button "Good response" [ref=e512] [cursor=pointer]:
+                  - img [ref=e514]
+                - button "Bad response" [ref=e517] [cursor=pointer]:
+                  - img [ref=e519]
+              - button "More options" [ref=e523] [cursor=pointer]:
+                - img [ref=e525]
+          - generic [ref=e532]:
+            - generic [ref=e535]:
+              - button "26 sites" [ref=e536] [cursor=pointer]:
+                - generic [ref=e545]: 26 sites
+              - button "About this result" [ref=e548] [cursor=pointer]:
+                - img [ref=e549]
+            - list [ref=e551]:
+              - listitem [ref=e552]:
+                - generic [ref=e553]:
+                  - link "Debugging - What is the Model Context Protocol (MCP)?. Opens in new tab." [ref=e554] [cursor=pointer]:
+                    - /url: https://modelcontextprotocol.io/docs/tools/debugging
+                  - generic [ref=e555]:
+                    - generic [ref=e557]:
+                      - generic [ref=e558]: Debugging - What is the Model Context Protocol (MCP)?
+                      - generic [ref=e559]: Check client logs. Verify server process is running. Test standalone with Inspector. Verify protocol compatibility. Check capabili...
+                    - generic [ref=e561]:
+                      - generic [ref=e566]: Model Context Protocol
+                      - button "About this result" [ref=e568] [cursor=pointer]:
+                        - img [ref=e569]
+              - listitem [ref=e572]:
+                - generic [ref=e573]:
+                  - link "Debug MCP Server Like a PRO with MCP Inspector 🚀. Opens in new tab." [ref=e574] [cursor=pointer]:
+                    - /url: https://www.youtube.com/watch?v=98l_k0XYXKs
+                  - generic [ref=e575]:
+                    - generic [ref=e576]:
+                      - generic [ref=e577]:
+                        - generic [ref=e578]: Debug MCP Server Like a PRO with MCP Inspector 🚀
+                        - generic [ref=e579]: Mar 21, 2025 — hi guys welcome back and today in this video I'm going to talk about. how. I do build the MCP servers. and how I do debugging of t...
+                      - button "12:02" [ref=e583] [cursor=pointer]:
+                        - generic [ref=e584]:
+                          - img [ref=e586]
+                          - text: 12:02
+                        - img [ref=e590]
+                    - generic [ref=e592]:
+                      - generic [ref=e599]:
+                        - generic [ref=e600]: YouTube
+                        - generic [ref=e601]: ·
+                        - generic [ref=e602]: Execute Automation
+                      - button "About this result" [ref=e604] [cursor=pointer]:
+                        - img [ref=e605]
+              - listitem [ref=e608]:
+                - generic [ref=e609]:
+                  - link "MCP Inspector. Opens in new tab." [ref=e610] [cursor=pointer]:
+                    - /url: https://modelcontextprotocol.io/docs/tools/inspector
+                  - generic [ref=e611]:
+                    - generic [ref=e613]:
+                      - generic [ref=e614]: MCP Inspector
+                      - generic [ref=e615]: Develop with MCP * Connect to local MCP servers. * Connect to remote MCP Servers. * Build with Agent Skills. * Build an MCP server...
+                    - generic [ref=e617]:
+                      - generic [ref=e622]: Model Context Protocol
+                      - button "About this result" [ref=e624] [cursor=pointer]:
+                        - img [ref=e625]
+            - button "Show all related links" [ref=e628] [cursor=pointer]:
+              - generic [ref=e629]: Show all
+      - generic [ref=e133]:
+        - textbox "Ask anything" [active] [ref=e135]
+        - button "More input options" [ref=e138] [cursor=pointer]:
+          - img [ref=e140]
+        - button "Microphone" [ref=e157] [cursor=pointer]:
+          - img [ref=e159]
+    - contentinfo
+  - generic [ref=e630]: AI Mode response is ready

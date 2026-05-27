@@ -1,0 +1,57 @@
+- generic [ref=e2]:
+  - generic [ref=e5]:
+    - navigation "Sidebar" [ref=e7]:
+      - generic [ref=e8]:
+        - generic:
+          - link "Home":
+            - /url: /new
+            - img "Claude"
+        - button "Open sidebar" [ref=e10] [cursor=pointer]:
+          - generic [ref=e11]:
+            - img [ref=e13]
+            - img [ref=e16]
+      - generic [ref=e18]:
+        - generic [ref=e19]:
+          - link "New chat" [ref=e22] [cursor=pointer]:
+            - /url: /new
+            - generic [ref=e23]:
+              - img [ref=e27]
+              - generic:
+                - generic: New chat
+          - link "Search" [ref=e31] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e32]:
+              - img [ref=e35]
+              - generic:
+                - generic: Search
+        - generic [ref=e37]:
+          - link "Chats" [ref=e39] [cursor=pointer]:
+            - /url: /recents
+            - generic [ref=e40]:
+              - img [ref=e43]
+              - generic:
+                - generic: Chats
+          - link "Projects" [ref=e47] [cursor=pointer]:
+            - /url: /projects
+            - generic [ref=e48]:
+              - img [ref=e51]
+              - generic:
+                - generic: Projects
+    - main [ref=e59]:
+      - group [ref=e64]:
+        - generic [ref=e67]:
+          - generic [ref=e68]:
+            - textbox "Write your prompt to Claude" [active] [ref=e70]:
+              - paragraph [ref=e71]
+            - generic:
+              - generic: How can I help you today?
+          - generic [ref=e72]:
+            - button "Add files, connectors, and more" [ref=e75] [cursor=pointer]:
+              - img [ref=e77]
+            - generic [ref=e81]:
+              - button "Send message" [disabled]:
+                - img
+        - generic:
+          - status
+  - region "Notifications (F8)":
+    - list

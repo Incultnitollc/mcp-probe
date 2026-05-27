@@ -1,0 +1,205 @@
+- generic [ref=e1]:
+  - generic [ref=e5]:
+    - navigation "Main" [ref=e7]:
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - link "Perplexity" [ref=e11] [cursor=pointer]:
+            - /url: /
+            - img "Perplexity" [ref=e14]
+          - button "Collapse sidebar" [ref=e17] [cursor=pointer]:
+            - img [ref=e18]
+        - generic [ref=e23]:
+          - generic [ref=e26]:
+            - link "New" [ref=e27] [cursor=pointer]:
+              - /url: /
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - img
+                - generic:
+                  - generic:
+                    - generic: New
+                  - generic: ⌘K
+          - generic [ref=e30]:
+            - link "Computer" [ref=e31] [cursor=pointer]:
+              - /url: /computer/tasks
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Computer":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Computer
+          - generic [ref=e35]:
+            - link "Spaces" [ref=e36] [cursor=pointer]:
+              - /url: /spaces
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Spaces":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Spaces
+          - generic [ref=e40]:
+            - link "Artifacts" [ref=e41] [cursor=pointer]:
+              - /url: /computer/artifacts
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Artifacts":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Artifacts
+          - generic [ref=e45]:
+            - link "Customize" [ref=e46] [cursor=pointer]:
+              - /url: /computer/connectors
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Customize":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Customize
+          - generic [ref=e48]:
+            - generic [ref=e50]:
+              - link "History" [ref=e51] [cursor=pointer]:
+                - /url: /library
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - button "Collapse History" [expanded]:
+                        - generic:
+                          - img
+                    - generic:
+                      - img
+                  - generic:
+                    - generic:
+                      - generic: History
+            - generic [ref=e54]:
+              - link "MCP server CI pipeline" [ref=e55] [cursor=pointer]:
+                - /url: /search/29ccde2e-b9dd-432d-9f1c-35f3b74542f5
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: MCP server CI pipeline
+                  - button "Thread actions" [ref=e59] [cursor=pointer]:
+                    - img [ref=e62]
+        - button "Sign In" [ref=e73] [cursor=pointer]:
+          - generic [ref=e74]:
+            - generic [ref=e76]:
+              - img [ref=e79]
+              - generic [ref=e82]: Sign In
+            - generic:
+              - img
+    - main [ref=e84]:
+      - generic [ref=e87]:
+        - generic:
+          - generic:
+            - tablist "Answer mode tabs" [ref=e89]:
+              - tab "Answer" [selected] [ref=e90] [cursor=pointer]:
+                - img [ref=e91]
+                - text: Answer
+              - tab "Links" [ref=e93] [cursor=pointer]:
+                - img [ref=e94]
+                - text: Links
+              - tab "Images" [ref=e96] [cursor=pointer]:
+                - img [ref=e97]
+                - text: Images
+              - tab "Videos" [ref=e100] [cursor=pointer]:
+                - img [ref=e101]
+                - text: Videos
+            - generic [ref=e103]:
+              - button "Share" [ref=e105] [cursor=pointer]:
+                - img [ref=e107]
+                - generic [ref=e109]: Share
+              - button "Download Comet" [ref=e112] [cursor=pointer]:
+                - img [ref=e114]
+                - generic [ref=e116]: Download Comet
+        - generic [ref=e119]:
+          - tabpanel "Answer" [ref=e129]:
+            - generic [ref=e130]:
+              - generic [ref=e135]:
+                - generic:
+                  - button "Edit query":
+                    - generic:
+                      - generic:
+                        - img
+                  - button "Copy query":
+                    - generic:
+                      - generic:
+                        - img
+                - heading "MCP server CI pipeline" [level=1] [ref=e141]:
+                  - generic [ref=e143]: MCP server CI pipeline
+              - generic [ref=e152]: Thinking
+          - generic [ref=e166]:
+            - generic [ref=e168]:
+              - textbox [ref=e169]:
+                - paragraph [ref=e170]
+              - generic: Ask a follow-up
+            - generic [ref=e172]:
+              - button "Add files or tools" [ref=e173] [cursor=pointer]:
+                - img [ref=e176]
+              - button "Search" [pressed] [ref=e182] [cursor=pointer]:
+                - img [ref=e184]
+                - generic [ref=e186]:
+                  - text: Search
+                  - img [ref=e187]
+            - generic [ref=e189]:
+              - button "Model" [ref=e191] [cursor=pointer]:
+                - generic [ref=e192]: Model
+                - img [ref=e194]
+              - button "Stop response (Esc)" [ref=e199] [cursor=pointer]:
+                - img [ref=e202]
+  - dialog [ref=e212]:
+    - generic [ref=e216]:
+      - generic [ref=e217]:
+        - generic [ref=e218]: Sign up below to unlock the full potential of Perplexity
+        - generic [ref=e219]:
+          - text: By continuing, you agree to our
+          - link "privacy policy" [ref=e220] [cursor=pointer]:
+            - /url: https://www.perplexity.com/hub/legal/privacy-policy
+          - text: .
+      - generic [ref=e221]:
+        - button "Back home" [ref=e223] [cursor=pointer]:
+          - img [ref=e225]
+          - generic [ref=e227]: Back home
+        - generic [ref=e229]:
+          - generic [ref=e230]:
+            - button "Continue with Google" [ref=e231] [cursor=pointer]:
+              - img [ref=e233]
+              - generic [ref=e235]: Continue with Google
+            - button "Continue with Apple" [ref=e237] [cursor=pointer]:
+              - img [ref=e239]
+              - generic [ref=e241]: Continue with Apple
+          - generic [ref=e244]:
+            - generic [ref=e246]:
+              - textbox "Enter your email" [active] [ref=e251]
+              - generic [ref=e252]:
+                - button "Continue with email" [disabled]:
+                  - generic: Continue with email
+            - button "Single sign-on (SSO)" [ref=e254] [cursor=pointer]:
+              - generic [ref=e255]: Single sign-on (SSO)

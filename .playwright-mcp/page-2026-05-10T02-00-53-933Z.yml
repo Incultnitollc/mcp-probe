@@ -1,0 +1,343 @@
+- generic [ref=e1]:
+  - generic [ref=e5]:
+    - navigation "Main" [ref=e7]:
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - link "Perplexity" [ref=e11] [cursor=pointer]:
+            - /url: /
+            - img "Perplexity" [ref=e14]
+          - button "Collapse sidebar" [ref=e17] [cursor=pointer]:
+            - img [ref=e18]
+        - generic [ref=e21]:
+          - generic [ref=e24]:
+            - link "New" [ref=e25] [cursor=pointer]:
+              - /url: /
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - img
+                - generic:
+                  - generic:
+                    - generic: New
+                  - generic: ⌘K
+          - generic [ref=e28]:
+            - link "Computer" [ref=e29] [cursor=pointer]:
+              - /url: /computer/tasks
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Computer":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Computer
+          - generic [ref=e33]:
+            - link "Spaces" [ref=e34] [cursor=pointer]:
+              - /url: /spaces
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Spaces":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Spaces
+          - generic [ref=e38]:
+            - link "Artifacts" [ref=e39] [cursor=pointer]:
+              - /url: /computer/artifacts
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Artifacts":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Artifacts
+          - generic [ref=e43]:
+            - link "Customize" [ref=e44] [cursor=pointer]:
+              - /url: /computer/connectors
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Customize":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Customize
+          - generic [ref=e46]:
+            - generic [ref=e48]:
+              - link "History" [ref=e49] [cursor=pointer]:
+                - /url: /library
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - button "Collapse History" [expanded]:
+                        - generic:
+                          - img
+                    - generic:
+                      - img
+                  - generic:
+                    - generic:
+                      - generic: History
+            - generic [ref=e151]:
+              - link "tool to check MCP server health" [ref=e152] [cursor=pointer]:
+                - /url: /search/tool-to-check-mcp-server-healt-xESzIyjtQ9SFb9nRjH1Vlw
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: tool to check MCP server health
+                  - button "Thread actions" [ref=e156] [cursor=pointer]:
+                    - img [ref=e159]
+        - button "Sign In" [ref=e171] [cursor=pointer]:
+          - generic [ref=e172]:
+            - generic [ref=e174]:
+              - img [ref=e177]
+              - generic [ref=e180]: Sign In
+            - generic:
+              - img
+    - main [ref=e56]:
+      - generic [ref=e59]:
+        - generic:
+          - generic:
+            - tablist "Answer mode tabs" [ref=e61]:
+              - tab "Answer" [selected] [ref=e62] [cursor=pointer]:
+                - img [ref=e63]
+                - text: Answer
+              - tab "Links" [ref=e181] [cursor=pointer]:
+                - img [ref=e182]
+                - text: Links
+              - tab "Images" [ref=e184] [cursor=pointer]:
+                - img [ref=e185]
+                - text: Images
+            - generic [ref=e65]:
+              - button "Thread actions" [ref=e188] [cursor=pointer]:
+                - img [ref=e191]
+              - button "Share" [ref=e196] [cursor=pointer]:
+                - img [ref=e198]
+                - generic [ref=e200]: Share
+              - button "Download Comet" [ref=e67] [cursor=pointer]:
+                - img [ref=e69]
+                - generic [ref=e71]: Download Comet
+        - generic [ref=e74]:
+          - tabpanel "Answer" [ref=e84]:
+            - generic [ref=e85]:
+              - generic [ref=e90]:
+                - generic:
+                  - button "Edit query":
+                    - generic:
+                      - generic:
+                        - img
+                  - button "Copy query":
+                    - generic:
+                      - generic:
+                        - img
+                - heading "tool to check MCP server health" [level=1] [ref=e96]:
+                  - generic [ref=e98]: tool to check MCP server health
+              - generic [ref=e202]:
+                - generic [ref=e210]:
+                  - paragraph [ref=e211]:
+                    - text: For checking MCP server health, the most direct options are an MCP health-monitoring server that can run live checks and report uptime, latency, and alerts, or the MCP Inspector for manual debugging and connectivity testing. The health-monitoring approach is better for ongoing monitoring, while the Inspector is better for one-off verification and troubleshooting.
+                    - generic [ref=e216] [cursor=pointer]:
+                      - generic [ref=e217]: libraries
+                      - generic [ref=e218]: "+1"
+                  - heading "Useful options" [level=2] [ref=e219]
+                  - list [ref=e220]:
+                    - listitem [ref=e221]:
+                      - paragraph [ref=e222]:
+                        - strong [ref=e223]: "Automated monitoring:"
+                        - code [ref=e224]: mcp-health-monitor
+                        - text: can register servers, run a live
+                        - code [ref=e225]: check_server
+                        - text: ", check all servers, and expose a"
+                        - code [ref=e226]: GET /health
+                        - text: endpoint.
+                        - generic "mcp-health-monitor 1.0.3 on npm - Libraries.io - security ..." [ref=e228]:
+                          - link "libraries" [ref=e230] [cursor=pointer]:
+                            - /url: https://libraries.io/npm/mcp-health-monitor
+                            - generic [ref=e233]: libraries
+                    - listitem [ref=e234]:
+                      - paragraph [ref=e235]:
+                        - strong [ref=e236]: "Manual inspection:"
+                        - text: MCP Inspector is designed to connect to a server, verify capability negotiation, and inspect tools/resources during development.
+                        - generic "MCP Inspector" [ref=e238]:
+                          - link "modelcontextprotocol" [ref=e240] [cursor=pointer]:
+                            - /url: https://modelcontextprotocol.io/docs/tools/inspector
+                            - generic [ref=e243]: modelcontextprotocol
+                    - listitem [ref=e244]:
+                      - paragraph [ref=e245]:
+                        - strong [ref=e246]: "Automated testing:"
+                        - code [ref=e247]: mcp-server-tester
+                        - text: and similar test harnesses are useful when you want repeatable validation in CI rather than a live dashboard.
+                        - generic [ref=e252] [cursor=pointer]:
+                          - generic [ref=e253]: codely
+                          - generic [ref=e254]: "+1"
+                  - heading "What to use when" [level=2] [ref=e255]
+                  - list [ref=e256]:
+                    - listitem [ref=e257]:
+                      - paragraph [ref=e258]:
+                        - text: Use a
+                        - strong [ref=e259]: health monitor
+                        - text: if you want uptime, latency, and alerting over time.
+                        - generic "mcp-health-monitor 1.0.3 on npm - Libraries.io - security ..." [ref=e261]:
+                          - link "libraries" [ref=e263] [cursor=pointer]:
+                            - /url: https://libraries.io/npm/mcp-health-monitor
+                            - generic [ref=e266]: libraries
+                    - listitem [ref=e267]:
+                      - paragraph [ref=e268]:
+                        - text: Use the
+                        - strong [ref=e269]: Inspector
+                        - text: if you need to debug startup, handshake, or tool behavior interactively.
+                        - generic [ref=e274] [cursor=pointer]:
+                          - generic [ref=e275]: github
+                          - generic [ref=e276]: "+1"
+                    - listitem [ref=e277]:
+                      - paragraph [ref=e278]:
+                        - text: Use a
+                        - strong [ref=e279]: test runner
+                        - text: if you want regression checks after code changes or in CI.
+                        - generic [ref=e284] [cursor=pointer]:
+                          - generic [ref=e285]: github
+                          - generic [ref=e286]: "+1"
+                  - heading "Simple recommendation" [level=2] [ref=e287]
+                  - paragraph [ref=e288]:
+                    - text: If your goal is “is my MCP server up right now?”, start with a health-monitoring server like
+                    - code [ref=e289]: mcp-health-monitor
+                    - text: and its live check flow. If your goal is “why is it failing?”, use the MCP Inspector to connect directly and inspect the server session.
+                    - generic [ref=e294] [cursor=pointer]:
+                      - generic [ref=e295]: modelcontextprotocol
+                      - generic [ref=e296]: "+1"
+                - generic [ref=e297]:
+                  - generic [ref=e298]:
+                    - button "Share" [ref=e299] [cursor=pointer]:
+                      - img [ref=e302]
+                    - button "Download" [ref=e305] [cursor=pointer]:
+                      - img [ref=e308]
+                    - button "Copy" [ref=e311] [cursor=pointer]:
+                      - img [ref=e314]
+                    - button "Rewrite Thread" [ref=e317] [cursor=pointer]:
+                      - img [ref=e320]
+                    - button "10 sources" [ref=e324] [cursor=pointer]:
+                      - generic [ref=e326]:
+                        - img [ref=e327]
+                        - img [ref=e328]
+                        - generic [ref=e330]:
+                          - img [ref=e333]
+                          - img [ref=e337]
+                          - img [ref=e341]
+                        - text: 10 sources
+                  - generic [ref=e344]:
+                    - generic [ref=e346]:
+                      - button "Helpful" [ref=e347] [cursor=pointer]:
+                        - img [ref=e350]
+                      - button "Not helpful" [ref=e353] [cursor=pointer]:
+                        - img [ref=e356]
+                    - button "More actions" [ref=e360] [cursor=pointer]:
+                      - img [ref=e363]
+                - generic [ref=e367]:
+                  - generic [ref=e372]: Follow-ups
+                  - generic [ref=e373]:
+                    - button "How to install and configure mcp-health-monitor" [ref=e374] [cursor=pointer]:
+                      - img [ref=e376]
+                      - generic [ref=e379]: How to install and configure mcp-health-monitor
+                    - button "MCP Inspector tutorial for beginners" [ref=e380] [cursor=pointer]:
+                      - img [ref=e382]
+                      - generic [ref=e385]: MCP Inspector tutorial for beginners
+                    - button "Automated testing tools for MCP servers like mcp-server-tester" [ref=e386] [cursor=pointer]:
+                      - img [ref=e388]
+                      - generic [ref=e391]: Automated testing tools for MCP servers like mcp-server-tester
+                    - button "Compare mcp-health-monitor vs MCP Inspector" [ref=e392] [cursor=pointer]:
+                      - img [ref=e394]
+                      - generic [ref=e397]: Compare mcp-health-monitor vs MCP Inspector
+                    - button "How to set up Azure DevOps pipeline monitoring in mcp-health-monitor" [ref=e398] [cursor=pointer]:
+                      - img [ref=e400]
+                      - generic [ref=e403]: How to set up Azure DevOps pipeline monitoring in mcp-health-monitor
+          - generic [ref=e414]:
+            - generic [ref=e416]:
+              - textbox [ref=e417]:
+                - paragraph [ref=e418]
+              - generic:
+                - generic: Ask a follow-up
+            - generic [ref=e420]:
+              - button "Add files or tools" [ref=e421] [cursor=pointer]:
+                - img [ref=e424]
+              - button "Search" [pressed] [ref=e431] [cursor=pointer]:
+                - img [ref=e433]
+                - generic [ref=e435]:
+                  - text: Search
+                  - img [ref=e436]
+            - generic [ref=e438]:
+              - button "Model" [ref=e440] [cursor=pointer]:
+                - generic [ref=e441]: Model
+                - img [ref=e443]
+              - button "Dictation" [ref=e447] [cursor=pointer]:
+                - img [ref=e450]
+              - button "Submit" [disabled]:
+                - generic:
+                  - generic:
+                    - img
+  - dialog [ref=e458]:
+    - generic [ref=e462]:
+      - generic [ref=e463]:
+        - generic [ref=e464]: Sign up below to unlock the full potential of Perplexity
+        - generic [ref=e465]:
+          - text: By continuing, you agree to our
+          - link "privacy policy" [ref=e466] [cursor=pointer]:
+            - /url: https://www.perplexity.com/hub/legal/privacy-policy
+          - text: .
+      - generic [ref=e467]:
+        - button "Back home" [ref=e469] [cursor=pointer]:
+          - img [ref=e471]
+          - generic [ref=e473]: Back home
+        - generic [ref=e475]:
+          - generic [ref=e476]:
+            - button "Continue with Google" [ref=e477] [cursor=pointer]:
+              - img [ref=e479]
+              - generic [ref=e481]: Continue with Google
+            - button "Continue with Apple" [ref=e483] [cursor=pointer]:
+              - img [ref=e485]
+              - generic [ref=e487]: Continue with Apple
+          - generic [ref=e490]:
+            - generic [ref=e492]:
+              - textbox "Enter your email" [active] [ref=e497]
+              - generic [ref=e498]:
+                - button "Continue with email" [disabled]:
+                  - generic: Continue with email
+            - button "Single sign-on (SSO)" [ref=e500] [cursor=pointer]:
+              - generic [ref=e501]: Single sign-on (SSO)
+  - dialog "Cookie Policy" [ref=e503]:
+    - generic [ref=e504]:
+      - heading "Cookie Policy" [level=2] [ref=e505]
+      - paragraph [ref=e506]: This website uses third party cookies to serve you relevant ads and provide personalization.
+    - generic [ref=e507]:
+      - img [ref=e508]
+      - generic [ref=e510]: Cookie Policy
+    - generic [ref=e511]:
+      - text: This website uses third party cookies to serve you relevant ads and provide personalization by remembering your location. You may opt out from these cookies by selecting the "Opt out" button below. If you have a Perplexity account, you may opt out of the "sale" or "sharing" of your data
+      - link "here" [ref=e512] [cursor=pointer]:
+        - /url: https://www.perplexity.ai/hub/legal/privacy-policy
+      - text: .
+    - generic [ref=e513]:
+      - button "Opt out" [ref=e514] [cursor=pointer]:
+        - generic [ref=e515]: Opt out
+      - button "Got it" [ref=e517] [cursor=pointer]:
+        - generic [ref=e518]: Got it

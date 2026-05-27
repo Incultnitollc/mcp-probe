@@ -1,0 +1,67 @@
+- generic [ref=e1]:
+  - generic:
+    - generic:
+      - link "Skip to main content" [ref=e2] [cursor=pointer]
+      - link "Accessibility help" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=en-TW
+      - link "Accessibility feedback" [ref=e4] [cursor=pointer]
+  - banner [ref=e5]:
+    - banner [ref=e6]:
+      - link "Go to Google Home" [ref=e8] [cursor=pointer]:
+        - /url: https://www.google.com/webhp?hl=en&ictx=0&sa=X&ved=0ahUKEwiS5KTV_76UAxUUZvUHHZWwC3MQPAgJ
+        - img [ref=e9]
+  - generic [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - navigation [ref=e21]:
+          - list [ref=e23]:
+            - listitem [ref=e24]:
+              - button "AI Mode" [ref=e30] [cursor=pointer]:
+                - generic [ref=e32]:
+                  - generic [ref=e33]: AI Mode
+                  - img [ref=e35]
+            - listitem [ref=e37]:
+              - link "All" [ref=e38] [cursor=pointer]:
+                - /url: /search?q=how+to+debug+MCP+tool+calls&sca_esv=19e12980e28944c9&prmd=ivns&sxsrf=ANbL-n4_nZgxDm0ib-4WK4thio37srNHaA:1778975364433&source=lnms&sa=X&ved=2ahUKEwiS5KTV_76UAxUUZvUHHZWwC3MQ0pQJegQIBhAI
+                - generic [ref=e40]: All
+            - listitem [ref=e41]:
+              - link "Images" [ref=e42] [cursor=pointer]:
+                - /url: /search?q=how+to+debug+MCP+tool+calls&sca_esv=19e12980e28944c9&udm=2&prmd=ivns&sxsrf=ANbL-n4_nZgxDm0ib-4WK4thio37srNHaA:1778975364433&source=lnms&sa=X&ved=2ahUKEwiS5KTV_76UAxUUZvUHHZWwC3MQ0pQJegQIBhAK
+                - generic [ref=e44]: Images
+            - listitem [ref=e45]:
+              - link "Videos" [ref=e46] [cursor=pointer]:
+                - /url: /search?q=how+to+debug+MCP+tool+calls&sca_esv=19e12980e28944c9&udm=7&prmd=ivns&sxsrf=ANbL-n4_nZgxDm0ib-4WK4thio37srNHaA:1778975364433&source=lnms&sa=X&ved=2ahUKEwiS5KTV_76UAxUUZvUHHZWwC3MQ0pQJegQIBhAM
+                - generic [ref=e48]: Videos
+            - listitem [ref=e49]:
+              - link "News" [ref=e50] [cursor=pointer]:
+                - /url: /search?q=how+to+debug+MCP+tool+calls&sca_esv=19e12980e28944c9&tbm=nws&prmd=ivns&sxsrf=ANbL-n4_nZgxDm0ib-4WK4thio37srNHaA:1778975364433&source=lnms&sa=X&ved=2ahUKEwiS5KTV_76UAxUUZvUHHZWwC3MQ0pQJegQIBhAO
+                - generic [ref=e52]: News
+            - listitem [ref=e53]:
+              - button "More filters" [ref=e54] [cursor=pointer]:
+                - generic "More filters" [ref=e55]:
+                  - generic [ref=e56]: More
+                  - img [ref=e58]
+        - generic [ref=e61]:
+          - link "Search Labs" [ref=e63] [cursor=pointer]:
+            - /url: https://labs.google.com/search?source=srp
+            - img [ref=e64]
+          - button "Google apps" [ref=e67] [cursor=pointer]:
+            - img [ref=e68]
+          - 'button "Google Account: Peng-Ta (incultnito@gmail.com)" [ref=e72] [cursor=pointer]':
+            - img [ref=e73]
+      - separator [ref=e74]
+    - heading "Search Results" [level=1] [ref=e75]
+    - generic [ref=e83]:
+      - generic [ref=e86]:
+        - button "AI Mode history" [ref=e88] [cursor=pointer]:
+          - img [ref=e90]
+        - button "New thread" [ref=e93] [cursor=pointer]:
+          - img [ref=e95]
+      - heading "how to debug MCP tool calls" [level=2] [ref=e106]
+      - generic [ref=e133]:
+        - textbox "Ask anything" [active] [ref=e135]
+        - button "More input options" [ref=e138] [cursor=pointer]:
+          - img [ref=e140]
+        - button "Microphone" [ref=e157] [cursor=pointer]:
+          - img [ref=e159]
+    - contentinfo

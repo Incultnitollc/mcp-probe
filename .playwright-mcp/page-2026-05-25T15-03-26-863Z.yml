@@ -1,0 +1,187 @@
+- generic [ref=e1]:
+  - generic [ref=e5]:
+    - navigation "Main" [ref=e7]:
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - link "Perplexity" [ref=e11] [cursor=pointer]:
+            - /url: /
+            - img "Perplexity" [ref=e14]
+          - button "Collapse sidebar" [ref=e17] [cursor=pointer]:
+            - img [ref=e18]
+        - generic [ref=e23]:
+          - generic [ref=e26]:
+            - link "New" [ref=e27] [cursor=pointer]:
+              - /url: /
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - img
+                - generic:
+                  - generic:
+                    - generic: New
+                  - generic: ⌘K
+          - generic [ref=e30]:
+            - link "Computer" [ref=e31] [cursor=pointer]:
+              - /url: /computer/tasks
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Computer":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Computer
+          - generic [ref=e35]:
+            - link "Spaces" [ref=e36] [cursor=pointer]:
+              - /url: /spaces
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Spaces":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Spaces
+          - generic [ref=e40]:
+            - link "Artifacts" [ref=e41] [cursor=pointer]:
+              - /url: /computer/artifacts
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Artifacts":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Artifacts
+          - generic [ref=e45]:
+            - link "Customize" [ref=e46] [cursor=pointer]:
+              - /url: /computer/connectors
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Customize":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Customize
+          - generic [ref=e48]:
+            - generic [ref=e50]:
+              - link "History" [ref=e51] [cursor=pointer]:
+                - /url: /library
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - button "Collapse History" [expanded]:
+                        - generic:
+                          - img
+                    - generic:
+                      - img
+                  - generic:
+                    - generic:
+                      - generic: History
+            - generic [ref=e54]: No recent threads
+        - button "Sign In" [ref=e63] [cursor=pointer]:
+          - generic [ref=e64]:
+            - generic [ref=e66]:
+              - img [ref=e69]
+              - generic [ref=e72]: Sign In
+            - generic:
+              - img
+    - main [ref=e74]:
+      - generic [ref=e77]:
+        - generic:
+          - generic:
+            - tablist "Answer mode tabs" [ref=e79]:
+              - tab "Answer" [selected] [ref=e80] [cursor=pointer]:
+                - img [ref=e81]
+                - text: Answer
+            - button "Download Comet" [ref=e85] [cursor=pointer]:
+              - img [ref=e87]
+              - generic [ref=e89]: Download Comet
+        - generic [ref=e92]:
+          - tabpanel "Answer" [ref=e102]:
+            - generic [ref=e103]:
+              - generic [ref=e108]:
+                - generic:
+                  - button:
+                    - generic:
+                      - generic:
+                        - img
+                  - button:
+                    - generic:
+                      - generic:
+                        - img
+                - heading "tool to check MCP server health" [level=1] [ref=e114]:
+                  - generic [ref=e116]: tool to check MCP server health
+              - generic [ref=e125]: Thinking
+          - generic [ref=e139]:
+            - generic [ref=e141]:
+              - textbox [ref=e142]:
+                - paragraph [ref=e143]
+              - generic: Ask a follow-up
+            - generic [ref=e145]:
+              - button "Add files or tools" [ref=e146] [cursor=pointer]:
+                - img [ref=e149]
+              - button "Search" [pressed] [ref=e155] [cursor=pointer]:
+                - img [ref=e157]
+                - generic [ref=e159]:
+                  - text: Search
+                  - img [ref=e160]
+            - generic [ref=e162]:
+              - button "Model" [ref=e164] [cursor=pointer]:
+                - generic [ref=e165]: Model
+                - img [ref=e167]
+              - button "Dictation" [ref=e171] [cursor=pointer]:
+                - img [ref=e174]
+              - button "Submit" [disabled]:
+                - generic:
+                  - generic:
+                    - img
+  - dialog [ref=e184]:
+    - generic [ref=e188]:
+      - generic [ref=e189]:
+        - generic [ref=e190]: Sign up below to unlock the full potential of Perplexity
+        - generic [ref=e191]:
+          - text: By continuing, you agree to our
+          - link "privacy policy" [ref=e192] [cursor=pointer]:
+            - /url: https://www.perplexity.com/hub/legal/privacy-policy
+          - text: .
+      - generic [ref=e193]:
+        - button "Back home" [ref=e195] [cursor=pointer]:
+          - img [ref=e197]
+          - generic [ref=e199]: Back home
+        - generic [ref=e201]:
+          - generic [ref=e202]:
+            - button "Continue with Google" [ref=e203] [cursor=pointer]:
+              - img [ref=e205]
+              - generic [ref=e207]: Continue with Google
+            - button "Continue with Apple" [ref=e209] [cursor=pointer]:
+              - img [ref=e211]
+              - generic [ref=e213]: Continue with Apple
+          - generic [ref=e216]:
+            - generic [ref=e218]:
+              - textbox "Enter your email" [active] [ref=e223]
+              - generic [ref=e224]:
+                - button "Continue with email" [disabled]:
+                  - generic: Continue with email
+            - button "Single sign-on (SSO)" [ref=e226] [cursor=pointer]:
+              - generic [ref=e227]: Single sign-on (SSO)

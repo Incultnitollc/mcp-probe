@@ -1,0 +1,266 @@
+- generic [ref=e1]:
+  - generic:
+    - generic:
+      - link "Skip to main content" [ref=e2] [cursor=pointer]
+      - link "Accessibility help" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=en-TW
+  - banner [ref=e4]:
+    - banner [ref=e5]:
+      - link "Go to Google Home" [ref=e7] [cursor=pointer]:
+        - /url: https://www.google.com/webhp?hl=en&ictx=0&sa=X&ved=0ahUKEwjyrc-Q2tSUAxVLb_UHHQP1HdMQPAgH
+        - img [ref=e8]
+  - generic [ref=e14]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - navigation [ref=e20]:
+          - list [ref=e22]:
+            - listitem [ref=e23]:
+              - button "AI Mode" [ref=e29] [cursor=pointer]:
+                - generic [ref=e31]:
+                  - generic [ref=e32]: AI Mode
+                  - img [ref=e34]
+            - listitem [ref=e36]:
+              - link "All" [ref=e37] [cursor=pointer]:
+                - /url: /search?q=how+do+I+test+my+MCP+server&sca_esv=bb6909982b54b99b&prmd=ivns&sxsrf=ANbL-n6hgw420x5mPC8qPDj7NIz1h1Ghhw:1779721202561&source=lnms&sa=X&ved=2ahUKEwjyrc-Q2tSUAxVLb_UHHQP1HdMQ0pQJegQIBhAI
+                - generic [ref=e39]: All
+            - listitem [ref=e40]:
+              - link "Images" [ref=e41] [cursor=pointer]:
+                - /url: /search?q=how+do+I+test+my+MCP+server&sca_esv=bb6909982b54b99b&udm=2&prmd=ivns&sxsrf=ANbL-n6hgw420x5mPC8qPDj7NIz1h1Ghhw:1779721202561&source=lnms&sa=X&ved=2ahUKEwjyrc-Q2tSUAxVLb_UHHQP1HdMQ0pQJegQIBhAK
+                - generic [ref=e43]: Images
+            - listitem [ref=e44]:
+              - link "Videos" [ref=e45] [cursor=pointer]:
+                - /url: /search?q=how+do+I+test+my+MCP+server&sca_esv=bb6909982b54b99b&udm=7&prmd=ivns&sxsrf=ANbL-n6hgw420x5mPC8qPDj7NIz1h1Ghhw:1779721202561&source=lnms&sa=X&ved=2ahUKEwjyrc-Q2tSUAxVLb_UHHQP1HdMQ0pQJegQIBhAM
+                - generic [ref=e47]: Videos
+            - listitem [ref=e48]:
+              - link "News" [ref=e49] [cursor=pointer]:
+                - /url: /search?q=how+do+I+test+my+MCP+server&sca_esv=bb6909982b54b99b&tbm=nws&prmd=ivns&sxsrf=ANbL-n6hgw420x5mPC8qPDj7NIz1h1Ghhw:1779721202561&source=lnms&sa=X&ved=2ahUKEwjyrc-Q2tSUAxVLb_UHHQP1HdMQ0pQJegQIBhAO
+                - generic [ref=e51]: News
+            - listitem [ref=e52]:
+              - button "More filters" [ref=e53] [cursor=pointer]:
+                - generic "More filters" [ref=e54]:
+                  - generic [ref=e55]: More
+                  - img [ref=e57]
+        - generic [ref=e60]:
+          - link "Search Labs" [ref=e62] [cursor=pointer]:
+            - /url: https://labs.google.com/search?source=srp
+            - img [ref=e63]
+          - button "Google apps" [ref=e66] [cursor=pointer]:
+            - img [ref=e67]
+          - 'button "Google Account: Peng-Ta (incultnito@gmail.com)" [ref=e71] [cursor=pointer]':
+            - img [ref=e72]
+      - separator [ref=e73]
+    - heading "Search Results" [level=1] [ref=e74]
+    - generic [ref=e82]:
+      - generic [ref=e85]:
+        - button "AI Mode history" [ref=e87] [cursor=pointer]:
+          - img [ref=e89]
+        - button "New thread" [ref=e92] [cursor=pointer]:
+          - img [ref=e94]
+      - generic [ref=e99]:
+        - 'heading "You said: how do I test my MCP server" [level=2] [ref=e105]':
+          - generic [ref=e106]: "You said:"
+          - text: how do I test my MCP server
+        - generic [ref=e112]:
+          - generic [ref=e115]:
+            - generic [ref=e116]:
+              - text: The best way to test your Model Context Protocol (MCP) server is to
+              - mark [ref=e117]:
+                - text: use the
+                - strong [ref=e118]:
+                  - link "Official MCP Inspector" [ref=e120] [cursor=pointer]:
+                    - /url: https://modelcontextprotocol.io/docs/tools/inspector
+              - text: ", a purpose-built graphical interface developed by Anthropic. It allows you to view exposed tools, validate schemas, and run direct tool calls without needing an LLM."
+              - generic [ref=e122]:
+                - link "Model Context Protocol (+3) – View related links" [ref=e123] [cursor=pointer]:
+                  - /url: https://modelcontextprotocol.io/docs/tools/inspector
+                - button "Model Context Protocol (+3) – View related links" [disabled] [ref=e124]:
+                  - generic [ref=e126]:
+                    - generic [ref=e127]: Model Context Protocol
+                    - generic [ref=e128]: "+3"
+            - generic [ref=e129]:
+              - text: Depending on your stage of development, you can test your MCP server manually, via automated scripts, or directly through an AI client.
+              - generic [ref=e131]:
+                - link "Stainless (+1) – View related links" [ref=e132] [cursor=pointer]:
+                  - /url: https://www.stainless.com/mcp/how-to-test-mcp-servers/
+                - button "Stainless (+1) – View related links" [disabled] [ref=e133]:
+                  - generic [ref=e135]:
+                    - generic [ref=e136]: Stainless
+                    - generic [ref=e137]: "+1"
+            - separator [ref=e138]
+            - heading "1. Manual Testing with MCP Inspector (Recommended)" [level=3] [ref=e139]
+            - generic [ref=e140]:
+              - text: The Inspector boots up a local web client that interfaces directly with your server.
+              - generic [ref=e142]:
+                - link "Stainless (+1) – View related links" [ref=e143] [cursor=pointer]:
+                  - /url: https://www.stainless.com/mcp/how-to-test-mcp-servers/
+                - button "Stainless (+1) – View related links" [disabled] [ref=e144]:
+                  - generic [ref=e146]:
+                    - generic [ref=e147]: Stainless
+                    - generic [ref=e148]: "+1"
+            - generic [ref=e149]:
+              - strong [ref=e150]: "For Node.js / TypeScript Servers:"
+              - text: "Run the inspector by pointing it to your build file:"
+              - generic [ref=e152]:
+                - link "GitHub (+1) – View related links" [ref=e153] [cursor=pointer]:
+                  - /url: https://github.com/modelcontextprotocol/inspector
+                - button "GitHub (+1) – View related links" [disabled] [ref=e154]:
+                  - generic [ref=e156]:
+                    - generic [ref=e157]: GitHub
+                    - generic [ref=e158]: "+1"
+            - generic [ref=e160]:
+              - generic [ref=e161]:
+                - generic [ref=e163]: bash
+                - code [ref=e166]: npx @modelcontextprotocol/inspector node build/index.js
+              - generic [ref=e167]:
+                - generic [ref=e168]: Use code with caution.
+                - button "Copy code text to clipboard." [ref=e171] [cursor=pointer]:
+                  - img [ref=e173]
+            - generic [ref=e176]:
+              - strong [ref=e177]: "For Python / FastMCP Servers:"
+              - text: If you are using the
+              - code [ref=e178]: mcp
+              - text: CLI or
+              - code [ref=e179]: uv
+              - text: "package manager, run:"
+              - generic [ref=e181]:
+                - link "Medium (+1) – View related links" [ref=e182] [cursor=pointer]:
+                  - /url: https://mahendranp.medium.com/beginners-guide-to-building-and-testing-your-first-mcp-server-with-uv-and-claude-3bfc6198212a
+                - button "Medium (+1) – View related links" [disabled] [ref=e183]:
+                  - generic [ref=e185]:
+                    - generic [ref=e186]: Medium
+                    - generic [ref=e187]: ·Mahendran
+                    - generic [ref=e188]: "+1"
+            - generic [ref=e190]:
+              - generic [ref=e191]:
+                - generic [ref=e193]: bash
+                - code [ref=e196]: uv run mcp dev your_server.py
+              - generic [ref=e197]:
+                - generic [ref=e198]: Use code with caution.
+                - button "Copy code text to clipboard." [ref=e201] [cursor=pointer]:
+                  - img [ref=e203]
+            - list [ref=e206]:
+              - listitem [ref=e207]:
+                - generic [ref=e208]:
+                  - strong [ref=e209]: What to look for
+                  - text: ": Open the provided local URL (usually"
+                  - code [ref=e210]: http://localhost:5173
+                  - text: ). Use the
+                  - strong [ref=e211]: Tools
+                  - text: ","
+                  - strong [ref=e212]: Prompts
+                  - text: ", or"
+                  - strong [ref=e213]: Resources
+                  - text: tabs to check if everything populates correctly. Click
+                  - strong [ref=e214]: Run Tool
+                  - text: with test arguments to evaluate the outputs and status logs.
+                - generic [ref=e216]:
+                  - link "Cloudflare Developer Docs (+5) – View related links" [ref=e217] [cursor=pointer]:
+                    - /url: https://developers.cloudflare.com/agents/guides/test-remote-mcp-server/
+                  - button "Cloudflare Developer Docs (+5) – View related links" [disabled] [ref=e218]:
+                    - generic [ref=e220]:
+                      - generic [ref=e221]: Cloudflare Developer Docs
+                      - generic [ref=e222]: "+5"
+            - separator [ref=e223]
+            - heading "2. Testing with API Clients (Postman & Bruno)" [level=3] [ref=e224]
+            - generic [ref=e225]:
+              - text: If your server uses Streamable HTTP or Server-Sent Events (SSE) instead of
+              - code [ref=e226]: stdio
+              - text: ", you can visually map requests using regular API tools."
+              - generic [ref=e228]:
+                - link "YouTube (+1) – View related links" [ref=e229] [cursor=pointer]:
+                  - /url: https://www.youtube.com/watch?v=5MdSgQ87FfM
+                - button "YouTube (+1) – View related links" [disabled] [ref=e230]:
+                  - generic [ref=e232]:
+                    - generic [ref=e233]: YouTube
+                    - generic [ref=e234]: ·Postman
+                    - generic [ref=e235]: "+1"
+            - list [ref=e236]:
+              - listitem [ref=e237]:
+                - generic [ref=e238]:
+                  - strong [ref=e239]:
+                    - link "Postman MCP Client" [ref=e241] [cursor=pointer]:
+                      - /url: https://learning.postman.com/docs/postman-ai/mcp-requests/interact
+                  - text: ": Postman has native support for MCP requests. Open Postman, create a"
+                  - strong [ref=e242]: New Request
+                  - text: ", select"
+                  - strong [ref=e243]: MCP
+                  - text: ", and configure your connection type to visualize payloads and debug stream history."
+              - listitem:
+                - generic:
+                  - strong:
+                    - generic:
+                      - link "MCP Playground":
+                        - /url: https://mcpplaygroundonline.com/
+                  - text: ": A free, browser-based online testing tool where you can input any remote MCP server URL (along with authentication tokens) to test your endpoints instantly."
+                - generic:
+                  - generic:
+                    - link "YouTube (+3) – View related links":
+                      - /url: https://www.youtube.com/watch?v=5MdSgQ87FfM
+                    - button "YouTube (+3) – View related links" [disabled]:
+                      - generic:
+                        - generic:
+                          - generic: YouTube
+                          - generic: ·Postman
+                          - generic: "+3"
+            - separator
+            - heading "3. Writing Automated & Unit Tests" [level=3]
+            - generic [ref=e244]:
+              - text: To avoid manual testing fatigue, you can build regression and unit tests by spinning up a lightweight test client.
+              - generic [ref=e245]:
+                - generic:
+                  - link "Codely – View related links":
+                    - /url: https://codely.com/en/blog/how-to-test-mcp-servers
+                  - button "Codely – View related links" [disabled]:
+                    - generic:
+                      - generic:
+                        - generic: Codely
+          - generic [ref=e250]:
+            - generic [ref=e252]:
+              - button "10 sites" [ref=e253] [cursor=pointer]:
+                - generic [ref=e262]: 10 sites
+              - button "About this result" [ref=e267] [cursor=pointer]:
+                - img [ref=e269]
+            - list [ref=e272]:
+              - listitem [ref=e273]:
+                - generic [ref=e274]:
+                  - link "MCP Inspector - Model Context Protocol. Opens in new tab." [ref=e275] [cursor=pointer]:
+                    - /url: https://modelcontextprotocol.io/docs/tools/inspector
+                  - generic [ref=e276]:
+                    - generic [ref=e278]:
+                      - generic [ref=e279]: MCP Inspector - Model Context Protocol
+                      - generic [ref=e280]: Development workflow. Start Development. Launch Inspector with your server. Verify basic connectivity. Check capability negotiatio...
+                    - generic [ref=e282]:
+                      - generic [ref=e287]: Model Context Protocol
+                      - button "About this result" [ref=e291] [cursor=pointer]:
+                        - img [ref=e293]
+              - listitem [ref=e297]:
+                - generic [ref=e298]:
+                  - 'link "modelcontextprotocol/inspector: Visual testing tool for MCP .... Opens in new tab." [ref=e299] [cursor=pointer]':
+                    - /url: https://github.com/modelcontextprotocol/inspector
+                  - generic [ref=e300]:
+                    - generic [ref=e302]:
+                      - generic [ref=e303]: "modelcontextprotocol/inspector: Visual testing tool for MCP ..."
+                      - generic [ref=e304]: Open the MCPI client UI in your browser to use the inspector. ( These ports are derived from the T9 dialpad mapping of MCPI and MC...
+                    - generic [ref=e306]:
+                      - generic [ref=e311]: GitHub
+                      - button "About this result" [ref=e315] [cursor=pointer]:
+                        - img [ref=e317]
+              - listitem [ref=e321]:
+                - generic [ref=e322]:
+                  - link "How to Test MCP Servers - Stainless. Opens in new tab." [ref=e323] [cursor=pointer]:
+                    - /url: https://www.stainless.com/mcp/how-to-test-mcp-servers/
+                  - generic [ref=e324]:
+                    - generic [ref=e326]:
+                      - generic [ref=e327]: How to Test MCP Servers - Stainless
+                      - generic [ref=e328]: "The simplest way to test a local MCP server is using the Inspector with npx: * npx @modelcontextprotocol/inspector node. * { \"mcpS..."
+                    - generic [ref=e330]:
+                      - generic [ref=e335]: Stainless
+                      - button "About this result" [ref=e339] [cursor=pointer]:
+                        - img [ref=e341]
+      - generic [ref=e345]:
+        - textbox "Ask anything" [active] [ref=e347]
+        - button "More input options" [ref=e351] [cursor=pointer]:
+          - img [ref=e353]
+        - button "Microphone" [ref=e370] [cursor=pointer]:
+          - img [ref=e372]
+    - contentinfo

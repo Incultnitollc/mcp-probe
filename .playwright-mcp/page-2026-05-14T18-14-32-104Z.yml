@@ -1,0 +1,274 @@
+- generic [ref=e1]:
+  - generic [ref=e5]:
+    - navigation "Main" [ref=e7]:
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - link "Perplexity" [ref=e11] [cursor=pointer]:
+            - /url: /
+            - img "Perplexity" [ref=e14]
+          - button "Collapse sidebar" [ref=e17] [cursor=pointer]:
+            - img [ref=e18]
+        - generic [ref=e21]:
+          - generic [ref=e24]:
+            - link "New" [ref=e25] [cursor=pointer]:
+              - /url: /
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - img
+                - generic:
+                  - generic:
+                    - generic: New
+                  - generic: ⌘K
+          - generic [ref=e28]:
+            - link "Computer" [ref=e29] [cursor=pointer]:
+              - /url: /computer/tasks
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Computer":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Computer
+          - generic [ref=e33]:
+            - link "Spaces" [ref=e34] [cursor=pointer]:
+              - /url: /spaces
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Spaces":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Spaces
+          - generic [ref=e38]:
+            - link "Artifacts" [ref=e39] [cursor=pointer]:
+              - /url: /computer/artifacts
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Artifacts":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Artifacts
+          - generic [ref=e43]:
+            - link "Customize" [ref=e44] [cursor=pointer]:
+              - /url: /computer/connectors
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Customize":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Customize
+          - generic [ref=e46]:
+            - generic [ref=e48]:
+              - link "History" [ref=e49] [cursor=pointer]:
+                - /url: /library
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - button "Collapse History" [expanded]:
+                        - generic:
+                          - img
+                    - generic:
+                      - img
+                  - generic:
+                    - generic:
+                      - generic: History
+            - generic [ref=e52]:
+              - link "what does missing description on MCP tool do" [ref=e53] [cursor=pointer]:
+                - /url: /search/c418801e-4cfc-4aa5-8d2f-6bb245ec5a60
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: what does missing description on MCP tool do
+                  - button "Thread actions" [ref=e57] [cursor=pointer]:
+                    - img [ref=e60]
+        - button "Sign In" [ref=e71] [cursor=pointer]:
+          - generic [ref=e72]:
+            - generic [ref=e74]:
+              - img [ref=e77]
+              - generic [ref=e80]: Sign In
+            - generic:
+              - img
+    - main [ref=e82]:
+      - generic [ref=e85]:
+        - generic:
+          - generic:
+            - tablist "Answer mode tabs" [ref=e87]:
+              - tab "Answer" [selected] [ref=e88] [cursor=pointer]:
+                - img [ref=e89]
+                - text: Answer
+              - tab "Links" [ref=e91] [cursor=pointer]:
+                - img [ref=e92]
+                - text: Links
+              - tab "Images" [ref=e94] [cursor=pointer]:
+                - img [ref=e95]
+                - text: Images
+            - generic [ref=e97]:
+              - button "Thread actions" [ref=e99] [cursor=pointer]:
+                - img [ref=e102]
+              - button "Share" [ref=e106] [cursor=pointer]:
+                - img [ref=e108]
+                - generic [ref=e110]: Share
+              - button "Download Comet" [ref=e113] [cursor=pointer]:
+                - img [ref=e115]
+                - generic [ref=e117]: Download Comet
+        - generic [ref=e120]:
+          - tabpanel "Answer" [ref=e130]:
+            - generic [ref=e131]:
+              - generic [ref=e136]:
+                - generic:
+                  - button "Edit query":
+                    - generic:
+                      - generic:
+                        - img
+                  - button "Copy query":
+                    - generic:
+                      - generic:
+                        - img
+                - heading "what does missing description on MCP tool do" [level=1] [ref=e142]:
+                  - generic [ref=e144]: what does missing description on MCP tool do
+              - generic [ref=e145]:
+                - generic [ref=e153]:
+                  - paragraph [ref=e154]:
+                    - text: A missing description on an MCP tool usually makes the model much worse at choosing and using that tool correctly. It can still exist and be callable, but the agent has less context about when to pick it, what it does, and how to form the right arguments.
+                    - 'generic "MCP tool descriptions: overview, examples, and best ..." [ref=e156]':
+                      - link "merge" [ref=e158] [cursor=pointer]:
+                        - /url: https://www.merge.dev/blog/mcp-tool-description
+                        - generic [ref=e161]: merge
+                  - paragraph [ref=e162]: "In practice, that often leads to:"
+                  - list [ref=e163]:
+                    - listitem [ref=e164]:
+                      - paragraph [ref=e165]: The wrong tool being selected when several tools look similar.
+                    - listitem [ref=e166]:
+                      - paragraph [ref=e167]: The right tool being skipped because its purpose is unclear.
+                    - listitem [ref=e168]:
+                      - paragraph [ref=e169]:
+                        - text: More failed calls or trial-and-error because the model cannot infer the expected use from the name alone.
+                        - 'generic "MCP tool descriptions: overview, examples, and best ..." [ref=e171]':
+                          - link "merge" [ref=e173] [cursor=pointer]:
+                            - /url: https://www.merge.dev/blog/mcp-tool-description
+                            - generic [ref=e176]: merge
+                  - paragraph [ref=e177]:
+                    - text: The description is meant to be a short, high-signal explanation of the tool’s purpose, while argument requirements and operational details belong in the schema rather than the description. So “missing description” does not usually break the server itself, but it reduces reliability and makes tool use less accurate.
+                    - 'generic "MCP tool descriptions: overview, examples, and best ..." [ref=e179]':
+                      - link "merge" [ref=e181] [cursor=pointer]:
+                        - /url: https://www.merge.dev/blog/mcp-tool-description
+                        - generic [ref=e184]: merge
+                  - paragraph [ref=e185]:
+                    - text: "If you meant a different “missing description” case, such as a missing parameter description, that has a similar effect: the model has less guidance and is more likely to misuse the tool."
+                    - 'generic "MCP tool argument description missing · Issue #5458" [ref=e187]':
+                      - link "github" [ref=e189] [cursor=pointer]:
+                        - /url: https://github.com/cline/cline/issues/5458
+                        - generic [ref=e192]: github
+                - generic [ref=e193]:
+                  - generic [ref=e194]:
+                    - button "Share" [ref=e195] [cursor=pointer]:
+                      - img [ref=e198]
+                    - button "Download" [ref=e201] [cursor=pointer]:
+                      - img [ref=e204]
+                    - button "Copy" [ref=e207] [cursor=pointer]:
+                      - img [ref=e210]
+                    - button "Rewrite Thread" [ref=e213] [cursor=pointer]:
+                      - img [ref=e216]
+                    - button "10 sources" [ref=e220] [cursor=pointer]:
+                      - generic [ref=e222]:
+                        - img [ref=e223]
+                        - img [ref=e224]
+                        - generic [ref=e226]:
+                          - img [ref=e229]
+                          - img [ref=e233]
+                          - img [ref=e237]
+                        - text: 10 sources
+                  - generic [ref=e240]:
+                    - generic [ref=e242]:
+                      - button "Helpful" [ref=e243] [cursor=pointer]:
+                        - img [ref=e246]
+                      - button "Not helpful" [ref=e249] [cursor=pointer]:
+                        - img [ref=e252]
+                    - button "More actions" [ref=e256] [cursor=pointer]:
+                      - img [ref=e259]
+                - generic [ref=e263]:
+                  - generic [ref=e268]: Follow-ups
+                  - generic [ref=e269]:
+                    - button "How do MCP tools use schema instead of descriptions" [ref=e270] [cursor=pointer]:
+                      - img [ref=e272]
+                      - generic [ref=e275]: How do MCP tools use schema instead of descriptions
+                    - button "What happens when an MCP tool has no read only hint" [ref=e276] [cursor=pointer]:
+                      - img [ref=e278]
+                      - generic [ref=e281]: What happens when an MCP tool has no read only hint
+                    - button "How should I write a good MCP tool description" [ref=e282] [cursor=pointer]:
+                      - img [ref=e284]
+                      - generic [ref=e287]: How should I write a good MCP tool description
+                    - button "How does MCP elicitation handle missing tool inputs" [ref=e288] [cursor=pointer]:
+                      - img [ref=e290]
+                      - generic [ref=e293]: How does MCP elicitation handle missing tool inputs
+                    - button "How can I inspect missing tool descriptions in a server" [ref=e294] [cursor=pointer]:
+                      - img [ref=e296]
+                      - generic [ref=e299]: How can I inspect missing tool descriptions in a server
+          - generic [ref=e311]:
+            - generic [ref=e313]:
+              - textbox [active] [ref=e314]:
+                - paragraph [ref=e315]
+              - generic: Ask a follow-up
+            - generic [ref=e317]:
+              - button "Add files or tools" [ref=e318] [cursor=pointer]:
+                - img [ref=e321]
+              - button "Search" [pressed] [ref=e327] [cursor=pointer]:
+                - img [ref=e329]
+                - generic [ref=e331]:
+                  - text: Search
+                  - img [ref=e332]
+            - generic [ref=e334]:
+              - button "Model" [ref=e336] [cursor=pointer]:
+                - generic [ref=e337]: Model
+                - img [ref=e339]
+              - button "Dictation" [ref=e343] [cursor=pointer]:
+                - img [ref=e346]
+              - button "Submit" [disabled]:
+                - generic:
+                  - generic:
+                    - img
+  - listbox "Typeahead menu"
+  - dialog "Cookie Policy" [ref=e351]:
+    - generic [ref=e352]:
+      - heading "Cookie Policy" [level=2] [ref=e353]
+      - paragraph [ref=e354]: This website uses third party cookies to serve you relevant ads and provide personalization.
+    - generic [ref=e355]:
+      - img [ref=e356]
+      - generic [ref=e358]: Cookie Policy
+    - generic [ref=e359]:
+      - text: This website uses third party cookies to serve you relevant ads and provide personalization by remembering your location. You may opt out from these cookies by selecting the "Opt out" button below. If you have a Perplexity account, you may opt out of the "sale" or "sharing" of your data
+      - link "here" [ref=e360] [cursor=pointer]:
+        - /url: https://www.perplexity.ai/hub/legal/privacy-policy
+      - text: .
+    - generic [ref=e361]:
+      - button "Opt out" [ref=e362] [cursor=pointer]:
+        - generic [ref=e363]: Opt out
+      - button "Got it" [ref=e365] [cursor=pointer]:
+        - generic [ref=e366]: Got it

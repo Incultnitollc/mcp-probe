@@ -1,0 +1,364 @@
+- generic [ref=e1]:
+  - link "Skip to content" [ref=e3] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e7]:
+    - generic [ref=e9]:
+      - navigation "Sidebar":
+        - generic:
+          - generic:
+            - generic:
+              - button "Open sidebar":
+                - img
+        - generic:
+          - generic:
+            - link "New chat":
+              - /url: /
+              - generic:
+                - img
+              - generic: New chat
+          - generic:
+            - generic:
+              - generic:
+                - img
+              - generic: Search chats
+          - generic:
+            - link "Images":
+              - /url: /images
+              - generic:
+                - img
+              - generic: Images
+        - generic:
+          - generic:
+            - button "Open profile menu":
+              - generic:
+                - generic:
+                  - img
+      - generic [ref=e10]:
+        - heading "Chat history" [level=2] [ref=e11]
+        - navigation "Chat history" [ref=e13]:
+          - generic [ref=e16]:
+            - link "Home" [ref=e17] [cursor=pointer]:
+              - /url: /
+              - img [ref=e18]
+            - button "Close sidebar" [expanded] [ref=e21]:
+              - img [ref=e22]
+          - list [ref=e25]:
+            - listitem [ref=e26]:
+              - link "New chat Shift Command O" [ref=e154] [cursor=pointer]:
+                - /url: /
+                - generic [ref=e28]:
+                  - img [ref=e156]
+                  - generic [ref=e159]: New chat
+                - generic [ref=e160]:
+                  - generic "Shift" [ref=e161]:
+                    - generic [ref=e162]: ⇧
+                  - generic "Command" [ref=e163]:
+                    - generic [ref=e164]: ⌘
+                  - generic [ref=e166]: O
+            - listitem [ref=e33]:
+              - generic [ref=e34] [cursor=pointer]:
+                - generic [ref=e35]:
+                  - img [ref=e168]
+                  - generic [ref=e171]: Search chats
+                - generic [ref=e172]:
+                  - generic "Command" [ref=e173]:
+                    - generic [ref=e174]: ⌘
+                  - generic [ref=e176]: K
+          - link "Images" [ref=e40] [cursor=pointer]:
+            - /url: /images
+            - img [ref=e42]
+            - generic [ref=e45]: Images
+          - generic [ref=e46]:
+            - link "Apps" [ref=e47] [cursor=pointer]:
+              - /url: /apps
+              - img [ref=e49]
+              - generic [ref=e52]: Apps
+            - generic [ref=e53] [cursor=pointer]:
+              - img [ref=e55]
+              - generic [ref=e58]: Deep research
+          - generic [ref=e60]:
+            - link "See plans and pricing" [ref=e61] [cursor=pointer]:
+              - /url: https://openai.com/chatgpt/pricing/
+              - generic [ref=e62]:
+                - img [ref=e64]
+                - text: See plans and pricing
+              - img [ref=e67]
+            - generic [ref=e69] [cursor=pointer]:
+              - img [ref=e71]
+              - text: Settings
+            - generic [ref=e73] [cursor=pointer]:
+              - generic [ref=e74]:
+                - img [ref=e76]
+                - generic [ref=e79]: Help
+              - img [ref=e81]
+          - generic [ref=e83]:
+            - generic [ref=e84]:
+              - paragraph [ref=e85]: Get responses tailored to you
+              - paragraph [ref=e86]: Log in to get answers based on saved chats, plus create images and upload files.
+            - button "Log in" [ref=e88] [cursor=pointer]:
+              - generic [ref=e89]: Log in
+    - generic [ref=e91]:
+      - banner:
+        - button "Model selector" [ref=e93] [cursor=pointer]:
+          - generic [ref=e94]:
+            - generic [ref=e95]: ChatGPT
+            - img [ref=e96]
+        - generic [ref=e102]:
+          - button "Log in" [ref=e103] [cursor=pointer]:
+            - generic [ref=e105]: Log in
+          - button "Sign up for free" [ref=e106] [cursor=pointer]:
+            - generic [ref=e107]: Sign up for free
+      - main [ref=e108]:
+        - generic [ref=e109]:
+          - generic [ref=e178]:
+            - generic [ref=e181]:
+              - heading "You said:" [level=4] [ref=e182]
+              - generic [ref=e184]:
+                - generic [ref=e192]: tool to check MCP server health
+                - generic [ref=e193]:
+                  - group "Your message actions":
+                    - button "Copy message":
+                      - generic:
+                        - img
+            - generic [ref=e197]:
+              - heading "ChatGPT said:" [level=4] [ref=e198]
+              - generic [ref=e200]:
+                - generic [ref=e204]:
+                  - paragraph [ref=e205]: "If you want a tool specifically for checking and monitoring MCP server health, these are the strongest options right now:"
+                  - list [ref=e206]:
+                    - listitem [ref=e207]:
+                      - paragraph [ref=e208]:
+                        - link "MCP Doctor" [ref=e210] [cursor=pointer]:
+                          - /url: https://mcpdoctor.ai/?utm_source=chatgpt.com
+                          - text: MCP Doctor
+                          - img [ref=e212]
+                        - text: — best for protocol compliance + CI validation
+                    - listitem [ref=e214]:
+                      - paragraph [ref=e215]:
+                        - link "MCP Server Health Monitor" [ref=e217] [cursor=pointer]:
+                          - /url: https://mcpservers.org/id/servers/dbsectrainer/mcp-server-health-monitor?utm_source=chatgpt.com
+                          - text: MCP Server Health Monitor
+                          - img [ref=e219]
+                        - text: — best for continuous monitoring of your own MCP fleet
+                    - listitem [ref=e221]:
+                      - paragraph [ref=e222]:
+                        - link "MCPWatch" [ref=e224] [cursor=pointer]:
+                          - /url: https://mcpwatch.vercel.app/?utm_source=chatgpt.com
+                          - text: MCPWatch
+                          - img [ref=e226]
+                        - text: — hosted dashboard + alerts
+                    - listitem [ref=e228]:
+                      - paragraph [ref=e229]:
+                        - link "HealthyMCP" [ref=e231] [cursor=pointer]:
+                          - /url: https://healthymcp.com/?utm_source=chatgpt.com
+                          - text: HealthyMCP
+                          - img [ref=e233]
+                        - text: — uptime and tool validation for remote MCP servers
+                    - listitem [ref=e235]:
+                      - paragraph [ref=e236]:
+                        - generic [ref=e238] [cursor=pointer]:
+                          - text: MCPSafetyScanner GitHub
+                          - img [ref=e240]
+                        - text: — security-focused auditing tool
+                  - 'heading "Best overall for developers: MCP Doctor" [level=3] [ref=e242]'
+                  - paragraph [ref=e243]:
+                    - generic [ref=e244] [cursor=pointer]: MCP Doctor
+                  - paragraph [ref=e245]: "Good for:"
+                  - list [ref=e246]:
+                    - listitem [ref=e247]:
+                      - paragraph [ref=e248]: validating MCP spec compliance
+                    - listitem [ref=e249]:
+                      - paragraph [ref=e250]: checking handshake/tool discovery
+                    - listitem [ref=e251]:
+                      - paragraph [ref=e252]: CI/CD testing
+                    - listitem [ref=e253]:
+                      - paragraph [ref=e254]: catching protocol regressions
+                  - paragraph [ref=e255]: "Example:"
+                  - generic [ref=e263]:
+                    - generic [ref=e265]:
+                      - generic [ref=e266]:
+                        - img [ref=e267]
+                        - text: Bash
+                      - button "Copy" [ref=e270] [cursor=pointer]:
+                        - img [ref=e271]
+                    - code [ref=e279]: npx mcpdoctor test my-server
+                  - paragraph [ref=e280]: "It runs automated checks like:"
+                  - list [ref=e281]:
+                    - listitem [ref=e282]:
+                      - paragraph [ref=e283]: initialize handshake
+                    - listitem [ref=e284]:
+                      - paragraph [ref=e285]: tool discovery
+                    - listitem [ref=e286]:
+                      - paragraph [ref=e287]: cancellation support
+                    - listitem [ref=e288]:
+                      - paragraph [ref=e289]: timeout handling
+                    - listitem [ref=e290]:
+                      - paragraph [ref=e291]: resource listing
+                  - paragraph [ref=e292]:
+                    - text: It gives a score/grade similar to linting.
+                    - link "MCP Doctor" [ref=e295] [cursor=pointer]:
+                      - /url: https://mcpdoctor.ai/?utm_source=chatgpt.com
+                      - generic [ref=e298]: MCP Doctor
+                  - separator [ref=e299]
+                  - 'heading "Best for ongoing monitoring: MCP Server Health Monitor" [level=3] [ref=e300]'
+                  - paragraph [ref=e301]:
+                    - generic [ref=e302] [cursor=pointer]: MCP Server Health Monitor
+                  - paragraph [ref=e303]: "Good for:"
+                  - list [ref=e304]:
+                    - listitem [ref=e305]:
+                      - paragraph [ref=e306]: monitoring multiple MCP servers
+                    - listitem [ref=e307]:
+                      - paragraph [ref=e308]: latency tracking
+                    - listitem [ref=e309]:
+                      - paragraph [ref=e310]: uptime history
+                    - listitem [ref=e311]:
+                      - paragraph [ref=e312]: detecting degraded servers
+                    - listitem [ref=e313]:
+                      - paragraph [ref=e314]: auto-discovering Claude/Cursor/VSCode MCP configs
+                  - paragraph [ref=e315]: "What makes it useful:"
+                  - list [ref=e316]:
+                    - listitem [ref=e317]:
+                      - paragraph [ref=e318]:
+                        - text: it checks
+                        - code [ref=e319]: list_tools
+                        - text: instead of just pinging a port
+                    - listitem [ref=e320]:
+                      - paragraph [ref=e321]: stores history in SQLite
+                    - listitem [ref=e322]:
+                      - paragraph [ref=e323]: detects schema/version drift
+                  - paragraph [ref=e324]: "Install:"
+                  - generic [ref=e332]:
+                    - generic [ref=e334]:
+                      - generic [ref=e335]:
+                        - img [ref=e336]
+                        - text: JSON
+                      - button "Copy" [ref=e339] [cursor=pointer]:
+                        - img [ref=e340]
+                    - code [ref=e348]:
+                      - text: "{"
+                      - text: "\"mcpServers\": {"
+                      - text: "\"health-monitor\": {"
+                      - text: "\"command\": \"npx\","
+                      - text: "\"args\": [\"-y\", \"mcp-server-health-monitor@latest\"]"
+                      - text: "}"
+                      - text: "}"
+                      - text: "}"
+                  - paragraph [ref=e349]: "Then ask:"
+                  - generic [ref=e357]:
+                    - button "Copy" [ref=e358] [cursor=pointer]:
+                      - img [ref=e359]
+                    - code [ref=e367]: Check the health of all my MCP servers
+                  - paragraph [ref=e368]:
+                    - link "Awesome MCP Servers +1" [ref=e371] [cursor=pointer]:
+                      - /url: https://mcpservers.org/id/servers/dbsectrainer/mcp-server-health-monitor?utm_source=chatgpt.com
+                      - generic [ref=e373]:
+                        - generic [ref=e374]: Awesome MCP Servers
+                        - generic [ref=e375]: "+1"
+                  - separator [ref=e376]
+                  - heading "Best SaaS dashboard" [level=3] [ref=e377]
+                  - paragraph [ref=e378]:
+                    - generic [ref=e379] [cursor=pointer]: MCPWatch
+                  - paragraph [ref=e380]: "Features:"
+                  - list [ref=e381]:
+                    - listitem [ref=e382]:
+                      - paragraph [ref=e383]: uptime monitoring
+                    - listitem [ref=e384]:
+                      - paragraph [ref=e385]: latency/error tracking
+                    - listitem [ref=e386]:
+                      - paragraph [ref=e387]: alerts
+                    - listitem [ref=e388]:
+                      - paragraph [ref=e389]: token/cost visibility
+                    - listitem [ref=e390]:
+                      - paragraph [ref=e391]: hosted dashboard
+                  - paragraph [ref=e392]:
+                    - text: Useful if you operate production MCP infrastructure.
+                    - link "MCPWatch" [ref=e395] [cursor=pointer]:
+                      - /url: https://mcpwatch.vercel.app/?utm_source=chatgpt.com
+                      - generic [ref=e398]: MCPWatch
+                  - separator [ref=e399]
+                  - heading "Best for security auditing" [level=3] [ref=e400]
+                  - paragraph [ref=e401]:
+                    - generic [ref=e402] [cursor=pointer]: MCPSafetyScanner
+                  - paragraph [ref=e403]: "Checks for:"
+                  - list [ref=e404]:
+                    - listitem [ref=e405]:
+                      - paragraph [ref=e406]: prompt injection exposure
+                    - listitem [ref=e407]:
+                      - paragraph [ref=e408]: unsafe tool schemas
+                    - listitem [ref=e409]:
+                      - paragraph [ref=e410]: auth weaknesses
+                    - listitem [ref=e411]:
+                      - paragraph [ref=e412]: exploit paths
+                    - listitem [ref=e413]:
+                      - paragraph [ref=e414]: dangerous tool surfaces
+                  - paragraph [ref=e415]:
+                    - text: Very useful before exposing public MCP servers.
+                    - link "arXiv +1" [ref=e418] [cursor=pointer]:
+                      - /url: https://arxiv.org/abs/2504.03767?utm_source=chatgpt.com
+                      - generic [ref=e420]:
+                        - generic [ref=e421]: arXiv
+                        - generic [ref=e422]: "+1"
+                  - separator [ref=e423]
+                  - heading "Minimal DIY health check" [level=3] [ref=e424]
+                  - paragraph [ref=e425]: "Most MCP monitoring tools ultimately validate:"
+                  - generic [ref=e433]:
+                    - button "Copy" [ref=e434] [cursor=pointer]:
+                      - img [ref=e435]
+                    - code [ref=e443]:
+                      - text: initialize
+                      - text: tools/list
+                      - text: resources/list
+                      - text: prompts/list
+                  - paragraph [ref=e444]: "A server is usually considered healthy if:"
+                  - list [ref=e445]:
+                    - listitem [ref=e446]:
+                      - paragraph [ref=e447]: handshake succeeds
+                    - listitem [ref=e448]:
+                      - paragraph [ref=e449]:
+                        - code [ref=e450]: tools/list
+                        - text: responds
+                    - listitem [ref=e451]:
+                      - paragraph [ref=e452]: latency is acceptable
+                    - listitem [ref=e453]:
+                      - paragraph [ref=e454]: schemas are valid
+                  - paragraph [ref=e455]:
+                    - text: That pattern shows up consistently across community tools.
+                    - link "Awesome MCP Servers +2 Reddit +2" [ref=e458] [cursor=pointer]:
+                      - /url: https://mcpservers.org/id/servers/dbsectrainer/mcp-server-health-monitor?utm_source=chatgpt.com
+                      - generic [ref=e459]:
+                        - generic [ref=e460]:
+                          - generic [ref=e461]: Awesome MCP Servers
+                          - generic [ref=e462]: "+2"
+                        - generic [ref=e463]:
+                          - generic [ref=e464]: Reddit
+                          - generic [ref=e465]: "+2"
+                - generic [ref=e466]:
+                  - group "Response actions":
+                    - button "Copy response":
+                      - generic:
+                        - img
+                    - button "Share":
+                      - generic:
+                        - img
+                    - button "Sources":
+                      - generic: Sources
+          - generic [ref=e111]:
+            - button [ref=e467] [cursor=pointer]:
+              - img [ref=e468]
+            - generic [ref=e117]:
+              - generic [ref=e121]:
+                - button "Add files and more" [ref=e124] [cursor=pointer]:
+                  - img
+                - textbox "Chat with ChatGPT" [active] [ref=e474]:
+                  - paragraph [ref=e475]: Ask anything
+                - generic [ref=e129]:
+                  - button "Start dictation" [ref=e130] [cursor=pointer]:
+                    - img
+                  - button "Start Voice" [ref=e478] [cursor=pointer]:
+                    - img [ref=e480]
+                    - generic [ref=e482]: Voice
+              - button [ref=e139]
+              - button [ref=e140]
+            - generic [ref=e484]: ChatGPT can make mistakes. Check important info. See Cookie Preferences.
+  - alert [ref=e152]
+  - status [ref=e153]

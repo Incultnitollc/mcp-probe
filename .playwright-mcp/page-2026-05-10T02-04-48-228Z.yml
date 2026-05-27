@@ -1,0 +1,447 @@
+- generic [ref=e1]:
+  - generic [ref=e5]:
+    - navigation "Main" [ref=e7]:
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - link "Perplexity" [ref=e11] [cursor=pointer]:
+            - /url: /
+            - img "Perplexity" [ref=e14]
+          - button "Collapse sidebar" [ref=e17] [cursor=pointer]:
+            - img [ref=e18]
+        - generic [ref=e21]:
+          - generic [ref=e24]:
+            - link "New" [ref=e25] [cursor=pointer]:
+              - /url: /
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - img
+                - generic:
+                  - generic:
+                    - generic: New
+                  - generic: ⌘K
+          - generic [ref=e28]:
+            - link "Computer" [ref=e29] [cursor=pointer]:
+              - /url: /computer/tasks
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Computer":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Computer
+          - generic [ref=e33]:
+            - link "Spaces" [ref=e34] [cursor=pointer]:
+              - /url: /spaces
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Spaces":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Spaces
+          - generic [ref=e38]:
+            - link "Artifacts" [ref=e39] [cursor=pointer]:
+              - /url: /computer/artifacts
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Artifacts":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Artifacts
+          - generic [ref=e43]:
+            - link "Customize" [ref=e44] [cursor=pointer]:
+              - /url: /computer/connectors
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Customize":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Customize
+          - generic [ref=e46]:
+            - generic [ref=e48]:
+              - link "History" [ref=e49] [cursor=pointer]:
+                - /url: /library
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - button "Collapse History" [expanded]:
+                        - generic:
+                          - img
+                    - generic:
+                      - img
+                  - generic:
+                    - generic:
+                      - generic: History
+            - generic [ref=e52]:
+              - link "best practices for MCP server schemas" [ref=e53] [cursor=pointer]:
+                - /url: /search/best-practices-for-mcp-server-j7JtyY_8QAWpKcYSYdHMfQ
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: best practices for MCP server schemas
+                  - button "Thread actions" [ref=e57] [cursor=pointer]:
+                    - img [ref=e60]
+        - button "Sign In" [ref=e74] [cursor=pointer]:
+          - generic [ref=e75]:
+            - generic [ref=e77]:
+              - img [ref=e80]
+              - generic [ref=e83]: Sign In
+            - generic:
+              - img
+    - main [ref=e85]:
+      - generic [ref=e88]:
+        - generic:
+          - generic:
+            - tablist "Answer mode tabs" [ref=e90]:
+              - tab "Answer" [selected] [ref=e91] [cursor=pointer]:
+                - img [ref=e92]
+                - text: Answer
+              - tab "Links" [ref=e94] [cursor=pointer]:
+                - img [ref=e95]
+                - text: Links
+              - tab "Images" [ref=e97] [cursor=pointer]:
+                - img [ref=e98]
+                - text: Images
+            - generic [ref=e100]:
+              - button "Thread actions" [ref=e102] [cursor=pointer]:
+                - img [ref=e105]
+              - button "Share" [ref=e110] [cursor=pointer]:
+                - img [ref=e112]
+                - generic [ref=e114]: Share
+              - button "Download Comet" [ref=e117] [cursor=pointer]:
+                - img [ref=e119]
+                - generic [ref=e121]: Download Comet
+        - generic [ref=e124]:
+          - tabpanel "Answer" [ref=e134]:
+            - generic [ref=e135]:
+              - generic [ref=e140]:
+                - generic:
+                  - button "Edit query":
+                    - generic:
+                      - generic:
+                        - img
+                  - button "Copy query":
+                    - generic:
+                      - generic:
+                        - img
+                - heading "best practices for MCP server schemas" [level=1] [ref=e146]:
+                  - generic [ref=e148]: best practices for MCP server schemas
+              - generic [ref=e149]:
+                - generic [ref=e153]:
+                  - paragraph [ref=e158]:
+                    - text: For MCP server schemas, the main best practices are to make each tool narrowly focused, describe parameters clearly, validate inputs strictly, and keep return shapes consistent. Good schemas help models choose the right tool, reduce errors, and make your server easier to test and maintain.
+                    - generic "MCP development best practices" [ref=e160]:
+                      - link "youtube" [ref=e162] [cursor=pointer]:
+                        - /url: https://www.youtube.com/watch?v=W56H9W7x-ao
+                        - generic [ref=e164]:
+                          - img [ref=e166]
+                          - generic [ref=e168]: youtube
+                    - generic "Client Best Practices - Model Context Protocol" [ref=e170]:
+                      - link "modelcontextprotocol" [ref=e172] [cursor=pointer]:
+                        - /url: https://modelcontextprotocol.io/docs/develop/clients/client-best-practices
+                        - generic [ref=e175]: modelcontextprotocol
+                  - heading "Schema design" [level=2] [ref=e180]
+                  - list [ref=e185]:
+                    - listitem [ref=e186]:
+                      - paragraph [ref=e187]:
+                        - text: Prefer one tool per clear responsibility instead of “mega tools” that do too many things.
+                        - generic "MCP development best practices" [ref=e189]:
+                          - link "youtube" [ref=e191] [cursor=pointer]:
+                            - /url: https://www.youtube.com/watch?v=W56H9W7x-ao
+                            - generic [ref=e193]:
+                              - img [ref=e195]
+                              - generic [ref=e197]: youtube
+                    - listitem [ref=e198]:
+                      - paragraph [ref=e199]:
+                        - text: Use concise, explicit parameter names and explain what each field means.
+                        - generic "MCP development best practices" [ref=e201]:
+                          - link "youtube" [ref=e203] [cursor=pointer]:
+                            - /url: https://www.youtube.com/watch?v=W56H9W7x-ao
+                            - generic [ref=e205]:
+                              - img [ref=e207]
+                              - generic [ref=e209]: youtube
+                    - listitem [ref=e210]:
+                      - paragraph [ref=e211]:
+                        - text: Add constraints where possible, such as allowed formats, min/max values, or enums, so the model has fewer ambiguous choices.
+                        - generic "MCP development best practices" [ref=e213]:
+                          - link "youtube" [ref=e215] [cursor=pointer]:
+                            - /url: https://www.youtube.com/watch?v=W56H9W7x-ao
+                            - generic [ref=e217]:
+                              - img [ref=e219]
+                              - generic [ref=e221]: youtube
+                    - listitem [ref=e222]:
+                      - paragraph [ref=e223]:
+                        - text: Keep output structures stable and predictable; if you can provide an output schema, do it.
+                        - generic "Client Best Practices - Model Context Protocol" [ref=e225]:
+                          - link "modelcontextprotocol" [ref=e227] [cursor=pointer]:
+                            - /url: https://modelcontextprotocol.io/docs/develop/clients/client-best-practices
+                            - generic [ref=e230]: modelcontextprotocol
+                  - heading "Validation and errors" [level=2] [ref=e235]
+                  - list [ref=e240]:
+                    - listitem [ref=e241]:
+                      - paragraph [ref=e242]:
+                        - text: Validate all inputs before execution, including type, format, ranges, and authorization-related assumptions.
+                        - generic "MCP development best practices" [ref=e244]:
+                          - link "youtube" [ref=e246] [cursor=pointer]:
+                            - /url: https://www.youtube.com/watch?v=W56H9W7x-ao
+                            - generic [ref=e248]:
+                              - img [ref=e250]
+                              - generic [ref=e252]: youtube
+                        - generic "Security Best Practices" [ref=e254]:
+                          - link "modelcontextprotocol" [ref=e256] [cursor=pointer]:
+                            - /url: https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices
+                            - generic [ref=e259]: modelcontextprotocol
+                    - listitem [ref=e260]:
+                      - paragraph [ref=e261]:
+                        - text: Return structured errors with enough detail for the caller to recover, instead of crashing or returning vague failures.
+                        - generic "MCP development best practices" [ref=e263]:
+                          - link "youtube" [ref=e265] [cursor=pointer]:
+                            - /url: https://www.youtube.com/watch?v=W56H9W7x-ao
+                            - generic [ref=e267]:
+                              - img [ref=e269]
+                              - generic [ref=e271]: youtube
+                    - listitem [ref=e272]:
+                      - paragraph [ref=e273]:
+                        - text: Separate transient failures from permanent ones so retries make sense only where appropriate.
+                        - generic "MCP development best practices" [ref=e275]:
+                          - link "youtube" [ref=e277] [cursor=pointer]:
+                            - /url: https://www.youtube.com/watch?v=W56H9W7x-ao
+                            - generic [ref=e279]:
+                              - img [ref=e281]
+                              - generic [ref=e283]: youtube
+                  - heading "Tool naming and descriptions" [level=2] [ref=e288]
+                  - list [ref=e293]:
+                    - listitem [ref=e294]:
+                      - paragraph [ref=e295]:
+                        - text: Use names that are consistent and easy to discover, usually verb-first and resource-focused.
+                        - generic "lirantal/awesome-mcp-best-practices" [ref=e297]:
+                          - link "github" [ref=e299] [cursor=pointer]:
+                            - /url: https://github.com/lirantal/awesome-mcp-best-practices
+                            - generic [ref=e302]: github
+                    - listitem [ref=e303]:
+                      - paragraph [ref=e304]:
+                        - text: Put the action and target early in the tool description so the model can recognize intent quickly.
+                        - generic [ref=e309] [cursor=pointer]:
+                          - generic [ref=e310]: reddit
+                          - generic [ref=e311]: "+1"
+                    - listitem [ref=e312]:
+                      - paragraph [ref=e313]:
+                        - text: Include “do not use for” guidance when a tool has a narrow scope or a better alternative exists.
+                        - generic "Best schema/prompt pattern for MCP tool descriptions? ..." [ref=e315]:
+                          - link "reddit" [ref=e317] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/LocalLLaMA/comments/1rdj5cr/best_schemaprompt_pattern_for_mcp_tool/
+                            - generic [ref=e320]: reddit
+                  - heading "Practical server shape" [level=2] [ref=e325]
+                  - list [ref=e330]:
+                    - listitem [ref=e331]:
+                      - paragraph [ref=e332]:
+                        - text: Design tools to be composable, so one tool’s output can feed another cleanly.
+                        - generic "MCP development best practices" [ref=e334]:
+                          - link "youtube" [ref=e336] [cursor=pointer]:
+                            - /url: https://www.youtube.com/watch?v=W56H9W7x-ao
+                            - generic [ref=e338]:
+                              - img [ref=e340]
+                              - generic [ref=e342]: youtube
+                    - listitem [ref=e343]:
+                      - paragraph [ref=e344]:
+                        - text: Keep services injectable rather than hard-wired, which makes testing and deployment easier.
+                        - generic "MCP development best practices" [ref=e346]:
+                          - link "youtube" [ref=e348] [cursor=pointer]:
+                            - /url: https://www.youtube.com/watch?v=W56H9W7x-ao
+                            - generic [ref=e350]:
+                              - img [ref=e352]
+                              - generic [ref=e354]: youtube
+                    - listitem [ref=e355]:
+                      - paragraph [ref=e356]:
+                        - text: Avoid exposing overly broad schemas when a smaller, task-specific schema would work better.
+                        - generic "Designing MCP servers for wide schemas and large result sets" [ref=e358]:
+                          - link "axiom" [ref=e360] [cursor=pointer]:
+                            - /url: https://axiom.co/blog/designing-mcp-servers-for-wide-events
+                            - generic [ref=e363]: axiom
+                        - generic "MCP development best practices" [ref=e365]:
+                          - link "youtube" [ref=e367] [cursor=pointer]:
+                            - /url: https://www.youtube.com/watch?v=W56H9W7x-ao
+                            - generic [ref=e369]:
+                              - img [ref=e371]
+                              - generic [ref=e373]: youtube
+                  - heading "Security and robustness" [level=2] [ref=e378]
+                  - generic [ref=e382]:
+                    - list [ref=e383]:
+                      - listitem [ref=e384]:
+                        - paragraph [ref=e385]:
+                          - text: "Treat schemas as part of your security boundary: validate inputs, restrict actions, and avoid assuming client trust."
+                          - generic "Security Best Practices" [ref=e387]:
+                            - link "modelcontextprotocol" [ref=e389] [cursor=pointer]:
+                              - /url: https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices
+                              - generic [ref=e392]: modelcontextprotocol
+                      - listitem [ref=e393]:
+                        - paragraph [ref=e394]:
+                          - text: Use structured authentication and secure session handling, and do not rely on sessions as a substitute for proper auth design.
+                          - generic "Security Best Practices" [ref=e396]:
+                            - link "modelcontextprotocol" [ref=e398] [cursor=pointer]:
+                              - /url: https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices
+                              - generic [ref=e401]: modelcontextprotocol
+                      - listitem [ref=e402]:
+                        - paragraph [ref=e403]:
+                          - text: Add tests for schema validation, happy paths, edge cases, and failure modes.
+                          - generic "MCP development best practices" [ref=e405]:
+                            - link "youtube" [ref=e407] [cursor=pointer]:
+                              - /url: https://www.youtube.com/watch?v=W56H9W7x-ao
+                              - generic [ref=e409]:
+                                - img [ref=e411]
+                                - generic [ref=e413]: youtube
+                    - paragraph [ref=e414]:
+                      - text: "A simple rule of thumb: if a schema is hard to read by a human, it is probably also too hard for a model to use reliably."
+                      - generic "Client Best Practices - Model Context Protocol" [ref=e416]:
+                        - link "modelcontextprotocol" [ref=e418] [cursor=pointer]:
+                          - /url: https://modelcontextprotocol.io/docs/develop/clients/client-best-practices
+                          - generic [ref=e421]: modelcontextprotocol
+                      - generic "MCP development best practices" [ref=e423]:
+                        - link "youtube" [ref=e425] [cursor=pointer]:
+                          - /url: https://www.youtube.com/watch?v=W56H9W7x-ao
+                          - generic [ref=e427]:
+                            - img [ref=e429]
+                            - generic [ref=e431]: youtube
+                    - paragraph [ref=e432]: Would you like a practical schema checklist or an example MCP tool schema template?
+                - generic [ref=e433]:
+                  - generic [ref=e434]:
+                    - button "Share" [ref=e435] [cursor=pointer]:
+                      - img [ref=e438]
+                    - button "Download" [ref=e441] [cursor=pointer]:
+                      - img [ref=e444]
+                    - button "Copy" [ref=e447] [cursor=pointer]:
+                      - img [ref=e450]
+                    - button "Rewrite Thread" [ref=e453] [cursor=pointer]:
+                      - img [ref=e456]
+                    - button "9 sources" [ref=e460] [cursor=pointer]:
+                      - generic [ref=e462]:
+                        - img [ref=e463]
+                        - img [ref=e464]
+                        - generic [ref=e466]:
+                          - img [ref=e469]
+                          - img [ref=e473]
+                          - img [ref=e477]
+                        - text: 9 sources
+                  - generic [ref=e480]:
+                    - generic [ref=e482]:
+                      - button "Helpful" [ref=e483] [cursor=pointer]:
+                        - img [ref=e486]
+                      - button "Not helpful" [ref=e489] [cursor=pointer]:
+                        - img [ref=e492]
+                    - button "More actions" [ref=e496] [cursor=pointer]:
+                      - img [ref=e499]
+                - generic [ref=e503]:
+                  - generic [ref=e508]: Follow-ups
+                  - generic [ref=e509]:
+                    - button "Examples of effective MCP tool schema descriptions" [ref=e510] [cursor=pointer]:
+                      - img [ref=e512]
+                      - generic [ref=e515]: Examples of effective MCP tool schema descriptions
+                    - button "Common pitfalls in MCP schema design" [ref=e516] [cursor=pointer]:
+                      - img [ref=e518]
+                      - generic [ref=e521]: Common pitfalls in MCP schema design
+                    - button "How to validate MCP server schemas" [ref=e522] [cursor=pointer]:
+                      - img [ref=e524]
+                      - generic [ref=e527]: How to validate MCP server schemas
+                    - button "MCP schema security best practices" [ref=e528] [cursor=pointer]:
+                      - img [ref=e530]
+                      - generic [ref=e533]: MCP schema security best practices
+                    - button "Tools for generating MCP schemas" [ref=e534] [cursor=pointer]:
+                      - img [ref=e536]
+                      - generic [ref=e539]: Tools for generating MCP schemas
+          - generic [ref=e551]:
+            - generic [ref=e553]:
+              - textbox [ref=e554]:
+                - paragraph [ref=e555]
+              - generic:
+                - generic: Ask a follow-up
+            - generic [ref=e557]:
+              - button "Add files or tools" [ref=e558] [cursor=pointer]:
+                - img [ref=e561]
+              - button "Search" [pressed] [ref=e568] [cursor=pointer]:
+                - img [ref=e570]
+                - generic [ref=e572]:
+                  - text: Search
+                  - img [ref=e573]
+            - generic [ref=e575]:
+              - button "Model" [ref=e577] [cursor=pointer]:
+                - generic [ref=e578]: Model
+                - img [ref=e580]
+              - button "Dictation" [ref=e584] [cursor=pointer]:
+                - img [ref=e587]
+              - button "Submit" [disabled]:
+                - generic:
+                  - generic:
+                    - img
+  - dialog [ref=e597]:
+    - generic [ref=e601]:
+      - generic [ref=e602]:
+        - generic [ref=e603]: Sign up below to unlock the full potential of Perplexity
+        - generic [ref=e604]:
+          - text: By continuing, you agree to our
+          - link "privacy policy" [ref=e605] [cursor=pointer]:
+            - /url: https://www.perplexity.com/hub/legal/privacy-policy
+          - text: .
+      - generic [ref=e606]:
+        - button "Back home" [ref=e608] [cursor=pointer]:
+          - img [ref=e610]
+          - generic [ref=e612]: Back home
+        - generic [ref=e614]:
+          - generic [ref=e615]:
+            - button "Continue with Google" [ref=e616] [cursor=pointer]:
+              - img [ref=e618]
+              - generic [ref=e620]: Continue with Google
+            - button "Continue with Apple" [ref=e622] [cursor=pointer]:
+              - img [ref=e624]
+              - generic [ref=e626]: Continue with Apple
+          - generic [ref=e629]:
+            - generic [ref=e631]:
+              - textbox "Enter your email" [active] [ref=e636]
+              - generic [ref=e637]:
+                - button "Continue with email" [disabled]:
+                  - generic: Continue with email
+            - button "Single sign-on (SSO)" [ref=e639] [cursor=pointer]:
+              - generic [ref=e640]: Single sign-on (SSO)
+  - dialog "Cookie Policy" [ref=e642]:
+    - generic [ref=e643]:
+      - heading "Cookie Policy" [level=2] [ref=e644]
+      - paragraph [ref=e645]: This website uses third party cookies to serve you relevant ads and provide personalization.
+    - generic [ref=e646]:
+      - img [ref=e647]
+      - generic [ref=e649]: Cookie Policy
+    - generic [ref=e650]:
+      - text: This website uses third party cookies to serve you relevant ads and provide personalization by remembering your location. You may opt out from these cookies by selecting the "Opt out" button below. If you have a Perplexity account, you may opt out of the "sale" or "sharing" of your data
+      - link "here" [ref=e651] [cursor=pointer]:
+        - /url: https://www.perplexity.ai/hub/legal/privacy-policy
+      - text: .
+    - generic [ref=e652]:
+      - button "Opt out" [ref=e653] [cursor=pointer]:
+        - generic [ref=e654]: Opt out
+      - button "Got it" [ref=e656] [cursor=pointer]:
+        - generic [ref=e657]: Got it

@@ -1,0 +1,262 @@
+- generic [ref=e1]:
+  - generic [ref=e5]:
+    - navigation "Main" [ref=e7]:
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - link "Perplexity" [ref=e11] [cursor=pointer]:
+            - /url: /
+            - img "Perplexity" [ref=e14]
+          - button "Collapse sidebar" [ref=e17] [cursor=pointer]:
+            - img [ref=e18]
+        - generic [ref=e23]:
+          - generic [ref=e26]:
+            - link "New" [ref=e27] [cursor=pointer]:
+              - /url: /
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - img
+                - generic:
+                  - generic:
+                    - generic: New
+                  - generic: ⌘K
+          - generic [ref=e30]:
+            - link "Computer" [ref=e31] [cursor=pointer]:
+              - /url: /computer/tasks
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Computer":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Computer
+          - generic [ref=e35]:
+            - link "Spaces" [ref=e36] [cursor=pointer]:
+              - /url: /spaces
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Spaces":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Spaces
+          - generic [ref=e40]:
+            - link "Artifacts" [ref=e41] [cursor=pointer]:
+              - /url: /computer/artifacts
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Artifacts":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Artifacts
+          - generic [ref=e45]:
+            - link "Customize" [ref=e46] [cursor=pointer]:
+              - /url: /computer/connectors
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Customize":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Customize
+          - generic [ref=e48]:
+            - generic [ref=e50]:
+              - link "History" [ref=e51] [cursor=pointer]:
+                - /url: /library
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - button "Collapse History" [expanded]:
+                        - generic:
+                          - img
+                    - generic:
+                      - img
+                  - generic:
+                    - generic:
+                      - generic: History
+            - generic [ref=e229]:
+              - link "tool to check MCP server health" [ref=e230] [cursor=pointer]:
+                - /url: /search/bfc4aefd-eb1e-479d-a80c-4436dbb83005
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: tool to check MCP server health
+                  - button "Thread actions" [ref=e234] [cursor=pointer]:
+                    - img [ref=e237]
+        - button "Sign In" [ref=e63] [cursor=pointer]:
+          - generic [ref=e64]:
+            - generic [ref=e66]:
+              - img [ref=e69]
+              - generic [ref=e72]: Sign In
+            - generic:
+              - img
+    - main [ref=e74]:
+      - generic [ref=e77]:
+        - generic:
+          - generic:
+            - tablist "Answer mode tabs" [ref=e79]:
+              - tab "Answer" [selected] [ref=e80] [cursor=pointer]:
+                - img [ref=e81]
+                - text: Answer
+              - tab "Links" [ref=e240] [cursor=pointer]:
+                - img [ref=e241]
+                - text: Links
+              - tab "Images" [ref=e243] [cursor=pointer]:
+                - img [ref=e244]
+                - text: Images
+            - generic [ref=e83]:
+              - button "Share" [ref=e247] [cursor=pointer]:
+                - img [ref=e249]
+                - generic [ref=e251]: Share
+              - button "Download Comet" [ref=e85] [cursor=pointer]:
+                - img [ref=e87]
+                - generic [ref=e89]: Download Comet
+        - generic [ref=e92]:
+          - tabpanel "Answer" [ref=e102]:
+            - generic [ref=e103]:
+              - generic [ref=e108]:
+                - generic:
+                  - button "Edit query":
+                    - generic:
+                      - generic:
+                        - img
+                  - button "Copy query":
+                    - generic:
+                      - generic:
+                        - img
+                - heading "tool to check MCP server health" [level=1] [ref=e114]:
+                  - generic [ref=e116]: tool to check MCP server health
+              - generic [ref=e259]:
+                - paragraph [ref=e260]:
+                  - text: A solid tool for checking MCP server health is
+                  - strong [ref=e261]: MCP Health Monitor
+                  - text: ", which tests an endpoint, checks Smithery namespaces, and can keep a watchlist of servers with uptime monitoring."
+                  - generic "Free Tool to Check If Your MCP Servers Are Actually ..." [ref=e263]:
+                    - link "dev" [ref=e265] [cursor=pointer]:
+                      - /url: https://dev.to/rumblingb/mcp-health-monitor-free-tool-to-check-if-your-mcp-servers-are-actually-running-3jih
+                      - generic [ref=e268]: dev
+                - paragraph [ref=e269]:
+                  - text: For debugging and manual verification, the
+                  - strong [ref=e270]: MCP Inspector
+                  - text: is the official interactive tool for testing connectivity and capabilities of an MCP server. If you want a quick health-check workflow, some guides recommend checking the server’s health endpoint and confirming that
+                  - code [ref=e271]: initialize
+                  - text: plus
+                  - code [ref=e272]: tools/list
+                  - text: succeed.
+                  - generic [ref=e277] [cursor=pointer]:
+                    - generic [ref=e278]: corcava
+                    - generic [ref=e279]: "+2"
+                - paragraph [ref=e280]: "Recommended options:"
+                - list [ref=e281]:
+                  - listitem [ref=e282]:
+                    - paragraph [ref=e283]:
+                      - strong [ref=e284]: MCP Health Monitor
+                      - text: for ongoing uptime checks.
+                      - generic "Free Tool to Check If Your MCP Servers Are Actually ..." [ref=e286]:
+                        - link "dev" [ref=e288] [cursor=pointer]:
+                          - /url: https://dev.to/rumblingb/mcp-health-monitor-free-tool-to-check-if-your-mcp-servers-are-actually-running-3jih
+                          - generic [ref=e291]: dev
+                  - listitem [ref=e292]:
+                    - paragraph [ref=e293]:
+                      - strong [ref=e294]: MCP Inspector
+                      - text: for hands-on debugging and validation.
+                      - generic "MCP Inspector - Model Context Protocol" [ref=e296]:
+                        - link "modelcontextprotocol" [ref=e298] [cursor=pointer]:
+                          - /url: https://modelcontextprotocol.io/docs/tools/inspector
+                          - generic [ref=e301]: modelcontextprotocol
+                  - listitem [ref=e302]:
+                    - paragraph [ref=e303]:
+                      - strong [ref=e304]: Claude Desktop logs / developer tools
+                      - text: when the issue is client-side or configuration-related.
+                      - generic "Debugging - Model Context Protocol （MCP）" [ref=e306]:
+                        - link "modelcontextprotocol" [ref=e308] [cursor=pointer]:
+                          - /url: https://modelcontextprotocol.info/tools/debugging/
+                          - generic [ref=e311]: modelcontextprotocol
+                - paragraph [ref=e312]: If you want, I can give you a one-line recommendation for the best tool depending on whether your MCP server is local, remote, or in production.
+          - generic [ref=e323]:
+            - generic [ref=e325]:
+              - textbox [active] [ref=e326]:
+                - paragraph [ref=e327]
+              - generic: Ask a follow-up
+            - generic [ref=e329]:
+              - button "Add files or tools" [ref=e330] [cursor=pointer]:
+                - img [ref=e333]
+              - button "Search" [pressed] [ref=e339] [cursor=pointer]:
+                - img [ref=e341]
+                - generic [ref=e343]:
+                  - text: Search
+                  - img [ref=e344]
+            - generic [ref=e346]:
+              - button "Model" [ref=e348] [cursor=pointer]:
+                - generic [ref=e349]: Model
+                - img [ref=e351]
+              - button "Stop response (Esc)" [ref=e356] [cursor=pointer]:
+                - img [ref=e359]
+  - dialog [ref=e184]:
+    - generic [ref=e188]:
+      - generic [ref=e189]:
+        - generic [ref=e190]: Sign up below to unlock the full potential of Perplexity
+        - generic [ref=e191]:
+          - text: By continuing, you agree to our
+          - link "privacy policy" [ref=e192] [cursor=pointer]:
+            - /url: https://www.perplexity.com/hub/legal/privacy-policy
+          - text: .
+      - generic [ref=e193]:
+        - button "Back home" [ref=e195] [cursor=pointer]:
+          - img [ref=e197]
+          - generic [ref=e199]: Back home
+        - generic [ref=e201]:
+          - generic [ref=e202]:
+            - button "Continue with Google" [ref=e203] [cursor=pointer]:
+              - img [ref=e205]
+              - generic [ref=e207]: Continue with Google
+            - button "Continue with Apple" [ref=e209] [cursor=pointer]:
+              - img [ref=e211]
+              - generic [ref=e213]: Continue with Apple
+          - generic [ref=e216]:
+            - generic [ref=e218]:
+              - textbox "Enter your email" [ref=e223]
+              - generic [ref=e224]:
+                - button "Continue with email" [disabled]:
+                  - generic: Continue with email
+            - button "Single sign-on (SSO)" [ref=e226] [cursor=pointer]:
+              - generic [ref=e227]: Single sign-on (SSO)
+  - listbox "Typeahead menu"
+  - dialog "Cookie Policy" [ref=e362]:
+    - generic [ref=e363]:
+      - heading "Cookie Policy" [level=2] [ref=e364]
+      - paragraph [ref=e365]: We and our partners use cookies, pixels, SDKs, APIs, and server-to-server integrations. Perplexity does not use these technologies to sell third party ads on our services. Perplexity uses them to measure our ad performance on third party partner websites and to improve our services. If you continue using Perplexity, without adjusting your settings, you are consenting to these technologies.
+    - generic [ref=e366]:
+      - img [ref=e367]
+      - generic [ref=e369]: Cookie Policy
+    - generic [ref=e370]: We and our partners use cookies, pixels, SDKs, APIs, and server-to-server integrations. Perplexity does not use these technologies to sell third party ads on our services. Perplexity uses them to measure our ad performance on third party partner websites and to improve our services. If you continue using Perplexity, without adjusting your settings, you are consenting to these technologies.
+    - generic [ref=e371]:
+      - button "Decline optional" [ref=e372] [cursor=pointer]:
+        - generic [ref=e373]: Decline optional
+      - button "Got it" [ref=e375] [cursor=pointer]:
+        - generic [ref=e376]: Got it

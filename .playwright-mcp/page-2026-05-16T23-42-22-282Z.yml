@@ -1,0 +1,532 @@
+- generic [ref=e1]:
+  - link "Skip to content" [ref=e3] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e7]:
+    - generic [ref=e9]:
+      - navigation "Sidebar":
+        - generic:
+          - generic:
+            - generic:
+              - button "Open sidebar":
+                - img
+        - generic:
+          - generic:
+            - link "New chat":
+              - /url: /
+              - generic:
+                - img
+              - generic: New chat
+          - generic:
+            - generic:
+              - generic:
+                - img
+              - generic: Search chats
+          - generic:
+            - link "Images":
+              - /url: /images
+              - generic:
+                - img
+              - generic: Images
+        - generic:
+          - generic:
+            - button "Open profile menu":
+              - generic:
+                - generic:
+                  - img
+      - generic [ref=e10]:
+        - heading "Chat history" [level=2] [ref=e11]
+        - navigation "Chat history" [ref=e13]:
+          - generic [ref=e16]:
+            - link "Home" [ref=e17] [cursor=pointer]:
+              - /url: /
+              - img [ref=e18]
+            - button "Close sidebar" [expanded] [ref=e21]:
+              - img [ref=e22]
+          - list [ref=e25]:
+            - listitem [ref=e26]:
+              - link "New chat Shift Command O" [ref=e27] [cursor=pointer]:
+                - /url: /
+                - generic [ref=e28]:
+                  - img [ref=e30]
+                  - generic [ref=e33]: New chat
+                - generic [ref=e35]:
+                  - generic "Shift" [ref=e36]:
+                    - generic [ref=e37]: ⇧
+                  - generic "Command" [ref=e38]:
+                    - generic [ref=e39]: ⌘
+                  - generic [ref=e41]: O
+            - listitem [ref=e42]:
+              - generic [ref=e43] [cursor=pointer]:
+                - generic [ref=e44]:
+                  - img [ref=e156]
+                  - generic [ref=e159]: Search chats
+                - generic [ref=e160]:
+                  - generic "Command" [ref=e161]:
+                    - generic [ref=e162]: ⌘
+                  - generic [ref=e164]: K
+          - link "Images" [ref=e49] [cursor=pointer]:
+            - /url: /images
+            - img [ref=e51]
+            - generic [ref=e54]: Images
+          - generic [ref=e55]:
+            - link "Apps" [ref=e56] [cursor=pointer]:
+              - /url: /apps
+              - img [ref=e58]
+              - generic [ref=e61]: Apps
+            - generic [ref=e62] [cursor=pointer]:
+              - img [ref=e64]
+              - generic [ref=e67]: Deep research
+          - generic [ref=e69]:
+            - link "See plans and pricing" [ref=e70] [cursor=pointer]:
+              - /url: https://openai.com/chatgpt/pricing/
+              - generic [ref=e71]:
+                - img [ref=e73]
+                - text: See plans and pricing
+              - img [ref=e76]
+            - generic [ref=e78] [cursor=pointer]:
+              - img [ref=e80]
+              - text: Settings
+            - generic [ref=e82] [cursor=pointer]:
+              - generic [ref=e83]:
+                - img [ref=e85]
+                - generic [ref=e88]: Help
+              - img [ref=e90]
+          - generic [ref=e92]:
+            - generic [ref=e93]:
+              - paragraph [ref=e94]: Get responses tailored to you
+              - paragraph [ref=e95]: Log in to get answers based on saved chats, plus create images and upload files.
+            - button "Log in" [ref=e97] [cursor=pointer]:
+              - generic [ref=e98]: Log in
+    - generic [ref=e100]:
+      - banner:
+        - button "Model selector" [ref=e102] [cursor=pointer]:
+          - generic [ref=e103]:
+            - generic [ref=e104]: ChatGPT
+            - img [ref=e105]
+        - generic [ref=e111]:
+          - button "Log in" [ref=e112] [cursor=pointer]:
+            - generic [ref=e114]: Log in
+          - button "Sign up for free" [ref=e115] [cursor=pointer]:
+            - generic [ref=e116]: Sign up for free
+      - main [ref=e117]:
+        - generic [ref=e118]:
+          - generic [ref=e166]:
+            - generic [ref=e169]:
+              - heading "You said:" [level=4] [ref=e170]
+              - generic [ref=e172]:
+                - generic [ref=e180]: Anthropic MCP server diagnostic
+                - generic [ref=e181]:
+                  - group "Your message actions":
+                    - button "Copy message":
+                      - generic:
+                        - img
+            - generic [ref=e185]:
+              - heading "ChatGPT said:" [level=4] [ref=e186]
+              - generic [ref=e188]:
+                - generic [ref=e192]:
+                  - paragraph [ref=e193]:
+                    - text: If you’re looking for an “Anthropic MCP server diagnostic,” there are a few common meanings. Here’s a practical breakdown for diagnosing a Model Context Protocol (MCP) server used with
+                    - link "Anthropic Docs" [ref=e195] [cursor=pointer]:
+                      - /url: https://docs.anthropic.com/en/docs/agents-and-tools/mcp-connector?utm_source=chatgpt.com
+                      - text: Anthropic Docs
+                      - img [ref=e197]
+                    - text: .
+                  - heading "Quick MCP Server Diagnostic Checklist" [level=2] [ref=e199]
+                  - heading "1. Verify the server transport" [level=3] [ref=e200]
+                  - paragraph [ref=e201]: "Anthropic MCP connector currently supports:"
+                  - list [ref=e202]:
+                    - listitem [ref=e203]:
+                      - paragraph [ref=e204]:
+                        - text: SSE (
+                        - code [ref=e205]: /sse
+                        - text: )
+                    - listitem [ref=e206]:
+                      - paragraph [ref=e207]: Streamable HTTP
+                  - paragraph [ref=e208]:
+                    - text: It does
+                    - strong [ref=e209]: not
+                    - text: support local stdio servers directly through the hosted Messages API.
+                    - link "Claude API Docs +1" [ref=e212] [cursor=pointer]:
+                      - /url: https://docs.anthropic.com/en/docs/agents-and-tools/mcp-connector?utm_source=chatgpt.com
+                      - generic [ref=e214]:
+                        - generic [ref=e215]: Claude API Docs
+                        - generic [ref=e216]: "+1"
+                  - paragraph [ref=e217]: "Test endpoint:"
+                  - generic [ref=e225]:
+                    - generic [ref=e227]:
+                      - generic [ref=e228]:
+                        - img [ref=e229]
+                        - text: Bash
+                      - button "Copy" [ref=e232] [cursor=pointer]:
+                        - img [ref=e233]
+                    - code [ref=e241]: curl -i https://your-server.com/sse
+                  - paragraph [ref=e242]: "or:"
+                  - generic [ref=e250]:
+                    - generic [ref=e252]:
+                      - generic [ref=e253]:
+                        - img [ref=e254]
+                        - text: Bash
+                      - button "Copy" [ref=e257] [cursor=pointer]:
+                        - img [ref=e258]
+                    - code [ref=e266]: curl -i https://your-server.com/mcp
+                  - paragraph [ref=e267]: "Expected:"
+                  - list [ref=e268]:
+                    - listitem [ref=e269]:
+                      - paragraph [ref=e270]: HTTP 200
+                    - listitem [ref=e271]:
+                      - paragraph [ref=e272]:
+                        - code [ref=e273]: text/event-stream
+                        - text: for SSE
+                    - listitem [ref=e274]:
+                      - paragraph [ref=e275]: no TLS/certificate errors
+                  - separator [ref=e276]
+                  - heading "2. Validate MCP capability handshake" [level=2] [ref=e277]
+                  - paragraph [ref=e278]: "Use the official MCP Inspector:"
+                  - generic [ref=e286]:
+                    - generic [ref=e288]:
+                      - generic [ref=e289]:
+                        - img [ref=e290]
+                        - text: Bash
+                      - button "Copy" [ref=e293] [cursor=pointer]:
+                        - img [ref=e294]
+                    - code [ref=e302]: npx @modelcontextprotocol/inspector
+                  - paragraph [ref=e303]: "Then:"
+                  - list [ref=e304]:
+                    - listitem [ref=e305]:
+                      - paragraph [ref=e306]: choose SSE or Streamable HTTP
+                    - listitem [ref=e307]:
+                      - paragraph [ref=e308]: enter your MCP URL
+                    - listitem [ref=e309]:
+                      - paragraph [ref=e310]: "inspect:"
+                      - list [ref=e311]:
+                        - listitem [ref=e312]:
+                          - paragraph [ref=e313]: tools
+                        - listitem [ref=e314]:
+                          - paragraph [ref=e315]: schemas
+                        - listitem [ref=e316]:
+                          - paragraph [ref=e317]: auth
+                        - listitem [ref=e318]:
+                          - paragraph [ref=e319]: responses
+                  - paragraph [ref=e320]:
+                    - text: Anthropic specifically recommends this for debugging OAuth and connectivity.
+                    - link "Claude API Docs +1" [ref=e323] [cursor=pointer]:
+                      - /url: https://docs.anthropic.com/en/docs/agents-and-tools/mcp-connector?utm_source=chatgpt.com
+                      - generic [ref=e325]:
+                        - generic [ref=e326]: Claude API Docs
+                        - generic [ref=e327]: "+1"
+                  - separator [ref=e328]
+                  - heading "3. Confirm Anthropic API configuration" [level=2] [ref=e329]
+                  - paragraph [ref=e330]: "Minimal working request:"
+                  - generic [ref=e338]:
+                    - generic [ref=e340]:
+                      - generic [ref=e341]:
+                        - img [ref=e342]
+                        - text: JSON
+                      - button "Copy" [ref=e345] [cursor=pointer]:
+                        - img [ref=e346]
+                    - code [ref=e354]:
+                      - text: "{"
+                      - text: "\"model\": \"claude-sonnet-4-20250514\","
+                      - text: "\"messages\": ["
+                      - text: "{"
+                      - text: "\"role\": \"user\","
+                      - text: "\"content\": \"What tools are available?\""
+                      - text: "}"
+                      - text: "],"
+                      - text: "\"mcp_servers\": ["
+                      - text: "{"
+                      - text: "\"type\": \"url\","
+                      - text: "\"url\": \"https://your-server.com/sse\","
+                      - text: "\"name\": \"my-mcp\""
+                      - text: "}"
+                      - text: "]"
+                      - text: "}"
+                  - paragraph [ref=e355]: "Required header:"
+                  - generic [ref=e363]:
+                    - generic [ref=e365]:
+                      - generic [ref=e366]:
+                        - img [ref=e367]
+                        - text: http
+                      - button "Copy" [ref=e370] [cursor=pointer]:
+                        - img [ref=e371]
+                    - code [ref=e379]: "anthropic-beta: mcp-client-2025-04-04"
+                  - paragraph [ref=e380]:
+                    - text: Missing beta headers are a very common failure source.
+                    - link "Claude API Docs" [ref=e383] [cursor=pointer]:
+                      - /url: https://docs.anthropic.com/en/docs/agents-and-tools/mcp-connector?utm_source=chatgpt.com
+                      - generic [ref=e386]: Claude API Docs
+                  - separator [ref=e387]
+                  - heading "4. Check tool schema quality" [level=2] [ref=e388]
+                  - paragraph [ref=e389]: "Common MCP failures:"
+                  - list [ref=e390]:
+                    - listitem [ref=e391]:
+                      - paragraph [ref=e392]: missing parameter descriptions
+                    - listitem [ref=e393]:
+                      - paragraph [ref=e394]: invalid JSON schema
+                    - listitem [ref=e395]:
+                      - paragraph [ref=e396]: duplicate tool names
+                    - listitem [ref=e397]:
+                      - paragraph [ref=e398]: huge tool lists consuming context
+                    - listitem [ref=e399]:
+                      - paragraph [ref=e400]: ambiguous arguments
+                  - paragraph [ref=e401]:
+                    - text: Community audits found many MCP servers expose poorly documented tools or unsafe capabilities.
+                    - link "Reddit +1" [ref=e404] [cursor=pointer]:
+                      - /url: https://www.reddit.com/r/SideProject/comments/1s9uit3/mcp_servers_are_the_new_npm_packages_but_nobodys/?utm_source=chatgpt.com
+                      - generic [ref=e406]:
+                        - generic [ref=e407]: Reddit
+                        - generic [ref=e408]: "+1"
+                  - paragraph [ref=e409]: "Good diagnostic:"
+                  - generic [ref=e417]:
+                    - generic [ref=e419]:
+                      - generic [ref=e420]:
+                        - img [ref=e421]
+                        - text: Bash
+                      - button "Copy" [ref=e424] [cursor=pointer]:
+                        - img [ref=e425]
+                    - code [ref=e433]: jq . tools.json
+                  - paragraph [ref=e434]: "Look for:"
+                  - list [ref=e435]:
+                    - listitem [ref=e436]:
+                      - paragraph [ref=e437]: required fields
+                    - listitem [ref=e438]:
+                      - paragraph [ref=e439]: descriptions
+                    - listitem [ref=e440]:
+                      - paragraph [ref=e441]: enum constraints
+                    - listitem [ref=e442]:
+                      - paragraph [ref=e443]: argument types
+                  - separator [ref=e444]
+                  - heading "5. Authentication diagnostics" [level=2] [ref=e445]
+                  - paragraph [ref=e446]: "If OAuth is used:"
+                  - paragraph [ref=e447]: "Verify:"
+                  - list [ref=e448]:
+                    - listitem [ref=e449]:
+                      - paragraph [ref=e450]: bearer token validity
+                    - listitem [ref=e451]:
+                      - paragraph [ref=e452]: token refresh handling
+                    - listitem [ref=e453]:
+                      - paragraph [ref=e454]: auth headers reaching upstream MCP server
+                  - paragraph [ref=e455]:
+                    - text: Anthropic expects clients to manage OAuth themselves.
+                    - link "Claude API Docs" [ref=e458] [cursor=pointer]:
+                      - /url: https://docs.anthropic.com/en/docs/agents-and-tools/mcp-connector?utm_source=chatgpt.com
+                      - generic [ref=e461]: Claude API Docs
+                  - paragraph [ref=e462]: "Example:"
+                  - generic [ref=e470]:
+                    - generic [ref=e472]:
+                      - generic [ref=e473]:
+                        - img [ref=e474]
+                        - text: JSON
+                      - button "Copy" [ref=e477] [cursor=pointer]:
+                        - img [ref=e478]
+                    - code [ref=e486]:
+                      - text: "{"
+                      - text: "\"authorization_token\": \"YOUR_ACCESS_TOKEN\""
+                      - text: "}"
+                  - separator [ref=e487]
+                  - heading "6. Security diagnostics (important)" [level=2] [ref=e488]
+                  - paragraph [ref=e489]: "Recent security research identified several MCP ecosystem risks:"
+                  - list [ref=e490]:
+                    - listitem [ref=e491]:
+                      - paragraph [ref=e492]: prompt injection
+                    - listitem [ref=e493]:
+                      - paragraph [ref=e494]: tool poisoning
+                    - listitem [ref=e495]:
+                      - paragraph [ref=e496]: arbitrary command execution
+                    - listitem [ref=e497]:
+                      - paragraph [ref=e498]: insecure stdio execution
+                    - listitem [ref=e499]:
+                      - paragraph [ref=e500]: filesystem exposure
+                    - listitem [ref=e501]:
+                      - paragraph [ref=e502]: environment variable leakage
+                  - paragraph [ref=e503]:
+                    - link "Tom's Hardware +2 TechRadar +2" [ref=e506] [cursor=pointer]:
+                      - /url: https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-model-context-protocol-has-critical-security-flaw-exposed?utm_source=chatgpt.com
+                      - generic [ref=e507]:
+                        - generic [ref=e508]:
+                          - generic [ref=e509]: Tom's Hardware
+                          - generic [ref=e510]: "+2"
+                        - generic [ref=e511]:
+                          - generic [ref=e512]: TechRadar
+                          - generic [ref=e513]: "+2"
+                  - paragraph [ref=e514]: "Recommended checks:"
+                  - heading "Dangerous tools" [level=3] [ref=e515]
+                  - paragraph [ref=e516]: "Flag tools that:"
+                  - list [ref=e517]:
+                    - listitem [ref=e518]:
+                      - paragraph [ref=e519]: execute shell commands
+                    - listitem [ref=e520]:
+                      - paragraph [ref=e521]: expose environment variables
+                    - listitem [ref=e522]:
+                      - paragraph [ref=e523]: read arbitrary files
+                    - listitem [ref=e524]:
+                      - paragraph [ref=e525]: perform git operations
+                    - listitem [ref=e526]:
+                      - paragraph [ref=e527]: fetch arbitrary URLs
+                  - heading "Sandboxing" [level=3] [ref=e528]
+                  - paragraph [ref=e529]: "Run MCP servers:"
+                  - list [ref=e530]:
+                    - listitem [ref=e531]:
+                      - paragraph [ref=e532]: inside containers
+                    - listitem [ref=e533]:
+                      - paragraph [ref=e534]: with read-only FS where possible
+                    - listitem [ref=e535]:
+                      - paragraph [ref=e536]: with minimal permissions
+                    - listitem [ref=e537]:
+                      - paragraph [ref=e538]: without production secrets
+                  - heading "Network isolation" [level=3] [ref=e539]
+                  - paragraph [ref=e540]: Restrict outbound network access.
+                  - separator [ref=e541]
+                  - heading "7. Runtime logging diagnostics" [level=2] [ref=e542]
+                  - paragraph [ref=e543]: "Enable verbose logs:"
+                  - heading "Node.js" [level=3] [ref=e544]
+                  - generic [ref=e552]:
+                    - generic [ref=e554]:
+                      - generic [ref=e555]:
+                        - img [ref=e556]
+                        - text: Bash
+                      - button "Copy" [ref=e559] [cursor=pointer]:
+                        - img [ref=e560]
+                    - code [ref=e568]: DEBUG=* node server.js
+                  - heading "Python" [level=3] [ref=e569]
+                  - generic [ref=e577]:
+                    - generic [ref=e579]:
+                      - generic [ref=e580]:
+                        - img [ref=e581]
+                        - text: Bash
+                      - button "Copy" [ref=e584] [cursor=pointer]:
+                        - img [ref=e585]
+                    - code [ref=e593]: export MCP_LOG_LEVEL=debug
+                  - paragraph [ref=e594]: "Monitor:"
+                  - list [ref=e595]:
+                    - listitem [ref=e596]:
+                      - paragraph [ref=e597]: incoming tool calls
+                    - listitem [ref=e598]:
+                      - paragraph [ref=e599]: malformed arguments
+                    - listitem [ref=e600]:
+                      - paragraph [ref=e601]: timeout behavior
+                    - listitem [ref=e602]:
+                      - paragraph [ref=e603]: token usage
+                    - listitem [ref=e604]:
+                      - paragraph [ref=e605]: streaming disconnects
+                  - separator [ref=e606]
+                  - heading "8. Common failure signatures" [level=2] [ref=e607]
+                  - generic [ref=e609]:
+                    - table [ref=e610]:
+                      - rowgroup [ref=e611]:
+                        - row "Symptom Likely Cause" [ref=e612]:
+                          - columnheader "Symptom" [ref=e613]
+                          - columnheader "Likely Cause" [ref=e614]
+                      - rowgroup [ref=e615]:
+                        - row "No tools available handshake/schema failure" [ref=e616]:
+                          - cell "No tools available" [ref=e617]:
+                            - code [ref=e618]: No tools available
+                          - cell "handshake/schema failure" [ref=e619]
+                        - row "Tool call timeout SSE stream broken" [ref=e620]:
+                          - cell "Tool call timeout" [ref=e621]:
+                            - code [ref=e622]: Tool call timeout
+                          - cell "SSE stream broken" [ref=e623]
+                        - row "401 Unauthorized OAuth token invalid" [ref=e624]:
+                          - cell "401 Unauthorized" [ref=e625]:
+                            - code [ref=e626]: 401 Unauthorized
+                          - cell "OAuth token invalid" [ref=e627]
+                        - row "Tool not found duplicate or renamed tools" [ref=e628]:
+                          - cell "Tool not found" [ref=e629]:
+                            - code [ref=e630]: Tool not found
+                          - cell "duplicate or renamed tools" [ref=e631]
+                        - row "Claude ignores tools poor tool descriptions" [ref=e632]:
+                          - cell "Claude ignores tools" [ref=e633]
+                          - cell "poor tool descriptions" [ref=e634]
+                        - row "Random command execution unsafe shell tool" [ref=e635]:
+                          - cell "Random command execution" [ref=e636]
+                          - cell "unsafe shell tool" [ref=e637]
+                    - generic [ref=e639]:
+                      - button "Copy table":
+                        - img
+                  - separator [ref=e640]
+                  - heading "9. Recommended validation flow" [level=2] [ref=e641]
+                  - list [ref=e642]:
+                    - listitem [ref=e643]:
+                      - paragraph [ref=e644]: MCP Inspector
+                    - listitem [ref=e645]:
+                      - paragraph [ref=e646]: Raw curl test
+                    - listitem [ref=e647]:
+                      - paragraph [ref=e648]: Schema validation
+                    - listitem [ref=e649]:
+                      - paragraph [ref=e650]: Anthropic Messages API test
+                    - listitem [ref=e651]:
+                      - paragraph [ref=e652]: Sandbox security review
+                    - listitem [ref=e653]:
+                      - paragraph [ref=e654]: Prompt injection testing
+                  - separator [ref=e655]
+                  - heading "10. Useful official resources" [level=2] [ref=e656]
+                  - list [ref=e657]:
+                    - listitem [ref=e658]:
+                      - paragraph [ref=e659]:
+                        - link "Anthropic MCP Connector Docs" [ref=e661] [cursor=pointer]:
+                          - /url: https://docs.anthropic.com/en/docs/agents-and-tools/mcp-connector?utm_source=chatgpt.com
+                          - text: Anthropic MCP Connector Docs
+                          - img [ref=e663]
+                    - listitem [ref=e665]:
+                      - paragraph [ref=e666]:
+                        - link "Model Context Protocol Inspector" [ref=e668] [cursor=pointer]:
+                          - /url: https://github.com/modelcontextprotocol/inspector?utm_source=chatgpt.com
+                          - text: Model Context Protocol Inspector
+                          - img [ref=e670]
+                    - listitem [ref=e672]:
+                      - paragraph [ref=e673]:
+                        - link "MCP Specification" [ref=e675] [cursor=pointer]:
+                          - /url: https://modelcontextprotocol.io?utm_source=chatgpt.com
+                          - text: MCP Specification
+                          - img [ref=e677]
+                    - listitem [ref=e679]:
+                      - paragraph [ref=e680]:
+                        - generic [ref=e682] [cursor=pointer]:
+                          - text: MCPSafetyScanner GitHub
+                          - img [ref=e684]
+                  - paragraph [ref=e686]: "If you want, I can also help with:"
+                  - list [ref=e687]:
+                    - listitem [ref=e688]:
+                      - paragraph [ref=e689]: diagnosing a specific MCP server error log
+                    - listitem [ref=e690]:
+                      - paragraph [ref=e691]: building a health-check script
+                    - listitem [ref=e692]:
+                      - paragraph [ref=e693]: Docker hardening for MCP servers
+                    - listitem [ref=e694]:
+                      - paragraph [ref=e695]: Anthropic + MCP integration examples
+                    - listitem [ref=e696]:
+                      - paragraph [ref=e697]: SSE debugging
+                    - listitem [ref=e698]:
+                      - paragraph [ref=e699]: tool schema linting
+                    - listitem [ref=e700]:
+                      - paragraph [ref=e701]: prompt injection testing for MCP tools
+                - generic [ref=e702]:
+                  - group "Response actions":
+                    - button "Copy response":
+                      - generic:
+                        - img
+                    - button "Share":
+                      - generic:
+                        - img
+                    - button "Sources":
+                      - generic: Sources
+          - generic [ref=e120]:
+            - button [ref=e703] [cursor=pointer]:
+              - img [ref=e704]
+            - generic [ref=e126]:
+              - generic [ref=e130]:
+                - button "Add files and more" [ref=e133] [cursor=pointer]:
+                  - img
+                - textbox "Chat with ChatGPT" [active] [ref=e136]:
+                  - paragraph [ref=e137]: Ask anything
+                - generic [ref=e139]:
+                  - button "Start dictation" [ref=e140] [cursor=pointer]:
+                    - img
+                  - button "Start Voice" [ref=e712] [cursor=pointer]:
+                    - img [ref=e714]
+                    - generic [ref=e716]: Voice
+              - button [ref=e145]
+              - button [ref=e146]
+            - generic [ref=e152]: ChatGPT can make mistakes. Check important info. See Cookie Preferences.
+  - alert [ref=e153]
+  - status [ref=e154]

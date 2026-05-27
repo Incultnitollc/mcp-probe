@@ -1,0 +1,381 @@
+- generic:
+  - generic:
+    - link:
+      - /url: "#main"
+      - text: Skip to content
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - navigation:
+                - generic:
+                  - generic:
+                    - generic:
+                      - button:
+                        - img
+                - generic:
+                  - generic:
+                    - link:
+                      - /url: /
+                      - generic:
+                        - img
+                      - generic: New chat
+                  - generic:
+                    - generic:
+                      - generic:
+                        - img
+                      - generic: Search chats
+                  - generic:
+                    - link:
+                      - /url: /images
+                      - generic:
+                        - img
+                      - generic: Images
+                - generic:
+                  - generic:
+                    - button:
+                      - generic:
+                        - generic:
+                          - img
+              - generic:
+                - heading [level=2]: Chat history
+                - generic:
+                  - navigation:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - link:
+                            - /url: /
+                            - img
+                          - generic:
+                            - button [expanded]:
+                              - img
+                    - generic:
+                      - list:
+                        - listitem:
+                          - link:
+                            - /url: /
+                            - generic:
+                              - generic:
+                                - img
+                              - generic:
+                                - generic: New chat
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic: ⇧
+                                - generic:
+                                  - generic: ⌘
+                                - generic:
+                                  - generic: O
+                        - listitem:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - img
+                              - generic:
+                                - generic: Search chats
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic: ⌘
+                                - generic:
+                                  - generic: K
+                    - link:
+                      - /url: /images
+                      - generic:
+                        - img
+                      - generic:
+                        - generic: Images
+                    - generic:
+                      - link:
+                        - /url: /apps
+                        - generic:
+                          - img
+                        - generic:
+                          - generic: Apps
+                      - generic:
+                        - generic:
+                          - img
+                        - generic:
+                          - generic: Deep research
+                    - generic:
+                      - link:
+                        - /url: https://openai.com/chatgpt/pricing/
+                        - generic:
+                          - generic:
+                            - img
+                          - text: See plans and pricing
+                        - generic:
+                          - img
+                      - generic:
+                        - generic:
+                          - img
+                        - text: Settings
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+                          - generic:
+                            - generic: Help
+                        - generic:
+                          - img
+                    - generic:
+                      - generic:
+                        - paragraph: Get responses tailored to you
+                        - paragraph: Log in to get answers based on saved chats, plus create images and upload files.
+                      - button [ref=e164] [cursor=pointer]:
+                        - generic [ref=e98]: Log in
+          - generic:
+            - generic:
+              - banner:
+                - button [ref=e165] [cursor=pointer]:
+                  - generic [ref=e103]:
+                    - generic [ref=e104]: ChatGPT
+                    - img [ref=e105]
+                - generic [ref=e111]:
+                  - button [ref=e166] [cursor=pointer]:
+                    - generic [ref=e114]: Log in
+                  - button [ref=e167] [cursor=pointer]:
+                    - generic [ref=e116]: Sign up for free
+              - main:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - heading [level=4]: "You said:"
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic:
+                                          - generic:
+                                            - generic:
+                                              - generic:
+                                                - generic: MCP schema validator
+                                  - generic:
+                                    - group:
+                                      - button:
+                                        - generic:
+                                          - img
+                        - generic:
+                          - generic:
+                            - generic:
+                              - heading [level=4]: "ChatGPT said:"
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic:
+                                          - paragraph: "If you’re looking for an MCP schema validator, there are a few different categories depending on what you need:"
+                                          - heading [level=3]: Dedicated MCP schema validators
+                                          - list:
+                                            - listitem:
+                                              - paragraph:
+                                                - generic:
+                                                  - link:
+                                                    - /url: https://pypi.org/project/mcp-schema-validator/?utm_source=chatgpt.com
+                                                    - text: mcp-schema-validator (PyPI)
+                                                    - generic:
+                                                      - img
+                                                - text: Validates MCP tools/resources/prompts against official MCP SDK schemas. Supports TypeScript and Python SDK formats.
+                                                - generic:
+                                                  - generic:
+                                                    - link:
+                                                      - /url: https://pypi.org/project/mcp-schema-validator/?utm_source=chatgpt.com
+                                                      - generic:
+                                                        - generic:
+                                                          - generic: PyPI
+                                            - listitem:
+                                              - paragraph:
+                                                - generic:
+                                                  - link:
+                                                    - /url: https://webmcptools.io/tools/schema-validator?utm_source=chatgpt.com
+                                                    - text: WebMCP Schema Validator
+                                                    - generic:
+                                                      - img
+                                                - text: Browser-based validator for WebMCP tool schemas and JSON Schema Draft 7 compatibility.
+                                                - generic:
+                                                  - generic:
+                                                    - link:
+                                                      - /url: https://webmcptools.io/tools/schema-validator?utm_source=chatgpt.com
+                                                      - generic:
+                                                        - generic:
+                                                          - generic: WebMCPTools.io
+                                            - listitem:
+                                              - paragraph:
+                                                - generic:
+                                                  - generic:
+                                                    - text: MCP Playground Schema Linter
+                                                    - generic:
+                                                      - img
+                                                - text: Grades MCP servers A–F and checks schema completeness, required fields, naming conventions, token cost, etc.
+                                                - generic:
+                                                  - generic:
+                                                    - link:
+                                                      - /url: https://www.reddit.com/r/mcp/comments/1rz4oay/update_mcp_playground_now_has_a_schema_linter/?utm_source=chatgpt.com
+                                                      - generic:
+                                                        - generic:
+                                                          - generic: Reddit
+                                          - heading [level=3]: Full MCP JSON Schema validation servers
+                                          - list:
+                                            - listitem:
+                                              - paragraph:
+                                                - generic:
+                                                  - link:
+                                                    - /url: https://mcpmarket.com/server/json-schema-validator?utm_source=chatgpt.com
+                                                    - text: JSON Schema Validator MCP Server
+                                                    - generic:
+                                                      - img
+                                                - text: MCP server implementing JSON Schema Draft 2020-12 validation with schema management and external reference resolution.
+                                                - generic:
+                                                  - generic:
+                                                    - link:
+                                                      - /url: https://mcpmarket.com/server/json-schema-validator?utm_source=chatgpt.com
+                                                      - generic:
+                                                        - generic:
+                                                          - generic: MCP Market
+                                                          - generic: "+1"
+                                          - heading [level=3]: MCP tooling / schema generation
+                                          - list:
+                                            - listitem:
+                                              - paragraph:
+                                                - generic:
+                                                  - link:
+                                                    - /url: https://shapemcp.com/?utm_source=chatgpt.com
+                                                    - text: ShapeMCP
+                                                    - generic:
+                                                      - img
+                                                - text: Converts TypeScript, SQL, GraphQL, JSON, etc. into MCP-compatible tool schemas and validates MCP servers.
+                                                - generic:
+                                                  - generic:
+                                                    - link:
+                                                      - /url: https://shapemcp.com/?utm_source=chatgpt.com
+                                                      - generic:
+                                                        - generic:
+                                                          - generic: ShapeMCP
+                                          - heading [level=3]: Common validation stack for custom MCP servers
+                                          - paragraph: "If you’re building your own validator, most teams combine:"
+                                          - list:
+                                            - listitem:
+                                              - paragraph: JSON Schema Draft 2020-12
+                                            - listitem:
+                                              - paragraph:
+                                                - code: ajv
+                                                - text: (TypeScript/Node)
+                                            - listitem:
+                                              - paragraph:
+                                                - code: jsonschema
+                                                - text: or
+                                                - code: pydantic
+                                                - text: (Python)
+                                            - listitem:
+                                              - paragraph: MCP protocol schema checks
+                                            - listitem:
+                                              - paragraph: runtime payload validation
+                                            - listitem:
+                                              - paragraph: schema linting (descriptions, required fields, enums, token size)
+                                          - paragraph:
+                                            - text: A minimal Node.js example with
+                                            - code: ajv
+                                            - text: ":"
+                                          - generic:
+                                            - generic:
+                                              - generic:
+                                                - generic:
+                                                  - generic:
+                                                    - generic:
+                                                      - generic:
+                                                        - generic:
+                                                          - generic:
+                                                            - generic:
+                                                              - generic:
+                                                                - img
+                                                                - text: TypeScript
+                                                              - generic:
+                                                                - button:
+                                                                  - img
+                                                          - generic:
+                                                            - generic:
+                                                              - generic:
+                                                                - generic:
+                                                                  - generic:
+                                                                    - generic:
+                                                                      - code: "import Ajv from \"ajv\"; const ajv = new Ajv(); const validate = ajv.compile(tool.inputSchema); const ok = validate(payload); if (!ok) { console.log(validate.errors); }"
+                                          - paragraph:
+                                            - text: A common issue in MCP ecosystems is “schema drift” — schemas validate statically but fail at runtime because payloads differ from advertised structures. Community discussions repeatedly highlight runtime mismatch debugging as the hardest part.
+                                            - generic:
+                                              - generic:
+                                                - link:
+                                                  - /url: https://www.reddit.com/r/MCPservers/comments/1t3v7wl/building_an_mcp_validator_schema_tools_whats_your/?utm_source=chatgpt.com
+                                                  - generic:
+                                                    - generic:
+                                                      - generic: Reddit
+                                                      - generic: "+1"
+                                          - paragraph: "If you want, I can also help with:"
+                                          - list:
+                                            - listitem:
+                                              - paragraph: validating a specific MCP schema
+                                            - listitem:
+                                              - paragraph: generating schemas from OpenAPI/TypeScript
+                                            - listitem:
+                                              - paragraph: writing a CLI validator
+                                            - listitem:
+                                              - paragraph: adding CI validation for MCP servers
+                                            - listitem:
+                                              - paragraph: MCP tool schema best practices
+                                            - listitem:
+                                              - paragraph: converting OpenAI tools ↔ MCP schemas
+                                  - generic:
+                                    - group:
+                                      - button:
+                                        - generic:
+                                          - img
+                                      - button:
+                                        - generic:
+                                          - img
+                                      - button:
+                                        - generic: Sources
+                  - generic:
+                    - button:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic [ref=e130]:
+                                  - button [ref=e168] [cursor=pointer]:
+                                    - img
+                                  - textbox [ref=e169]:
+                                    - paragraph [ref=e137]: Ask anything
+                                  - generic [ref=e139]:
+                                    - button [ref=e170] [cursor=pointer]:
+                                      - img
+                                    - button [ref=e173] [cursor=pointer]:
+                                      - img [ref=e175]
+                                      - generic [ref=e177]: Voice
+                                - button
+                                - button
+                    - generic [ref=e179]: ChatGPT can make mistakes. Check important info. See Cookie Preferences.
+  - alert
+  - status
+  - dialog [ref=e182]:
+    - generic [ref=e184]:
+      - paragraph [ref=e185]: Thanks for trying ChatGPT
+      - paragraph [ref=e186]: Log in or sign up to get smarter responses, upload files and images, and more.
+      - generic [ref=e187]:
+        - button "Log in" [active] [ref=e188] [cursor=pointer]:
+          - generic [ref=e189]: Log in
+        - button "Sign up for free" [ref=e190] [cursor=pointer]:
+          - generic [ref=e191]: Sign up for free
+      - link "Stay logged out" [ref=e192] [cursor=pointer]:
+        - /url: "#"

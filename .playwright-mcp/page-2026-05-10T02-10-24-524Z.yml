@@ -1,0 +1,332 @@
+- generic [ref=e1]:
+  - generic [ref=e5]:
+    - navigation "Main" [ref=e7]:
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - link "Perplexity" [ref=e11] [cursor=pointer]:
+            - /url: /
+            - img "Perplexity" [ref=e14]
+          - button "Collapse sidebar" [ref=e17] [cursor=pointer]:
+            - img [ref=e18]
+        - generic [ref=e21]:
+          - generic [ref=e24]:
+            - link "New" [ref=e25] [cursor=pointer]:
+              - /url: /
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - img
+                - generic:
+                  - generic:
+                    - generic: New
+                  - generic: ⌘K
+          - generic [ref=e28]:
+            - link "Computer" [ref=e29] [cursor=pointer]:
+              - /url: /computer/tasks
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Computer":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Computer
+          - generic [ref=e33]:
+            - link "Spaces" [ref=e34] [cursor=pointer]:
+              - /url: /spaces
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Spaces":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Spaces
+          - generic [ref=e38]:
+            - link "Artifacts" [ref=e39] [cursor=pointer]:
+              - /url: /computer/artifacts
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Artifacts":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Artifacts
+          - generic [ref=e43]:
+            - link "Customize" [ref=e44] [cursor=pointer]:
+              - /url: /computer/connectors
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Customize":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Customize
+          - generic [ref=e46]:
+            - generic [ref=e48]:
+              - link "History" [ref=e49] [cursor=pointer]:
+                - /url: /library
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - button "Collapse History" [expanded]:
+                        - generic:
+                          - img
+                    - generic:
+                      - img
+                  - generic:
+                    - generic:
+                      - generic: History
+            - generic [ref=e52]:
+              - link "how to debug MCP tool calls" [ref=e53] [cursor=pointer]:
+                - /url: /search/how-to-debug-mcp-tool-calls-duJH4Mx_SXyRu0QgleG3ww
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: how to debug MCP tool calls
+                  - button "Thread actions" [ref=e57] [cursor=pointer]:
+                    - img [ref=e60]
+        - button "Sign In" [ref=e74] [cursor=pointer]:
+          - generic [ref=e75]:
+            - generic [ref=e77]:
+              - img [ref=e80]
+              - generic [ref=e83]: Sign In
+            - generic:
+              - img
+    - main [ref=e85]:
+      - generic [ref=e88]:
+        - generic:
+          - generic:
+            - tablist "Answer mode tabs" [ref=e90]:
+              - tab "Answer" [selected] [ref=e91] [cursor=pointer]:
+                - img [ref=e92]
+                - text: Answer
+              - tab "Links" [ref=e94] [cursor=pointer]:
+                - img [ref=e95]
+                - text: Links
+              - tab "Images" [ref=e97] [cursor=pointer]:
+                - img [ref=e98]
+                - text: Images
+              - tab "Videos" [ref=e101] [cursor=pointer]:
+                - img [ref=e102]
+                - text: Videos
+            - generic [ref=e104]:
+              - button "Share" [ref=e107] [cursor=pointer]:
+                - img [ref=e109]
+                - generic [ref=e111]: Share
+              - button "Download Comet" [ref=e114] [cursor=pointer]:
+                - img [ref=e116]
+                - generic [ref=e118]: Download Comet
+        - generic [ref=e121]:
+          - tabpanel "Answer" [ref=e131]:
+            - generic [ref=e132]:
+              - generic [ref=e137]:
+                - generic:
+                  - button "Edit query":
+                    - generic:
+                      - generic:
+                        - img
+                  - button "Copy query":
+                    - generic:
+                      - generic:
+                        - img
+                - heading "how to debug MCP tool calls" [level=1] [ref=e143]:
+                  - generic [ref=e145]: how to debug MCP tool calls
+              - generic [ref=e150]:
+                - generic [ref=e152]:
+                  - generic [ref=e154]:
+                    - 'button "MCP Inspector: Debugging Your MCP Servers Made Easy trailer MCP Inspector: Debugging Your MCP Servers Made Easy" [ref=e155] [cursor=pointer]':
+                      - 'img "MCP Inspector: Debugging Your MCP Servers Made Easy trailer" [ref=e156]'
+                      - generic [ref=e158]: "MCP Inspector: Debugging Your MCP Servers Made Easy"
+                      - img [ref=e163]
+                    - 'button "10 - MCP Inspector: Test and Debug your MCP Server Locally trailer 10 - MCP Inspector: Test and Debug your MCP Server Locally" [ref=e165] [cursor=pointer]':
+                      - 'img "10 - MCP Inspector: Test and Debug your MCP Server Locally trailer" [ref=e166]'
+                      - generic [ref=e168]: "10 - MCP Inspector: Test and Debug your MCP Server Locally"
+                      - img [ref=e173]
+                    - button "Debug MCP Server Like a PRO with MCP Inspector trailer Debug MCP Server Like a PRO with MCP Inspector" [ref=e175] [cursor=pointer]:
+                      - img "Debug MCP Server Like a PRO with MCP Inspector trailer" [ref=e176]
+                      - generic [ref=e178]: Debug MCP Server Like a PRO with MCP Inspector
+                      - img [ref=e183]
+                  - button "More videos" [ref=e186] [cursor=pointer]:
+                    - img [ref=e189]
+                - generic [ref=e194]:
+                  - heading "MCP Overview" [level=2] [ref=e195]
+                  - paragraph [ref=e196]:
+                    - text: Model Context Protocol (MCP) standardizes AI agent-server communication for tool calls, resources, and prompts. Debugging focuses on connection issues, tool execution failures, and protocol mismatches.
+                    - generic "Debugging" [ref=e198]:
+                      - link "modelcontextprotocol" [ref=e200] [cursor=pointer]:
+                        - /url: https://modelcontextprotocol.io/docs/tools/debugging
+                        - generic [ref=e203]: modelcontextprotocol
+                  - heading "Primary Debugging Tool" [level=2] [ref=e204]
+                  - paragraph [ref=e205]:
+                    - text: Use
+                    - strong [ref=e206]: MCP Inspector
+                    - text: first—it's a transport-agnostic UI for testing servers via stdio or HTTP. Connect to your server, invoke tools, inspect notifications, and view schemas/results in real time.
+                    - generic "Debugging MCP Servers with MCP Inspector - Silsila Series EP.3" [ref=e208]:
+                      - link "youtube" [ref=e210] [cursor=pointer]:
+                        - /url: https://www.youtube.com/watch?v=evHChaqlhqA
+                        - generic [ref=e212]:
+                          - img [ref=e214]
+                          - generic [ref=e216]: youtube
+                    - generic [ref=e221] [cursor=pointer]:
+                      - generic [ref=e222]: mcp-framework
+                      - generic [ref=e223]: "+1"
+                  - heading "Server Logging" [level=2] [ref=e224]
+                  - list [ref=e225]:
+                    - listitem [ref=e226]:
+                      - paragraph [ref=e227]:
+                        - text: Log to stderr (stdio transport) or send notifications like
+                        - code [ref=e228]: "@server.tool() async def my_tool(ctx): await ctx.session.send_log_message(level=\"info\", data=\"Tool executed\")"
+                        - text: .
+                    - listitem [ref=e229]:
+                      - paragraph [ref=e230]:
+                        - text: Use RFC 5424 levels (debug to emergency); clients filter by level.
+                        - generic "Debugging" [ref=e232]:
+                          - link "modelcontextprotocol" [ref=e234] [cursor=pointer]:
+                            - /url: https://modelcontextprotocol.io/docs/tools/debugging
+                            - generic [ref=e237]: modelcontextprotocol
+                    - listitem [ref=e238]:
+                      - paragraph [ref=e239]: Track initialization, tool calls, errors, and metrics.
+                  - heading "Client-Side Checks" [level=2] [ref=e240]
+                  - paragraph [ref=e241]: "For apps like Claude Desktop:"
+                  - list [ref=e242]:
+                    - listitem [ref=e243]:
+                      - paragraph [ref=e244]:
+                        - text: "View logs:"
+                        - code [ref=e245]: tail -n 20 -F ~/Library/Logs/Claude/mcp*.log
+                        - text: (macOS).
+                    - listitem [ref=e246]:
+                      - paragraph [ref=e247]:
+                        - text: "Enable DevTools: Create"
+                        - code [ref=e248]: ~/Library/Application Support/Claude/developer_settings.json
+                        - text: with
+                        - code [ref=e249]: "{\"allowDevTools\": true}"
+                        - text: ", then Cmd+Option+I."
+                    - listitem [ref=e250]:
+                      - paragraph [ref=e251]:
+                        - text: Inspect Network panel for payloads, timing, and JSON-RPC errors like -32602 (invalid params).
+                        - generic "Debugging" [ref=e253]:
+                          - link "modelcontextprotocol" [ref=e255] [cursor=pointer]:
+                            - /url: https://modelcontextprotocol.io/docs/tools/debugging
+                            - generic [ref=e258]: modelcontextprotocol
+                  - heading "Common Issues" [level=2] [ref=e259]
+                  - table [ref=e262]:
+                    - rowgroup [ref=e263]:
+                      - row "Issue Steps" [ref=e264]:
+                        - columnheader "Issue" [ref=e265]
+                        - columnheader "Steps" [ref=e266]
+                    - rowgroup [ref=e267]:
+                      - row "Connection fails Check client logs, verify server running, test with Inspector, confirm capabilities in initialize exchange Debugging ." [ref=e268]:
+                        - cell "Connection fails" [ref=e269]
+                        - cell "Check client logs, verify server running, test with Inspector, confirm capabilities in initialize exchange Debugging ." [ref=e270]:
+                          - text: Check client logs, verify server running, test with Inspector, confirm capabilities in
+                          - code [ref=e271]: initialize
+                          - text: exchange
+                          - generic "Debugging" [ref=e273]:
+                            - link "modelcontextprotocol" [ref=e275] [cursor=pointer]:
+                              - /url: https://modelcontextprotocol.io/docs/tools/debugging
+                              - generic [ref=e278]: modelcontextprotocol
+                          - text: .
+                      - row "Tool not found Validate export/registration, match names, test inputs/schemas in Inspector Debugging - MCP Framework ." [ref=e279]:
+                        - cell "Tool not found" [ref=e280]
+                        - cell "Validate export/registration, match names, test inputs/schemas in Inspector Debugging - MCP Framework ." [ref=e281]:
+                          - text: Validate export/registration, match names, test inputs/schemas in Inspector
+                          - generic "Debugging - MCP Framework" [ref=e283]:
+                            - link "mcp-framework" [ref=e285] [cursor=pointer]:
+                              - /url: https://www.mcp-framework.com/docs/debugging
+                              - generic [ref=e288]: mcp-framework
+                          - text: .
+                      - row "Java/Spring AI Add JAVA_TOOL_OPTIONS='-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005'; attach" [ref=e289]:
+                        - cell "Java/Spring AI" [ref=e290]
+                        - cell "Add JAVA_TOOL_OPTIONS='-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005'; attach" [ref=e291]:
+                          - text: Add
+                          - code [ref=e292]: JAVA_TOOL_OPTIONS='-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005'
+                          - text: ; attach
+          - generic [ref=e304]:
+            - generic [ref=e306]:
+              - textbox [ref=e307]:
+                - paragraph [ref=e308]
+              - generic:
+                - generic: Ask a follow-up
+            - generic [ref=e310]:
+              - button "Add files or tools" [ref=e311] [cursor=pointer]:
+                - img [ref=e314]
+              - button "Search" [pressed] [ref=e321] [cursor=pointer]:
+                - img [ref=e323]
+                - generic [ref=e325]:
+                  - text: Search
+                  - img [ref=e326]
+            - generic [ref=e328]:
+              - button "Model" [ref=e330] [cursor=pointer]:
+                - generic [ref=e331]: Model
+                - img [ref=e333]
+              - button "Stop response (Esc)" [ref=e338] [cursor=pointer]:
+                - img [ref=e341]
+  - dialog "Cookie Policy" [ref=e346]:
+    - generic [ref=e347]:
+      - heading "Cookie Policy" [level=2] [ref=e348]
+      - paragraph [ref=e349]: This website uses third party cookies to serve you relevant ads and provide personalization.
+    - generic [ref=e350]:
+      - img [ref=e351]
+      - generic [ref=e353]: Cookie Policy
+    - generic [ref=e354]:
+      - text: This website uses third party cookies to serve you relevant ads and provide personalization by remembering your location. You may opt out from these cookies by selecting the "Opt out" button below. If you have a Perplexity account, you may opt out of the "sale" or "sharing" of your data
+      - link "here" [ref=e355] [cursor=pointer]:
+        - /url: https://www.perplexity.ai/hub/legal/privacy-policy
+      - text: .
+    - generic [ref=e356]:
+      - button "Opt out" [ref=e357] [cursor=pointer]:
+        - generic [ref=e358]: Opt out
+      - button "Got it" [ref=e360] [cursor=pointer]:
+        - generic [ref=e361]: Got it
+  - dialog [ref=e368]:
+    - generic [ref=e372]:
+      - generic [ref=e373]:
+        - generic [ref=e374]: Sign up below to unlock the full potential of Perplexity
+        - generic [ref=e375]:
+          - text: By continuing, you agree to our
+          - link "privacy policy" [ref=e376] [cursor=pointer]:
+            - /url: https://www.perplexity.com/hub/legal/privacy-policy
+          - text: .
+      - generic [ref=e377]:
+        - button "Back home" [ref=e379] [cursor=pointer]:
+          - img [ref=e381]
+          - generic [ref=e383]: Back home
+        - generic [ref=e385]:
+          - generic [ref=e386]:
+            - button "Continue with Google" [ref=e387] [cursor=pointer]:
+              - img [ref=e389]
+              - generic [ref=e391]: Continue with Google
+            - button "Continue with Apple" [ref=e393] [cursor=pointer]:
+              - img [ref=e395]
+              - generic [ref=e397]: Continue with Apple
+          - generic [ref=e400]:
+            - generic [ref=e402]:
+              - textbox "Enter your email" [active] [ref=e407]
+              - generic [ref=e408]:
+                - button "Continue with email" [disabled]:
+                  - generic: Continue with email
+            - button "Single sign-on (SSO)" [ref=e410] [cursor=pointer]:
+              - generic [ref=e411]: Single sign-on (SSO)

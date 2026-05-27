@@ -1,0 +1,339 @@
+- generic [ref=e1]:
+  - generic [ref=e5]:
+    - navigation "Main" [ref=e7]:
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - link "Perplexity" [ref=e11] [cursor=pointer]:
+            - /url: /
+            - img "Perplexity" [ref=e14]
+          - button "Collapse sidebar" [ref=e17] [cursor=pointer]:
+            - img [ref=e18]
+        - generic [ref=e23]:
+          - generic [ref=e26]:
+            - link "New" [ref=e27] [cursor=pointer]:
+              - /url: /
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - img
+                - generic:
+                  - generic:
+                    - generic: New
+                  - generic: ⌘K
+          - generic [ref=e30]:
+            - link "Computer" [ref=e31] [cursor=pointer]:
+              - /url: /computer/tasks
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Computer":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Computer
+          - generic [ref=e35]:
+            - link "Spaces" [ref=e36] [cursor=pointer]:
+              - /url: /spaces
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Spaces":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Spaces
+          - generic [ref=e40]:
+            - link "Artifacts" [ref=e41] [cursor=pointer]:
+              - /url: /computer/artifacts
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Artifacts":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Artifacts
+          - generic [ref=e45]:
+            - link "Customize" [ref=e46] [cursor=pointer]:
+              - /url: /computer/connectors
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Customize":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Customize
+          - generic [ref=e48]:
+            - generic [ref=e50]:
+              - link "History" [ref=e51] [cursor=pointer]:
+                - /url: /library
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - button "Collapse History" [expanded]:
+                        - generic:
+                          - img
+                    - generic:
+                      - img
+                  - generic:
+                    - generic:
+                      - generic: History
+            - generic [ref=e61]:
+              - link "how do I test my MCP server" [ref=e62] [cursor=pointer]:
+                - /url: /search/a7f1311e-c84b-4f07-88aa-68998549ebb6
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: how do I test my MCP server
+                  - button "Thread actions" [ref=e66] [cursor=pointer]:
+                    - img [ref=e69]
+        - button "Sign In" [ref=e78] [cursor=pointer]:
+          - generic [ref=e79]:
+            - generic [ref=e81]:
+              - img [ref=e84]
+              - generic [ref=e87]: Sign In
+            - generic:
+              - img
+    - main [ref=e58]:
+      - generic [ref=e88]:
+        - generic:
+          - generic:
+            - tablist "Answer mode tabs" [ref=e90]:
+              - tab "Answer" [selected] [ref=e91] [cursor=pointer]:
+                - img [ref=e92]
+                - text: Answer
+              - tab "Links" [ref=e94] [cursor=pointer]:
+                - img [ref=e95]
+                - text: Links
+              - tab "Images" [ref=e97] [cursor=pointer]:
+                - img [ref=e98]
+                - text: Images
+            - generic [ref=e100]:
+              - button "Thread actions" [ref=e102] [cursor=pointer]:
+                - img [ref=e105]
+              - button "Share" [ref=e109] [cursor=pointer]:
+                - img [ref=e111]
+                - generic [ref=e113]: Share
+              - button "Download Comet" [ref=e116] [cursor=pointer]:
+                - img [ref=e118]
+                - generic [ref=e120]: Download Comet
+        - generic [ref=e123]:
+          - tabpanel "Answer" [ref=e133]:
+            - generic [ref=e134]:
+              - generic [ref=e139]:
+                - generic:
+                  - button "Edit query":
+                    - generic:
+                      - generic:
+                        - img
+                  - button "Copy query":
+                    - generic:
+                      - generic:
+                        - img
+                - heading "how do I test my MCP server" [level=1] [ref=e145]:
+                  - generic [ref=e147]: how do I test my MCP server
+              - generic [ref=e148]:
+                - generic [ref=e156]:
+                  - paragraph [ref=e157]:
+                    - text: "The usual way to test an MCP server is with a browser-based inspector: start the inspector, connect it to your server, then exercise its tools, prompts, and resources manually. For a local server, the inspector can launch your server for you over stdio, so you typically point it at the server command or entrypoint rather than starting the server separately."
+                    - generic "MCP Inspector - Model Context Protocol" [ref=e159]:
+                      - link "modelcontextprotocol" [ref=e161] [cursor=pointer]:
+                        - /url: https://modelcontextprotocol.io/docs/tools/inspector
+                        - generic [ref=e164]: modelcontextprotocol
+                  - heading "Typical workflow" [level=2] [ref=e165]
+                  - list [ref=e166]:
+                    - listitem [ref=e167]:
+                      - paragraph [ref=e168]:
+                        - text: Install Node.js if you do not already have it, since the inspector runs through
+                        - code [ref=e169]: npx
+                        - text: .
+                        - generic [ref=e174] [cursor=pointer]:
+                          - generic [ref=e175]: learn.microsoft
+                          - generic [ref=e176]: "+1"
+                    - listitem [ref=e177]:
+                      - paragraph [ref=e178]: "Launch the inspector with your server command, for example:"
+                      - list [ref=e179]:
+                        - listitem [ref=e180]:
+                          - paragraph [ref=e181]:
+                            - code [ref=e182]: npx @modelcontextprotocol/inspector <your server command>
+                            - generic "MCP Inspector - Model Context Protocol" [ref=e184]:
+                              - link "modelcontextprotocol" [ref=e186] [cursor=pointer]:
+                                - /url: https://modelcontextprotocol.io/docs/tools/inspector
+                                - generic [ref=e189]: modelcontextprotocol
+                    - listitem [ref=e190]:
+                      - paragraph [ref=e191]:
+                        - text: Open the inspector UI in your browser and connect to the server.
+                        - generic "MCP Inspector - Model Context Protocol" [ref=e193]:
+                          - link "modelcontextprotocol" [ref=e195] [cursor=pointer]:
+                            - /url: https://modelcontextprotocol.io/docs/tools/inspector
+                            - generic [ref=e198]: modelcontextprotocol
+                    - listitem [ref=e199]:
+                      - paragraph [ref=e200]:
+                        - text: Check that the server advertises the expected capabilities, then run each tool with normal inputs and edge-case inputs.
+                        - generic "MCP Inspector - Model Context Protocol" [ref=e202]:
+                          - link "modelcontextprotocol" [ref=e204] [cursor=pointer]:
+                            - /url: https://modelcontextprotocol.io/docs/tools/inspector
+                            - generic [ref=e207]: modelcontextprotocol
+                  - heading "What to verify" [level=2] [ref=e208]
+                  - list [ref=e209]:
+                    - listitem [ref=e210]:
+                      - paragraph [ref=e211]:
+                        - text: "Connectivity: the inspector can start and talk to the server."
+                        - generic "MCP Inspector - Model Context Protocol" [ref=e213]:
+                          - link "modelcontextprotocol" [ref=e215] [cursor=pointer]:
+                            - /url: https://modelcontextprotocol.io/docs/tools/inspector
+                            - generic [ref=e218]: modelcontextprotocol
+                    - listitem [ref=e219]:
+                      - paragraph [ref=e220]:
+                        - text: "Tool schemas: tool names, required parameters, and descriptions look correct."
+                        - generic "MCP Inspector - Model Context Protocol" [ref=e222]:
+                          - link "modelcontextprotocol" [ref=e224] [cursor=pointer]:
+                            - /url: https://modelcontextprotocol.io/docs/tools/inspector
+                            - generic [ref=e227]: modelcontextprotocol
+                    - listitem [ref=e228]:
+                      - paragraph [ref=e229]:
+                        - text: "Success paths: each tool returns the expected result with valid inputs."
+                        - generic [ref=e234] [cursor=pointer]:
+                          - generic [ref=e235]: merge
+                          - generic [ref=e236]: "+1"
+                    - listitem [ref=e237]:
+                      - paragraph [ref=e238]:
+                        - text: "Error handling: invalid or missing arguments produce clean, useful errors."
+                        - generic "MCP Inspector - Model Context Protocol" [ref=e240]:
+                          - link "modelcontextprotocol" [ref=e242] [cursor=pointer]:
+                            - /url: https://modelcontextprotocol.io/docs/tools/inspector
+                            - generic [ref=e245]: modelcontextprotocol
+                    - listitem [ref=e246]:
+                      - paragraph [ref=e247]:
+                        - text: "Edge cases: test empty values, bad types, concurrency, and any limits your server has."
+                        - generic [ref=e252] [cursor=pointer]:
+                          - generic [ref=e253]: merge
+                          - generic [ref=e254]: "+1"
+                  - heading "Windows note" [level=2] [ref=e255]
+                  - paragraph [ref=e256]:
+                    - text: "On Windows, Microsoft documents the same general approach: run the inspector with"
+                    - code [ref=e257]: npx @modelcontextprotocol/inspector <path to your .exe>
+                    - text: after building your MCP server into an executable.
+                    - generic "Test MCP servers on Windows" [ref=e259]:
+                      - link "learn.microsoft" [ref=e261] [cursor=pointer]:
+                        - /url: https://learn.microsoft.com/en-us/windows/ai/mcp/servers/test-mcp-server
+                        - generic [ref=e264]: learn.microsoft
+                  - heading "Practical example" [level=2] [ref=e265]
+                  - paragraph [ref=e266]:
+                    - text: If your server has a
+                    - code [ref=e267]: search_docs
+                    - text: "tool, test it with:"
+                  - list [ref=e268]:
+                    - listitem [ref=e269]:
+                      - paragraph [ref=e270]: a normal query,
+                    - listitem [ref=e271]:
+                      - paragraph [ref=e272]: an empty query,
+                    - listitem [ref=e273]:
+                      - paragraph [ref=e274]: a very long query,
+                    - listitem [ref=e275]:
+                      - paragraph [ref=e276]: and a query that should return no results.
+                  - paragraph [ref=e277]: That gives you a quick read on both correctness and robustness.
+                  - paragraph [ref=e278]: If you want, I can also give you a copy-paste test checklist for your specific MCP server setup.
+                - generic [ref=e279]:
+                  - generic [ref=e280]:
+                    - button "Share" [ref=e281] [cursor=pointer]:
+                      - img [ref=e284]
+                    - button "Download" [ref=e287] [cursor=pointer]:
+                      - img [ref=e290]
+                    - button "Copy" [ref=e293] [cursor=pointer]:
+                      - img [ref=e296]
+                    - button "Rewrite Thread" [ref=e299] [cursor=pointer]:
+                      - img [ref=e302]
+                    - button "10 sources" [ref=e306] [cursor=pointer]:
+                      - generic [ref=e308]:
+                        - img [ref=e309]
+                        - img [ref=e310]
+                        - generic [ref=e312]:
+                          - img [ref=e315]
+                          - img [ref=e319]
+                          - img [ref=e323]
+                        - text: 10 sources
+                  - generic [ref=e326]:
+                    - generic [ref=e328]:
+                      - button "Helpful" [ref=e329] [cursor=pointer]:
+                        - img [ref=e332]
+                      - button "Not helpful" [ref=e335] [cursor=pointer]:
+                        - img [ref=e338]
+                    - button "More actions" [ref=e342] [cursor=pointer]:
+                      - img [ref=e345]
+                - generic [ref=e349]:
+                  - generic [ref=e354]: Follow-ups
+                  - generic [ref=e355]:
+                    - button "Yes, I am building a TypeScript server and need a test checklist" [ref=e356] [cursor=pointer]:
+                      - img [ref=e358]
+                      - generic [ref=e361]: Yes, I am building a TypeScript server and need a test checklist
+                    - button "I am using Python, can you provide a test checklist for that instead" [ref=e362] [cursor=pointer]:
+                      - img [ref=e364]
+                      - generic [ref=e367]: I am using Python, can you provide a test checklist for that instead
+                    - button "I have multiple tools and need a plan for systematic testing" [ref=e368] [cursor=pointer]:
+                      - img [ref=e370]
+                      - generic [ref=e373]: I have multiple tools and need a plan for systematic testing
+                    - button "How can I automate these tests as part of a CI pipeline instead" [ref=e374] [cursor=pointer]:
+                      - img [ref=e376]
+                      - generic [ref=e379]: How can I automate these tests as part of a CI pipeline instead
+                    - button "My server uses custom resources, how should I test those specifically" [ref=e380] [cursor=pointer]:
+                      - img [ref=e382]
+                      - generic [ref=e385]: My server uses custom resources, how should I test those specifically
+          - generic [ref=e397]:
+            - generic [ref=e399]:
+              - textbox [active] [ref=e400]:
+                - paragraph [ref=e401]
+              - generic: Ask a follow-up
+            - generic [ref=e403]:
+              - button "Add files or tools" [ref=e404] [cursor=pointer]:
+                - img [ref=e407]
+              - button "Search" [pressed] [ref=e413] [cursor=pointer]:
+                - img [ref=e415]
+                - generic [ref=e417]:
+                  - text: Search
+                  - img [ref=e418]
+            - generic [ref=e420]:
+              - button "Model" [ref=e422] [cursor=pointer]:
+                - generic [ref=e423]: Model
+                - img [ref=e425]
+              - button "Dictation" [ref=e429] [cursor=pointer]:
+                - img [ref=e432]
+              - button "Submit" [disabled]:
+                - generic:
+                  - generic:
+                    - img
+  - dialog "Cookie Policy" [ref=e435]:
+    - generic [ref=e436]:
+      - heading "Cookie Policy" [level=2] [ref=e437]
+      - paragraph [ref=e438]: We and our partners use cookies, pixels, SDKs, APIs, and server-to-server integrations. Perplexity does not use these technologies to sell third party ads on our services. Perplexity uses them to measure our ad performance on third party partner websites and to improve our services. If you continue using Perplexity, without adjusting your settings, you are consenting to these technologies.
+    - generic [ref=e439]:
+      - img [ref=e440]
+      - generic [ref=e442]: Cookie Policy
+    - generic [ref=e443]: We and our partners use cookies, pixels, SDKs, APIs, and server-to-server integrations. Perplexity does not use these technologies to sell third party ads on our services. Perplexity uses them to measure our ad performance on third party partner websites and to improve our services. If you continue using Perplexity, without adjusting your settings, you are consenting to these technologies.
+    - generic [ref=e444]:
+      - button "Decline optional" [ref=e445] [cursor=pointer]:
+        - generic [ref=e446]: Decline optional
+      - button "Got it" [ref=e448] [cursor=pointer]:
+        - generic [ref=e449]: Got it
+  - listbox "Typeahead menu"

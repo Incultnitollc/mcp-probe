@@ -1,0 +1,434 @@
+- generic [ref=e1]:
+  - generic [ref=e5]:
+    - navigation "Main" [ref=e7]:
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - link "Perplexity" [ref=e11] [cursor=pointer]:
+            - /url: /
+            - img "Perplexity" [ref=e14]
+          - button "Collapse sidebar" [ref=e17] [cursor=pointer]:
+            - img [ref=e18]
+        - generic [ref=e21]:
+          - generic [ref=e24]:
+            - link "New" [ref=e25] [cursor=pointer]:
+              - /url: /
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - img
+                - generic:
+                  - generic:
+                    - generic: New
+                  - generic: ⌘K
+          - generic [ref=e28]:
+            - link "Computer" [ref=e29] [cursor=pointer]:
+              - /url: /computer/tasks
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Computer":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Computer
+          - generic [ref=e33]:
+            - link "Spaces" [ref=e34] [cursor=pointer]:
+              - /url: /spaces
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Spaces":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Spaces
+          - generic [ref=e38]:
+            - link "Artifacts" [ref=e39] [cursor=pointer]:
+              - /url: /computer/artifacts
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Artifacts":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Artifacts
+          - generic [ref=e43]:
+            - link "Customize" [ref=e44] [cursor=pointer]:
+              - /url: /computer/connectors
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Customize":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Customize
+          - generic [ref=e46]:
+            - generic [ref=e48]:
+              - link "History" [ref=e49] [cursor=pointer]:
+                - /url: /library
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - button "Collapse History" [expanded]:
+                        - generic:
+                          - img
+                    - generic:
+                      - img
+                  - generic:
+                    - generic:
+                      - generic: History
+            - generic [ref=e52]:
+              - link "Anthropic MCP server diagnostic" [ref=e53] [cursor=pointer]:
+                - /url: /search/78a98f1d-7f40-454e-941e-328517050ab9
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Anthropic MCP server diagnostic
+                  - button "Thread actions" [ref=e57] [cursor=pointer]:
+                    - img [ref=e60]
+        - button "Sign In" [ref=e71] [cursor=pointer]:
+          - generic [ref=e72]:
+            - generic [ref=e74]:
+              - img [ref=e77]
+              - generic [ref=e80]: Sign In
+            - generic:
+              - img
+    - main [ref=e82]:
+      - generic [ref=e85]:
+        - generic:
+          - generic:
+            - tablist "Answer mode tabs" [ref=e87]:
+              - tab "Answer" [selected] [ref=e88] [cursor=pointer]:
+                - img [ref=e89]
+                - text: Answer
+              - tab "Links" [ref=e91] [cursor=pointer]:
+                - img [ref=e92]
+                - text: Links
+              - tab "Images" [ref=e94] [cursor=pointer]:
+                - img [ref=e95]
+                - text: Images
+            - generic [ref=e97]:
+              - button "Thread actions" [ref=e250] [cursor=pointer]:
+                - img [ref=e253]
+              - button "Share" [ref=e99] [cursor=pointer]:
+                - img [ref=e101]
+                - generic [ref=e103]: Share
+              - button "Download Comet" [ref=e106] [cursor=pointer]:
+                - img [ref=e108]
+                - generic [ref=e110]: Download Comet
+        - generic [ref=e113]:
+          - tabpanel "Answer" [ref=e123]:
+            - generic [ref=e124]:
+              - generic [ref=e129]:
+                - generic:
+                  - button "Edit query":
+                    - generic:
+                      - generic:
+                        - img
+                  - button "Copy query":
+                    - generic:
+                      - generic:
+                        - img
+                - heading "Anthropic MCP server diagnostic" [level=1] [ref=e135]:
+                  - generic [ref=e137]: Anthropic MCP server diagnostic
+              - generic [ref=e138]:
+                - generic [ref=e258]:
+                  - paragraph [ref=e259]:
+                    - text: To do a
+                    - strong [ref=e260]: diagnostic on an Anthropic MCP server
+                    - text: ", you typically use the"
+                    - strong [ref=e261]: MCP Inspector
+                    - text: ", the official tool for inspecting and debugging Model Context Protocol servers."
+                    - generic [ref=e266] [cursor=pointer]:
+                      - generic [ref=e267]: snyk
+                      - generic [ref=e268]: "+1"
+                  - separator [ref=e269]
+                  - heading "What “MCP server diagnostic” means" [level=2] [ref=e270]
+                  - paragraph [ref=e271]: "An MCP server diagnostic usually involves:"
+                  - list [ref=e272]:
+                    - listitem [ref=e273]:
+                      - paragraph [ref=e274]: checking that the server starts and communicates correctly over JSON‑RPC,
+                    - listitem [ref=e275]:
+                      - paragraph [ref=e276]: verifying that advertised tools and resources are properly listed, and
+                    - listitem [ref=e277]:
+                      - paragraph [ref=e278]:
+                        - text: testing that requests and responses conform to the MCP spec (payload shape, errors, etc.).
+                        - generic [ref=e283] [cursor=pointer]:
+                          - generic [ref=e284]: dev
+                          - generic [ref=e285]: "+1"
+                  - separator [ref=e286]
+                  - heading "How to run an MCP server diagnostic" [level=2] [ref=e287]
+                  - list [ref=e288]:
+                    - listitem [ref=e289]:
+                      - paragraph [ref=e290]:
+                        - strong [ref=e291]: Start the MCP Inspector
+                        - text: "Run the Inspector against your MCP server command (e.g., Node, Python, or npm‑packaged server):"
+                      - generic [ref=e294]:
+                        - button "Copy code" [ref=e297] [cursor=pointer]:
+                          - img [ref=e300]
+                        - generic [ref=e302]:
+                          - generic [ref=e304]: bash
+                          - code [ref=e307]:
+                            - generic [ref=e308]: npx @modelcontextprotocol/inspector node path/to/your/server.js
+                      - paragraph [ref=e309]: "For an npm‑packaged server:"
+                      - generic [ref=e312]:
+                        - button "Copy code" [ref=e315] [cursor=pointer]:
+                          - img [ref=e318]
+                        - generic [ref=e320]:
+                          - generic [ref=e322]: bash
+                          - code [ref=e325]:
+                            - generic [ref=e326]: npx -y @modelcontextprotocol/inspector npx @anthropic‑ai/mcp‑server‑xxx ...
+                      - paragraph [ref=e327]:
+                        - text: This starts a local proxy and a browser UI (by default at
+                        - code [ref=e328]: http://127.0.0.1:6274
+                        - text: ).
+                        - generic [ref=e333] [cursor=pointer]:
+                          - generic [ref=e334]: modelcontextprotocol
+                          - generic [ref=e335]: "+2"
+                    - listitem [ref=e336]:
+                      - paragraph [ref=e337]:
+                        - strong [ref=e338]: Connect and inspect metadata
+                        - text: "In the Inspector UI:"
+                      - list [ref=e339]:
+                        - listitem [ref=e340]:
+                          - paragraph [ref=e341]:
+                            - text: Click
+                            - strong [ref=e342]: “Connect”
+                            - text: to handshake with your MCP server.
+                        - listitem [ref=e343]:
+                          - paragraph [ref=e344]:
+                            - text: Check whether the server responds to
+                            - code [ref=e345]: initialize
+                            - text: and correctly lists tools, resources, and capabilities.
+                            - generic [ref=e350] [cursor=pointer]:
+                              - generic [ref=e351]: dev
+                              - generic [ref=e352]: "+1"
+                    - listitem [ref=e353]:
+                      - paragraph [ref=e354]:
+                        - strong [ref=e355]: Test individual tools and requests
+                      - list [ref=e356]:
+                        - listitem [ref=e357]:
+                          - paragraph [ref=e358]: Use the UI to invoke each tool with sample parameters.
+                        - listitem [ref=e359]:
+                          - paragraph [ref=e360]: "Watch the JSON‑RPC traffic to confirm:"
+                          - list [ref=e361]:
+                            - listitem [ref=e362]:
+                              - paragraph [ref=e363]: request/response IDs match,
+                            - listitem [ref=e364]:
+                              - paragraph [ref=e365]: errors are properly formatted,
+                            - listitem [ref=e366]:
+                              - paragraph [ref=e367]:
+                                - text: payloads match what your client (e.g., Claude) expects.
+                                - generic [ref=e372] [cursor=pointer]:
+                                  - generic [ref=e373]: modelcontextprotocol
+                                  - generic [ref=e374]: "+1"
+                    - listitem [ref=e375]:
+                      - paragraph [ref=e376]:
+                        - strong [ref=e377]: Add logging for deeper diagnostics
+                        - text: MCP servers that talk over process STDIO often swallow
+                        - code [ref=e378]: console.log
+                        - text: or
+                        - code [ref=e379]: print
+                        - text: "output. As a workaround:"
+                      - list [ref=e380]:
+                        - listitem [ref=e381]:
+                          - paragraph [ref=e382]:
+                            - text: Write debug logs to a file instead of
+                            - code [ref=e383]: stdout
+                            - text: .
+                        - listitem [ref=e384]:
+                          - paragraph [ref=e385]:
+                            - text: Check the logs while running the Inspector or from Claude‑related caches (e.g.,
+                            - code [ref=e386]: ~/.cache/claude-cli
+                            - text: or
+                            - code [ref=e387]: ~/Library/Caches/claude-cli-nodejs/
+                            - text: on Mac).
+                            - generic [ref=e392] [cursor=pointer]:
+                              - generic [ref=e393]: github
+                              - generic [ref=e394]: "+1"
+                  - separator [ref=e395]
+                  - heading "Quick‑check checklist" [level=2] [ref=e396]
+                  - table [ref=e399]:
+                    - rowgroup [ref=e400]:
+                      - row "Item What to verify" [ref=e401]:
+                        - columnheader "Item" [ref=e402]
+                        - columnheader "What to verify" [ref=e403]
+                    - rowgroup [ref=e404]:
+                      - row "Server starts without crash Runs npx @modelcontextprotocol/inspector <server‑cmd> with no early errors. snyk +1" [ref=e405]:
+                        - cell "Server starts without crash" [ref=e406]
+                        - cell "Runs npx @modelcontextprotocol/inspector <server‑cmd> with no early errors. snyk +1" [ref=e407]:
+                          - text: Runs
+                          - code [ref=e408]: npx @modelcontextprotocol/inspector <server‑cmd>
+                          - text: with no early errors.
+                          - generic [ref=e413] [cursor=pointer]:
+                            - generic [ref=e414]: snyk
+                            - generic [ref=e415]: "+1"
+                      - row "Lists correct tools/resources Inspector shows expected tools, files, or other resources. dev +1" [ref=e416]:
+                        - cell "Lists correct tools/resources" [ref=e417]
+                        - cell "Inspector shows expected tools, files, or other resources. dev +1" [ref=e418]:
+                          - text: Inspector shows expected tools, files, or other resources.
+                          - generic [ref=e423] [cursor=pointer]:
+                            - generic [ref=e424]: dev
+                            - generic [ref=e425]: "+1"
+                      - row "Returns valid JSON‑RPC id, method, and result/error conform; no malformed JSON. How to Test MCP Servers Before They Break Your CI" [ref=e426]:
+                        - cell "Returns valid JSON‑RPC" [ref=e427]
+                        - cell "id, method, and result/error conform; no malformed JSON. How to Test MCP Servers Before They Break Your CI" [ref=e428]:
+                          - code [ref=e429]: id
+                          - text: ","
+                          - code [ref=e430]: method
+                          - text: ", and"
+                          - code [ref=e431]: result
+                          - text: /
+                          - code [ref=e432]: error
+                          - text: conform; no malformed JSON.
+                          - generic "How to Test MCP Servers Before They Break Your CI" [ref=e434]:
+                            - link "dev" [ref=e436] [cursor=pointer]:
+                              - /url: https://dev.to/aiwithanton/how-to-test-mcp-servers-before-they-break-your-ci-p7b
+                              - generic [ref=e439]: dev
+                      - row "Permissions and behavior Tests that sensitive operations (disk, network, shell) are scoped and safe. How to Test MCP Servers Before They Break Your CI" [ref=e440]:
+                        - cell "Permissions and behavior" [ref=e441]
+                        - cell "Tests that sensitive operations (disk, network, shell) are scoped and safe. How to Test MCP Servers Before They Break Your CI" [ref=e442]:
+                          - text: Tests that sensitive operations (disk, network, shell) are scoped and safe.
+                          - generic "How to Test MCP Servers Before They Break Your CI" [ref=e444]:
+                            - link "dev" [ref=e446] [cursor=pointer]:
+                              - /url: https://dev.to/aiwithanton/how-to-test-mcp-servers-before-they-break-your-ci-p7b
+                              - generic [ref=e449]: dev
+                  - separator [ref=e450]
+                  - paragraph [ref=e451]: If you tell me what tech stack your MCP server is on (Node, Python, etc.) and what symptoms you see (timeout, no tools, crashes), I can walk through a concrete diagnostic command and log‑checking steps for your setup.
+                - generic [ref=e452]:
+                  - generic [ref=e453]:
+                    - button "Share" [ref=e454] [cursor=pointer]:
+                      - img [ref=e457]
+                    - button "Download" [ref=e460] [cursor=pointer]:
+                      - img [ref=e463]
+                    - button "Copy" [ref=e466] [cursor=pointer]:
+                      - img [ref=e469]
+                    - button "Rewrite Thread" [ref=e472] [cursor=pointer]:
+                      - img [ref=e475]
+                    - button "10 sources" [ref=e479] [cursor=pointer]:
+                      - generic [ref=e481]:
+                        - img [ref=e482]
+                        - img [ref=e483]
+                        - generic [ref=e485]:
+                          - img [ref=e488]
+                          - img [ref=e492]
+                          - img [ref=e496]
+                        - text: 10 sources
+                  - generic [ref=e499]:
+                    - generic [ref=e501]:
+                      - button "Helpful" [ref=e502] [cursor=pointer]:
+                        - img [ref=e505]
+                      - button "Not helpful" [ref=e508] [cursor=pointer]:
+                        - img [ref=e511]
+                    - button "More actions" [ref=e515] [cursor=pointer]:
+                      - img [ref=e518]
+                - generic [ref=e522]:
+                  - generic [ref=e527]: Follow-ups
+                  - generic [ref=e528]:
+                    - button "I am using Python and seeing connection timeout errors" [ref=e529] [cursor=pointer]:
+                      - img [ref=e531]
+                      - generic [ref=e534]: I am using Python and seeing connection timeout errors
+                    - button "My Node server starts but shows no tools in the UI" [ref=e535] [cursor=pointer]:
+                      - img [ref=e537]
+                      - generic [ref=e540]: My Node server starts but shows no tools in the UI
+                    - button "How do I log MCP stderr messages to a separate file" [ref=e541] [cursor=pointer]:
+                      - img [ref=e543]
+                      - generic [ref=e546]: How do I log MCP stderr messages to a separate file
+                    - button "The server crashes during the initialize handshake" [ref=e547] [cursor=pointer]:
+                      - img [ref=e549]
+                      - generic [ref=e552]: The server crashes during the initialize handshake
+                    - button "I am getting JSON-RPC schema validation errors" [ref=e553] [cursor=pointer]:
+                      - img [ref=e555]
+                      - generic [ref=e558]: I am getting JSON-RPC schema validation errors
+          - generic [ref=e158]:
+            - generic [ref=e160]:
+              - textbox [active] [ref=e161]:
+                - paragraph [ref=e162]
+              - generic: Ask a follow-up
+            - generic [ref=e164]:
+              - button "Add files or tools" [ref=e165] [cursor=pointer]:
+                - img [ref=e168]
+              - button "Search" [pressed] [ref=e174] [cursor=pointer]:
+                - img [ref=e176]
+                - generic [ref=e178]:
+                  - text: Search
+                  - img [ref=e179]
+            - generic [ref=e181]:
+              - button "Model" [ref=e183] [cursor=pointer]:
+                - generic [ref=e184]: Model
+                - img [ref=e186]
+              - button "Dictation" [ref=e560] [cursor=pointer]:
+                - img [ref=e563]
+              - button "Submit" [disabled]:
+                - generic:
+                  - generic:
+                    - img
+  - dialog [ref=e204]:
+    - generic [ref=e208]:
+      - generic [ref=e209]:
+        - generic [ref=e210]: Sign up below to unlock the full potential of Perplexity
+        - generic [ref=e211]:
+          - text: By continuing, you agree to our
+          - link "privacy policy" [ref=e212] [cursor=pointer]:
+            - /url: https://www.perplexity.com/hub/legal/privacy-policy
+          - text: .
+      - generic [ref=e213]:
+        - button "Back home" [ref=e215] [cursor=pointer]:
+          - img [ref=e217]
+          - generic [ref=e219]: Back home
+        - generic [ref=e221]:
+          - generic [ref=e222]:
+            - button "Continue with Google" [ref=e223] [cursor=pointer]:
+              - img [ref=e225]
+              - generic [ref=e227]: Continue with Google
+            - button "Continue with Apple" [ref=e229] [cursor=pointer]:
+              - img [ref=e231]
+              - generic [ref=e233]: Continue with Apple
+          - generic [ref=e236]:
+            - generic [ref=e238]:
+              - textbox "Enter your email" [ref=e243]
+              - generic [ref=e244]:
+                - button "Continue with email" [disabled]:
+                  - generic: Continue with email
+            - button "Single sign-on (SSO)" [ref=e246] [cursor=pointer]:
+              - generic [ref=e247]: Single sign-on (SSO)
+  - listbox "Typeahead menu"
+  - dialog "Cookie Policy" [ref=e566]:
+    - generic [ref=e567]:
+      - heading "Cookie Policy" [level=2] [ref=e568]
+      - paragraph [ref=e569]: This website uses third party cookies to serve you relevant ads and provide personalization.
+    - generic [ref=e570]:
+      - img [ref=e571]
+      - generic [ref=e573]: Cookie Policy
+    - generic [ref=e574]:
+      - text: This website uses third party cookies to serve you relevant ads and provide personalization by remembering your location. You may opt out from these cookies by selecting the "Opt out" button below. If you have a Perplexity account, you may opt out of the "sale" or "sharing" of your data
+      - link "here" [ref=e575] [cursor=pointer]:
+        - /url: https://www.perplexity.ai/hub/legal/privacy-policy
+      - text: .
+    - generic [ref=e576]:
+      - button "Opt out" [ref=e577] [cursor=pointer]:
+        - generic [ref=e578]: Opt out
+      - button "Got it" [ref=e580] [cursor=pointer]:
+        - generic [ref=e581]: Got it

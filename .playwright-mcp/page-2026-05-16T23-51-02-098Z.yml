@@ -1,0 +1,273 @@
+- generic [ref=e2]:
+  - generic [ref=e5]:
+    - navigation "Sidebar" [ref=e7]:
+      - generic [ref=e8]:
+        - generic:
+          - link "Home":
+            - /url: /new
+            - img "Claude"
+        - button "Open sidebar" [ref=e10] [cursor=pointer]:
+          - generic [ref=e11]:
+            - img [ref=e13]
+            - img [ref=e16]
+      - generic [ref=e18]:
+        - generic [ref=e19]:
+          - link "New chat" [ref=e22] [cursor=pointer]:
+            - /url: /new
+            - generic [ref=e23]:
+              - img [ref=e27]
+              - generic:
+                - generic: New chat
+          - link "Search" [ref=e31] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e32]:
+              - img [ref=e35]
+              - generic:
+                - generic: Search
+        - generic [ref=e82]:
+          - generic [ref=e83]:
+            - link "Chats" [ref=e85] [cursor=pointer]:
+              - /url: /recents
+              - generic [ref=e86]:
+                - img [ref=e89]
+                - generic:
+                  - generic: Chats
+            - link "Projects" [ref=e93] [cursor=pointer]:
+              - /url: /projects
+              - generic [ref=e94]:
+                - img [ref=e97]
+                - generic:
+                  - generic: Projects
+            - link "Code" [ref=e102] [cursor=pointer]:
+              - /url: /code
+              - generic [ref=e103]:
+                - img [ref=e106]
+                - generic:
+                  - generic:
+                    - generic: Code
+            - link "Customize" [ref=e111] [cursor=pointer]:
+              - /url: /customize
+              - generic [ref=e112]:
+                - img [ref=e116]
+                - generic:
+                  - generic: Customize
+            - link "Design" [ref=e119] [cursor=pointer]:
+              - /url: /design
+              - generic [ref=e120]:
+                - img [ref=e124]
+                - generic [ref=e127]: Design
+            - button "More" [ref=e128]:
+              - generic [ref=e129]:
+                - img [ref=e131]
+                - generic: More
+          - generic [ref=e135]:
+            - generic [ref=e136]:
+              - heading [level=2]: Starred
+              - list [ref=e137]:
+                - listitem [ref=e138]:
+                  - link [ref=e140] [cursor=pointer]:
+                    - /url: /project/019d3595-9f84-72fd-a072-a748c13cde49
+                    - img [ref=e144]
+                - listitem [ref=e148]:
+                  - link [ref=e150] [cursor=pointer]:
+                    - /url: /project/019cfcfa-ec1e-77bb-9318-fc2b10cb3e84
+                    - img [ref=e154]
+                - listitem [ref=e158]:
+                  - link [ref=e160] [cursor=pointer]:
+                    - /url: /project/019cf584-f264-7532-bd32-793e296bcaa2
+                    - img [ref=e164]
+                - listitem [ref=e168]:
+                  - link [ref=e170] [cursor=pointer]:
+                    - /url: /project/019cf1d6-affe-7064-9aaa-1fc8b9c17459
+                    - img [ref=e174]
+                - listitem [ref=e178]:
+                  - link [ref=e180] [cursor=pointer]:
+                    - /url: /project/019ce2b1-33c9-77f2-8a16-1bf5f0dd08b0
+                    - img [ref=e184]
+            - generic [ref=e188]:
+              - generic [ref=e189]:
+                - button [expanded]:
+                  - text: Recents
+                  - generic: Hide
+              - list [ref=e190]:
+                - listitem [ref=e191]:
+                  - link [ref=e193] [cursor=pointer]:
+                    - /url: /chat/b8a0e9c1-470f-4d70-a382-6176eb24d455
+                    - generic [ref=e195]: Update Notion / GCal
+                - listitem [ref=e196]:
+                  - link [ref=e198] [cursor=pointer]:
+                    - /url: /chat/16133834-dffe-4a9e-a6f4-fab39a88ffce
+                    - generic [ref=e200]: Real-time YouTube video dubbing and subtitling tool
+                - listitem [ref=e201]:
+                  - link [ref=e203] [cursor=pointer]:
+                    - /url: /chat/618ba930-d4e2-4d74-820c-cec9f83c0418
+                    - generic [ref=e205]: LinkedIn Profile
+                - listitem [ref=e206]:
+                  - link [ref=e208] [cursor=pointer]:
+                    - /url: /chat/5a47e677-a85b-4480-a8b7-cb7897e03f34
+                    - generic [ref=e210]: 💬 Give me fengshui tips for a ne…
+                - listitem [ref=e211]:
+                  - link [ref=e213] [cursor=pointer]:
+                    - /url: /chat/5721b7a4-746b-4298-bea4-6240d98ba3d8
+                    - generic [ref=e215]: 💬 If I want to get my AI tech st…
+                - listitem [ref=e216]:
+                  - link [ref=e218] [cursor=pointer]:
+                    - /url: /chat/24023edc-12e9-4e2f-b8e6-1c97e7c50f46
+                    - generic [ref=e220]: acortia.com
+                - listitem [ref=e221]:
+                  - link [ref=e223] [cursor=pointer]:
+                    - /url: /chat/66b4bb4c-dc53-4b0a-92ea-3169b95f1ac8
+                    - generic [ref=e225]: 💬 Advantages of using cloudflare…
+                - listitem [ref=e226]:
+                  - link [ref=e228] [cursor=pointer]:
+                    - /url: /chat/82baf2c4-3d9c-4fc3-a075-02df2c8d38b7
+                    - generic [ref=e230]: Claude setup evaluation and optimization
+                - listitem [ref=e231]:
+                  - link [ref=e233] [cursor=pointer]:
+                    - /url: /chat/c3e86fc4-9e61-45eb-977a-aaec882fa931
+                    - generic [ref=e235]: Setup / Notion / Updates
+                - listitem [ref=e236]:
+                  - link [ref=e238] [cursor=pointer]:
+                    - /url: /chat/5d2c216b-0571-42ee-a690-548c2c2ff427
+                    - generic [ref=e240]: skills / plugins / prompts - Opus 4.6
+                - listitem [ref=e241]:
+                  - link [ref=e243] [cursor=pointer]:
+                    - /url: /chat/86e5b8d1-ea0d-46d7-9dec-4c66137b49a6
+                    - generic [ref=e245]: External storage for git repositories on MacBook
+                - listitem [ref=e246]:
+                  - link [ref=e248] [cursor=pointer]:
+                    - /url: /chat/25e2097f-371f-42d3-a57d-f538ea5d58ec
+                    - generic [ref=e250]: MCP server testing and validation
+                - listitem [ref=e251]:
+                  - link [ref=e253] [cursor=pointer]:
+                    - /url: /chat/94ff3af8-b333-4c00-8c20-2adfbfb63990
+                    - generic [ref=e255]: Cloudflare Pages vs Vercel pricing comparison
+                - listitem [ref=e256]:
+                  - link [ref=e258] [cursor=pointer]:
+                    - /url: /chat/266e86cb-de84-4573-9efb-618891752e51
+                    - generic [ref=e260]: GEPT upper intermediate grammar worksheet for teens
+                - listitem [ref=e261]:
+                  - link [ref=e263] [cursor=pointer]:
+                    - /url: /chat/f8ce859e-fd80-4ac9-8e3b-91fcfffbba36
+                    - generic [ref=e265]: Early Ritalin refill options in Taiwan
+                - listitem [ref=e266]:
+                  - link [ref=e268] [cursor=pointer]:
+                    - /url: /chat/636232a3-9212-4362-b67c-c5a12b91803b
+                    - generic [ref=e270]: Anthropic MCP server diagnostic
+                - listitem [ref=e271]:
+                  - link [ref=e273] [cursor=pointer]:
+                    - /url: /chat/a92a8ed1-508d-423b-9bcd-a90c12022116
+                    - generic [ref=e275]: MCP server schema best practices
+                - listitem [ref=e276]:
+                  - link [ref=e278] [cursor=pointer]:
+                    - /url: /chat/2f66fb3a-c1b0-47ca-a954-e2f3d2f34a0a
+                    - generic [ref=e280]: MCP server health monitoring
+                - listitem [ref=e281]:
+                  - link [ref=e283] [cursor=pointer]:
+                    - /url: /chat/f82f0114-0243-4cb0-9e9e-9992bebb67d5
+                    - generic [ref=e285]: MCP schema validator
+                - listitem [ref=e286]:
+                  - link [ref=e288] [cursor=pointer]:
+                    - /url: /chat/297995d1-5d35-431a-9eb3-6355a28a07c1
+                    - generic [ref=e290]: MCP server validation tool
+                - listitem [ref=e291]:
+                  - link [ref=e293] [cursor=pointer]:
+                    - /url: /chat/ac43ab4e-494e-4132-8065-c8fa10293b9a
+                    - generic [ref=e295]: Testing MCP server
+                - listitem [ref=e296]:
+                  - link [ref=e298] [cursor=pointer]:
+                    - /url: /chat/43298995-f671-44a8-b75f-32e945d69786
+                    - generic [ref=e300]: MCP server pre-publish checklist
+                - listitem [ref=e301]:
+                  - link [ref=e303] [cursor=pointer]:
+                    - /url: /chat/a0689017-e9f6-4d8e-84d1-aa113a44ef52
+                    - generic [ref=e305]: Debugging MCP tool calls
+                - listitem [ref=e306]:
+                  - link [ref=e308] [cursor=pointer]:
+                    - /url: /chat/172d31ce-3746-4a14-a558-f08c2f0d08e2
+                    - generic [ref=e310]: Missing description on MCP tool
+                - listitem [ref=e311]:
+                  - link [ref=e313] [cursor=pointer]:
+                    - /url: /chat/47651e23-c9b3-4a10-a217-fdf63c6f4be9
+                    - generic [ref=e315]: MCP server CI pipeline
+                - listitem [ref=e316]:
+                  - link [ref=e318] [cursor=pointer]:
+                    - /url: /chat/d2bf7157-90ac-42b5-8a37-3bcd7731fe89
+                    - generic [ref=e320]: Autonomous target detection and guidance for FPV drones
+                - listitem [ref=e321]:
+                  - link [ref=e323] [cursor=pointer]:
+                    - /url: /chat/4a042d5c-116f-4c98-849c-89637f18b0be
+                    - generic [ref=e325]: IRS Form SS-6 EIN assignment notice
+                - listitem [ref=e326]:
+                  - link [ref=e328] [cursor=pointer]:
+                    - /url: /chat/d13082b6-2b4d-434d-bb10-d5a116bec62c
+                    - generic [ref=e330]: Changing your household registry address in Taiwan
+                - listitem [ref=e331]:
+                  - link [ref=e333] [cursor=pointer]:
+                    - /url: /chat/5457ed9b-8cfa-4656-850a-60b6e5ae1c8a
+                    - generic [ref=e335]: Google Calendar update
+                - listitem [ref=e336]:
+                  - link [ref=e338] [cursor=pointer]:
+                    - /url: /chat/6c09127b-1ed2-420f-add4-b6e6d65828fc
+                    - generic [ref=e340]: MCPR launch schedule calendar setup
+              - link [ref=e342] [cursor=pointer]:
+                - /url: /recents
+                - img [ref=e344]
+        - link "Get apps and extensions" [ref=e349] [cursor=pointer]:
+          - /url: /downloads
+          - img [ref=e353]
+        - button "Peng-Ta Wang, Settings" [ref=e359] [cursor=pointer]:
+          - generic [ref=e363]: PW
+          - generic:
+            - generic [ref=e364]:
+              - generic: Peng-Ta Wang
+              - generic: Max plan
+            - img [ref=e366]
+    - generic [ref=e56]:
+      - main [ref=e59]:
+        - generic [ref=e372]:
+          - img [ref=e376]
+          - generic [ref=e378]: Coffee and Claude time?
+        - generic [ref=e61]:
+          - group [ref=e64]:
+            - generic [ref=e67]:
+              - generic [ref=e68]:
+                - textbox "Write your prompt to Claude" [active] [ref=e70]:
+                  - paragraph [ref=e71]
+                - generic:
+                  - generic: How can I help you today?
+              - generic [ref=e72]:
+                - button "Add files, connectors, and more" [ref=e75] [cursor=pointer]:
+                  - img [ref=e77]
+                - 'button "Model: Haiku 4.5" [ref=e382] [cursor=pointer]':
+                  - generic [ref=e385]: Haiku 4.5
+                  - img [ref=e387]
+                - button "Use voice mode" [ref=e391] [cursor=pointer]:
+                  - img [ref=e394]
+            - generic:
+              - status
+          - tablist "Prompt categories" [ref=e403]:
+            - tab "Write" [ref=e404] [cursor=pointer]:
+              - generic [ref=e405]:
+                - img [ref=e407]
+                - generic [ref=e409]: Write
+            - tab "Learn" [ref=e410] [cursor=pointer]:
+              - generic [ref=e411]:
+                - img [ref=e413]
+                - generic [ref=e415]: Learn
+            - tab "From Drive" [ref=e416] [cursor=pointer]:
+              - generic [ref=e417]:
+                - img [ref=e419]
+                - generic [ref=e426]: From Drive
+            - tab "From Calendar" [ref=e427] [cursor=pointer]:
+              - generic [ref=e428]:
+                - img [ref=e430]
+                - generic [ref=e440]: From Calendar
+            - tab "From Gmail" [ref=e441] [cursor=pointer]:
+              - generic [ref=e442]:
+                - img [ref=e444]
+                - generic [ref=e450]: From Gmail
+      - button "Use incognito" [ref=e454] [cursor=pointer]:
+        - img [ref=e456]
+  - region "Notifications (F8)":
+    - list

@@ -1,0 +1,383 @@
+- generic [ref=e1]:
+  - generic:
+    - generic:
+      - link "Skip to main content" [ref=e2] [cursor=pointer]
+      - link "Accessibility help" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=en-TW
+      - link "Accessibility feedback" [ref=e4] [cursor=pointer]
+  - banner [ref=e5]:
+    - banner [ref=e6]:
+      - link "Go to Google Home" [ref=e8] [cursor=pointer]:
+        - /url: https://www.google.com/webhp?hl=en&ictx=0&sa=X&ved=0ahUKEwjTue3F_76UAxW9cPUHHTihG1oQPAgJ
+        - img [ref=e9]
+  - generic [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - navigation [ref=e21]:
+          - list [ref=e23]:
+            - listitem [ref=e24]:
+              - button "AI Mode" [ref=e30] [cursor=pointer]:
+                - generic [ref=e32]:
+                  - generic [ref=e33]: AI Mode
+                  - img [ref=e35]
+            - listitem [ref=e37]:
+              - link "All" [ref=e38] [cursor=pointer]:
+                - /url: /search?q=Anthropic+MCP+server+diagnostic&sca_esv=19e12980e28944c9&prmd=ivns&sxsrf=ANbL-n4apUsWMPa3U4iDbYA1zoWnHv6wjg:1778975332069&source=lnms&sa=X&ved=2ahUKEwjTue3F_76UAxW9cPUHHTihG1oQ0pQJegQIBhAI
+                - generic [ref=e40]: All
+            - listitem [ref=e41]:
+              - link "Images" [ref=e42] [cursor=pointer]:
+                - /url: /search?q=Anthropic+MCP+server+diagnostic&sca_esv=19e12980e28944c9&udm=2&prmd=ivns&sxsrf=ANbL-n4apUsWMPa3U4iDbYA1zoWnHv6wjg:1778975332069&source=lnms&sa=X&ved=2ahUKEwjTue3F_76UAxW9cPUHHTihG1oQ0pQJegQIBhAK
+                - generic [ref=e44]: Images
+            - listitem [ref=e45]:
+              - link "Videos" [ref=e46] [cursor=pointer]:
+                - /url: /search?q=Anthropic+MCP+server+diagnostic&sca_esv=19e12980e28944c9&udm=7&prmd=ivns&sxsrf=ANbL-n4apUsWMPa3U4iDbYA1zoWnHv6wjg:1778975332069&source=lnms&sa=X&ved=2ahUKEwjTue3F_76UAxW9cPUHHTihG1oQ0pQJegQIBhAM
+                - generic [ref=e48]: Videos
+            - listitem [ref=e49]:
+              - link "News" [ref=e50] [cursor=pointer]:
+                - /url: /search?q=Anthropic+MCP+server+diagnostic&sca_esv=19e12980e28944c9&tbm=nws&prmd=ivns&sxsrf=ANbL-n4apUsWMPa3U4iDbYA1zoWnHv6wjg:1778975332069&source=lnms&sa=X&ved=2ahUKEwjTue3F_76UAxW9cPUHHTihG1oQ0pQJegQIBhAO
+                - generic [ref=e52]: News
+            - listitem [ref=e53]:
+              - button "More filters" [ref=e54] [cursor=pointer]:
+                - generic "More filters" [ref=e55]:
+                  - generic [ref=e56]: More
+                  - img [ref=e58]
+        - generic [ref=e61]:
+          - link "Search Labs" [ref=e63] [cursor=pointer]:
+            - /url: https://labs.google.com/search?source=srp
+            - img [ref=e64]
+          - button "Google apps" [ref=e67] [cursor=pointer]:
+            - img [ref=e68]
+          - 'button "Google Account: Peng-Ta (incultnito@gmail.com)" [ref=e72] [cursor=pointer]':
+            - img [ref=e73]
+      - separator [ref=e74]
+    - heading "Search Results" [level=1] [ref=e75]
+    - generic [ref=e83]:
+      - generic [ref=e86]:
+        - button "AI Mode history" [ref=e88] [cursor=pointer]:
+          - img [ref=e90]
+        - button "New thread" [ref=e93] [cursor=pointer]:
+          - img [ref=e95]
+      - generic [ref=e100]:
+        - heading "Anthropic MCP server diagnostic" [level=2] [ref=e106]
+        - generic [ref=e169]:
+          - generic [ref=e172]:
+            - generic [ref=e173]:
+              - text: To diagnose and troubleshoot issues with an
+              - strong [ref=e174]: Anthropic Model Context Protocol (MCP) server
+              - text: ", you need to systematically isolate the problem across its architecture. Most MCP issues stem from"
+              - strong [ref=e175]: JSON-RPC connection failures
+              - text: ","
+              - strong [ref=e176]: syntax/pathing bugs in the client configuration
+              - text: ", or"
+              - strong [ref=e177]: runtime dependency crashes
+              - text: .
+              - generic [ref=e179]:
+                - link "Anthropic (+3) – View related links" [ref=e180] [cursor=pointer]:
+                  - /url: https://www.anthropic.com/news/model-context-protocol
+                - button "Anthropic (+3) – View related links" [ref=e181] [cursor=pointer]:
+                  - generic [ref=e183]:
+                    - generic [ref=e184]: Anthropic
+                    - generic [ref=e185]: "+3"
+            - generic [ref=e186]: Here is the comprehensive playbook to run a diagnostic on your MCP server.
+            - separator [ref=e187]
+            - heading "1. Visual Debugging with the MCP Inspector View related links" [level=3] [ref=e188]:
+              - text: 1. Visual Debugging with the MCP Inspector
+              - button "View related links" [ref=e191] [cursor=pointer]:
+                - img [ref=e193]
+            - generic [ref=e195]:
+              - text: The fastest way to isolate server-side bugs from client configurations is to use the official
+              - link "MCP Inspector" [ref=e197] [cursor=pointer]:
+                - /url: https://modelcontextprotocol.io/docs/tools/inspector
+              - text: . This visual developer tool bypasses your client application (like Claude Desktop) and talks directly to your server.
+              - generic [ref=e199]:
+                - link "Model Context Protocol (+4) – View related links" [ref=e200] [cursor=pointer]:
+                  - /url: https://modelcontextprotocol.io/docs/tools/inspector
+                - button "Model Context Protocol (+4) – View related links" [ref=e201] [cursor=pointer]:
+                  - generic [ref=e203]:
+                    - generic [ref=e204]: Model Context Protocol
+                    - generic [ref=e205]: "+4"
+            - generic [ref=e206]:
+              - text: Run the inspector via
+              - code [ref=e207]: npx
+              - text: "by pointing it directly to your server's build file:"
+              - button "View related links" [ref=e210] [cursor=pointer]:
+                - img [ref=e212]
+            - generic [ref=e215]:
+              - generic [ref=e216]:
+                - generic [ref=e218]: bash
+                - code [ref=e221]: "# For Node.js / TypeScript servers npx @modelcontextprotocol/inspector node build/index.js # For Python servers (using uv or python) npx @modelcontextprotocol/inspector uv run main.py"
+              - generic [ref=e222]:
+                - generic [ref=e223]: Use code with caution.
+                - button "Copy code text to clipboard." [ref=e226] [cursor=pointer]:
+                  - img [ref=e228]
+            - list [ref=e231]:
+              - listitem [ref=e232]:
+                - generic [ref=e233]:
+                  - strong [ref=e234]: "What to check:"
+                  - text: Once the browser window opens, click
+                  - strong [ref=e235]: Connect
+                  - text: . Check if the
+                  - code [ref=e236]: tools/list
+                  - text: or
+                  - code [ref=e237]: resources/list
+                  - text: tabs successfully populate. If the inspector fails to connect, your bug is entirely inside your server code or its compilation step.
+                - generic [ref=e239]:
+                  - link "GitHub (+3) – View related links" [ref=e240] [cursor=pointer]:
+                    - /url: https://github.com/modelcontextprotocol/inspector
+                  - button "GitHub (+3) – View related links" [ref=e241] [cursor=pointer]:
+                    - generic [ref=e243]:
+                      - generic [ref=e244]: GitHub
+                      - generic [ref=e245]: "+3"
+            - separator [ref=e246]
+            - heading "2. Common Errors & Resolution Checklist" [level=3] [ref=e247]
+            - generic [ref=e248]:
+              - text: "If you are trying to resolve a failure where a client application (like Claude Desktop) cannot connect to your server, check these critical vectors:"
+              - button "View related links" [ref=e251] [cursor=pointer]:
+                - img [ref=e253]
+            - heading "❌ The \"Invisible Server\" (Doesn't appear in client)" [level=3] [ref=e255]
+            - list [ref=e256]:
+              - listitem [ref=e257]:
+                - generic [ref=e258]:
+                  - strong [ref=e259]: "Symptoms:"
+                  - text: The server icon or tools do not show up in the client UI at all.
+              - listitem [ref=e260]:
+                - generic [ref=e261]:
+                  - strong [ref=e262]: "Fix 1: Absolute Paths."
+                  - text: MCP clients launch servers as background subprocesses. They cannot resolve relative paths like
+                  - code [ref=e263]: ./
+                  - text: or
+                  - code [ref=e264]: ~/
+                  - text: . You must provide the full absolute path.
+                - generic [ref=e266]:
+                  - generic [ref=e267]:
+                    - generic [ref=e269]: json
+                    - code [ref=e272]: "\"args\": [\"/Users/username/projects/my-mcp-server/build/index.js\"]"
+                  - generic [ref=e273]:
+                    - generic [ref=e274]: Use code with caution.
+                    - button "Copy code text to clipboard." [ref=e277] [cursor=pointer]:
+                      - img [ref=e279]
+              - listitem [ref=e282]:
+                - generic [ref=e283]:
+                  - strong [ref=e284]: "Fix 2: Command Availability."
+                  - text: If using
+                  - code [ref=e285]: node
+                  - text: ","
+                  - code [ref=e286]: uvx
+                  - text: ", or"
+                  - code [ref=e287]: npx
+                  - text: in your configuration, verify that the environment variable path for these binaries is globally accessible to your desktop applications.
+                - generic [ref=e289]:
+                  - link "Anthropic (+4) – View related links" [ref=e290] [cursor=pointer]:
+                    - /url: https://www.anthropic.com/engineering/desktop-extensions
+                  - button "Anthropic (+4) – View related links" [ref=e291] [cursor=pointer]:
+                    - generic [ref=e293]:
+                      - generic [ref=e294]: Anthropic
+                      - generic [ref=e295]: "+4"
+            - heading "❌ The Stderr Pollution Crash View related links" [level=3] [ref=e296]:
+              - text: ❌ The Stderr Pollution Crash
+              - button "View related links" [ref=e299] [cursor=pointer]:
+                - img [ref=e301]
+            - list [ref=e303]:
+              - listitem [ref=e304]:
+                - generic [ref=e305]:
+                  - strong [ref=e306]: "Symptoms:"
+                  - text: Connection terminates instantly or throws a parsing error.
+              - listitem [ref=e307]:
+                - generic [ref=e308]:
+                  - strong [ref=e309]: "Fix:"
+                  - text: MCP communicates using standard input/output (
+                  - code [ref=e310]: stdio
+                  - text: ) via strict JSON-RPC 2.0 frames. If your server code utilizes
+                  - code [ref=e311]: console.log()
+                  - text: or Python's
+                  - code [ref=e312]: print()
+                  - text: for debugging, it will inject raw string text into the stream and break the client's parser. Ensure all server-side logging is routed exclusively to
+                  - strong [ref=e313]:
+                    - text: standard error (
+                    - code [ref=e314]: stderr
+                    - text: )
+                  - text: or
+                  - code [ref=e315]: console.error()
+                  - text: .
+                - generic [ref=e317]:
+                  - link "Backslash Security (+4) – View related links" [ref=e318] [cursor=pointer]:
+                    - /url: https://www.backslash.security/blog/what-is-mcp-model-context-protocol
+                  - button "Backslash Security (+4) – View related links" [ref=e319] [cursor=pointer]:
+                    - generic [ref=e321]:
+                      - generic [ref=e322]: Backslash Security
+                      - generic [ref=e323]: "+4"
+            - heading "❌ Environment Variable Isolation View related links" [level=3] [ref=e324]:
+              - text: ❌ Environment Variable Isolation
+              - button "View related links" [ref=e327] [cursor=pointer]:
+                - img [ref=e329]
+            - list [ref=e331]:
+              - listitem [ref=e332]:
+                - generic [ref=e333]:
+                  - strong [ref=e334]: "Symptoms:"
+                  - text: Tools appear in the client, but fail immediately upon invocation with API or permission errors.
+              - listitem [ref=e335]:
+                - generic [ref=e336]:
+                  - strong [ref=e337]: "Fix:"
+                  - text: When a client spawns an MCP subprocess, it does
+                  - strong [ref=e338]: not
+                  - text: automatically pass through your shell's local environment variables (like
+                  - code [ref=e339]: .bashrc
+                  - text: or
+                  - code [ref=e340]: .zshrc
+                  - text: "exports). You must explicitly define tokens or database keys within the client's configuration file:"
+                - generic [ref=e342]:
+                  - generic [ref=e343]:
+                    - generic [ref=e345]: json
+                    - code [ref=e348]: "\"env\": { \"API_KEY\": \"your_secret_key_here\" }"
+                  - generic [ref=e349]:
+                    - generic [ref=e350]: Use code with caution.
+                    - button "Copy code text to clipboard." [ref=e353] [cursor=pointer]:
+                      - img [ref=e355]
+                - generic [ref=e359]:
+                  - link "GitHub (+4) – View related links" [ref=e360] [cursor=pointer]:
+                    - /url: https://github.com/modelcontextprotocol/inspector
+                  - button "GitHub (+4) – View related links" [ref=e361] [cursor=pointer]:
+                    - generic [ref=e363]:
+                      - generic [ref=e364]: GitHub
+                      - generic [ref=e365]: "+4"
+            - separator [ref=e366]
+            - heading "3. Reviewing Client Configuration Syntax" [level=3] [ref=e367]
+            - generic [ref=e368]:
+              - text: "A single missing comma or misconfigured object block in your host configuration file will break the initialization sequence. Confirm your configuration adheres to this standard structure:"
+              - generic [ref=e370]:
+                - link "Anthropic – View related links" [ref=e371] [cursor=pointer]:
+                  - /url: https://www.anthropic.com/engineering/desktop-extensions
+                - button "Anthropic – View related links" [ref=e372] [cursor=pointer]:
+                  - generic [ref=e375]: Anthropic
+            - generic [ref=e377]:
+              - generic [ref=e378]:
+                - generic [ref=e380]: json
+                - code [ref=e383]: "{ \"mcpServers\": { \"my-diagnostic-server\": { \"command\": \"node\", \"args\": [\"/absolute/path/to/server/index.js\"], \"env\": { \"DATABASE_URL\": \"postgresql://localhost:5432/db\" } } } }"
+              - generic [ref=e384]:
+                - generic [ref=e385]: Use code with caution.
+                - button "Copy code text to clipboard." [ref=e388] [cursor=pointer]:
+                  - img [ref=e390]
+            - list [ref=e393]:
+              - listitem [ref=e394]:
+                - strong [ref=e396]: "Claude Desktop Config Location:"
+                - list [ref=e397]:
+                  - listitem [ref=e398]:
+                    - generic [ref=e399]:
+                      - strong [ref=e400]: "macOS:"
+                      - code [ref=e401]: ~/Library/Application Support/Claude/claude_desktop_config.json
+                  - listitem [ref=e402]:
+                    - generic [ref=e403]:
+                      - strong [ref=e404]: "Windows:"
+                      - code [ref=e405]: "%APPDATA%\\Claude\\claude_desktop_config.json"
+                    - button "View related links" [ref=e408] [cursor=pointer]:
+                      - img [ref=e410]
+            - separator [ref=e412]
+            - heading "4. Direct Manual Testing (JSON-RPC Ping)" [level=3] [ref=e413]
+            - generic [ref=e414]:
+              - text: "For custom implementations or remote servers over HTTP/SSE, you can manually verify if the server's lifecycle endpoints respond normally using standard network requests:"
+              - generic [ref=e416]:
+                - link "OpenStatus – View related links" [ref=e417] [cursor=pointer]:
+                  - /url: https://docs.openstatus.dev/guides/how-to-monitor-mcp-server/
+                - button "OpenStatus – View related links" [ref=e418] [cursor=pointer]:
+                  - generic [ref=e421]: OpenStatus
+            - generic [ref=e423]:
+              - generic [ref=e424]:
+                - generic [ref=e426]: bash
+                - code [ref=e429]: "curl -X POST http://localhost:8788/mcp \\ -H \"Content-Type: application/json\" \\ -d '{\"jsonrpc\":\"2.0\", \"method\": \"ping\", \"id\": 1}'"
+              - generic [ref=e430]:
+                - generic [ref=e431]: Use code with caution.
+                - button "Copy code text to clipboard." [ref=e434] [cursor=pointer]:
+                  - img [ref=e436]
+            - list [ref=e439]:
+              - listitem [ref=e440]:
+                - generic [ref=e441]:
+                  - strong [ref=e442]: "Expected Healthy Response:"
+                  - code [ref=e443]: "{\"jsonrpc\":\"2.0\",\"result\":{},\"id\":1}"
+                - generic [ref=e445]:
+                  - link "OpenStatus – View related links" [ref=e446] [cursor=pointer]:
+                    - /url: https://docs.openstatus.dev/guides/how-to-monitor-mcp-server/
+                  - button "OpenStatus – View related links" [ref=e447] [cursor=pointer]:
+                    - generic [ref=e450]: OpenStatus
+            - separator [ref=e451]
+            - generic [ref=e452]: "If your server is still failing, let me know:"
+            - list [ref=e453]:
+              - listitem [ref=e454]:
+                - generic [ref=e455]:
+                  - text: What
+                  - strong [ref=e456]: programming language
+                  - text: is the server written in (Python, TypeScript, Go)?
+              - listitem [ref=e457]:
+                - generic [ref=e458]:
+                  - text: What
+                  - strong [ref=e459]: error message
+                  - text: or behavior are you seeing in your client application log?
+              - listitem [ref=e460]:
+                - generic [ref=e461]:
+                  - text: Could you share the
+                  - strong [ref=e462]: server configuration block
+                  - text: from your JSON settings file?
+            - generic [ref=e465]:
+              - button "Copy text" [ref=e468] [cursor=pointer]:
+                - img [ref=e471]
+              - button "Share" [ref=e477] [cursor=pointer]:
+                - img [ref=e480]
+              - generic [ref=e483]:
+                - button "Good response" [ref=e485] [cursor=pointer]:
+                  - img [ref=e487]
+                - button "Bad response" [ref=e490] [cursor=pointer]:
+                  - img [ref=e492]
+              - button "More options" [ref=e496] [cursor=pointer]:
+                - img [ref=e498]
+          - generic [ref=e505]:
+            - generic [ref=e508]:
+              - button "34 sites" [ref=e509] [cursor=pointer]:
+                - generic [ref=e518]: 34 sites
+              - button "About this result" [ref=e521] [cursor=pointer]:
+                - img [ref=e522]
+            - list [ref=e524]:
+              - listitem [ref=e525]:
+                - generic [ref=e526]:
+                  - link "Introducing the Model Context Protocol - Anthropic. Opens in new tab." [ref=e527] [cursor=pointer]:
+                    - /url: https://www.anthropic.com/news/model-context-protocol
+                  - generic [ref=e528]:
+                    - generic [ref=e530]:
+                      - generic [ref=e531]: Introducing the Model Context Protocol - Anthropic
+                      - generic [ref=e532]: Nov 25, 2024 — MCP addresses this challenge. It provides a universal, open standard for connecting AI systems with data sources, replacing fragme...
+                    - generic [ref=e534]:
+                      - generic [ref=e539]: Anthropic
+                      - button "About this result" [ref=e541] [cursor=pointer]:
+                        - img [ref=e542]
+              - listitem [ref=e545]:
+                - generic [ref=e546]:
+                  - link "MCP Inspector - Model Context Protocol. Opens in new tab." [ref=e547] [cursor=pointer]:
+                    - /url: https://modelcontextprotocol.io/docs/tools/inspector
+                  - generic [ref=e548]:
+                    - generic [ref=e550]:
+                      - generic [ref=e551]: MCP Inspector - Model Context Protocol
+                      - generic [ref=e552]: "Documentation Index. Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt. Use this file to discove..."
+                    - generic [ref=e554]:
+                      - generic [ref=e559]: Model Context Protocol
+                      - button "About this result" [ref=e561] [cursor=pointer]:
+                        - img [ref=e562]
+              - listitem [ref=e565]:
+                - generic [ref=e566]:
+                  - 'link "Claude Desktop Extensions: One-click MCP server installation for .... Opens in new tab." [ref=e567] [cursor=pointer]':
+                    - /url: https://www.anthropic.com/engineering/desktop-extensions
+                  - generic [ref=e568]:
+                    - generic [ref=e570]:
+                      - generic [ref=e571]: "Claude Desktop Extensions: One-click MCP server installation for ..."
+                      - generic [ref=e572]: Jun 26, 2025 — Addressing the MCP installation problem Local MCP servers unlock powerful capabilities for Claude Desktop users. They can interact...
+                    - generic [ref=e574]:
+                      - generic [ref=e579]: Anthropic
+                      - button "About this result" [ref=e581] [cursor=pointer]:
+                        - img [ref=e582]
+            - button "Show all related links" [ref=e585] [cursor=pointer]:
+              - generic [ref=e586]: Show all
+      - generic [ref=e133]:
+        - textbox "Ask anything" [active] [ref=e135]
+        - button "More input options" [ref=e138] [cursor=pointer]:
+          - img [ref=e140]
+        - button "Microphone" [ref=e157] [cursor=pointer]:
+          - img [ref=e159]
+    - contentinfo
+  - generic [ref=e587]: AI Mode response is ready

@@ -1,0 +1,445 @@
+- generic [ref=e1]:
+  - generic [ref=e5]:
+    - navigation "Main" [ref=e7]:
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - link "Perplexity" [ref=e11] [cursor=pointer]:
+            - /url: /
+            - img "Perplexity" [ref=e14]
+          - button "Collapse sidebar" [ref=e17] [cursor=pointer]:
+            - img [ref=e18]
+        - generic [ref=e21]:
+          - generic [ref=e24]:
+            - link "New" [ref=e25] [cursor=pointer]:
+              - /url: /
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - img
+                - generic:
+                  - generic:
+                    - generic: New
+                  - generic: ⌘K
+          - generic [ref=e28]:
+            - link "Computer" [ref=e29] [cursor=pointer]:
+              - /url: /computer/tasks
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Computer":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Computer
+          - generic [ref=e33]:
+            - link "Spaces" [ref=e34] [cursor=pointer]:
+              - /url: /spaces
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Spaces":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Spaces
+          - generic [ref=e38]:
+            - link "Artifacts" [ref=e39] [cursor=pointer]:
+              - /url: /computer/artifacts
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Artifacts":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Artifacts
+          - generic [ref=e43]:
+            - link "Customize" [ref=e44] [cursor=pointer]:
+              - /url: /computer/connectors
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Expand Customize":
+                      - generic:
+                        - img
+                  - generic:
+                    - img
+                - generic:
+                  - generic:
+                    - generic: Customize
+          - generic [ref=e46]:
+            - generic [ref=e48]:
+              - link "History" [ref=e49] [cursor=pointer]:
+                - /url: /library
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - button "Collapse History" [expanded]:
+                        - generic:
+                          - img
+                    - generic:
+                      - img
+                  - generic:
+                    - generic:
+                      - generic: History
+            - generic [ref=e52]:
+              - link "MCP server CI pipeline" [ref=e53] [cursor=pointer]:
+                - /url: /search/47ca10d7-855e-4e3a-9a1c-10a51fcc044e
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: MCP server CI pipeline
+                  - button "Thread actions" [ref=e57] [cursor=pointer]:
+                    - img [ref=e60]
+        - button "Sign In" [ref=e71] [cursor=pointer]:
+          - generic [ref=e72]:
+            - generic [ref=e74]:
+              - img [ref=e77]
+              - generic [ref=e80]: Sign In
+            - generic:
+              - img
+    - main [ref=e82]:
+      - generic [ref=e85]:
+        - generic:
+          - generic:
+            - tablist "Answer mode tabs" [ref=e87]:
+              - tab "Answer" [selected] [ref=e88] [cursor=pointer]:
+                - img [ref=e89]
+                - text: Answer
+              - tab "Links" [ref=e91] [cursor=pointer]:
+                - img [ref=e92]
+                - text: Links
+              - tab "Images" [ref=e94] [cursor=pointer]:
+                - img [ref=e95]
+                - text: Images
+              - tab "Videos" [ref=e98] [cursor=pointer]:
+                - img [ref=e99]
+                - text: Videos
+            - generic [ref=e101]:
+              - button "Thread actions" [ref=e255] [cursor=pointer]:
+                - img [ref=e258]
+              - button "Share" [ref=e103] [cursor=pointer]:
+                - img [ref=e105]
+                - generic [ref=e107]: Share
+              - button "Download Comet" [ref=e110] [cursor=pointer]:
+                - img [ref=e112]
+                - generic [ref=e114]: Download Comet
+        - generic [ref=e117]:
+          - tabpanel "Answer" [ref=e127]:
+            - generic [ref=e128]:
+              - generic [ref=e133]:
+                - generic:
+                  - button "Edit query":
+                    - generic:
+                      - generic:
+                        - img
+                  - button "Copy query":
+                    - generic:
+                      - generic:
+                        - img
+                - heading "MCP server CI pipeline" [level=1] [ref=e139]:
+                  - generic [ref=e141]: MCP server CI pipeline
+              - generic [ref=e142]:
+                - generic [ref=e264]:
+                  - generic [ref=e266]:
+                    - generic [ref=e268]:
+                      - 'button "MCP server: Automated test coverage trailer MCP server: Automated test coverage" [ref=e269] [cursor=pointer]':
+                        - 'img "MCP server: Automated test coverage trailer" [ref=e270]'
+                        - generic [ref=e272]: "MCP server: Automated test coverage"
+                        - img [ref=e277]
+                      - 'button "AI-Driven CI/CD: Introducing Semaphore''s MCP Server trailer AI-Driven CI/CD: Introducing Semaphore''s MCP Server" [ref=e279] [cursor=pointer]':
+                        - 'img "AI-Driven CI/CD: Introducing Semaphore''s MCP Server trailer" [ref=e280]'
+                        - generic [ref=e282]: "AI-Driven CI/CD: Introducing Semaphore's MCP Server"
+                        - img [ref=e287]
+                      - 'button "Gemini CLI Automation Tutorial: CI/CD Pipelines, MCP ... trailer Gemini CLI Automation Tutorial: CI/CD Pipelines, MCP ..." [ref=e289] [cursor=pointer]':
+                        - 'img "Gemini CLI Automation Tutorial: CI/CD Pipelines, MCP ... trailer" [ref=e290]'
+                        - generic [ref=e292]: "Gemini CLI Automation Tutorial: CI/CD Pipelines, MCP ..."
+                        - img [ref=e297]
+                    - button "More videos" [ref=e300] [cursor=pointer]:
+                      - img [ref=e303]
+                  - generic [ref=e309]:
+                    - paragraph [ref=e310]:
+                      - text: An
+                      - strong [ref=e311]: MCP server CI pipeline
+                      - text: typically means baking a [Model] Context Protocol (MCP) server into your CI/CD workflow so that AI‑assisted tooling, model validation, or automated testing runs on every build or pull request.
+                      - generic [ref=e316] [cursor=pointer]:
+                        - generic [ref=e317]: bleevht.substack
+                        - generic [ref=e318]: "+1"
+                    - paragraph [ref=e319]: "Below is a concise blueprint you can adapt to GitLab CI, GitHub Actions, or similar:"
+                    - separator [ref=e320]
+                    - heading "1. What “MCP server in CI” means" [level=2] [ref=e321]
+                    - list [ref=e322]:
+                      - listitem [ref=e323]:
+                        - paragraph [ref=e324]:
+                          - text: An
+                          - strong [ref=e325]: MCP server
+                          - text: exposes tools (e.g., linters, model validators, test runners) over the MCP protocol, so AI agents or CLI tools can invoke them in a structured way.
+                          - generic [ref=e330] [cursor=pointer]:
+                            - generic [ref=e331]: glama
+                            - generic [ref=e332]: "+1"
+                      - listitem [ref=e333]:
+                        - paragraph [ref=e334]:
+                          - text: In CI, you start the MCP server as a service container, then call its tools from pipeline jobs (e.g.,
+                          - code [ref=e335]: mcp-cli validate
+                          - text: ","
+                          - code [ref=e336]: mcp-server test
+                          - text: ", etc.)."
+                          - generic [ref=e341] [cursor=pointer]:
+                            - generic [ref=e342]: circleci
+                            - generic [ref=e343]: "+1"
+                    - separator [ref=e344]
+                    - heading "2. Typical CI‑pipeline structure" [level=2] [ref=e345]
+                    - paragraph [ref=e346]: "For a GitLab‑style setup (similar patterns apply to GitHub Actions / Jenkins):"
+                    - generic [ref=e349]:
+                      - button "Copy code" [ref=e352] [cursor=pointer]:
+                        - img [ref=e355]
+                      - generic [ref=e357]:
+                        - generic [ref=e359]: text
+                        - code [ref=e362]:
+                          - generic [ref=e363]: "stages:"
+                          - text: "- build - mcp-check - package - deploy"
+                    - list [ref=e364]:
+                      - listitem [ref=e365]:
+                        - paragraph [ref=e366]:
+                          - strong [ref=e367]:
+                            - code [ref=e368]: build
+                          - text: ": Build app or model image as usual."
+                          - generic "Integrating MCP Servers into Your CI/CD Pipeline with GitLab and Docker" [ref=e370]:
+                            - link "bleevht.substack" [ref=e372] [cursor=pointer]:
+                              - /url: https://bleevht.substack.com/p/integrating-mcp-servers-into-your
+                              - generic [ref=e375]: bleevht.substack
+                      - listitem [ref=e376]:
+                        - paragraph [ref=e377]:
+                          - strong [ref=e378]:
+                            - code [ref=e379]: mcp-check
+                          - text: ": Start an MCP server container (e.g.,"
+                          - code [ref=e380]: hashicorp/terraform‑mcp‑server:latest
+                          - text: ) as a service, then run validations (model checks, linting, security scans) against it.
+                          - generic [ref=e385] [cursor=pointer]:
+                            - generic [ref=e386]: glama
+                            - generic [ref=e387]: "+1"
+                      - listitem [ref=e388]:
+                        - paragraph [ref=e389]:
+                          - strong [ref=e390]:
+                            - code [ref=e391]: package
+                            - text: /
+                            - code [ref=e392]: deploy
+                          - text: ": Only proceed if MCP checks pass; tag and push images or deploy to staging/production."
+                          - generic "Integrating MCP Servers into Your CI/CD Pipeline with GitLab and Docker" [ref=e394]:
+                            - link "bleevht.substack" [ref=e396] [cursor=pointer]:
+                              - /url: https://bleevht.substack.com/p/integrating-mcp-servers-into-your
+                              - generic [ref=e399]: bleevht.substack
+                    - paragraph [ref=e400]:
+                      - text: Example service snippet in
+                      - code [ref=e401]: .gitlab-ci.yml
+                      - text: ":"
+                    - generic [ref=e404]:
+                      - button "Copy code" [ref=e407] [cursor=pointer]:
+                        - img [ref=e410]
+                      - generic [ref=e412]:
+                        - generic [ref=e414]: text
+                        - code [ref=e417]:
+                          - generic [ref=e418]: "mcp-validate:"
+                          - text: "stage: mcp-check image: docker:stable services: - name: hashicorp/terraform-mcp-server:latest alias: mcp-server variables: MCP_SERVER_ADDR: mcp-server:50051 script: - mcp-cli validate --server $MCP_SERVER_ADDR --config mcp-config.hcl allow_failure: false"
+                    - paragraph [ref=e419]:
+                      - text: Your
+                      - code [ref=e420]: mcp-config.hcl
+                      - text: defines which models, contexts, and validation rules are exposed, just like a small “tool manifest” for the CI runner.
+                      - generic [ref=e425] [cursor=pointer]:
+                        - generic [ref=e426]: glama
+                        - generic [ref=e427]: "+1"
+                    - separator [ref=e428]
+                    - 'heading "3. Alternate use: MCP as test orchestrator" [level=2] [ref=e429]'
+                    - paragraph [ref=e430]:
+                      - text: Some teams use an
+                      - strong [ref=e431]: MCP‑based “Master Control Program”
+                      - text: "to orchestrate tens of thousands of test cases:"
+                    - list [ref=e432]:
+                      - listitem [ref=e433]:
+                        - paragraph [ref=e434]:
+                          - text: MCP server schedules test groups (independent vs dependent), distributes them across parallel runners, and aggregates results.
+                          - generic "How We Successfully Scaled 5,000+ Automated Test Cases in Our CI/CD Pipeline Using MCP Server" [ref=e436]:
+                            - link "medium" [ref=e438] [cursor=pointer]:
+                              - /url: https://medium.com/@kapilkumar080/how-we-successfully-scaled-5-000-automated-test-cases-in-our-ci-cd-pipeline-using-mcp-server-7bbb9614a5f4
+                              - generic [ref=e441]: medium
+                      - listitem [ref=e442]:
+                        - paragraph [ref=e443]: "In CI, your pipeline:"
+                        - list [ref=e444]:
+                          - listitem [ref=e445]:
+                            - paragraph [ref=e446]: Uploads test manifest / metadata to the MCP server.
+                          - listitem [ref=e447]:
+                            - paragraph [ref=e448]:
+                              - text: Triggers
+                              - code [ref=e449]: /run‑tests
+                              - text: via an API, then waits for aggregated reports (Allure, HTML, Slack/Teams messages).
+                              - generic [ref=e454] [cursor=pointer]:
+                                - generic [ref=e455]: mcp-server-langgraph.mintlify
+                                - generic [ref=e456]: "+1"
+                    - paragraph [ref=e457]:
+                      - text: This pattern is common when you want AI‑driven or agent‑driven test orchestration inside pipelines.
+                      - generic [ref=e462] [cursor=pointer]:
+                        - generic [ref=e463]: aws.amazon
+                        - generic [ref=e464]: "+1"
+                    - separator [ref=e465]
+                    - heading "4. CI tools that work well with MCP" [level=2] [ref=e466]
+                    - list [ref=e467]:
+                      - listitem [ref=e468]:
+                        - paragraph [ref=e469]:
+                          - strong [ref=e470]: GitHub Actions
+                          - text: ": Use"
+                          - code [ref=e471]: github/github‑mcp‑server
+                          - text: as a composite or container‑based action in workflows.
+                          - generic [ref=e476] [cursor=pointer]:
+                            - generic [ref=e477]: github
+                            - generic [ref=e478]: "+1"
+                      - listitem [ref=e479]:
+                        - paragraph [ref=e480]:
+                          - strong [ref=e481]: GitLab CI
+                          - text: ": Spin up MCP server via"
+                          - code [ref=e482]: services
+                          - text: and run
+                          - code [ref=e483]: mcp‑cli
+                          - text: inside Docker‑in‑Docker jobs.
+                          - generic [ref=e488] [cursor=pointer]:
+                            - generic [ref=e489]: prefactor
+                            - generic [ref=e490]: "+1"
+                      - listitem [ref=e491]:
+                        - paragraph [ref=e492]:
+                          - strong [ref=e493]: CircleCI / AWS‑based CI
+                          - text: ": CircleCI’s MCP server and AWS Marketplace integrations expose pipelines via MCP so AI agents can query logs, rerun jobs, or suggest fixes in natural language."
+                          - generic [ref=e498] [cursor=pointer]:
+                            - generic [ref=e499]: github
+                            - generic [ref=e500]: "+2"
+                    - separator [ref=e501]
+                    - paragraph [ref=e502]: If you tell me which platform you’re on (GitHub Actions / GitLab CI / Jenkins / CircleCI / AWS CodePipeline), I can give you a concrete, copy‑paste YAML/DSL template for an “MCP server CI pipeline” for your stack.
+                - generic [ref=e503]:
+                  - generic [ref=e504]:
+                    - button "Share" [ref=e505] [cursor=pointer]:
+                      - img [ref=e508]
+                    - button "Download" [ref=e511] [cursor=pointer]:
+                      - img [ref=e514]
+                    - button "Copy" [ref=e517] [cursor=pointer]:
+                      - img [ref=e520]
+                    - button "Rewrite Thread" [ref=e523] [cursor=pointer]:
+                      - img [ref=e526]
+                    - button "10 sources" [ref=e530] [cursor=pointer]:
+                      - generic [ref=e532]:
+                        - img [ref=e533]
+                        - img [ref=e534]
+                        - generic [ref=e536]:
+                          - img [ref=e539]
+                          - img [ref=e544]
+                          - img [ref=e548]
+                        - text: 10 sources
+                  - generic [ref=e551]:
+                    - generic [ref=e553]:
+                      - button "Helpful" [ref=e554] [cursor=pointer]:
+                        - img [ref=e557]
+                      - button "Not helpful" [ref=e560] [cursor=pointer]:
+                        - img [ref=e563]
+                    - button "More actions" [ref=e567] [cursor=pointer]:
+                      - img [ref=e570]
+                - generic [ref=e574]:
+                  - generic [ref=e579]: Follow-ups
+                  - generic [ref=e580]:
+                    - button "I am using GitHub Actions and need a YAML workflow example" [ref=e581] [cursor=pointer]:
+                      - img [ref=e583]
+                      - generic [ref=e586]: I am using GitHub Actions and need a YAML workflow example
+                    - button "Could you provide a GitLab CI template for an MCP server setup" [ref=e587] [cursor=pointer]:
+                      - img [ref=e589]
+                      - generic [ref=e592]: Could you provide a GitLab CI template for an MCP server setup
+                    - button "I am working with Jenkins; how do I integrate an MCP server here" [ref=e593] [cursor=pointer]:
+                      - img [ref=e595]
+                      - generic [ref=e598]: I am working with Jenkins; how do I integrate an MCP server here
+                    - button "I am using CircleCI; how do I structure an MCP validation job" [ref=e599] [cursor=pointer]:
+                      - img [ref=e601]
+                      - generic [ref=e604]: I am using CircleCI; how do I structure an MCP validation job
+                    - button "What is the best way to handle MCP server logs in my pipeline" [ref=e605] [cursor=pointer]:
+                      - img [ref=e607]
+                      - generic [ref=e610]: What is the best way to handle MCP server logs in my pipeline
+          - generic [ref=e163]:
+            - generic [ref=e165]:
+              - textbox [ref=e166]:
+                - paragraph [ref=e167]
+              - generic: Ask a follow-up
+            - generic [ref=e169]:
+              - button "Add files or tools" [ref=e170] [cursor=pointer]:
+                - img [ref=e173]
+              - button "Search" [pressed] [ref=e179] [cursor=pointer]:
+                - img [ref=e181]
+                - generic [ref=e183]:
+                  - text: Search
+                  - img [ref=e184]
+            - generic [ref=e186]:
+              - button "Model" [ref=e188] [cursor=pointer]:
+                - generic [ref=e189]: Model
+                - img [ref=e191]
+              - button "Dictation" [ref=e612] [cursor=pointer]:
+                - img [ref=e615]
+              - button "Submit" [disabled]:
+                - generic:
+                  - generic:
+                    - img
+  - dialog [ref=e209]:
+    - generic [ref=e213]:
+      - generic [ref=e214]:
+        - generic [ref=e215]: Sign up below to unlock the full potential of Perplexity
+        - generic [ref=e216]:
+          - text: By continuing, you agree to our
+          - link "privacy policy" [ref=e217] [cursor=pointer]:
+            - /url: https://www.perplexity.com/hub/legal/privacy-policy
+          - text: .
+      - generic [ref=e218]:
+        - button "Back home" [ref=e220] [cursor=pointer]:
+          - img [ref=e222]
+          - generic [ref=e224]: Back home
+        - generic [ref=e226]:
+          - generic [ref=e227]:
+            - button "Continue with Google" [ref=e228] [cursor=pointer]:
+              - img [ref=e230]
+              - generic [ref=e232]: Continue with Google
+            - button "Continue with Apple" [ref=e234] [cursor=pointer]:
+              - img [ref=e236]
+              - generic [ref=e238]: Continue with Apple
+          - generic [ref=e241]:
+            - generic [ref=e243]:
+              - textbox "Enter your email" [active] [ref=e248]
+              - generic [ref=e249]:
+                - button "Continue with email" [disabled]:
+                  - generic: Continue with email
+            - button "Single sign-on (SSO)" [ref=e251] [cursor=pointer]:
+              - generic [ref=e252]: Single sign-on (SSO)
+  - dialog "Cookie Policy" [ref=e618]:
+    - generic [ref=e619]:
+      - heading "Cookie Policy" [level=2] [ref=e620]
+      - paragraph [ref=e621]: This website uses third party cookies to serve you relevant ads and provide personalization.
+    - generic [ref=e622]:
+      - img [ref=e623]
+      - generic [ref=e625]: Cookie Policy
+    - generic [ref=e626]:
+      - text: This website uses third party cookies to serve you relevant ads and provide personalization by remembering your location. You may opt out from these cookies by selecting the "Opt out" button below. If you have a Perplexity account, you may opt out of the "sale" or "sharing" of your data
+      - link "here" [ref=e627] [cursor=pointer]:
+        - /url: https://www.perplexity.ai/hub/legal/privacy-policy
+      - text: .
+    - generic [ref=e628]:
+      - button "Opt out" [ref=e629] [cursor=pointer]:
+        - generic [ref=e630]: Opt out
+      - button "Got it" [ref=e632] [cursor=pointer]:
+        - generic [ref=e633]: Got it

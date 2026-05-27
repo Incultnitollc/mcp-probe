@@ -1,0 +1,294 @@
+- generic [ref=e1]:
+  - generic:
+    - generic:
+      - link "Skip to main content" [ref=e2] [cursor=pointer]
+      - link "Accessibility help" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=en-TW
+      - link "Accessibility feedback" [ref=e4] [cursor=pointer]
+  - banner [ref=e5]:
+    - banner [ref=e6]:
+      - link "Go to Google Home" [ref=e8] [cursor=pointer]:
+        - /url: https://www.google.com/webhp?hl=en&ictx=0&sa=X&ved=0ahUKEwiYvYGP_76UAxVwdPUHHcuPEoEQPAgJ
+        - img [ref=e9]
+  - generic [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - navigation [ref=e21]:
+          - list [ref=e23]:
+            - listitem [ref=e24]:
+              - button "AI Mode" [ref=e30] [cursor=pointer]:
+                - generic [ref=e32]:
+                  - generic [ref=e33]: AI Mode
+                  - img [ref=e35]
+            - listitem [ref=e37]:
+              - link "All" [ref=e38] [cursor=pointer]:
+                - /url: /search?q=best+practices+for+MCP+server+schemas&sca_esv=19e12980e28944c9&prmd=ivns&sxsrf=ANbL-n4_bq2uRVGQQAgl3TWcWR2tZgaNRg:1778975217054&source=lnms&sa=X&ved=2ahUKEwiYvYGP_76UAxVwdPUHHcuPEoEQ0pQJegQIBhAI
+                - generic [ref=e40]: All
+            - listitem [ref=e41]:
+              - link "Images" [ref=e42] [cursor=pointer]:
+                - /url: /search?q=best+practices+for+MCP+server+schemas&sca_esv=19e12980e28944c9&udm=2&prmd=ivns&sxsrf=ANbL-n4_bq2uRVGQQAgl3TWcWR2tZgaNRg:1778975217054&source=lnms&sa=X&ved=2ahUKEwiYvYGP_76UAxVwdPUHHcuPEoEQ0pQJegQIBhAK
+                - generic [ref=e44]: Images
+            - listitem [ref=e45]:
+              - link "Videos" [ref=e46] [cursor=pointer]:
+                - /url: /search?q=best+practices+for+MCP+server+schemas&sca_esv=19e12980e28944c9&udm=7&prmd=ivns&sxsrf=ANbL-n4_bq2uRVGQQAgl3TWcWR2tZgaNRg:1778975217054&source=lnms&sa=X&ved=2ahUKEwiYvYGP_76UAxVwdPUHHcuPEoEQ0pQJegQIBhAM
+                - generic [ref=e48]: Videos
+            - listitem [ref=e49]:
+              - link "News" [ref=e50] [cursor=pointer]:
+                - /url: /search?q=best+practices+for+MCP+server+schemas&sca_esv=19e12980e28944c9&tbm=nws&prmd=ivns&sxsrf=ANbL-n4_bq2uRVGQQAgl3TWcWR2tZgaNRg:1778975217054&source=lnms&sa=X&ved=2ahUKEwiYvYGP_76UAxVwdPUHHcuPEoEQ0pQJegQIBhAO
+                - generic [ref=e52]: News
+            - listitem [ref=e53]:
+              - button "More filters" [ref=e54] [cursor=pointer]:
+                - generic "More filters" [ref=e55]:
+                  - generic [ref=e56]: More
+                  - img [ref=e58]
+        - generic [ref=e61]:
+          - link "Search Labs" [ref=e63] [cursor=pointer]:
+            - /url: https://labs.google.com/search?source=srp
+            - img [ref=e64]
+          - button "Google apps" [ref=e67] [cursor=pointer]:
+            - img [ref=e68]
+          - 'button "Google Account: Peng-Ta (incultnito@gmail.com)" [ref=e72] [cursor=pointer]':
+            - img [ref=e73]
+      - separator [ref=e74]
+    - heading "Search Results" [level=1] [ref=e75]
+    - generic [ref=e83]:
+      - generic [ref=e86]:
+        - button "AI Mode history" [ref=e88] [cursor=pointer]:
+          - img [ref=e90]
+        - button "New thread" [ref=e93] [cursor=pointer]:
+          - img [ref=e95]
+      - generic [ref=e100]:
+        - heading "best practices for MCP server schemas" [level=2] [ref=e106]
+        - generic [ref=e169]:
+          - generic [ref=e172]:
+            - generic [ref=e173]:
+              - text: When designing schemas for Model Context Protocol (MCP) servers, you are
+              - mark [ref=e174]:
+                - text: writing an interface meant for
+                - strong [ref=e175]: AI consumption rather than human consumption
+              - text: . While traditional REST APIs favor highly flexible, nested, and granular models, Large Language Models (LLMs) thrive on clarity, constraints, and flat structures.
+              - generic [ref=e177]:
+                - link "Philschmid (+4) – View related links" [ref=e178] [cursor=pointer]:
+                  - /url: https://www.philschmid.de/mcp-best-practices
+                - button "Philschmid (+4) – View related links" [ref=e179] [cursor=pointer]:
+                  - generic [ref=e181]:
+                    - generic [ref=e182]: Philschmid
+                    - generic [ref=e183]: "+4"
+            - heading "1. Structure for LLM Readability" [level=3] [ref=e184]
+            - list [ref=e185]:
+              - listitem [ref=e186]:
+                - generic [ref=e187]:
+                  - strong [ref=e188]: Flatten Your Arguments
+                  - text: ": Avoid deeply nested JSON objects. Convert nested structures into top-level primitive keys (strings, numbers, booleans) so the LLM can map parameters accurately."
+              - listitem [ref=e189]:
+                - generic [ref=e190]:
+                  - strong [ref=e191]: Strict Type Constraints
+                  - text: ": Use"
+                  - code [ref=e192]: enum
+                  - text: or
+                  - code [ref=e193]: Literal
+                  - text: types wherever possible to limit the model's choices (e.g.,
+                  - code [ref=e194]: "status: [\"pending\", \"active\"]"
+                  - text: ). This minimizes formatting hallucinations.
+              - listitem [ref=e195]:
+                - generic [ref=e196]:
+                  - strong [ref=e197]: Reduce Required Parameters
+                  - text: ": Rely heavily on sensible defaults within your server logic. The fewer required decisions an AI has to make, the higher its execution success rate."
+              - listitem [ref=e198]:
+                - generic [ref=e199]:
+                  - strong [ref=e200]: Enforce Strict Schema Rules
+                  - text: ": Explicitly set"
+                  - code [ref=e201]: "additionalProperties: false"
+                  - text: in your JSON schema definitions. This blocks the LLM from inventing parameters that your server cannot process.
+                - generic [ref=e203]:
+                  - link "Philschmid (+4) – View related links" [ref=e204] [cursor=pointer]:
+                    - /url: https://www.philschmid.de/mcp-best-practices
+                  - button "Philschmid (+4) – View related links" [ref=e205] [cursor=pointer]:
+                    - generic [ref=e207]:
+                      - generic [ref=e208]: Philschmid
+                      - generic [ref=e209]: "+4"
+            - heading "2. Craft Precise Descriptions" [level=3] [ref=e210]
+            - list [ref=e211]:
+              - listitem [ref=e212]:
+                - generic [ref=e213]:
+                  - strong [ref=e214]: Tool Descriptions as Instructions
+                  - text: ": Think of the top-level tool"
+                  - code [ref=e215]: description
+                  - text: as a system prompt. Explicitly state
+                  - emphasis [ref=e216]: when
+                  - text: to use it (e.g.,
+                  - code [ref=e217]: "\"Use this tool only when the user explicitly requests a shipping status update.\""
+                  - text: ).
+              - listitem [ref=e218]:
+                - generic [ref=e219]:
+                  - strong [ref=e220]: Hyper-Specific Parameter Descriptions
+                  - text: ": Never use vague labels like \"ID\". Use explicit, pattern-based descriptions:"
+                  - code [ref=e221]: "\"The 24-character unique user identifier string starting with 'usr_'.\""
+              - listitem [ref=e222]:
+                - generic [ref=e223]:
+                  - strong [ref=e224]: Provide Format Examples
+                  - text: ": If a parameter requires specific formatting, explicitly include it in the description field (e.g.,"
+                  - code [ref=e225]: "\"The target date formatted strictly as YYYY-MM-DD.\""
+                  - text: ).
+                - generic [ref=e227]:
+                  - link "Philschmid (+4) – View related links" [ref=e228] [cursor=pointer]:
+                    - /url: https://www.philschmid.de/mcp-best-practices
+                  - button "Philschmid (+4) – View related links" [ref=e229] [cursor=pointer]:
+                    - generic [ref=e231]:
+                      - generic [ref=e232]: Philschmid
+                      - generic [ref=e233]: "+4"
+            - heading "3. Handle Scale and Pagination Safely" [level=3] [ref=e234]
+            - list [ref=e235]:
+              - listitem [ref=e236]:
+                - generic [ref=e237]:
+                  - strong [ref=e238]: Enforce Strict Limits
+                  - text: ": Always include a"
+                  - code [ref=e239]: limit
+                  - text: parameter in list operations. Define a low default (e.g.,
+                  - code [ref=e240]: "20"
+                  - text: ) and cap the maximum allowable value (e.g.,
+                  - code [ref=e241]: "maximum: 100"
+                  - text: ) inside the schema to safeguard the LLM's context window.
+              - listitem [ref=e242]:
+                - generic [ref=e243]:
+                  - strong [ref=e244]: Prefer Search Over Looping
+                  - text: ": AI agents are highly effective at finding specific objects but struggle to paginate sequentially. Provide specialized search tools (e.g.,"
+                  - code [ref=e245]: "search_users(query: string)"
+                  - text: ) rather than forcing the model to crawl page by page.
+                - generic [ref=e247]:
+                  - link "Philschmid (+2) – View related links" [ref=e248] [cursor=pointer]:
+                    - /url: https://www.philschmid.de/mcp-best-practices
+                  - button "Philschmid (+2) – View related links" [ref=e249] [cursor=pointer]:
+                    - generic [ref=e251]:
+                      - generic [ref=e252]: Philschmid
+                      - generic [ref=e253]: "+2"
+            - heading "4. Optimize Naming for Tool Selection View related links" [level=3] [ref=e254]:
+              - text: 4. Optimize Naming for Tool Selection
+              - button "View related links" [ref=e257] [cursor=pointer]:
+                - img [ref=e259]
+            - list [ref=e261]:
+              - listitem [ref=e262]:
+                - generic [ref=e263]:
+                  - strong [ref=e264]: Namespace Tool Names
+                  - text: ": To prevent conflicts when a client connects multiple MCP servers, use a"
+                  - code [ref=e265]: "{service}_{action}_{resource}"
+                  - text: naming pattern (e.g.,
+                  - code [ref=e266]: github_create_issue
+                  - text: instead of just
+                  - code [ref=e267]: create_issue
+                  - text: ).
+              - listitem [ref=e268]:
+                - generic [ref=e269]:
+                  - strong [ref=e270]: Keep Schemas Normalized
+                  - text: ": Avoid highly complex JSON Schema dialects like deeply nested"
+                  - code [ref=e271]: anyOf
+                  - text: or
+                  - code [ref=e272]: oneOf
+                  - text: blocks. Some local MCP clients or lighter-weight models fail to parse them, occasionally requiring custom normalization layers.
+                - generic [ref=e274]:
+                  - link "Philschmid (+3) – View related links" [ref=e275] [cursor=pointer]:
+                    - /url: https://www.philschmid.de/mcp-best-practices
+                  - button "Philschmid (+3) – View related links" [ref=e276] [cursor=pointer]:
+                    - generic [ref=e278]:
+                      - generic [ref=e279]: Philschmid
+                      - generic [ref=e280]: "+3"
+            - heading "Schema Example (Best-Practice Structure)" [level=3] [ref=e281]
+            - generic [ref=e283]:
+              - generic [ref=e284]:
+                - generic [ref=e286]: json
+                - code [ref=e289]: "{ \"name\": \"stripe_refund_charge\", \"description\": \"Processes a financial refund for a specific transaction. Use only after confirming the customer's identity and checking eligibility.\", \"inputSchema\": { \"type\": \"object\", \"properties\": { \"charge_id\": { \"type\": \"string\", \"description\": \"The unique transaction identifier starting with 'ch_' (e.g., ch_3M9x2b).\" }, \"reason\": { \"type\": \"string\", \"enum\": [\"duplicate\", \"fraudulent\", \"requested_by_customer\"], \"description\": \"The explicit reason why this refund is being processed.\" }, \"amount_in_cents\": { \"type\": \"integer\", \"description\": \"Optional partial refund amount in cents. If omitted, the full transaction amount is refunded.\" } }, \"required\": [\"charge_id\", \"reason\"], \"additionalProperties\": false } }"
+              - generic [ref=e290]:
+                - generic [ref=e291]: Use code with caution.
+                - button "Copy code text to clipboard." [ref=e294] [cursor=pointer]:
+                  - img [ref=e296]
+            - heading "5. Dual-Purpose Outputs" [level=3] [ref=e299]
+            - list [ref=e300]:
+              - listitem [ref=e301]:
+                - generic [ref=e302]:
+                  - strong [ref=e303]: Return Structured Data AND Natural Language
+                  - text: ": The June 2025 MCP specification update standardizes structured content output ("
+                  - code [ref=e304]: outputSchema
+                  - text: ). Ensure your server responses return clean JSON data for programmatic chaining, but always pair it with a brief text
+                  - code [ref=e305]: summary
+                  - text: object. This allows the LLM to directly quote the result to the end user without converting data tables back into language.
+                - generic [ref=e307]:
+                  - link "Clever Cloud (+2) – View related links" [ref=e308] [cursor=pointer]:
+                    - /url: https://www.clever.cloud/blog/engineering/2025/10/01/building-smarter-mcp-servers/
+                  - button "Clever Cloud (+2) – View related links" [ref=e309] [cursor=pointer]:
+                    - generic [ref=e311]:
+                      - generic [ref=e312]: Clever Cloud
+                      - generic [ref=e313]: "+2"
+            - generic [ref=e314]:
+              - text: Are you building an MCP server for a
+              - strong [ref=e315]: specific database
+              - text: or a
+              - strong [ref=e316]: third-party REST API
+              - text: "? If you share your core use case, I can help you draft a production-ready tool schema for it."
+            - generic [ref=e319]:
+              - button "Copy text" [ref=e322] [cursor=pointer]:
+                - img [ref=e325]
+              - button "Share" [ref=e331] [cursor=pointer]:
+                - img [ref=e334]
+              - generic [ref=e337]:
+                - button "Good response" [ref=e339] [cursor=pointer]:
+                  - img [ref=e341]
+                - button "Bad response" [ref=e344] [cursor=pointer]:
+                  - img [ref=e346]
+              - button "More options" [ref=e350] [cursor=pointer]:
+                - img [ref=e352]
+          - generic [ref=e359]:
+            - generic [ref=e362]:
+              - button "17 sites" [ref=e363] [cursor=pointer]:
+                - generic [ref=e372]: 17 sites
+              - button "About this result" [ref=e375] [cursor=pointer]:
+                - img [ref=e376]
+            - list [ref=e378]:
+              - listitem [ref=e379]:
+                - generic [ref=e380]:
+                  - 'link "MCP is Not the Problem, It''s your Server: Best Practices for .... Opens in new tab." [ref=e381] [cursor=pointer]':
+                    - /url: https://www.philschmid.de/mcp-best-practices
+                  - generic [ref=e382]:
+                    - generic [ref=e384]:
+                      - generic [ref=e385]: "MCP is Not the Problem, It's your Server: Best Practices for ..."
+                      - generic [ref=e386]: "Jan 21, 2026 — Here are the six best practices for building a good MCP server. * 1. Outcomes, Not Operations. Trap: Converting REST endpoints 1:1..."
+                    - generic [ref=e388]:
+                      - generic [ref=e393]: Philschmid
+                      - button "About this result" [ref=e395] [cursor=pointer]:
+                        - img [ref=e396]
+              - listitem [ref=e399]:
+                - generic [ref=e400]:
+                  - link "API MCP Server Architecture Guide for API Providers - Stainless. Opens in new tab." [ref=e401] [cursor=pointer]:
+                    - /url: https://www.stainless.com/mcp/api-mcp-server-architecture-guide
+                  - generic [ref=e402]:
+                    - generic [ref=e404]:
+                      - generic [ref=e405]: API MCP Server Architecture Guide for API Providers - Stainless
+                      - generic [ref=e406]: Schema design patterns for AI consumption LLMs perform best with simple, clear schemas. While your internal API may handle complex...
+                    - generic [ref=e408]:
+                      - generic [ref=e413]: Stainless
+                      - button "About this result" [ref=e415] [cursor=pointer]:
+                        - img [ref=e416]
+              - listitem [ref=e419]:
+                - generic [ref=e420]:
+                  - link "Lessons learned building a local MCP server (schemas, tool ... - Reddit. Opens in new tab." [ref=e421] [cursor=pointer]:
+                    - /url: https://www.reddit.com/r/mcp/comments/1ptcy1k/lessons_learned_building_a_local_mcp_server/
+                  - generic [ref=e422]:
+                    - generic [ref=e424]:
+                      - generic [ref=e425]: Lessons learned building a local MCP server (schemas, tool ... - Reddit
+                      - generic [ref=e426]: Dec 22, 2025 — In short, the same MCP server that worked fine in Claude Desktop would fail immediately in RooCode. I ended up writing a best-effo...
+                    - generic [ref=e427]:
+                      - generic [ref=e431]:
+                        - generic [ref=e432]: Reddit
+                        - generic [ref=e433]: ·
+                        - generic [ref=e434]: r/mcp
+                      - button "About this result" [ref=e436] [cursor=pointer]:
+                        - img [ref=e437]
+            - button "Show all related links" [ref=e440] [cursor=pointer]:
+              - generic [ref=e441]: Show all
+      - generic [ref=e133]:
+        - textbox "Ask anything" [active] [ref=e135]
+        - button "More input options" [ref=e138] [cursor=pointer]:
+          - img [ref=e140]
+        - button "Microphone" [ref=e157] [cursor=pointer]:
+          - img [ref=e159]
+    - contentinfo
+  - generic [ref=e442]: AI Mode response is ready

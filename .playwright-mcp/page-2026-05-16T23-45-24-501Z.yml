@@ -1,0 +1,297 @@
+- generic [ref=e1]:
+  - generic:
+    - generic:
+      - link "Skip to main content" [ref=e2] [cursor=pointer]
+      - link "Accessibility help" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=en-TW
+      - link "Accessibility feedback" [ref=e4] [cursor=pointer]
+  - banner [ref=e5]:
+    - banner [ref=e6]:
+      - link "Go to Google Home" [ref=e8] [cursor=pointer]:
+        - /url: https://www.google.com/webhp?hl=en&ictx=0&sa=X&ved=0ahUKEwil0Pva_r6UAxVYc_UHHYByMDgQPAgJ
+        - img [ref=e9]
+  - generic [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - navigation [ref=e21]:
+          - list [ref=e23]:
+            - listitem [ref=e24]:
+              - button "AI Mode" [ref=e30] [cursor=pointer]:
+                - generic [ref=e32]:
+                  - generic [ref=e33]: AI Mode
+                  - img [ref=e35]
+            - listitem [ref=e37]:
+              - link "All" [ref=e38] [cursor=pointer]:
+                - /url: /search?q=MCP+server+validation+tool&sca_esv=19e12980e28944c9&prmd=ivns&sxsrf=ANbL-n53fvUZzM2dXWc8z9ZnLzKCR3Sfgw:1778975107906&source=lnms&sa=X&ved=2ahUKEwil0Pva_r6UAxVYc_UHHYByMDgQ0pQJegQIBhAI
+                - generic [ref=e40]: All
+            - listitem [ref=e41]:
+              - link "Images" [ref=e42] [cursor=pointer]:
+                - /url: /search?q=MCP+server+validation+tool&sca_esv=19e12980e28944c9&udm=2&prmd=ivns&sxsrf=ANbL-n53fvUZzM2dXWc8z9ZnLzKCR3Sfgw:1778975107906&source=lnms&sa=X&ved=2ahUKEwil0Pva_r6UAxVYc_UHHYByMDgQ0pQJegQIBhAK
+                - generic [ref=e44]: Images
+            - listitem [ref=e45]:
+              - link "Videos" [ref=e46] [cursor=pointer]:
+                - /url: /search?q=MCP+server+validation+tool&sca_esv=19e12980e28944c9&udm=7&prmd=ivns&sxsrf=ANbL-n53fvUZzM2dXWc8z9ZnLzKCR3Sfgw:1778975107906&source=lnms&sa=X&ved=2ahUKEwil0Pva_r6UAxVYc_UHHYByMDgQ0pQJegQIBhAM
+                - generic [ref=e48]: Videos
+            - listitem [ref=e49]:
+              - link "News" [ref=e50] [cursor=pointer]:
+                - /url: /search?q=MCP+server+validation+tool&sca_esv=19e12980e28944c9&tbm=nws&prmd=ivns&sxsrf=ANbL-n53fvUZzM2dXWc8z9ZnLzKCR3Sfgw:1778975107906&source=lnms&sa=X&ved=2ahUKEwil0Pva_r6UAxVYc_UHHYByMDgQ0pQJegQIBhAO
+                - generic [ref=e52]: News
+            - listitem [ref=e53]:
+              - button "More filters" [ref=e54] [cursor=pointer]:
+                - generic "More filters" [ref=e55]:
+                  - generic [ref=e56]: More
+                  - img [ref=e58]
+        - generic [ref=e61]:
+          - link "Search Labs" [ref=e63] [cursor=pointer]:
+            - /url: https://labs.google.com/search?source=srp
+            - img [ref=e64]
+          - button "Google apps" [ref=e67] [cursor=pointer]:
+            - img [ref=e68]
+          - 'button "Google Account: Peng-Ta (incultnito@gmail.com)" [ref=e72] [cursor=pointer]':
+            - img [ref=e73]
+      - separator [ref=e74]
+    - heading "Search Results" [level=1] [ref=e75]
+    - generic [ref=e83]:
+      - generic [ref=e86]:
+        - button "AI Mode history" [ref=e88] [cursor=pointer]:
+          - img [ref=e90]
+        - button "New thread" [ref=e93] [cursor=pointer]:
+          - img [ref=e95]
+      - generic [ref=e100]:
+        - heading "MCP server validation tool" [level=2] [ref=e106]
+        - generic [ref=e154]:
+          - generic [ref=e157]:
+            - generic [ref=e158]:
+              - text: The primary tool for testing and validating Model Context Protocol (MCP) implementations is the
+              - mark [ref=e196]:
+                - text: official
+                - strong [ref=e197]:
+                  - link "MCP Inspector" [ref=e199] [cursor=pointer]:
+                    - /url: https://modelcontextprotocol.io/docs/tools/inspector
+              - text: . It is an interactive, visual developer tool designed to test, debug, and verify compliance for both local and remote MCP servers.
+              - generic [ref=e200]:
+                - link "Model Context Protocol (+3) – View related links" [ref=e201] [cursor=pointer]:
+                  - /url: https://modelcontextprotocol.io/docs/tools/inspector
+                - button "Model Context Protocol (+3) – View related links" [ref=e202] [cursor=pointer]:
+                  - generic [ref=e204]:
+                    - generic [ref=e205]: Model Context Protocol
+                    - generic [ref=e206]: "+3"
+            - generic [ref=e161]:
+              - text: Beyond the official inspector, several third-party and automated validation frameworks exist to help developers test compliance and agent behaviors.
+              - button "View related links" [ref=e209] [cursor=pointer]:
+                - img [ref=e211]
+            - heading "Core MCP Validation & Testing Tools View related links" [level=3] [ref=e213]:
+              - text: Core MCP Validation & Testing Tools
+              - button "View related links" [ref=e216] [cursor=pointer]:
+                - img [ref=e218]
+            - list [ref=e220]:
+              - listitem [ref=e221]:
+                - generic [ref=e222]:
+                  - strong [ref=e223]:
+                    - generic [ref=e224]: MCP Inspector
+                  - text: ": The primary, transport-agnostic testing UI provided by the protocol creators. It lets you connect via"
+                  - code [ref=e225]: stdio
+                  - text: or
+                  - code [ref=e226]: SSE
+                  - text: / Streamable HTTP, list available tools, execute them with custom arguments, and observe strict schema validation rules.
+              - listitem [ref=e227]:
+                - generic [ref=e228]:
+                  - strong [ref=e229]:
+                    - link "Janix-ai/mcp-validator" [ref=e231] [cursor=pointer]:
+                      - /url: https://github.com/Janix-ai/mcp-validator
+                  - text: ": A dedicated testing framework and test suite designed to validate MCP server implementations. It ensures adherence to the core MCP specification (including up-to-date features like structured tool outputs and OAuth authentication)."
+              - listitem [ref=e232]:
+                - generic [ref=e233]:
+                  - strong [ref=e234]:
+                    - link "mcp-eval (MCP Server Evaluation)" [ref=e236] [cursor=pointer]:
+                      - /url: https://docs.mcp-agent.com/test-evaluate/server-evaluation
+                  - text: ": An automated integration test framework that simulates how an AI agent interacts with your MCP server. It evaluates response latency, token usage, error handling limits, and tracks whether tools behave as expected within agentic environments."
+              - listitem [ref=e237]:
+                - generic [ref=e238]:
+                  - strong [ref=e239]:
+                    - link "Apify MCP Validator" [ref=e241] [cursor=pointer]:
+                      - /url: https://apify.com/rocketagro/mcp-validator
+                  - text: ": A cloud-hosted validation tool that allows you to run compliance testing on public or accessible MCP servers without installing local dependencies. It generates structured compliance reports for schema errors and protocol bottlenecks."
+                - generic [ref=e243]:
+                  - link "Model Context Protocol (+7) – View related links" [ref=e244] [cursor=pointer]:
+                    - /url: https://modelcontextprotocol.io/docs/tools/inspector
+                  - button "Model Context Protocol (+7) – View related links" [ref=e245] [cursor=pointer]:
+                    - generic [ref=e247]:
+                      - generic [ref=e248]: Model Context Protocol
+                      - generic [ref=e249]: "+7"
+            - separator [ref=e250]
+            - heading "How to Use the Official MCP Inspector" [level=3] [ref=e251]
+            - generic [ref=e252]:
+              - text: To validate a local MCP server, you can launch the Inspector using
+              - code [ref=e253]: npx
+              - text: directly through your terminal.
+              - generic [ref=e255]:
+                - link "Stainless – View related links" [ref=e256] [cursor=pointer]:
+                  - /url: https://www.stainless.com/mcp/mcp-inspector-testing-and-debugging-mcp-servers
+                - button "Stainless – View related links" [ref=e257] [cursor=pointer]:
+                  - generic [ref=e260]: Stainless
+            - heading "1. For Node.js / JavaScript Servers" [level=3] [ref=e261]
+            - generic [ref=e262]:
+              - text: "Pass your server's startup command directly into the inspector:"
+              - button "View related links" [ref=e265] [cursor=pointer]:
+                - img [ref=e267]
+            - generic [ref=e270]:
+              - generic [ref=e271]:
+                - generic [ref=e273]: bash
+                - code [ref=e276]: npx @modelcontextprotocol/inspector node path/to/server/index.js
+              - generic [ref=e277]:
+                - generic [ref=e278]: Use code with caution.
+                - button "Copy code text to clipboard." [ref=e281] [cursor=pointer]:
+                  - img [ref=e283]
+            - heading "2. For Python (FastMCP) Servers" [level=3] [ref=e286]
+            - generic [ref=e287]:
+              - text: If you are using Python or frameworks like
+              - link "FastMCP" [ref=e289] [cursor=pointer]:
+                - /url: https://github.com/PrefectHQ/fastmcp
+              - text: ", point the inspector to your script execution command:"
+              - generic [ref=e291]:
+                - link "GitHub (+1) – View related links" [ref=e292] [cursor=pointer]:
+                  - /url: https://github.com/PrefectHQ/fastmcp
+                - button "GitHub (+1) – View related links" [ref=e293] [cursor=pointer]:
+                  - generic [ref=e295]:
+                    - generic [ref=e296]: GitHub
+                    - generic [ref=e297]: "+1"
+            - generic [ref=e299]:
+              - generic [ref=e300]:
+                - generic [ref=e302]: bash
+                - code [ref=e305]: npx @modelcontextprotocol/inspector python path/to/server.py
+              - generic [ref=e306]:
+                - generic [ref=e307]: Use code with caution.
+                - button "Copy code text to clipboard." [ref=e310] [cursor=pointer]:
+                  - img [ref=e312]
+            - heading "3. What to Validate inside the UI" [level=3] [ref=e315]
+            - generic [ref=e316]:
+              - text: Once the inspector boots up, it hosts a local web interface (usually on
+              - code [ref=e317]: http://localhost:5173
+              - text: ") where you should check the following metrics:"
+              - generic [ref=e319]:
+                - link "YouTube (+2) – View related links" [ref=e320] [cursor=pointer]:
+                  - /url: https://www.youtube.com/watch?v=Y0tZ35dFFx4&t=3
+                - button "YouTube (+2) – View related links" [ref=e321] [cursor=pointer]:
+                  - generic [ref=e323]:
+                    - generic [ref=e324]: YouTube
+                    - generic [ref=e325]: ·AI Anytime
+                    - generic [ref=e326]: "+2"
+            - list [ref=e327]:
+              - listitem [ref=e328]:
+                - generic [ref=e329]:
+                  - strong [ref=e330]: Schema Validity
+                  - text: ": Ensure all exposed tools match valid JSON Schema structures."
+              - listitem [ref=e331]:
+                - generic [ref=e332]:
+                  - strong [ref=e333]: Naming Restrictions
+                  - text: ": Confirm tool names follow the standard protocol regex ("
+                  - code [ref=e334]: "^[a-zA-Z0-9_-]{1,64}$"
+                  - text: ) without illegal spaces or symbols.
+              - listitem [ref=e335]:
+                - generic [ref=e336]:
+                  - strong [ref=e337]: Resource Discovered
+                  - text: ": Verify that context resources and template prompts load cleanly into the client stream."
+                - generic [ref=e339]:
+                  - link "Stainless (+4) – View related links" [ref=e340] [cursor=pointer]:
+                    - /url: https://www.stainless.com/mcp/how-to-test-mcp-servers
+                  - button "Stainless (+4) – View related links" [ref=e341] [cursor=pointer]:
+                    - generic [ref=e343]:
+                      - generic [ref=e344]: Stainless
+                      - generic [ref=e345]: "+4"
+            - generic [ref=e346]: "If you are encountering a specific error while connecting your server, let me know:"
+            - list [ref=e347]:
+              - listitem [ref=e348]:
+                - generic [ref=e349]:
+                  - text: What
+                  - strong [ref=e350]: programming language
+                  - text: your server is written in?
+              - listitem [ref=e351]:
+                - generic [ref=e352]:
+                  - text: What
+                  - strong [ref=e353]: transport layer
+                  - text: are you using (
+                  - code [ref=e354]: stdio
+                  - text: ","
+                  - code [ref=e355]: SSE
+                  - text: ", or"
+                  - code [ref=e356]: HTTP
+                  - text: )?
+              - listitem [ref=e357]:
+                - generic [ref=e358]:
+                  - text: The exact
+                  - strong [ref=e359]: validation error message
+                  - text: you are seeing?
+                - generic [ref=e361]:
+                  - link "GitHub (+1) – View related links" [ref=e362] [cursor=pointer]:
+                    - /url: https://github.com/modelcontextprotocol/inspector
+                  - button "GitHub (+1) – View related links" [ref=e363] [cursor=pointer]:
+                    - generic [ref=e365]:
+                      - generic [ref=e366]: GitHub
+                      - generic [ref=e367]: "+1"
+            - generic [ref=e368]: I can provide the exact code changes or configuration payload needed to fix it.
+            - generic [ref=e371]:
+              - button "Copy text" [ref=e374] [cursor=pointer]:
+                - img [ref=e377]
+              - button "Share" [ref=e383] [cursor=pointer]:
+                - img [ref=e386]
+              - generic [ref=e389]:
+                - button "Good response" [ref=e391] [cursor=pointer]:
+                  - img [ref=e393]
+                - button "Bad response" [ref=e396] [cursor=pointer]:
+                  - img [ref=e398]
+              - button "More options" [ref=e402] [cursor=pointer]:
+                - img [ref=e404]
+          - generic [ref=e410]:
+            - generic [ref=e413]:
+              - button "20 sites" [ref=e414] [cursor=pointer]:
+                - generic [ref=e423]: 20 sites
+              - button "About this result" [ref=e426] [cursor=pointer]:
+                - img [ref=e427]
+            - list [ref=e429]:
+              - listitem [ref=e430]:
+                - generic [ref=e431]:
+                  - link "MCP Inspector - Model Context Protocol. Opens in new tab." [ref=e432] [cursor=pointer]:
+                    - /url: https://modelcontextprotocol.io/docs/tools/inspector
+                  - generic [ref=e433]:
+                    - generic [ref=e435]:
+                      - generic [ref=e436]: MCP Inspector - Model Context Protocol
+                      - generic [ref=e437]: "Documentation Index. Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt. Use this file to discove..."
+                    - generic [ref=e439]:
+                      - generic [ref=e444]: Model Context Protocol
+                      - button "About this result" [ref=e446] [cursor=pointer]:
+                        - img [ref=e447]
+              - listitem [ref=e450]:
+                - generic [ref=e451]:
+                  - 'link "Janix-ai/mcp-validator: Test suite for validating MCP server .... Opens in new tab." [ref=e452] [cursor=pointer]':
+                    - /url: https://github.com/Janix-ai/mcp-validator
+                  - generic [ref=e453]:
+                    - generic [ref=e455]:
+                      - generic [ref=e456]: "Janix-ai/mcp-validator: Test suite for validating MCP server ..."
+                      - generic [ref=e457]: Jul 8, 2025 — Summary. The MCP Validator provides a comprehensive environment for testing and validating MCP server implementations. It includes...
+                    - generic [ref=e458]:
+                      - generic [ref=e463]: GitHub
+                      - button "About this result" [ref=e465] [cursor=pointer]:
+                        - img [ref=e466]
+              - listitem [ref=e469]:
+                - generic [ref=e470]:
+                  - link "Debugging - What is the Model Context Protocol (MCP)?. Opens in new tab." [ref=e471] [cursor=pointer]:
+                    - /url: https://modelcontextprotocol.io/docs/tools/debugging
+                  - generic [ref=e472]:
+                    - generic [ref=e474]:
+                      - generic [ref=e475]: Debugging - What is the Model Context Protocol (MCP)?
+                      - generic [ref=e476]: "Debugging tools overview * MCP Inspector: interactive, transport-agnostic testing UI. Connect to stdio or Streamable HTTP server..."
+                    - generic [ref=e478]:
+                      - generic [ref=e483]: Model Context Protocol
+                      - button "About this result" [ref=e485] [cursor=pointer]:
+                        - img [ref=e486]
+            - button "Show all related links" [ref=e489] [cursor=pointer]:
+              - generic [ref=e490]: Show all
+      - generic [ref=e165]:
+        - textbox "Ask anything" [active] [ref=e167]
+        - button "More input options" [ref=e170] [cursor=pointer]:
+          - img [ref=e172]
+        - button "Microphone" [ref=e189] [cursor=pointer]:
+          - img [ref=e191]
+    - contentinfo
+  - generic [ref=e491]: AI Mode response is ready
