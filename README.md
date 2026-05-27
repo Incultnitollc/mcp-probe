@@ -1,5 +1,6 @@
 # mcp-probe
 
+[![SafeSkill 60/100](https://img.shields.io/badge/SafeSkill-60%2F100_Use%20with%20Caution-orange)](https://safeskill.dev/scan/incultnitollc-mcp-probe)
 **One command to diagnose your MCP server.**
 
 Tests every tool, resource, and prompt your server exposes — then gives you a health report with a pass/fail scorecard.
