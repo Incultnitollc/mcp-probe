@@ -821,13 +821,15 @@ Tally normalized to **/20 cells run** (not /40). Wk1–Wk3 baselines used 4 plat
 - #18 https://github.com/Incultnitollc/mcp-probe/discussions/18 — Q10 pre-publish checklist
 - #19 https://github.com/Incultnitollc/mcp-probe/discussions/19 — synthesis (publishability scorecard 5-axis)
 
-### Outstanding pre-Wk5-sweep manual fires (Peng action)
+### Manual fires — ALL POSTED 2026-05-27 (Peng manual, permalinks pending)
 
-- Cursor forum #161459 reply
-- r/mcp `1tmwzoj` reply
-- r/ClaudeAI `1tn6cey` reply
-- r/mcp Puppeteer cross-post (`1to5c9c` or `1tle6gl`)
-- dev.to Puppeteer blog (incultnitollc acct, manual paste)
+- ✅ Cursor forum #161459 reply
+- ✅ r/mcp `1tmwzoj` reply
+- ✅ r/ClaudeAI `1tn6cey` reply
+- ✅ r/mcp Puppeteer cross-post `1to5c9c` (4a only — backup `1tle6gl` skipped)
+- ✅ dev.to Puppeteer blog (incultnitollc acct)
+
+**Permalinks to backfill** when convenient — open the 5 surfaces, copy the comment/post URLs, paste here. Wk5 sweep Sun 2026-06-01 will need them to attribute any citation flips.
 
 ### Resume keyword
 
