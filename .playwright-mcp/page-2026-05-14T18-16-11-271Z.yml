@@ -1,5 +1,0 @@
-- generic [ref=e1]:
-  - textbox "Ask Gemini" [active] [ref=e4]
-  - 'button "Google Account: Peng-Ta (incultnito@gmail.com)" [ref=e11] [cursor=pointer]':
-    - img [ref=e13]
-  - main [ref=e15]

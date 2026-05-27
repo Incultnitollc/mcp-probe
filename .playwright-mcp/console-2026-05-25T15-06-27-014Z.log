@@ -1,2 +1,0 @@
-[    4493ms] [ERROR] Framing 'https://ogs.google.com/' violates the following report-only Content Security Policy directive: "frame-ancestors 'self'". The violation has been logged, but no further action has been taken.
- @ :0

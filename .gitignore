@@ -1,3 +1,6 @@
+# Session-local tool artifacts
+.playwright-mcp/
+.claude/
 node_modules/
 dist/
 *.tsbuildinfo
