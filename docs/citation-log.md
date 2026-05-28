@@ -834,3 +834,26 @@ Tally normalized to **/20 cells run** (not /40). Wk1–Wk3 baselines used 4 plat
 ### Resume keyword
 
 `WK4-PRESENCE` — drafts under `docs/launch/wk4-presence-2026-05-27/` and `docs/launch/scorecards-puppeteer/`.
+
+
+---
+
+## 2026-05-28 — Spec-repo thread #2733 follow-up draft (pending manual fire)
+
+**Trigger:** Zawwarsami16 replied to Wk4 fire #2 on `modelcontextprotocol/modelcontextprotocol#2733` with a substantive fifth-bucket proposal (`liveCall` behavior) and organically named `mcp-probe` in their reply. Continued engagement keeps probe in-thread on the spec repo's most-read validator discussion.
+
+### Draft
+
+| # | Venue | Thread | Template | Probe? | Status |
+|---|---|---|---|---|---|
+| 8 | gh-discussion | modelcontextprotocol/modelcontextprotocol#2733 (followup to Zawwarsami16) | D2-followup | Y | **DRAFT** — `docs/launch/wk4-presence-2026-05-27/gh-replies/02b-mcp-discussion-2733-followup-livecall-bucket.md` |
+
+**Probe-mention posture:** 1 honest scope-acknowledgment ("bucket 4 is what probe covers today; bucket 5 is uncovered, probe included") + 1 mid-flow reference about wiring stdio-guard findings into probe's scorecard. No pitch. Probe was named upthread by Zawwarsami16 organically, so the mention is responsive rather than promotional.
+
+**Fire path:** manual paste by Peng — gh CLI auto-fire OK but content is high-signal enough on the spec repo that a hand-fire keeps cadence natural. Pre-fire state check: verify thread still OPEN and not locked; verify no other reply has landed between draft and fire (re-read top of thread for new context).
+
+**Permalink to backfill** after fire — same row as above.
+
+### Resume keyword
+
+`WK5-2733-FOLLOWUP` — single-thread continuation on the spec repo's validator discussion.
