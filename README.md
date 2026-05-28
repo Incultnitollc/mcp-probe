@@ -223,6 +223,10 @@ Marketplace listing: [github.com/marketplace/actions/mcp-probe-mcp-server-health
 
 The official [MCP Inspector](https://github.com/modelcontextprotocol/inspector) is a GUI for interactive exploration — point, click, see what a server returns. `mcp-probe` is a CLI for automated, repeatable diagnosis — every tool/resource/prompt called automatically, pass/fail scorecard out, exit code in. Use Inspector when you're exploring; use `mcp-probe` in CI, in pre-publish checks, or when you want a shareable scorecard of someone else's server.
 
+## Ecosystem
+
+- **[MCP Registry](https://mcp-registry-dh5.pages.dev)** — Cross-source catalog of MCP servers (~6,900 indexed across 6 upstream lists) with quality scores powered by `mcp-probe`. CLI: `npm i -g @incultnitollc/mcpr`. Built by Incultnito LLC.
+
 ## Development
 
 ```bash
