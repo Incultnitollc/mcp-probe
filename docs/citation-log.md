@@ -857,3 +857,34 @@ Tally normalized to **/20 cells run** (not /40). Wk1–Wk3 baselines used 4 plat
 ### Resume keyword
 
 `WK5-2733-FOLLOWUP` — single-thread continuation on the spec repo's validator discussion.
+
+---
+
+## 2026-05-29 — Wk5 daily-presence fire (2 GH + clinic cross-link, manual)
+
+**Fired Fri 2026-05-29 ~21:30 TPE** by Peng (manual paste). Drafts at `docs/launch/wk5-presence-2026-05-29/`.
+
+### GitHub-venue replies (2 fired)
+
+| # | Venue | Thread | Probe? | Permalink |
+|---|---|---|---|---|
+| 1 | gh-discussion | modelcontextprotocol/modelcontextprotocol#2812 (token overhead) | Y | https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/2812#discussioncomment-17106730 |
+| 2 | gh-issue | anthropics/claude-code#63451 (Opus 4.8 ignores schemas) | N | https://github.com/anthropics/claude-code/issues/63451#issuecomment-4576668661 |
+
+**Fired probe-mention ratio:** 1/2 = 50% — at ≤50% ceiling, deliberate recalibration from Wk5 D2's 67%.
+
+### Clinic cross-link (new Show-and-tell on MCP org repo)
+
+| Surface | Thread | Framing | Permalink |
+|---|---|---|---|
+| gh-discussion | modelcontextprotocol/modelcontextprotocol#2816 | async (links mcp-probe #13) | https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/2816#discussion-10161869 |
+
+### Not fired this batch (honest shortfall vs 4-GH target)
+
+- modelcontextprotocol#2682 — already engaged (PengSpirit commenter) · #2733 — Wk5 follow-up draft pending separately
+- mcp/servers#4250 — empty body · mcp/servers#4254 — territorial-risk (competing scorer resource-add)
+- **Reddit r/mcp + r/ClaudeAI — NOT browsed**, curl `.json` hard-403'd all hosts/UAs this session; Cursor forum not swept
+
+### Resume keyword
+
+`WK5-PRESENCE-2026-05-29` — 3 surfaces live; Sun 6/1 sweep should watch #2812 + #2816 for citation pickup.
