@@ -888,3 +888,71 @@ Tally normalized to **/20 cells run** (not /40). Wk1–Wk3 baselines used 4 plat
 ### Resume keyword
 
 `WK5-PRESENCE-2026-05-29` — 3 surfaces live; Sun 6/1 sweep should watch #2812 + #2816 for citation pickup.
+
+---
+
+## 2026-06-01 — Week 5 sweep + W5 TRIGGER CHECK (first Monday after 4 full weeks)
+
+**Run:** Sun 2026-06-01 ~18:40 TPE via unauth Playwright. Screenshots: `docs/citation-log-screenshots/2026-06-01-wk5-sweep/` (20 PNGs).
+**Platforms swept:** Perplexity (unauth, CF challenge auto-cleared) + Gemini via **Google AI Mode** (`google.com/search?udm=50`, unauth). **ChatGPT + Claude NOT run** — login/UI-detection wall for unauth Playwright per `feedback_no_login_sweep_preference.md` (same blind spot as Wk4). Manual logged-in Temporary-Chat run by Peng needed to cover those 2 platforms.
+
+### Perplexity — 0/10 cited
+
+| Q | Query | Cited? | Top source(s) |
+|---|---|---|---|
+| 1 | how do I test my MCP server | N | modelcontextprotocol.io (Inspector), developers.cloudflare.com, merge.dev |
+| 2 | MCP server validation tool | N | modelcontextprotocol.io, github.com, learn.microsoft.com |
+| 3 | MCP schema validator | N | mcptools.tools |
+| 4 | tool to check MCP server health | N | mcpmarket.com, healthymcp.com, libraries.io |
+| 5 | best practices for MCP server schemas | N | modelcontextprotocol.io, axiom.co, github.com |
+| 6 | MCP server CI pipeline | N | circleci.com, github.com, medium.com, learn.microsoft.com |
+| 7 | what does missing description on MCP tool do | N | merge.dev, arxiv.org |
+| 8 | Anthropic MCP server diagnostic | N | modelcontextprotocol.io, snyk.io |
+| 9 | how to debug MCP tool calls | N | (sources collapsed in DOM; screenshot captured — probe absent) |
+| 10 | MCP server pre-publish checklist | N | linkedin.com (mcp-audit-checklist post — unchanged from Wk4) |
+
+### Gemini (Google AI Mode, udm=50) — 0/10 cited
+
+| Q | Query | Cited? | Top source(s) |
+|---|---|---|---|
+| 1 | how do I test my MCP server | N | modelcontextprotocol.io, stainless.com, developers.cloudflare.com, jlowin.dev, gofastmcp.com |
+| 2 | MCP server validation tool | N | github.com, mcpplaygroundonline.com, docs.specmatic.io, arxiv.org |
+| 3 | MCP schema validator | N | modelcontextprotocol.io, github.com, basedash.com, mcpmarket.com |
+| 4 | tool to check MCP server health | N | modelcontextprotocol.io, openstatus.dev, mcpcat.io, apigene.ai |
+| 5 | best practices for MCP server schemas | N | philschmid.de, stainless.com, snyk.io, reddit.com, dev.to |
+| 6 | MCP server CI pipeline | N | circleci.com, github.com, learn.microsoft.com, mcpmarket.com |
+| 7 | what does missing description on MCP tool do | N | github.com, dev.to, reddit.com, forum.cursor.com, modelcontextprotocol.io |
+| 8 | Anthropic MCP server diagnostic | N | modelcontextprotocol.io, code.claude.com, anthropic.com, snyk.io |
+| 9 | how to debug MCP tool calls | N | modelcontextprotocol.io, snyk.io, stainless.com, code.claude.com, mcpjam.com |
+| 10 | MCP server pre-publish checklist | N | nimblebrain.ai, composio.dev, npmjs.com, semgrep.dev, linkedin.com |
+
+### Cumulative sweep tracker
+
+| Sweep | Date | Queries | Cited | Rate | Notes |
+|---|---|---|---|---|---|
+| Wk2 sweep | 2026-05-10 | 40 | 0 | 0% | Post-v1.0.2 SEO refresh |
+| Wk3 sweep | 2026-05-17 | 40 | 0 | 0% | Inspector lane fragmentation; PIVOT to publishability-score |
+| Wk4 sweep | 2026-05-25 | 20 | 0 | 0% | Post-v1.1.0 ship T+3; Anthropic published competing Q10 anchor |
+| **Wk5 sweep** | **2026-06-01** | **20** | **0** | **0%** | Perplexity 0/10 + Gemini/AI-Mode 0/10. ChatGPT+Claude not run (login wall). **Δ vs Wk4 = 0.** |
+
+**Δ vs Wk4:** No flips. Lanes remain locked to incumbents — modelcontextprotocol.io (Inspector) dominates Q1/Q2/Q5/Q8/Q9; philschmid.de owns Q5 "best practices"; snyk.io + stainless.com recurring; mcpjam.com (NEW Wk5 on Gemini Q9), mcpcat.io, openstatus.dev surfacing on health queries. mcp-probe / @incultnitollc cited **0 times across 20 queries on 2 platforms**. No organic citation pickup on #2812 / #2816 (the Wk5 daily-presence surfaces) yet.
+
+### W5 TRIGGER CHECK (5-metric Show HN gate)
+
+| # | Metric | Wk5 value | Δ vs Wk4 | Threshold | Hit? |
+|---|---|---|---|---|---|
+| 1 | GH stars (organic) | 1 | 0 | ≥100 | ✗ |
+| 2 | npm weekly DL | 121 | −75 (was 196, spike-driven) | ≥150 | ✗ |
+| 3 | Unsolicited mentions | 0 | 0 | ≥5 | ✗ |
+| 4 | Scorecards live | 6 publishability (+5 legacy) | 0 | ≥6 | ✓ |
+| 5 | GH Discussions replies / distinct users | 0 ext replies / 0 users (9 threads, 3 self-comments) | +6 threads, 0 ext | ≥10 / ≥5 | ✗ |
+
+**Trigger status: 1/5 hit.**
+
+**Decision per rule (5/5 keep · 3–4/5 push 2 wks · <3/5 re-strategize): RE-STRATEGIZE. DO NOT push Show HN. Tomorrow's Show HN event = HELD/CANCELLED.**
+
+Worse than Wk4 (2/5): npm DL fell off the post-ship spike to organic floor (~10/day), and the only threshold still met (scorecards) is self-authored content, not external traction. 4 weeks of daily-presence fires produced **0 organic stars, 0 unsolicited mentions, 0 external Discussion replies, 0 AI citations**. The distribution model isn't converting. Re-strategize before any public launch.
+
+### Resume keyword
+
+`WK5-SWEEP` / `WK5-TRIGGER` — 1/5, re-strategize. ChatGPT+Claude manual sweep still owed. Next full sweep Sun 2026-06-08 15:00 TPE (if watch window continues post-re-strategy).
