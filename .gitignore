@@ -11,3 +11,7 @@ scripts/*
 !scripts/launch.sh
 !scripts/wk2-gh-presence-post.sh
 graphify-out/
+
+# Social pipeline build artifacts
+out/
+work/
