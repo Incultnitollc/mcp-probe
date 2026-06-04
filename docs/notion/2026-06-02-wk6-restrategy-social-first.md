@@ -48,7 +48,7 @@
 - Wk9: "Recap of 4 weeks scanning the MCP ecosystem" (signal-stacking)
 **Reply targets:** any tweet from MCP/AI-tooling accounts (>1k followers) where mcp-probe is a *helpful* answer. NOT pitch — answer the actual question.
 **Banned:** mass reply, "check out my repo" closer, generic thread bots.
-**Channel:** @PengSpirit (existing). Buffer-queued via MCP.
+**Channel:** @Incultnito (brand) — @PengSpirit retired as inactive 2026-06-05. Buffer-queued via MCP. Brand-voice rewrite required (cult-luxe/minimal cadence) per global CLAUDE.md.
 
 ### TRACK C — Influencer co-sign (1 hit, not 100 DMs)
 **Bet:** 1 co-sign from a credible MCP voice > 1,000 cold DMs.
