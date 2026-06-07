@@ -956,3 +956,59 @@ Worse than Wk4 (2/5): npm DL fell off the post-ship spike to organic floor (~10/
 ### Resume keyword
 
 `WK5-SWEEP` / `WK5-TRIGGER` — 1/5, re-strategize. ChatGPT+Claude manual sweep still owed. Next full sweep Sun 2026-06-08 15:00 TPE (if watch window continues post-re-strategy).
+
+---
+
+## 2026-06-07 — Wk6 bi-weekly sweep (diagnostic only, NOT a gate metric)
+
+**Cadence:** Downshifted weekly → bi-weekly per Wk6 re-strategy 2026-06-02 (`docs/notion/2026-06-02-wk6-restrategy-social-first.md`). Diagnostic, no longer feeds the Show HN gate.
+**Run:** ~21:10 TPE 2026-06-07 via Playwright (no login). 10 queries × 2 platforms = 20 cells. Screenshots: `docs/citation-log-screenshots/2026-06-07-sweep/` (20 full-page PNGs).
+**ChatGPT + Claude:** NOT run — conversational UIs login-walled, no automation path. Owed/manual, consistent with Wk4/Wk5.
+
+### Perplexity — 0/10 cited
+
+| Q | Query | Cited? | Top source(s) |
+|---|---|---|---|
+| 1 | how do I test my MCP server | N | modelcontextprotocol.io (Inspector), learn.microsoft, mydeveloperplanet |
+| 2 | MCP server validation tool | N | modelcontextprotocol.io, realmrook.com |
+| 3 | MCP schema validator | N | docs.mulesoft, basedash.com, jsontech.net |
+| 4 | tool to check MCP server health | N | libraries.io, healthymcp.com |
+| 5 | best practices for MCP server schemas | N | youtube.com, medium.com, reddit.com |
+| 6 | MCP server CI pipeline | N | medium.com, circleci.com, bleevht.substack |
+| 7 | what does missing description on MCP tool do | N | arcade.dev, linkedin.com, modelcontextprotocol.io |
+| 8 | Anthropic MCP server diagnostic | N | modelcontextprotocol.io, snyk.io, reddit |
+| 9 | how to debug MCP tool calls | N | snyk.io, stackoverflow.com, reddit |
+| 10 | MCP server pre-publish checklist | N | linkedin.com |
+
+### Gemini (Google AI Mode, udm=50) — 0/10 cited
+
+| Q | Query | Cited? | Top source(s) |
+|---|---|---|---|
+| 1 | how do I test my MCP server | N | stainless.com, modelcontextprotocol.io, jlowin.dev |
+| 2 | MCP server validation tool | N | github.com, nordicapis.com, docs.mcp-agent.com |
+| 3 | MCP schema validator | N | github.com, modelcontextprotocol.io, learn.microsoft.com |
+| 4 | tool to check MCP server health | N | openstatus.dev, modelcontextprotocol.io, mcpservers.org |
+| 5 | best practices for MCP server schemas | N | reddit.com, stainless.com, philschmid.de |
+| 6 | MCP server CI pipeline | N | circleci.com, youtube, towardsaws |
+| 7 | what does missing description on MCP tool do | N | arxiv.org, nitishagar.medium, modelcontextprotocol.io |
+| 8 | Anthropic MCP server diagnostic | N | modelcontextprotocol.io, institute.sfeir.com, github |
+| 9 | how to debug MCP tool calls | N | github.com, mcpevals.io, modelcontextprotocol.io |
+| 10 | MCP server pre-publish checklist | N | modelcontextprotocol.io, techwithibrahim.medium, youtube |
+
+### Cumulative sweep tracker
+
+| Sweep | Date | Queries | Cited | Rate | Notes |
+|---|---|---|---|---|---|
+| Wk2 sweep | 2026-05-10 | 40 | 0 | 0% | Post-v1.0.2 SEO refresh |
+| Wk3 sweep | 2026-05-17 | 40 | 0 | 0% | Inspector lane fragmentation; PIVOT to publishability-score |
+| Wk4 sweep | 2026-05-25 | 20 | 0 | 0% | Post-v1.1.0 ship T+3; Anthropic published competing Q10 anchor |
+| Wk5 sweep | 2026-06-01 | 20 | 0 | 0% | Perplexity 0/10 + Gemini 0/10. ChatGPT+Claude not run. Δ vs Wk4 = 0. |
+| **Wk6 sweep** | **2026-06-07** | **20** | **0** | **0%** | First *bi-weekly* run. Perplexity 0/10 + Gemini 0/10. ChatGPT+Claude not run. **Δ vs Wk5 = 0.** |
+
+**Δ vs Wk5 (no flips):** mcp-probe / @incultnito cited **0 / 20**. Lanes still locked to incumbents — modelcontextprotocol.io (Inspector) dominates Q1/Q3/Q4/Q8/Q10 on both engines; philschmid.de still owns Gemini Q5 "best practices"; stainless.com + snyk.io recurring.
+**New surfaces this sweep (none ours):** `mcpevals.io` now leads Gemini Q9 (debug, 5 cites); `docs.mcp-agent.com` (Gemini Q2); `arcade.dev` top of Perplexity Q7; `openstatus.dev` + `mcpservers.org` on Gemini Q4 health. Greenfield lanes (Q6/Q7/Q9/Q10) continue filling with third parties, not mcp-probe.
+**Read:** Bi-weekly cadence confirmed appropriate — zero movement; weekly diagnostic value was correctly judged near-nil. Next bi-weekly sweep ~2026-06-21.
+
+### Resume keyword
+
+`WK6-SWEEP` — 0/20, Δ 0 vs Wk5. Diagnostic only (not gate metric per Wk6 re-strategy). ChatGPT+Claude manual sweep still owed. Next bi-weekly ~2026-06-21.

@@ -357,3 +357,36 @@ For the audit pass, Anthropic's MCP Inspector lets you click through one server 
 - Daily cadence resume: Thu 2026-05-21 (post Vercel→CF Pages migration window)
 
 ---
+
+## 2026-06-07 — Wk6 Track C: influencer co-sign (2 public replies, NO pitch)
+
+**Source:** `docs/notion/2026-06-02-wk6-restrategy-social-first.md` Track C. Approach = 1 public, valuable interaction first (substantive reply, no pitch, no DM). Gift DM comes Wk7 ONLY if they engage. Max 2 targets this sprint.
+**Channel:** @Incultnito (brand) on X. ⚠️ **Buffer cannot schedule X replies** (no `in_reply_to` field — see `buffer-x-handle-mismatch` memory). **Manual paste required** — drafts below are ready, NOT posted.
+**Targets chosen:** @philschmid + @simonw (strongest verifiable MCP-quality hooks). @swyx / @hwchase17 / Anthropic DevRel passed — weaker or unverifiable recent server-quality hooks.
+
+### TARGET 1 — @philschmid (Philipp Schmid)
+
+- **Why:** His post argues server *quality* (not the protocol) is the failure point and enumerates the exact failure modes mcp-probe scores (bad tool naming, nested args, weak error strings, missing schema fields). A pre-publish-validation angle directly advances his thesis.
+- **Source:** https://www.philschmid.de/mcp-best-practices — "MCP is Not the Problem, It's your Server" (pub **Jan 21, 2026**; evergreen, still his canonical quality post). ⚠️ date caveat: not late-May/June; his newer mcp-cli/agent-harness posts are MCP-relevant but less precise for a validation reply.
+- **Reply draft (266 chars):**
+  > "MCP is a UI for agents" reframes the whole thing. We scan published servers — the naming collision point is underrated. `create_issue` x3 across servers and the model picks by vibes. The fix isn't better prompts; it's the description doing the disambiguation work upfront.
+- **Self-check:** no pitch ✓ · no "love your work" opener ✓ · no link/repo closer ✓ · adds real mechanism (description-as-disambiguator) ✓ · brand voice ✓. *Optional tighten:* swap "by vibes" → "picks blind" for cult-luxe.
+
+### TARGET 2 — @simonw (Simon Willison)
+
+- **Why:** His context-bloat argument is the other half of the quality story (tool defs burning tokens *before use*). mcp-probe angle = you can *measure* that bloat pre-publish, not just route around it at runtime. Genuine peer contribution, not agreement-noise.
+- **Source:** https://simonwillison.net/2025/Nov/4/code-execution-with-mcp/ (pub **Nov 4, 2025**). He moved off MCP for coding agents toward CLI/libraries because "all of those tool descriptions take up a lot of valuable real estate in the agent context even before you start using them."
+- **Reply draft (use zero-pitch variant, ~258 chars):**
+  > The "before you start using them" part is the quiet cost. Most servers never measure their own definition footprint — they ship 30 verbose tools and the bloat is invisible until it's in someone's context. Code-execution routes around it; measuring footprint upstream prevents it.
+- **Self-check:** no pitch ✓ (concept, not product — used the tighter "measuring footprint upstream" variant to kill pitch-scent) · no opener cliché ✓ · no link ✓ · complements rather than contradicts ✓ · brand voice ✓.
+
+**Status**
+- Drafts only — **nothing posted** (Buffer can't reply on X; manual paste). Peng to fire both from @Incultnito, then confirm URLs back into this log.
+- NO DM sent (correct — DM is Wk7-conditional on engagement).
+- Both source quotes verified via WebFetch (philschmid.de, simonwillison.net) — not invented.
+
+**Next (Wk7, conditional)**
+- IF either replies/likes/engages → send 1 short gift DM: pre-run mcp-probe report on a server they care about, zero ask.
+- IF no engagement by ~6/14 → no follow-up (rule: no follow-up DM without new value).
+
+---
