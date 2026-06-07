@@ -43,6 +43,9 @@
     "cli",
     "developer-tools",
     "pre-publish",
+    "publishability",
+    "mcp-server-testing",
+    "mcp-inspector-alternative",
     "ai",
     "llm"
   ],
