@@ -4,6 +4,7 @@ import { Command } from "commander";
 import { inspectServer } from "./client.js";
 import { benchServer } from "./bench.js";
 import { watchServer } from "./watcher.js";
+import { createProbeMcpServer } from "./mcp-server.js";
 import { parseTarget, createTransport } from "./transport.js";
 import type { TransportKind } from "./types.js";
 
@@ -287,5 +288,23 @@ program
       }
     }
   );
+
+program
+  .command("serve")
+  .description(
+    "Run mcp-probe as an MCP server (stdio) exposing probe_server + score_server tools"
+  )
+  .action(async () => {
+    try {
+      const { StdioServerTransport } = await import(
+        "@modelcontextprotocol/sdk/server/stdio.js"
+      );
+      const server = createProbeMcpServer();
+      await server.connect(new StdioServerTransport());
+    } catch (error) {
+      console.error("Error:", error instanceof Error ? error.message : error);
+      process.exit(1);
+    }
+  });
 
 program.parse();

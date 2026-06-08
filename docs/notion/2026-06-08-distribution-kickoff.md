@@ -31,6 +31,23 @@
 
 ---
 
+## ✅ BUILT 2026-06-08 — Fork #2 wedge SHIPPED (TDD, 6 new tests, 115/115 green)
+
+| Artifact | What |
+|---|---|
+| `src/mcp-server.ts` | `probe_server` + `score_server` tools; `createProbeMcpServer()`. Thin wrappers over `inspectServer` — no new probe logic. |
+| `src/mcp-server-bin.ts` | `mcp-probe-server` stdio binary (shebang preserved in dist). |
+| `src/cli.ts` `serve` | `mcp-probe serve` boots the MCP server — clean `npx @scope/pkg serve` for the registry. |
+| `.well-known/mcp/server.json` | Registry discovery: schema `2025-12-11`, name `io.github.incultnitollc/mcp-probe`, npm stdio, `packageArguments:["serve"]`. |
+| tests | `mcp-server.test.ts` (in-memory client + live fixture 46/100 D + error path), `mcp-server-bin.test.ts` (real stdio e2e), `cli-serve.test.ts` (real stdio e2e). |
+| `package.json` | added `mcp-probe-server` bin. |
+
+**Verify:** `npx tsc --noEmit` ✅ · `npm run build` ✅ (shebang ok) · `vitest run` → **115/115** ✅. (eslint not configured in this repo — skipped.)
+
+**On next npm publish (M4):** bump `version` in `package.json`, `.well-known/mcp/server.json`, and `McpServer({version})` in `mcp-server.ts` together. Then submit to registry via `mcp-publisher` (GitHub-auth namespace `io.github.incultnitollc`).
+
+<details><summary>Original next-session plan (now done)</summary>
+
 ## 🔧 NEXT-SESSION ENG — I build (with you), via TDD — Fork #2 wedge
 
 **Goal:** ship mcp-probe AS an MCP server so it lists in the official MCP Registry — the one move that puts us inside the ecosystem's own discovery layer.
@@ -52,6 +69,8 @@ import { inspectServer } from "./lib.js";
 import { runPublishability } from "./publishability-runner.js"; // confirm export name
 // register tools: probe_server, score_server  → return structured JSON
 ```
+
+</details>
 
 ---
 

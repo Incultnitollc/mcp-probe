@@ -15,7 +15,8 @@
     }
   },
   "bin": {
-    "mcp-probe": "./dist/cli.js"
+    "mcp-probe": "./dist/cli.js",
+    "mcp-probe-server": "./dist/mcp-server-bin.js"
   },
   "files": [
     "dist",
