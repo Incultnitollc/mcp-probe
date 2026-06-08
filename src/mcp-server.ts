@@ -117,7 +117,7 @@ const targetShape = {
 
 /** Build the mcp-probe MCP server with probe_server + score_server tools. */
 export function createProbeMcpServer(): McpServer {
-  const server = new McpServer({ name: "mcp-probe", version: "1.1.1" });
+  const server = new McpServer({ name: "mcp-probe", version: "1.1.2" });
 
   server.registerTool(
     "probe_server",
