@@ -1,7 +1,7 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.incultnitollc/mcp-probe",
-  "description": "Inspect and score any MCP server. probe_server lists/calls a server's tools, resources and prompts and flags schema + protocol-compliance issues; score_server rates publishability 0-100 with a letter grade before you publish.",
+  "description": "Inspect and score any MCP server 0-100 on publishability, schema and protocol before publish.",
   "version": "1.1.1",
   "repository": {
     "url": "https://github.com/incultnitollc/mcp-probe",
