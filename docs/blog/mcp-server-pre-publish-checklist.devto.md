@@ -1,12 +1,9 @@
 ---
 title: The MCP Server Pre-Publish Checklist
-published: false
+published: true
 description: Before you publish an MCP server, run 10 checks. Most servers fail at least three — and the failures are invisible until an agent picks the wrong tool.
 tags: mcp, ai, opensource, devtools
-canonical_url: https://YOUR-DOMAIN/blog/mcp-server-pre-publish-checklist
 ---
-
-> **Set `canonical_url` above to your own domain URL if you publish there first, then flip `published: true`. If you are NOT publishing to your own domain, DELETE the `canonical_url` line entirely (a canonical pointing at a non-existent page hurts you). Delete this quote block before posting.**
 
 **Before you publish an MCP server, run 10 checks.** Most servers fail at least three — and the failures are invisible until an agent picks the wrong tool, hallucinates an argument, or silently drops your server on connect. This is the checklist we built `mcp-probe` to enforce, distilled to what actually breaks in the wild.
 
