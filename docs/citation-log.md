@@ -1,5 +1,7 @@
 # mcp-probe — AI citation sweep log
 
+> **Q10 GEO asset (live 2026-06-15):** dev.to article "The MCP Server Pre-Publish Checklist" → https://dev.to/incultnitollc/the-mcp-server-pre-publish-checklist-5h4e — watch whether the 6/21 sweep flips any Q10/Q7 cell now that a public checklist page exists.
+
 ## 2026-05-22 — v1.1.0 SHIPPED (lane lock-in)
 
 **`@incultnitollc/mcp-probe@1.1.0`** published to npm (~16:15 TPE Fri 2026-05-22), GitHub Release `v1.1.0` live at https://github.com/Incultnitollc/mcp-probe/releases/tag/v1.1.0. Pulled forward 1 day from original Sat 5/23 D5 slot to unblock tonight's Probe Clinic (#13 / #2768) and the Show HN draft gate.

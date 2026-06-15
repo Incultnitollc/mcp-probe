@@ -2,10 +2,10 @@
 
 Autonomous session done. Gate = 1/5, EXTEND (no Show HN). Below = only what needs a human/login.
 
-## 1. Publish dev.to article (5 min, login-walled)
-- File ready: `docs/blog/mcp-server-pre-publish-checklist.devto.md` (`published: true`, canonical removed, committed `1735249`).
-- Go https://dev.to/new → toggle Markdown → paste full file body → **Publish**.
-- After: paste live URL into Q10 watch in `docs/citation-log.md`; drop link once in existing MCP Discussion thread.
+## 1. ✅ DONE — dev.to article PUBLISHED (2026-06-15, via Playwright)
+- LIVE: https://dev.to/incultnitollc/the-mcp-server-pre-publish-checklist-5h4e (author: pengspirit, tags: devtools/ai/opensource/mcp)
+- URL recorded in `docs/citation-log.md` Q10 watch.
+- **Remaining (1 min, you):** drop that link once in your existing MCP Discussion thread (Q10 seed) for distribution.
 
 ## 2. Citation sweep ChatGPT + Claude (~2026-06-21, login-walled)
 - Fill-sheet ready: `docs/citation-log-screenshots/2026-06-21-sweep/SWEEP-FILL-SHEET.md` (10 queries × 2 platforms).
