@@ -1,3 +1,5 @@
+![mcp-probe — one command to diagnose your MCP server](https://raw.githubusercontent.com/Incultnitollc/mcp-probe/main/og-card.png)
+
 # mcp-probe
 
 **One command to diagnose your MCP server.**
