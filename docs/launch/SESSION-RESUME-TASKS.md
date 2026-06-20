@@ -70,10 +70,10 @@ Wrote up a pre-publish checklist for MCP servers — schema, tool descriptions, 
 ```
 4. Send. **DONE =** posted in a relevant channel.
 
-## ⏳ D — PR #156  (PASSIVE — no action until 2026-06-20)
+## ⏳ D — PR #156  (PASSIVE — nudge #2 sent 2026-06-20, do NOT ping again)
 - URL: https://github.com/punkpeye/awesome-mcp-devtools/pull/156
-- Status: **open, clean merge, 1 comment, maintainer silent since 6/15.**
-- Nudge already posted. Do nothing until **2026-06-20**. If still silent → ping once (Claude can auto-post that comment on request).
+- Status: **open, clean merge, 2 comments (both Peng), maintainer silent since 6/15.**
+- Nudge #1 6/15, Nudge #2 6/20 (https://github.com/punkpeye/awesome-mcp-devtools/pull/156#issuecomment-4756529490). No more pings — two is the ceiling, further nudges read as nagging. Wait for maintainer.
 - DONE: merged = Gate-2 external proof point ✓.
 
 ## ⏸ C — Clean Claude re-sweep  (OPTIONAL — skip recommended, ~5 min)
