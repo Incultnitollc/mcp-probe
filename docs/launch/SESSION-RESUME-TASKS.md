@@ -1,5 +1,5 @@
 # mcp-probe — SESSION RESUME TASK LIST
-# Resume keyword: WK-END-SNAPSHOT | Last updated: 2026-06-18 (PM)
+# Resume keyword: WK-END-SNAPSHOT | Last updated: 2026-06-20 (PM)
 # Repo: Incultnitollc/mcp-probe · Branch: docs/mcpr-cross-link
 # ⏰ Calendar resume event set: Fri 2026-06-19 00:00 Taipei (popup reminder)
 
@@ -28,7 +28,12 @@
 
 # 🔴 MANUAL TASKS (Peng only — the ONLY blockers to first AI citation)
 
-## ★ B1 — Reddit r/mcp  (HIGHEST LEVER, ~3 min) — DO FIRST
+## ★ B1 — Reddit r/mcp  (⏳ MODMAIL-PENDING — do NOT repost)
+> **2026-06-20 status:** Posted (text-only AND with-link) — BOTH removed by **Reddit's site-wide filter**, not r/mcp mods.
+> Account checked: **NOT shadowbanned** (profile visible in incognito), **250 karma**, email verified. So it is NOT a karma/shadowban problem — account flagged for self-promo pattern or r/mcp account-age threshold.
+> **Action taken:** modmail sent to r/mcp mods to approve from queue. **Now passive — wait for approval. Do NOT re-attempt the post** (more attempts deepen the spam flag).
+> When approved → reply to every comment within ~1hr (canned reply below).
+
 **WHY:** Reddit is the #1 surface ChatGPT + Perplexity crawl. Moves the greenfield citation lanes off 0.
 
 ### Steps
@@ -57,9 +62,9 @@ Curious what others gate on before they publish a server.
 Right now: schema validity (JSON Schema parse + required fields), description coverage (flags tools/params with empty descriptions), a shallow health probe (starts the server, lists tools, checks it responds), and a CI exit-code gate so you can fail a build on a bad score. Happy to take requests on what else to gate.
 ```
 
-## ★ B2 — MCP Discord #showcase  (~1 min)
+## ★ B2 — MCP Discord #showcase  ✅ COMPLETED 2026-06-20
 
-### Steps
+### Steps (done — kept for record)
 1. **WHERE:** Open the official **Model Context Protocol** Discord server.
 2. Go to channel `#showcase`.
    - If no `#showcase` → use `#tools`.
