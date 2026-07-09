@@ -4,6 +4,20 @@ All notable changes to `@incultnitollc/mcp-probe` are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] — 2026-07-09
+
+### Added — contract testing ("VCR for MCP")
+
+A third diagnostic lane alongside `test` (health) and `score` (publishability): **regression testing across versions.** Record a snapshot of a server's contract surface, commit it, then diff or gate every PR against it — catching breaking schema changes and, critically, **tool-description mutations (the rug-pull / tool-poisoning vector)** before they ship.
+
+- **New `record` subcommand** — connects and captures the server's tools / resources / prompts and their schemas to a `.mcpvcr` snapshot. Lists only — never calls a tool, reads a resource, or gets a prompt, so it is safe against live servers. Snapshots are **deterministic** (sorted, stable-keyed): re-recording an unchanged server yields a byte-identical file. `--stamp` adds an informational `recordedAt`; `--out` sets the path.
+- **New `diff` subcommand** — compares a live server (or a second `.mcpvcr` via `--against`) to a recorded `--baseline`, classifying every change as **breaking** (removed tool, new required arg, removed property, type change, narrowed enum), **security** (tool-description mutation, dropped `readOnlyHint`, tool became destructive), **additive** (new tool/optional field, widened enum), or **info**. `--json` for machine output, `--markdown <path>` for a ready-to-post PR comment.
+- **New `gate` subcommand** — the CI enforcement point. Runs the diff and exits non-zero when it contains disallowed changes. Defaults to `--fail-on breaking,security`; tune with any comma-separated severity set.
+- **Library API** — `buildSnapshot`, `readSnapshot`/`writeSnapshot`, `diffSnapshots`, `captureSnapshot`, `evaluateGate`, `renderDiffMarkdown`, and their types are exported from the package entry for programmatic use (e.g. the MCP Registry adapter).
+- **New example workflow** — [`examples/contract-gate.yml`](examples/contract-gate.yml): record a committed baseline, gate PRs, and auto-comment the classified diff.
+
+Rides the **2026-07-28 MCP spec** breaking changes: a `.mcpvcr` baseline turns "did we break our clients?" into a one-line CI check.
+
 ## [1.1.0] — 2026-05-22
 
 ### Added — publishability score

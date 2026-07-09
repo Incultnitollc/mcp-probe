@@ -1,6 +1,7 @@
 {
   "name": "@incultnitollc/mcp-probe",
-  "version": "1.1.0",
+  "version": "1.2.0",
+  "mcpName": "io.github.Incultnitollc/mcp-probe",
   "type": "module",
   "main": "./dist/lib.js",
   "types": "./dist/lib.d.ts",
@@ -15,7 +16,8 @@
     }
   },
   "bin": {
-    "mcp-probe": "./dist/cli.js"
+    "mcp-probe": "./dist/cli.js",
+    "mcp-probe-server": "./dist/mcp-server-bin.js"
   },
   "files": [
     "dist",
@@ -43,6 +45,9 @@
     "cli",
     "developer-tools",
     "pre-publish",
+    "publishability",
+    "mcp-server-testing",
+    "mcp-inspector-alternative",
     "ai",
     "llm"
   ],
