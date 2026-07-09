@@ -1,6 +1,6 @@
 {
   "name": "@incultnitollc/mcp-probe",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "mcpName": "io.github.Incultnitollc/mcp-probe",
   "type": "module",
   "main": "./dist/lib.js",

@@ -154,6 +154,37 @@ The five official Anthropic MCP servers all land at **60/100** under v1.1.0 — 
 
 `mcp-probe`'s publishability score is the **pre-publish quality** lane — for server authors before they ship. For the install-time **security** lane — server installers before they connect a third-party server — see [`@stephenywilson/mcp-doctor`](https://www.npmjs.com/package/@stephenywilson/mcp-doctor). Different audiences, complementary tools.
 
+## Contract testing — "VCR for MCP" (v1.2.0+)
+
+`test`/`score` tell you if your server is healthy *today*. **Contract testing tells you what changed since last time** — so a breaking schema edit or a poisoned tool description never ships silently.
+
+Record a snapshot of your server's contract (its tools, resources, prompts, and their schemas — no traffic, no side effects), commit the `.mcpvcr` file, then `diff` or `gate` every PR against it.
+
+```bash
+# 1. Record a baseline (lists only — never calls a tool)
+mcp-probe record "node dist/index.js" --out .mcp/contract.mcpvcr
+git add .mcp/contract.mcpvcr && git commit -m "record MCP contract baseline"
+
+# 2. See what a change did to the contract
+mcp-probe diff --baseline .mcp/contract.mcpvcr "node dist/index.js"
+
+# 3. Gate CI — exit 1 on breaking or security changes
+mcp-probe gate --baseline .mcp/contract.mcpvcr "node dist/index.js"
+```
+
+Every change is classified so the gate is meaningful, not noisy:
+
+| Severity | Examples |
+|----------|----------|
+| ❌ **breaking** | tool removed · new required argument · property removed · type changed · enum narrowed |
+| ⚠️ **security** | **tool description mutated (rug-pull / tool-poisoning)** · `readOnlyHint` dropped · tool became destructive |
+| ✅ **additive** | new tool · new optional field · enum widened |
+| ℹ️ **info** | server name · resource/prompt description text |
+
+`gate` fails on `breaking,security` by default — tune with `--fail-on breaking` (or any comma-separated set). Snapshots are **deterministic**: re-recording an unchanged server produces a byte-identical file, so committed baselines and diffs stay clean. Compare two recorded files offline with `--against <file>` instead of a live target, and write a ready-to-post PR comment with `--markdown <path>`.
+
+Why it matters: the **2026-07-28 MCP spec** ships breaking changes (dropped `initialize` handshake, error-code and JSON-Schema shifts, HTTP+SSE → Streamable HTTP). A recorded `.mcpvcr` baseline turns "did we break our clients?" into a one-line CI check. See [`examples/contract-gate.yml`](examples/contract-gate.yml) for the full PR workflow with auto-commenting.
+
 ## Use cases
 
 - **MCP server development** — Run mcp-probe in your test suite to catch regressions
