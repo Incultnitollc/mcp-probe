@@ -1,0 +1,38 @@
+# .aiderignore — MCP Probe (@incultnitollc/mcp-probe, published CLI)
+# Keeps Aider's repo-map + token footprint small (matters on an 8GB M2).
+# No .env is present today — keep it that way; the block below is defense-in-depth.
+
+# --- Secrets / privacy (NEVER send to a cloud model) ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*secret*
+
+# --- Dependency / build output (token-heavy, zero edit value) ---
+node_modules/
+dist/
+out/
+coverage/
+*.tsbuildinfo
+
+# --- Runtime / scratch / fixtures (noise) ---
+logs/
+work/
+test-fixtures/
+
+# --- Demo + media assets (binary, token-heavy) ---
+*.png
+*.gif
+demo.tape
+**/*.jpg
+**/*.jpeg
+**/*.svg
+**/*.pdf
+**/*.zip
+
+# --- VCS / OS / logs ---
+.git/
+.DS_Store
+*.log
