@@ -14,13 +14,6 @@ name: Publish to MCP Registry
 
 on:
   workflow_dispatch:
-  # Temporary: proves the OIDC path end to end on first push. Drop this trigger once
-  # the workflow is merged to main and release-driven publishing is the norm.
-  push:
-    branches: [ci/publish-oidc]
-    paths:
-      - server.json
-      - .github/workflows/publish-mcp.yml
   release:
     types: [published]
 
