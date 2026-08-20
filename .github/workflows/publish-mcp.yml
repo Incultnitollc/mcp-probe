@@ -1,0 +1,45 @@
+name: Publish to MCP Registry
+
+# Why this exists, so nobody re-derives it:
+#   The registry grants `io.github.<owner>/*` based on the identity that authenticates.
+#   An interactive personal login only ever yields `io.github.PengSpirit/*`, so publishing
+#   `io.github.Incultnitollc/mcp-probe` from a laptop returns 403 no matter what.
+#   Every interactive fix is a dead end: org membership is already public, the org's
+#   third-party OAuth policy does not govern GitHub Apps, and "MCP Registry Login (Prod)"
+#   is a PRIVATE GitHub App so it cannot be installed on the org.
+#   Actions OIDC is the supported route: this workflow authenticates AS the repository,
+#   which is owned by Incultnitollc, so the org namespace is the one it gets.
+#
+# It must run in the org repo. A fork or a personal copy reproduces the same 403.
+
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  id-token: write # required by `login github-oidc` — no repo secret is involved
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install mcp-publisher
+        env:
+          # Pinned deliberately: an unpinned "latest" would change the publishing
+          # binary underneath a release with no diff to review.
+          PUBLISHER_VERSION: v1.8.1
+        run: |
+          curl -fsSL "https://github.com/modelcontextprotocol/registry/releases/download/${PUBLISHER_VERSION}/mcp-publisher_linux_amd64.tar.gz" \
+            | tar -xz mcp-publisher
+          ./mcp-publisher --version
+
+      - name: Authenticate as the organization
+        run: ./mcp-publisher login github-oidc
+
+      - name: Publish
+        # Reads server.json from the repo root ("name": io.github.Incultnitollc/mcp-probe).
+        run: ./mcp-publisher publish
